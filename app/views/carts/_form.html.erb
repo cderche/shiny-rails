@@ -1,0 +1,5 @@
+<%= form_for @cart do |f| %>
+  <%= render partial: 'carts/components/frequency', locals: { f: f } %>
+  <%= render partial: 'carts/components/datetime', locals: { f: f } %>
+  <%= render partial: 'carts/components/options', locals: { f: f } %>
+<% end %>

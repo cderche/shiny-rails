@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004154243) do
+ActiveRecord::Schema.define(version: 20161004163121) do
 
   create_table "carts", force: :cascade do |t|
     t.string   "frequency"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20161004154243) do
     t.integer  "duration"
     t.boolean  "ironing"
     t.boolean  "pets"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.datetime "purchased_at"
   end
 
 end
