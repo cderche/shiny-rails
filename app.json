@@ -9,6 +9,9 @@
     },
     "PAYTURE_HOST": {
       "required": true
+    },
+    "DEVISE_SECRET_KEY": {
+      "required": true
     }
   },
   "formation": {

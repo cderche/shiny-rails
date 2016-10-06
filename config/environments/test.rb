@@ -39,4 +39,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1
+  config.active_record.time_zone_aware_types = [:datetime, :time]
 end
