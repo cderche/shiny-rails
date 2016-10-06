@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006130337) do
+ActiveRecord::Schema.define(version: 20161006154741) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "firstname"
@@ -46,6 +46,37 @@ ActiveRecord::Schema.define(version: 20161006130337) do
     t.datetime "updated_at",   null: false
     t.datetime "purchased_at"
     t.string   "token"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string   "OrderId"
+    t.string   "SessionType"
+    t.string   "VWUserLgn"
+    t.string   "VWUserPsw"
+    t.string   "Amount"
+    t.string   "TransactionDate"
+    t.string   "CardHolder"
+    t.string   "IsAlfa"
+    t.string   "CardName"
+    t.string   "CardId"
+    t.string   "DateTime"
+    t.string   "Success"
+    t.string   "Notification"
+    t.string   "MerchantContract"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "notification_id"
+    t.integer  "cart_id"
+    t.integer  "address_id"
+    t.string   "status"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["address_id"], name: "index_orders_on_address_id"
+    t.index ["cart_id"], name: "index_orders_on_cart_id"
+    t.index ["notification_id"], name: "index_orders_on_notification_id"
   end
 
   create_table "users", force: :cascade do |t|

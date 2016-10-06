@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  notification: one
+  cart: one
+  address: one
+  status: MyString
+
+two:
+  notification: two
+  cart: two
+  address: two
+  status: MyString
