@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004170436) do
+ActiveRecord::Schema.define(version: 20161006130337) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "city"
+    t.string   "postcode"
+    t.string   "phone"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "cart_id"
+    t.integer  "user_id"
+    t.string   "email"
+    t.string   "gateway_token"
+    t.string   "street"
+    t.string   "block"
+    t.string   "house"
+    t.string   "building"
+    t.string   "apartment"
+    t.string   "notes"
+    t.string   "token"
+    t.index ["cart_id"], name: "index_addresses_on_cart_id"
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
 
   create_table "carts", force: :cascade do |t|
     t.string   "frequency"
@@ -22,6 +45,7 @@ ActiveRecord::Schema.define(version: 20161004170436) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.datetime "purchased_at"
+    t.string   "token"
   end
 
   create_table "users", force: :cascade do |t|

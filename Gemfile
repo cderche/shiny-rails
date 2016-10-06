@@ -49,3 +49,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise for User Authentication
 gem 'devise'
+gem 'payture_api'
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'rspec'
+  gem 'capybara-mechanize'
+end
