@@ -1,0 +1,33 @@
+<%= form_for [@cart, @address], url: cart_address_path(@cart) do |f| %>
+  <%= f.label :firstname %>
+  <%= f.text_field :firstname %>
+
+  <%= f.label :lastname %>
+  <%= f.text_field :lastname %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+
+  <%= f.label :street %>
+  <%= f.text_field :street %>
+
+  <%= f.label :block %>
+  <%= f.text_field :block %>
+
+  <%= f.label :house %>
+  <%= f.text_field :house %>
+
+  <%= f.label :building %>
+  <%= f.text_field :building %>
+
+  <%= f.label :apartment %>
+  <%= f.text_field :apartment %>
+
+  <%= f.label :notes %>
+  <%= f.text_area :notes %>
+
+  <%= f.submit "Proceed" %>
+<% end %>

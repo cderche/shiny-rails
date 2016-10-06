@@ -1,6 +1,7 @@
 {
   "name": "shiny-rails",
   "scripts": {
+    "postdeploy": "bundle exec rails db:schema:load"
   },
   "env": {
     "PAYTURE_ADD": {
@@ -13,7 +14,7 @@
   "formation": {
   },
   "addons": [
-
+    "heroku-postgresql"
   ],
   "buildpacks": [
 

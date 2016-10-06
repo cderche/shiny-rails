@@ -1,7 +1,16 @@
-Rails.application.routes.draw do |map|
+Rails.application.routes.draw do
+  # devise_for :users
 
-  get 'cart', to: 'carts#show'
+  get 'clean', to: 'carts#new'
 
-  # resources :carts
+  resources :carts do
+    resource :address
+  end
 
+  resources :notifications
+
+
+
+
+  root to: "home#index"
 end
