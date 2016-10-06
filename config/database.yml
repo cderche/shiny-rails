@@ -17,7 +17,7 @@ default: &default
 
 development:
   <<: *default
-  database: db/shiny_rails_development
+  database: shiny_rails_development
   # database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
@@ -25,7 +25,7 @@ development:
 # Do not set this db to the same as development or production.
 test: &test
   <<: *default
-  database: db/shiny_rails_test
+  database: shiny_rails_test
   # database: db/test.sqlite3
 
 # production:
