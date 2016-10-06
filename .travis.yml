@@ -3,4 +3,4 @@ rvm:
   - "2.3.0"
 before_script:
   - psql -c 'create database shiny_rails_test;' -U postgres
-  - bin/rails db:migrate RAILS_ENV=test
+  - bin/rails db:schema:load RAILS_ENV=test
