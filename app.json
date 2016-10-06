@@ -1,0 +1,21 @@
+{
+  "name": "shiny-rails",
+  "scripts": {
+  },
+  "env": {
+    "PAYTURE_ADD": {
+      "required": true
+    },
+    "PAYTURE_HOST": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
