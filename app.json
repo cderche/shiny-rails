@@ -1,6 +1,7 @@
 {
   "name": "shiny-rails",
   "scripts": {
+    "postdeploy": "bundle exec rails db:migrate"
   },
   "env": {
     "PAYTURE_ADD": {
