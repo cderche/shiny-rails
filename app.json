@@ -1,13 +1,22 @@
 {
   "name": "shiny-rails",
   "scripts": {
-    "postdeploy": "bundle exec rails db:schema:load"
+    "postdeploy": "bundle exec rails db:schema:load; bundle exec rails db:seed;"
   },
   "env": {
     "PAYTURE_ADD": {
       "required": true
     },
     "PAYTURE_HOST": {
+      "required": true
+    },
+    "DEVISE_SECRET_KEY": {
+      "required": true
+    },
+    "ADMIN_EMAIL": {
+      "required": true
+    },
+    "ADMIN_PASSWORD": {
       "required": true
     }
   },

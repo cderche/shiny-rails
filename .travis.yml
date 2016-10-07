@@ -1,5 +1,8 @@
 language: ruby
 rvm:
   - "2.3.0"
+services:
+  - postgresql
 before_script:
-  - bin/rails db:migrate RAILS_ENV=test
+  - psql -c 'create database shiny_rails_test;' -U postgres
+  - bin/rails db:schema:load

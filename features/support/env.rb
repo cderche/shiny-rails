@@ -60,3 +60,4 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 # Rack-test does not support external urls
 # On scenarios that use external urls, add @mechanize before it
 require 'capybara/mechanize/cucumber'
+World(FactoryGirl::Syntax::Methods)

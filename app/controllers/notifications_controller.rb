@@ -3,9 +3,11 @@ class NotificationsController < ApplicationController
 
   def create
     # If this doesn't work, try to lowercase the keys
-    @notification = Notification.create(notification_params)
+    @notification = Notification.new(notification_params)
+    @notification.order = build_order(@notification)
+
     if @notification.save
-      build_order(@notification)
+      # build_order(@notification)
       head :ok
     else
       head :bad_request
