@@ -12,6 +12,7 @@ class AddressesController < ApplicationController
       flash[:success]
       redirect_to payment_gateway(@cart)
     else
+      flash[:error]
       render 'new'
     end
   end

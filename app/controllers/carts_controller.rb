@@ -10,6 +10,7 @@ def create
     flash[:success]
     redirect_to new_cart_address_path(@cart)
   else
+    flash[:error]
     render 'new'
   end
 end

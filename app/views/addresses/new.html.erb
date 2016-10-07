@@ -1,4 +1,7 @@
 <%= form_for [@cart, @address], url: cart_address_path(@cart) do |f| %>
+
+  <%= render partial: "./errors", locals: { object: @address } %>
+
   <%= f.label :firstname %>
   <%= f.text_field :firstname %>
 
