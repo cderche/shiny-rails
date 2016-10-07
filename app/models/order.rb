@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  belongs_to :notification
-  belongs_to :cart
-  belongs_to :address
+  has_many    :notifications
+  belongs_to  :cart
+  belongs_to  :address
 end

@@ -5,7 +5,7 @@ module NotificationsHelper
     Order.create!(
       cart:         cart          ,
       address:      cart.address  ,
-      notification: notification  ,
+      # notification: notification  ,
       status:       :active       ,
     )
   end
