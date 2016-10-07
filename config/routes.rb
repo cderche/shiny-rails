@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     resource :address
   end
 
-  resources :notifications, constraints: { host: ENV['PAYTURE_HOST'] }, only: :create
+  resources :notifications, only: :create
+  # resources :notifications, constraints: { host: ENV['PAYTURE_HOST'] }, only: :create
   # post '/notifications', to: 'notications#create', constraints: { protocol: 'https://', host: ENV['PAYTURE_HOST'] }
 
 
