@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007112824) do
+ActiveRecord::Schema.define(version: 20161007151831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "addresses", force: :cascade do |t|
     t.string   "firstname"
@@ -69,23 +70,11 @@ ActiveRecord::Schema.define(version: 20161007112824) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.string   "OrderId"
-    t.string   "SessionType"
-    t.string   "VWUserLgn"
-    t.string   "VWUserPsw"
-    t.string   "Amount"
-    t.string   "TransactionDate"
-    t.string   "CardHolder"
-    t.string   "IsAlfa"
-    t.string   "CardName"
-    t.string   "CardId"
-    t.string   "DateTime"
-    t.string   "Success"
-    t.string   "Notification"
-    t.string   "MerchantContract"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "order_id"
+    t.string   "category"
+    t.hstore   "data"
     t.index ["order_id"], name: "index_notifications_on_order_id", using: :btree
   end
 
