@@ -61,3 +61,10 @@ group :test do
 end
 
 gem 'pg'
+
+# PAGES gems
+# Gems for twitter LESS -> CSS and JS support
+gem 'jquery-turbolinks'
+gem 'execjs'
+gem 'therubyracer'
+gem 'less-rails', '~> 2.7.1'
