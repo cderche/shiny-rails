@@ -1,5 +1,5 @@
 Given(/^I have a valid Cart$/) do
-  @cart = Cart.create!
+  @cart = create(:cart)
 end
 
 Then(/^I should have (\d+) Cart$/) do |count|

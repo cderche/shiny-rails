@@ -20,7 +20,7 @@
 <%= f.time_select :time %>
 
 <%= f.label :duration %>
-<%= f.select :duration, ((2..10).step(0.5).to_a.map { |s| ["#{s} hours", s] }) %>
+<%= f.select :duration, ((2..10).step(0.5).to_a.map { |s| ["#{number_to_human(s)} hours", s*60*60.to_i] }) %>
 
 <%= f.check_box :ironing %>
 <%= f.label :ironing %>
@@ -31,3 +31,5 @@
 <%= f.submit "Reserve" %>
 
 <% end %>
+
+<%= render partial: './summary/index' %>
