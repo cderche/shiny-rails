@@ -21,3 +21,25 @@
 
 en:
   hello: "Hello world"
+  summary:
+    booking_summary: "Summary of your booking"
+    date: "Date"
+    time: "Time"
+    frequency: "How often"
+    duration: "Duration"
+    cost_of_clean: "Cost of clean"
+    discount: "Discount"
+    total_cost: "Final price"
+  cart_form:
+    questions:
+      frequency: "How often do you need a cleaner?"
+      duration: "Calculate your clean duration"
+      when: "When do you wish to have your first clean?"
+      special: "Do you have any special requests?"
+    button: "Reserve your cleaner"
+  ironing: "I need ironing"
+  pets: "I have animals in my home"
+  hours: "Hours"
+  frequency_week: "Once a week"
+  frequency_fortnight: "Every 2 weeks"
+  frequency_once: "One time"

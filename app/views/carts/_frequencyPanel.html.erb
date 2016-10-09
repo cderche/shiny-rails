@@ -1,9 +1,9 @@
 <%= f.label name, id: "label_#{name}", class: "panel panel-default text-center full-width" do %>
-<%= f.radio_button :frequency, value, class: "hide", data: { name: name } %>
+<%= f.radio_button :frequency, value, class: "hide", data: { name: t(name) } %>
 
 <div class="panel-heading separator">
     <div class="panel-title">
-        <%= name %>
+        <%= t(name) %>
     </div>
 </div>
 <div class="panel-body">
