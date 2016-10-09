@@ -1,36 +1,16 @@
-<%= form_for [@cart, @address], url: cart_address_path(@cart) do |f| %>
+<div class="container">
 
-  <%= render partial: "./errors", locals: { object: @address } %>
+    <div class="row">
 
-  <%= f.label :firstname %>
-  <%= f.text_field :firstname %>
+        <div class="col-sm-4 col-sm-push-8">
+            <%= render partial: './summary/index' %>
+        </div>
 
-  <%= f.label :lastname %>
-  <%= f.text_field :lastname %>
+        <div class="col-sm-8 col-sm-pull-4">
+            <%= render partial: 'cart' %>
+            <%= render partial: 'form' %>
+        </div>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+    </div>
 
-  <%= f.label :phone %>
-  <%= f.text_field :phone %>
-
-  <%= f.label :street %>
-  <%= f.text_field :street %>
-
-  <%= f.label :block %>
-  <%= f.text_field :block %>
-
-  <%= f.label :house %>
-  <%= f.text_field :house %>
-
-  <%= f.label :building %>
-  <%= f.text_field :building %>
-
-  <%= f.label :apartment %>
-  <%= f.text_field :apartment %>
-
-  <%= f.label :notes %>
-  <%= f.text_area :notes %>
-
-  <%= f.submit "Proceed" %>
-<% end %>
+</div>

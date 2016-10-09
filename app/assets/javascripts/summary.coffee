@@ -18,19 +18,6 @@ $(document).ready ->
     update_summary_frequency = ->
         selectedFrequency = $('[name="cart[frequency]"]:checked')
         $('.cart_frequency_summary').html selectedFrequency.data().name
-        # if selectedFrequency.size() == 1
-        #     raw = selectedFrequency.val()
-        #     out = '?'
-        #     switch raw
-        #         when 'week'
-        #             out = 'Chaque Semaine'
-        #         when 'fortnight'
-        #             out = 'Toutes les Deux Semaines'
-        #         when 'month'
-        #             out = 'Toutes les Quatre Semaines'
-        #         else
-        #             out = 'Une Fois Seulement'
-        #     $('.cart_frequency_summary').html out
         return
 
     update_summary_date = ->

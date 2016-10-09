@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007151831) do
+ActiveRecord::Schema.define(version: 20161009170223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20161007151831) do
     t.string   "city"
     t.string   "postcode"
     t.string   "phone"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "cart_id"
     t.integer  "user_id"
     t.string   "email"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20161007151831) do
     t.string   "apartment"
     t.string   "notes"
     t.string   "token"
+    t.boolean  "terms",         default: false
     t.index ["cart_id"], name: "index_addresses_on_cart_id", using: :btree
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
@@ -58,8 +59,8 @@ ActiveRecord::Schema.define(version: 20161007151831) do
 
   create_table "carts", force: :cascade do |t|
     t.string   "frequency"
-    t.date     "date"
-    t.time     "time"
+    t.string   "date"
+    t.string   "time"
     t.integer  "duration"
     t.boolean  "ironing"
     t.boolean  "pets"

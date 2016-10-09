@@ -21,6 +21,12 @@
 
 en:
   hello: "Hello world"
+  ironing: "I need ironing"
+  pets: "I have animals in my home"
+  hours: "Hours"
+  week: "Once a week"
+  fortnight: "Every 2 weeks"
+  once: "One time"
   summary:
     booking_summary: "Summary of your booking"
     date: "Date"
@@ -37,9 +43,22 @@ en:
       when: "When do you wish to have your first clean?"
       special: "Do you have any special requests?"
     button: "Reserve your cleaner"
-  ironing: "I need ironing"
-  pets: "I have animals in my home"
-  hours: "Hours"
-  frequency_week: "Once a week"
-  frequency_fortnight: "Every 2 weeks"
-  frequency_once: "One time"
+  address_form:
+    account_info: "Account Information"
+    your_address: "Your Address"
+    cc_remarks: "By checking this box, you are agreeing to our payment partner storing your credit card details for the duration of your registration, to allow the payment of the services offered on the site."
+    button: "Proceed to payment"
+  helpers:
+    label:
+      address:
+        firstname: "First name"
+        lastname: "Last name"
+        email: "Email"
+        phone: "Phone"
+        street: "Street"
+        block: "Block"
+        house: "House"
+        building: "Building"
+        apartment: "Apartment"
+        notes: "Notes"
+        terms: "I agree to the Terms and Conditions"

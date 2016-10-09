@@ -21,6 +21,12 @@
 
 fr:
   hello: "Bonjour!"
+  ironing: " J'ai besoin de repassage"
+  pets: "J'ai des animaux sur place"
+  hours: "Heures"
+  week: "Chaque semaine"
+  fortnight: "Tous les quinze jours"
+  once: "Juste cette fois"
   summary:
     booking_summary: "Résumé de votre réservation"
     date: "Date"
@@ -37,9 +43,22 @@ fr:
       when: "Quand souhaitez-vous avoir votre premier ménage?"
       special: "Avez vous des demandes particulières?"
     button: "Réservez une aide-ménagère"
-  ironing: " J'ai besoin de repassage"
-  pets: "J'ai des animaux sur place"
-  hours: "Heures"
-  frequency_week: "Chaque semaine"
-  frequency_fortnight: "Tous les quinze jours"
-  frequency_once: "Juste cette fois"
+  address_form:
+    account_info: "Vos informations"
+    your_address: "Où se trouve votre domicile"
+    cc_remarks: "En cochant cette case, vous acceptez que vos numéros de carte bancaire soient conservés pendant le temps de votre inscription sur le site, pour permettre les règlements des services proposés sur le site."
+    button: "Procéder au paiement"
+  helpers:
+    label:
+      address:
+        firstname: "Prénom"
+        lastname: "Nom"
+        email: "Email"
+        phone: "Numéro de portable"
+        street: "Rue"
+        block: "Bâtiment"
+        house: "Maison"
+        building: "Immeuble"
+        apartment: "Appartement"
+        notes: "Notes"
+        terms: "J'accepte les conditions d'utilisation"

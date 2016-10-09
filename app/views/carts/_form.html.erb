@@ -4,13 +4,13 @@
 <div class="row row-separator">
     <h4 class="text-center"><%= t('cart_form.questions.frequency') %></h4>
     <div class="col-sm-4">
-        <%= render partial: "frequencyPanel", locals: { f: f, name: :frequency_week, value: :week, price: 650 } %>
+        <%= render partial: "frequencyPanel", locals: { f: f, value: :week, price: 650 } %>
     </div>
     <div class="col-sm-4">
-        <%= render partial: "frequencyPanel", locals: { f: f, name: :frequency_fortnight, value: :fortnight, price: 700 } %>
+        <%= render partial: "frequencyPanel", locals: { f: f, value: :fortnight, price: 700 } %>
     </div>
     <div class="col-sm-4">
-        <%= render partial: "frequencyPanel", locals: { f: f, name: :frequency_once, value: :once, price: 750 } %>
+        <%= render partial: "frequencyPanel", locals: { f: f, value: :once, price: 750 } %>
     </div>
 </div>
 

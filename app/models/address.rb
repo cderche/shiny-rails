@@ -8,5 +8,6 @@ class Address < ApplicationRecord
   validates :email,     presence: true
   validates :phone,     presence: true
   validates :street,    presence: true
+  validates :terms,     acceptance: true
 
 end

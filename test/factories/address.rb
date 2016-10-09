@@ -14,5 +14,6 @@ FactoryGirl.define do
     building  { Faker::Address.building_number    }
     apartment { Faker::Address.secondary_address  }
     notes     { Faker::Lorem.sentence             }
+    terms     true
   end
 end
