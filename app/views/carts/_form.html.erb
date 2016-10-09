@@ -1,0 +1,52 @@
+<%= form_for @cart do |f| %>
+<%= render partial: "./errors", locals: { object: @cart } %>
+<!-- Frequency -->
+<div class="row row-separator">
+    <h4 class="text-center">A quelle fréquence avez-vous besoin de votre aide-ménagère ?</h4>
+    <div class="col-sm-4">
+        <%= render partial: "frequencyPanel", locals: { f: f, name: :frequency_week, value: :week, price: 650 } %>
+    </div>
+    <div class="col-sm-4">
+        <%= render partial: "frequencyPanel", locals: { f: f, name: :frequency_fortnight, value: :fortnight, price: 700 } %>
+    </div>
+    <div class="col-sm-4">
+        <%= render partial: "frequencyPanel", locals: { f: f, name: :frequency_once, value: :once, price: 750 } %>
+    </div>
+</div>
+
+<!-- Duration -->
+<div class="row row-separator">
+    <h4 class="text-center">Calculez votre temps de ménage</h4>
+    <div class="col-sm-offset-3 col-md-offset-4 col-sm-6 col-md-4">
+        <%= f.select(:duration, ((2..10).step(0.5).to_a.map { |s| ["#{number_to_human(s)} hours", s*60*60.to_i] }), {}, { class: "form-control input-lg"}) %>
+    </div>
+</div>
+
+<!-- Date and Time -->
+
+<div class="row row-separator">
+    <h4 class="text-center">Quand souhaitez-vous avoir votre premier ménage ?</h4>
+    <div class="col-xs-6">
+        <%= render partial: "timepicker", locals: { f: f } %>
+    </div>
+    <div class="col-xs-6">
+        <%= render partial: "datepicker", locals: { f: f } %>
+    </div>
+</div>
+
+<div class="row row-separator no-b-b">
+    <div class="col-xs-6">
+        <%= render partial: "checkbox", locals: { f: f, name: :ironing } %>
+    </div>
+    <div class="col-xs-6">
+        <%= render partial: "checkbox", locals: { f: f, name: :pets } %>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <%= f.submit :reserve, class: "btn btn-success btn-cons btn-lg full-width" %>
+  </div>
+</div>
+
+<% end %>

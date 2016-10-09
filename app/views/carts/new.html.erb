@@ -1,35 +1,19 @@
-<h1>Booking Form</h1>
+<div class="container">
 
-<%= form_for @cart do |f| %>
+    <div class="row">
 
-<%= render partial: "./errors", locals: { object: @cart } %>
+      <div class="col-sm-4 col-sm-push-8">
+          <%= render partial: './summary/index' %>
+      </div>
 
-<%= f.radio_button :frequency, :week %>
-<%= f.label :frequency_week, 'Weekly' %>
+        <div class="col-sm-8 col-sm-pull-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <%= render partial: 'form' %>
+                </div>
+            </div>
+        </div>
 
-<%= f.radio_button :frequency, :fortnight %>
-<%= f.label :frequency_fortnight, 'Fortnight' %>
+    </div>
 
-<%= f.radio_button :frequency, :once %>
-<%= f.label :frequency_once, 'Once' %>
-
-<%= f.label :date %>
-<%= f.date_select :date %>
-
-<%= f.label :time %>
-<%= f.time_select :time %>
-
-<%= f.label :duration %>
-<%= f.select :duration, ((2..10).step(0.5).to_a.map { |s| ["#{number_to_human(s)} hours", s*60*60.to_i] }) %>
-
-<%= f.check_box :ironing %>
-<%= f.label :ironing %>
-
-<%= f.check_box :pets %>
-<%= f.label :pets %>
-
-<%= f.submit "Reserve" %>
-
-<% end %>
-
-<%= render partial: './summary/index' %>
+</div>

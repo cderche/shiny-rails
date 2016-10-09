@@ -26,6 +26,10 @@
 //= require pages-plugins/imagesloaded/imagesloaded.pkgd.min
 //= require pages-plugins/jquery-actual/jquery.actual.min
 //= require pages-plugins/jquery-scrollbar/jquery.scrollbar.min
+//= require pages-plugins/bootstrap-datepicker/js/bootstrap-datepicker
+//= require pages-plugins/bootstrap-timepicker/bootstrap-timepicker.min
+//= require pages-plugins/bootstrap-select2/select2.min
+//= require pages-plugins/moment/moment.min
 
 // BEGIN CORE TEMPLATE JS FOR PAGES
 //= require pages-core/js/pages.min

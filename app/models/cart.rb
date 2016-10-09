@@ -7,4 +7,12 @@ class Cart < ApplicationRecord
   validates :date,      presence: true
   validates :time,      presence: true
   validates :duration,  presence: true
+
+  after_initialize :init
+
+  def init
+    # self.frequency  ||= :week
+    # self.date       ||= Date.today + 3
+    # self.time       ||= Time.now.change(hour: 10, min: 0)
+  end
 end

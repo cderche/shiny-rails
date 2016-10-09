@@ -1,0 +1,30 @@
+.booking_details {
+  padding-top: 5px;
+}
+
+.booking_details_item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px dotted rgba(0, 0, 0, 0.07);
+
+  .value {
+    font-weight: bold;
+  }
+
+  &:first-child {
+    border: 0;
+  }
+}
+
+.booking_details_cost {
+  margin-top: 10px;
+  border: 1px dotted #ccc;
+  background-color: #f9f9f9;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.list-cc-item {
+  display: inline-block;
+  color: #dbdbdb;
+}

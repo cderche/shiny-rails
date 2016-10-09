@@ -1,0 +1,23 @@
+<%= f.label name, id: "label_#{name}", class: "panel panel-default text-center full-width" do %>
+<%= f.radio_button :frequency, value, class: "hide", data: { name: name } %>
+
+<div class="panel-heading separator">
+    <div class="panel-title">
+        <%= name %>
+    </div>
+</div>
+<div class="panel-body">
+    <div class="frequency-panel-price separator">
+        <h1><%= price %>
+            <small>₽/h</small>
+        </h1>
+    </div>
+    <!-- <ul class="list-unstyled">
+        <li>Keep the same cleaner</li>
+        <li>Professionally trained</li>
+        <li>Engagement of minimum 3 months</li>
+    </ul> -->
+    <!-- <i class="fa fa-2x fa-check-circle"></i> -->
+    <!-- <i class="fa fa-2x fa-circle-thin"></i> -->
+</div>
+<% end %>

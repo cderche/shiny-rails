@@ -17,6 +17,8 @@
  *= require pages-plugins/jquery-scrollbar/jquery.scrollbar
  *= require pages-plugins/bootstrap-select2/select2
  *= require pages-plugins/switchery/css/switchery.min
+ *= require pages-plugins/bootstrap-datepicker/css/datepicker3
+ *= require pages-plugins/bootstrap-timepicker/bootstrap-timepicker.min
  *
  * BEGIN CORE TEMPLATE CSS FOR PAGES
  *= require pages-core/css/pages-icons
