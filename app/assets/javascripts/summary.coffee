@@ -16,8 +16,8 @@ $(document).ready ->
         update_summary_price()
 
     update_summary_frequency = ->
-        selectedFrequency = $('[name="cart[frequency]"]:checked')
-        $('.cart_frequency_summary').html selectedFrequency.data().name
+        selectedFrequency = $('[name="cart[frequency]"]:checked');
+        $('.cart_frequency_summary').html selectedFrequency.data().name;
         return
 
     update_summary_date = ->
