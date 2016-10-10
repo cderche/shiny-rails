@@ -21,7 +21,8 @@
 
 fr:
   hello: "Bonjour!"
-  ironing: " J'ai besoin de repassage"
+  order: "Commandez"
+  ironing: " J'ai besoin de repassage (+1 heure)"
   pets: "J'ai des animaux sur place"
   hours: "Heures"
   week: "Chaque semaine"

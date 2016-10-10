@@ -1,3 +1,151 @@
-<h1>Welcome to Shiny!</h1>
+<section class="jumbotron height-70 full-width hero_1" data-pages="parallax">
+    <div class="inner full-height">
+        <div class="container-xs-height full-height">
+            <div class="col-xs-height col-middle text-left">
+                <div class="container">
+                    <div class="col-sm-8 col-sm-offset-2 sm-m-t-30 sm-p-t-20 sm-p-b-20">
+                        <h2 class="dark text-center text-black xs-p-t-30 sm-p-b-30">
+                            Book a
+                            <b>professional</b>
+                            &
+                            <b>reliable</b>
+                            cleaner in Moscow.
+                        </h2>
+                        <div class="text-center m-t-30 col-md-8 col-md-offset-2">
+                            <%= link_to t('book_now'), clean_path, { class: 'btn btn-lg btn-primary btn-cons btn-block text-white', data: { turbolinks: false } }%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<%= link_to 'Clean', clean_path %>
+<section>
+    <div class="row p-t-50 p-b-50">
+        <div class="col-sm-3 text-center">
+            <i class="fa fa-4x fa-clock-o"></i>
+            <h4 class="m-t-10">Reserve in 60 seconds</h4>
+        </div>
+        <div class="col-sm-3 text-center">
+            <i class="fa fa-4x fa-shield"></i>
+            <h4 class="m-t-10">Identified and Qualified</h4>
+        </div>
+        <div class="col-sm-3 text-center">
+            <i class="fa fa-4x fa-credit-card"></i>
+            <h4 class="m-t-10">Secure Payments</h4>
+        </div>
+        <div class="col-sm-3 text-center">
+            <i class="fa fa-4x fa-language"></i>
+            <h4 class="m-t-10">English Speaking</h4>
+        </div>
+    </div>
+</section>
+
+<section class="p-b-100 p-t-100 bg-master-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h6 class="block-title m-b-0 text-white text-center">Stay in touch</h6>
+                <h1 class="text-white text-center m-t-5">Subscribe to our newsletter</h1>
+                <p class="small hint-text p-t-0 text-white text-center ">We value your privacy. None of the details supplied will be shared with external parties</p>
+                <div class="form-group form-group-default input-group  m-t-40 bg-transparent b-a b-transparent-white">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control text-white" placeholder="Example@mailserver.com" style="">
+                    <span class="input-group-btn">
+                        <button class="btn btn-white m-r-10 btn-cons" type="button">Subscribe!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-b-100 p-t-100">
+    <h3 class="text-center"><%=  t('just_three_small_steps') %></h3>
+    <div class="row m-t-50">
+        <div class="col-sm-4 text-center">
+            <h1>1</h2>
+            <h4 class="m-t-10">When & Duration</h4>
+        </div>
+        <div class="col-sm-4 text-center">
+            <h1>2</h2>
+            <h4 class="m-t-10">Where</h4>
+        </div>
+        <div class="col-sm-4 text-center">
+            <h1>3</h2>
+            <h4 class="m-t-10">Add a card</h4>
+        </div>
+    </div>
+    <div class="row m-t-50">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+            <%= link_to t('lets_do_it'), clean_path, { class: 'btn btn-lg btn-primary btn-cons btn-block text-white', data: { turbolinks: false } }%>
+        </div>
+    </div>
+</section>
+
+<section class="p-b-70 p-t-55 bg-master-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <%= image_tag 'shiny.svg', class: 'img-responsive logo' %>
+            </div>
+            <div class="col-md-5">
+              <ul class="list-unstyled hint-text text-right m-t-25">
+                  <li class="inline p-r-20">
+                      <a href="https://www.facebook.com/getshinyrus" target="_blank">
+                          <i class="fa fa-2x fa-facebook"></i>
+                      </a>
+                  </li>
+                  <li class="inline">
+                      <a href="https://www.instagram.com/getshiny" target="_blank">
+                          <i class="fa fa-2x fa-instagram"></i>
+                      </a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+        <div class="row m-t-30">
+            <div class="col-sm-3 col-xs-12 xs-m-b-20">
+                <address class="margin-bottom-20 margin-top-10">
+                    <strong>DC Ventures LLC</strong>
+                    <br>Petra Romanova Street 7/1
+                    <br>115193, Moscow
+                    <br>
+                    <abbr title="Phone">
+                        <i class="fa fa-phone"></i>
+                    </abbr>
+                    <a href="tel:+79263911284">+7 (926) 391-12-84</a>
+                    <br>
+                    <abbr title="Email">
+                        <i class="fa fa-envelope-o"></i>
+                    </abbr>
+                    <a href="mailto:info@getshiny.ru">info@getshiny.ru</a>
+                </address>
+            </div>
+            <div class="col-sm-3 col-xs-6 xs-m-b-20">
+                <ul class="list-unstyled hint-text">
+                    <li class="list-cc-item">
+                        <i class="fa fa-3x fa-cc-mastercard"></i>
+                    </li>
+                    <li class="list-cc-item">
+                        <i class="fa fa-3x fa-cc-visa"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-6 xs-m-b-20">
+                <ul class="no-style no-padding">
+                    <li class="m-b-5 no-padding">
+                      <%= link_to t('order'), clean_path, class: "text-footer", data: { turbolinks: false } %>
+                    </li>
+                    <li class="m-b-5 no-padding">
+                        <a class="text-footer" href="#">Q&A</a>
+                    </li>
+                    <li class="m-b-5 no-padding">
+                        <a class="text-footer" href="#">Terms & Conditions</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

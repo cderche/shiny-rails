@@ -21,7 +21,13 @@
 
 en:
   hello: "Hello world"
-  ironing: "I need ironing"
+  menu:
+    home: 'Home'
+    pricing: 'Pricing'
+    qa: 'Q&A'
+    about_us: 'About us'
+  order: "Order"
+  ironing: "I need ironing (+1 hour)"
   pets: "I have animals in my home"
   hours: "Hours"
   week: "Once a week"

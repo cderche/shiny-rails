@@ -28,15 +28,17 @@
         </script>
 
         <%= csrf_meta_tags %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, 'data-turbolinks-eval' => false %>
 
         <%= yield :head %>
     </head>
 
     <body>
+        <%= render './layouts/header' %>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= link_to('Logout', destroy_admin_session_path, method: :delete) if admin_signed_in? %>
         <%= yield %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, 'data-turbolinks-eval' => false %>
+
     </body>
 </html>
