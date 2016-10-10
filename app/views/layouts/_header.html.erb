@@ -26,9 +26,9 @@
             </div> -->
             <div class="p-t-10 p-b-10 clearfix m-b-5">
                 <div class="pull-right fs-12">
-                    <%= link_to t('en'), url_for(locale: 'en'), class: 'm-r-10' %>
-                    <%= link_to t('fr'), url_for(locale: 'fr'), class: 'm-r-10' %>
-                    <%= link_to t('ru'), url_for(locale: 'ru'), class: 'm-r-10' %>
+                    <%= link_to t('en'), url_for(locale: 'en'), class: 'm-r-10', data: { turbolinks: false } %>
+                    <%= link_to t('fr'), url_for(locale: 'fr'), class: 'm-r-10', data: { turbolinks: false } %>
+                    <%= link_to t('ru'), url_for(locale: 'ru'), class: 'm-r-10', data: { turbolinks: false } %>
                     <a href="tel:+79263911284" class="text-black font-montserrat hidden-xs m-r-10">+7 (926) 391-12-84</a>
                 </div>
             </div>
