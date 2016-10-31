@@ -1,5 +1,8 @@
 {
   "name": "shiny-rails",
+  "scripts": {
+    "postdeploy": "bundle exec rails db:schema:load; bundle exec rails db:seed;"
+  },
   "env": {
     "PAYTURE_ADD": {
       "required": true
