@@ -1,13 +1,17 @@
 <%= form_for @cart do |f| %>
 <%= render partial: "./errors", locals: { object: @cart } %>
+
+<input type="hidden" name="cart[cost]" class="form-control">
+<input type="hidden" name="cart[real]" class="form-control">
+<input type="hidden" name="cart[disc]" class="form-control">
 <!-- Frequency -->
 <div class="row row-separator">
     <h4 class="text-center"><%= t('cart_form.questions.frequency') %></h4>
     <div class="col-sm-4">
-        <%= render partial: "frequencyPanel", locals: { f: f, value: :week, price: 650 } %>
+        <%= render partial: "frequencyPanel", locals: { f: f, value: :week, price: 600 } %>
     </div>
     <div class="col-sm-4">
-        <%= render partial: "frequencyPanel", locals: { f: f, value: :fortnight, price: 700 } %>
+        <%= render partial: "frequencyPanel", locals: { f: f, value: :fortnight, price: 675 } %>
     </div>
     <div class="col-sm-4">
         <%= render partial: "frequencyPanel", locals: { f: f, value: :once, price: 750 } %>
