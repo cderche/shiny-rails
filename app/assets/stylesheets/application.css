@@ -22,7 +22,7 @@
  *
  * BEGIN CORE TEMPLATE CSS FOR PAGES
  *= require pages-core/css/pages-icons
- *= require pages-core/css/pages
+ *= require pages-core/scss/pages
  *
  * BEGIN PAGES ASSET PIPELINE OVERRIDE
  *= require ./pages-asset-pipeline
