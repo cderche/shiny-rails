@@ -17,8 +17,11 @@ module AddressesHelper
       path: '/vwapi/Pay'        ,
       query: {
         SessionId:  sessionId   ,
-        Date:       cart.date   ,
-        Time:       cart.time   ,
+        date:       cart.date   ,
+        time:       cart.time   ,
+        cost:       cart.cost   ,
+        real:       cart.real   ,
+        disc:       cart.disc   ,
       }.to_query
     })
 

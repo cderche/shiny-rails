@@ -1,3 +1,32 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.logo {
+  max-height: 28px;
+  //margin-top: 26px;
+}
+
+.hero {
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  // background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  //height: ~"calc(100vh - @{navbar-height-mobile})";
+  //
+  //@media @medium-and-up {
+  //  height: ~"calc(100vh - @{navbar-height})";
+  //}
+}
+
+.hero_1 {
+  @extend .hero;
+  background-image: image_url('hero_1.jpg');
+}
+
+.height-70 {
+  height: 70% !important;
+}

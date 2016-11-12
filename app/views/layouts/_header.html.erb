@@ -1,0 +1,50 @@
+<nav class="header md-header light-solid" data-pages="header" data-pages="header">
+    <div class="container relative">
+        <div class="pull-left">
+            <div class="header-inner">
+                <%= link_to root_path do %>
+                <%= image_tag 'shiny.svg', class: 'logo' %>
+                <% end %>
+            </div>
+        </div>
+
+        <!-- <div class="pull-right">
+            <div class="header-inner">
+                <div class="visible-sm-inline visible-xs-inline menu-toggler pull-right p-l-10" data-pages="header-toggle" data-pages-element="#header">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </div>
+            </div>
+        </div> -->
+        <div class="pull-right menu-content clearfix" data-pages-direction="slideRight" id="header">
+
+            <!-- <div class="pull-right">
+                <a href="#" class="text-black link padding-10 visible-xs-inline visible-sm-inline pull-right m-t-10 m-b-10 m-r-10" data-pages="header-toggle" data-pages-element="#header">
+                    <i class=" pg-close_line"></i>
+                </a>
+            </div> -->
+            <div class="p-t-10 p-b-10 clearfix m-b-5">
+                <div class="pull-right fs-12">
+                    <%= link_to t('en'), url_for(locale: 'en'), class: 'm-r-10', data: { turbolinks: false } %>
+                    <%= link_to t('fr'), url_for(locale: 'fr'), class: 'm-r-10', data: { turbolinks: false } %>
+                    <%= link_to t('ru'), url_for(locale: 'ru'), class: 'm-r-10', data: { turbolinks: false } %>
+                    <a href="tel:+79263911284" class="text-black font-montserrat hidden-xs m-r-10">+7 (926) 391-12-84</a>
+                </div>
+            </div>
+            <ul class="menu">
+                <!-- <li class='hidden-xs'><%= link_to t('menu.home'), root_path %></li> -->
+                <li class='hidden-xs'><%= link_to t('menu.pricing'), root_path %></li>
+                <li class='hidden-xs'><%= link_to t('menu.qa'), root_path %></li>
+                <li class='hidden-xs'><%= link_to t('menu.about_us'), root_path %></li>
+                <li><%= link_to t('order'), clean_path, class: "btn btn-sm btn-primary text-white", data: { turbolinks: false } %></li>
+            </ul>
+
+            <!-- <div class="font-arial m-l-35 m-r-35 m-b-20  visible-sm visible-xs m-t-30">
+                <p class="fs-11 no-margin small-text p-b-20">Exclusive only at ,Themeforest. See Standard licenses &amp; Extended licenses
+                </p>
+                <p class="fs-11 small-text muted">Copyright © 2014 REVOX</p>
+            </div> -->
+        </div>
+    </div>
+</nav>

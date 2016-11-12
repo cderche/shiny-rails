@@ -1,0 +1,28 @@
+<%= form_for [@cart, @address], url: cart_address_path(@cart) do |f| %>
+
+<div class="panel panel-default">
+    <%= render partial: "./errors", locals: { object: @address } %>
+    <div class="panel-heading">
+        <div class="panel-title"> <%= t('address_form.account_info') %></div>
+    </div>
+    <div class="panel-body">
+        <%= render partial: "account", locals: { f: f } %>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title"><%= t('address_form.your_address') %></div>
+    </div>
+    <div class="panel-body">
+        <%= render partial: "address", locals: { f: f } %>
+
+        <div class="row m-t-20">
+            <div class="col-xs-12">
+                <%= f.submit t('address_form.button'), class: "btn btn-primary btn-cons btn-lg full-width disabled" %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% end %>

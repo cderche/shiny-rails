@@ -4,8 +4,8 @@ Feature: Website
 Scenario: Create a valid Cart for Cleaner
   When I go to "clean"
   And I choose "week" as the "cart[frequency]"
-  And I select "November 23, 2016" as the "cart_date" date
-  And I select "10:15" as the "cart_time" time
+  And I fill in "23/11/2016" as the "cart[date]"
+  And I fill in "10:30" as the "cart[time]"
   And I select "4.5" as the "cart[duration]"
   And I check "cart[ironing]"
   And I press "Reserve"
@@ -25,6 +25,7 @@ Scenario: Create valid Address for a Cart
   And I fill in "3" as the "address[building]"
   And I fill in "4" as the "address[apartment]"
   And I fill in "This is a note." as the "address[notes]"
+  And I check "address[terms]"
   And I press "Proceed"
   Then I should be redirected to a payment gateway
   And I should have a address for my Cart

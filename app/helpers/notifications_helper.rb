@@ -15,5 +15,10 @@ module NotificationsHelper
       address:      cart.address  ,
       status:       :active       ,
     )
+
+    # notification.save
+
+    puts "Order built"
+    # OrderMailer.received(notification.order)
   end
 end

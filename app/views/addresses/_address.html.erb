@@ -1,0 +1,38 @@
+<div class="form-group-attached">
+    <div class="form-group form-group-default required">
+        <%= f.label :street %>
+        <%= f.text_field :street, class: "form-control" %>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-3">
+            <div class="form-group form-group-default">
+                <%= f.label :block %>
+                <%= f.text_field :block, class: "form-control" %>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+            <div class="form-group form-group-default">
+                <%= f.label :house %>
+                <%= f.text_field :house, class: "form-control" %>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+            <div class="form-group form-group-default">
+                <%= f.label :building %>
+                <%= f.text_field :building, class: "form-control" %>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+            <div class="form-group form-group-default">
+                <%= f.label :apartment %>
+                <%= f.text_field :apartment, class: "form-control" %>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group form-group-default">
+        <%= f.label :notes %>
+        <%= f.text_area :notes, class: "form-control" %>
+    </div>
+</div>

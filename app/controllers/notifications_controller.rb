@@ -5,7 +5,7 @@ class NotificationsController < ApplicationController
   def create
     # If this doesn't work, try to lowercase the keys
 
-    puts notification_params
+    puts "Notification Received: #{notification_params}"
 
     @notification           = Notification.new
 
