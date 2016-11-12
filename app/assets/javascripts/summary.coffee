@@ -54,6 +54,7 @@ update_summary_discount = ->
     cost = $('[name="cart[cost]"]').val()
     disc = $('[name="cart[disc]"]').val()
     real = $('[name="cart[real]"]').val()
+    # promo_value = parseInt(disc)
     promo_value = 0
 
     apply_fixed = ->
@@ -78,6 +79,10 @@ update_summary_discount = ->
             apply_percentage()
     else
         apply_fixed()
+
+    $('[name="cart[cost]"]').val(cost)
+    $('[name="cart[disc]"]').val(disc)
+    $('[name="cart[real]"]').val(real)
 
     $('.cart_discount_summary').html(disc + 'rub')
     $('.cart_cost_total').html(real + 'rub')

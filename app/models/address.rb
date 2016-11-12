@@ -10,4 +10,8 @@ class Address < ApplicationRecord
   validates :street,    presence: true
   validates :terms,     acceptance: true
 
+  def fullname
+    "#{self.firstname} #{self.lastname}"
+  end
+
 end

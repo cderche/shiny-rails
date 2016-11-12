@@ -68,3 +68,8 @@ gem 'jquery-turbolinks'
 gem 'execjs'
 gem 'therubyracer'
 gem 'less-rails', '~> 2.7.1'
+
+# Randomize id
+# gem "obfuscate_id"
+
+gem 'mandrill-api', require: 'mandrill'
