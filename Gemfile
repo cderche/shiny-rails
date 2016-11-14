@@ -73,3 +73,4 @@ gem 'less-rails', '~> 2.7.1'
 # gem "obfuscate_id"
 
 gem 'mandrill-api', require: 'mandrill'
+gem 'gibbon' # mailchimp v3

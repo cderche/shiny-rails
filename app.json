@@ -1,7 +1,7 @@
 {
   "name": "shiny-rails",
   "scripts": {
-    "postdeploy": "bundle exec rails db:schema:load; bundle exec rails db:seed;"
+    "postdeploy": "bundle exec rails db:migrate; bundle exec rails db:seed;"
   },
   "env": {
     "PAYTURE_ADD": {
@@ -18,7 +18,19 @@
     },
     "ADMIN_PASSWORD": {
       "required": true
-    }
+    },
+    "MANDRILL_USER": {
+      "required": true
+    },
+    "MANDRILL_API_KEY": {
+      "required": true
+    },
+    "MAILCHIMP_API_KEY": {
+      "required": true
+    },
+    "MAILCHIMP_LIST": {
+      "required": true
+    },
   },
   "formation": {
   },
