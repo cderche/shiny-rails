@@ -16,5 +16,7 @@ Rails.application.routes.draw do
 
   get '/admin/dashboard', to: 'admin#index'
 
+  post '/subscribe', to: 'subscribe#subscribe'
+
   root to: "home#index"
 end
