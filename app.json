@@ -30,7 +30,7 @@
     },
     "MAILCHIMP_LIST": {
       "required": true
-    },
+    }
   },
   "formation": {
   },
