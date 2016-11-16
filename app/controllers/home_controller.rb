@@ -11,4 +11,7 @@ class HomeController < ApplicationController
       render 'terms_en'
     end
   end
+
+  def questions
+  end
 end

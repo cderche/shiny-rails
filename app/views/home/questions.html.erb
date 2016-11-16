@@ -1,0 +1,182 @@
+<div class="container m-t-90">
+    <h1 class="text-center"><%= t('questions.title') %></h1>
+
+    <div class="panel-group" data-toggle="collapse" id="accordion">
+        <!-- BEGIN - Question 1 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse1"><%= t('questions.q1.title') %></a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapse1">
+                <div class="panel-body">
+                    <p><%= t('questions.q1.p1') %></p>
+                    <p><%= t('questions.q1.p2') %></p>
+                    <ol>
+                      <li><%= t('questions.q1.b1') %> <%= link_to t('order'), clean_path %></li>
+                      <!-- <li><%= t('questions.q1.b2') %></li> -->
+                      <li><%= t('questions.q1.b3') %></li>
+                      <li><%= t('questions.q1.b4') %></li>
+                      <li><%= t('questions.q1.b5') %></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- END - Question 1 -->
+
+        <!-- BEGIN - Question 2 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse2"><%= t('questions.q2.title') %></a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapse2">
+                <div class="panel-body">
+                    <p><%= t('questions.q2.p1') %></p>
+                    <p><%= t('questions.q2.p2') %> <%= link_to t('order'), clean_path %></p>
+                </div>
+            </div>
+        </div>
+        <!-- END - Question 2 -->
+
+        <!-- BEGIN - Question 3 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse3"><%= t('questions.q3.title') %></a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapse3">
+                <div class="panel-body">
+                    <p><%= t('questions.q3.p1') %></p>
+                    <p><%= t('questions.q3.p2') %></p>
+                    <p><%= t('questions.q3.p3') %></p>
+                    <p><%= t('questions.q3.p4') %></p>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th class="text-center"><%= t('questions.q3.table.c1r1') %></th>
+                          <th class="text-center"><%= t('questions.q3.table.c2r1') %></th>
+                          <th class="text-center"><%= t('questions.q3.table.c3r1') %></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="text-center">
+                          <td><%= t('questions.q3.table.c1r2') %></td>
+                          <td><%= t('questions.q3.table.c2r2') %></td>
+                          <td><%= t('questions.q3.table.c3r2') %></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END - Question 3 -->
+
+        <!-- BEGIN - Question 4 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse4"><%= t('questions.q4.title') %></a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapse4">
+                <div class="panel-body">
+                    <p><%= t('questions.q4.p1') %></p>
+                    <!-- <p><%= t('questions.q4.p2') %></p> -->
+                </div>
+            </div>
+        </div>
+        <!-- END - Question 4 -->
+
+        <!-- BEGIN - Question 5 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse5"><%= t('questions.q5.title') %></a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapse5">
+                <div class="panel-body">
+                    <p><%= t('questions.q5.p1') %></p>
+                    <p><i class="pg pg-mail"></i> <%= mail_to ENV['HELP_EMAIL'] %></p>
+                    <p><i class="pg pg-phone"></i> <%= link_to ENV['PHONE_NUMBER'], "tel:#{ENV['PHONE_NUMBER']}" %></p>
+                </div>
+            </div>
+        </div>
+        <!-- END - Question 5 -->
+
+        <!-- BEGIN - Question 6 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse6"><%= t('questions.q6.title') %></a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapse6">
+                <div class="panel-body">
+                    <p><%= t('questions.q6.p1') %></p>
+                    <ul>
+                      <li><%= t('questions.q6.b1') %></li>
+                      <li><%= t('questions.q6.b2') %></li>
+                      <li><%= t('questions.q6.b3') %></li>
+                      <li><%= t('questions.q6.b4') %></li>
+                      <li><%= t('questions.q6.b5') %></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END - Question 6 -->
+
+        <!-- BEGIN - Question 7 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse7"><%= t('questions.q7.title') %></a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapse7">
+                <div class="panel-body">
+                    <p><%= t('questions.q7.p1') %></p>
+                </div>
+            </div>
+        </div>
+        <!-- END - Question 7 -->
+
+        <!-- BEGIN - Question 8 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse8"><%= t('questions.q8.title') %></a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapse8">
+                <div class="panel-body">
+                    <p><%= t('questions.q8.p1') %></p>
+                    <p><i class="pg pg-mail"></i> <%= mail_to ENV['HELP_EMAIL'] %></p>
+                    <p><i class="pg pg-phone"></i> <%= link_to ENV['PHONE_NUMBER'], "tel:#{ENV['PHONE_NUMBER']}" %></p>
+                </div>
+            </div>
+        </div>
+        <!-- END - Question 8 -->
+
+        <!-- BEGIN - Question 9 -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse9"><%= t('questions.q9.title') %></a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="collapse9">
+                <div class="panel-body">
+                    <p><%= t('questions.q9.p1') %></p>
+                    <p><i class="pg pg-mail"></i> <%= mail_to ENV['HELP_EMAIL'] %></p>
+                    <p><i class="pg pg-phone"></i> <%= link_to ENV['PHONE_NUMBER'], "tel:#{ENV['PHONE_NUMBER']}" %></p>
+                </div>
+            </div>
+        </div>
+        <!-- END - Question 9 -->
+    </div>
+</div>

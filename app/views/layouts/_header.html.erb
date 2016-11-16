@@ -27,16 +27,16 @@
             <div class="p-t-10 p-b-10 clearfix m-b-5">
                 <div class="pull-right fs-12">
                     <%= link_to t('en'), url_for(locale: 'en'), class: 'm-r-10', data: { turbolinks: false } %>
-                    <%= link_to t('fr'), url_for(locale: 'fr'), class: 'm-r-10', data: { turbolinks: false } %>
+                    <!-- <%= link_to t('fr'), url_for(locale: 'fr'), class: 'm-r-10', data: { turbolinks: false } %> -->
                     <%= link_to t('ru'), url_for(locale: 'ru'), class: 'm-r-10', data: { turbolinks: false } %>
                     <a href="tel:+79263911284" class="text-black font-montserrat hidden-xs m-r-10">+7 (926) 391-12-84</a>
                 </div>
             </div>
             <ul class="menu">
                 <!-- <li class='hidden-xs'><%= link_to t('menu.home'), root_path %></li> -->
-                <li class='hidden-xs'><%= link_to t('menu.pricing'), root_path %></li>
-                <li class='hidden-xs'><%= link_to t('menu.qa'), root_path %></li>
-                <li class='hidden-xs'><%= link_to t('menu.about_us'), root_path %></li>
+                <!-- <li class='hidden-xs'><%= link_to t('menu.pricing'), root_path %></li> -->
+                <li class='hidden-xs'><%= link_to t('menu.qa'), questions_path, data: { turbolinks: false } %></li>
+                <!-- <li class='hidden-xs'><%= link_to t('menu.about_us'), root_path %></li> -->
                 <li><%= link_to t('order'), clean_path, class: "btn btn-sm btn-primary text-white", data: { turbolinks: false } %></li>
             </ul>
 
