@@ -18,5 +18,7 @@ Rails.application.routes.draw do
 
   post '/subscribe', to: 'subscribe#subscribe'
 
+  get '/terms', to: 'home#terms'
+
   root to: "home#index"
 end
