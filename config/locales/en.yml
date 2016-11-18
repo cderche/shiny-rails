@@ -121,4 +121,5 @@ en:
         building: "Building"
         apartment: "Apartment"
         notes: "Notes"
-        terms: "I agree to the Terms and Conditions"
+        agree: "I agree to the "
+        terms: "Terms and Conditions"

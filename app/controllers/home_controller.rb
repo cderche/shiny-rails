@@ -5,11 +5,6 @@ class HomeController < ApplicationController
   end
 
   def terms
-    if params[:locale]
-      render "terms_#{params[:locale]}"
-    else
-      render 'terms_en'
-    end
   end
 
   def questions
