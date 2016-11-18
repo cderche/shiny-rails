@@ -21,7 +21,6 @@ class OrderMailer < BaseMandrillMailer
       "COST"        =>  order.cart.real           ,
     }
     body = mandrill_template("shiny-booking-received", merge_vars)
-    puts body
     send_email(recipient, subject, body)
     # send_email("info@getshiny.ru", subject, body)
   end
