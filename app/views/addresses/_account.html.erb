@@ -55,7 +55,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <%= render partial: "shared/terms/#{params[:locale]}" %>
+                        <%= render partial: "shared/terms/#{params[:locale]}" if params[:locale]%>
                     </div>
                 </div>
             </div>
