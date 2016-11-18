@@ -1,0 +1,65 @@
+<section class="p-b-70 p-t-55 bg-master-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <%= image_tag 'shiny.svg', class: 'img-responsive logo' %>
+            </div>
+            <div class="col-md-5">
+              <ul class="list-unstyled hint-text text-right m-t-25">
+                  <li class="inline p-r-20">
+                      <a href="https://www.facebook.com/getshinyrus" target="_blank">
+                          <i class="fa fa-2x fa-facebook"></i>
+                      </a>
+                  </li>
+                  <li class="inline">
+                      <a href="https://www.instagram.com/getshiny" target="_blank">
+                          <i class="fa fa-2x fa-instagram"></i>
+                      </a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+        <div class="row m-t-30">
+            <div class="col-sm-3 col-xs-12 xs-m-b-20">
+                <address class="margin-bottom-20 margin-top-10">
+                    <strong>DC Ventures LLC</strong>
+                    <br>Petra Romanova Street 7/1
+                    <br>115193, Moscow
+                    <br>
+                    <abbr title="Phone">
+                        <i class="fa fa-phone"></i>
+                    </abbr>
+                    <a href="tel:+79263911284">+7 (926) 391-12-84</a>
+                    <br>
+                    <abbr title="Email">
+                        <i class="fa fa-envelope-o"></i>
+                    </abbr>
+                    <a href="mailto:info@getshiny.ru">info@getshiny.ru</a>
+                </address>
+            </div>
+            <div class="col-sm-3 col-xs-6 xs-m-b-20">
+                <ul class="list-unstyled hint-text">
+                    <li class="list-cc-item">
+                        <i class="fa fa-3x fa-cc-mastercard"></i>
+                    </li>
+                    <li class="list-cc-item">
+                        <i class="fa fa-3x fa-cc-visa"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-3 col-xs-6 xs-m-b-20">
+                <ul class="no-style no-padding">
+                    <li class="m-b-5 no-padding">
+                      <%= link_to t('menu.order'), clean_path, class: "text-footer", data: { turbolinks: false } %>
+                    </li>
+                    <li class="m-b-5 no-padding">
+                        <%= link_to t('menu.qa'), questions_path, class: "text-footer", data: { turbolinks: false } %>
+                    </li>
+                    <li class="m-b-5 no-padding">
+                        <%= link_to t('menu.terms'), terms_path, class: "text-footer", data: { turbolinks: false } %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

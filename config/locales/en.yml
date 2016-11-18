@@ -20,12 +20,66 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  questions:
+    title: "Questions & Answers"
+    q1:
+      title: "How does Shiny work?"
+      p1: "Shiny is an innovative platform for connecting individuals looking for household services with top-quality, pre-screened independent service professionals. With a seamless 60-second booking process, and secure payment, Shiny is the easiest, most convenient way to book home services."
+      p2: "Ready to change how you get stuff done around the house?"
+      b1: "Start by visiting"
+      # b2: "Select the order button and log in."
+      b3: "Pick a time that works for you."
+      b4: "Add your debit or credit card so that we can charge you after a clean."
+      b5: "On the big day, a background-checked and highly-rated professional will arrive at your home ready to get the job done right."
+    q2:
+      title: "How do I make an account?"
+      p1: "When you make your first booking, we'll create a Shiny account for you."
+      p2: "Ready to make a booking?"
+    q3:
+      title: "What's the cancellation policy?"
+      p1: "Skip, reschedule, or cancel a day in advance for free."
+      p2: "The Shiny platform is made to be flexible, but we have some rules. First, it's important to know that you can skip, reschedule, or cancel any booking for free with at least 24 hours notice. You can also permanently cancel your cleaning plan for free, with the same notice."
+      p3: "That said, skipping, rescheduling, or cancelling a booking with short notice can cause the professionals using our platform to lose valuable work. If you make a change to a booking within 24 hours, but with at least two hours to go, you'll be charged a fee."
+      p4: "If the clock runs out, and you need to skip or cancel within two hours, you'll be charged the full price of the booking. You can't reschedule a booking with less than two hours until the start time."
+      table:
+        title: "Reschedule / Cancellation Policy"
+        c1r1: "> 24 hours before booking"
+        c2r1: "2-24 hours before booking"
+        c3r1: "< 2 hours before booking"
+        c1r2: "Free"
+        c2r2: "750 rub."
+        c3r2: "Full booking amount"
+    q4:
+      title: "Trust and safety"
+      p1: "We know that none of this works without putting trust, safety, and security at the forefront of every decision we make. The professionals using our platform are background-checked and highly recommended by previous employers."
+      # p2: "Furthermore, the professionals are insured, so that if anything goes wrong, your property is protected."
+    q5:
+      title: "How do I contact Shiny?"
+      p1: "Our customer experience team uses email to handle the vast majority of cases. The more detailed you are, the faster we'll be able to help you. For urgent issues, call us."
+    q6:
+      title: "What do I need to have at home?"
+      p1: "Make sure to have following items at home before every clean starts:"
+      b1: "A vacuum cleaner"
+      b2: "Rags and wipes"
+      b3: "Floor sweeper-mop"
+      b4: "Floor cleaning solutions"
+      b5: "Universal cleaning solution"
+    q7:
+      title: "Who are the cleaners that use Shiny?"
+      p1: "The professionals using the Shiny platform are independent service providers. It's our job to help connect you to them. Professionals apply to register on the Shiny platform, and undergo a background check and a platform orientation session before they're able to register. The professionals are required to maintain high customer ratings, so make sure to rate all of your professionals after each booking!"
+    q8:
+      title: "How do I change the frequency of my cleans?"
+      p1: "Just write us an email of give us a call:"
+    q9:
+      title: "Can I book more than one professional?"
+      p1: "In general our cleaners work individually. If you have the need for more than one cleaner, please write us an email or give us a call."
   menu:
     home: 'Home'
     pricing: 'Pricing'
     qa: 'Q&A'
     about_us: 'About us'
+    terms: "Terms & Conditions"
+    order: "Order Now"
   order: "Order"
   ironing: "I need ironing (+1 hour)"
   pets: "I have animals in my home"
@@ -67,4 +121,5 @@ en:
         building: "Building"
         apartment: "Apartment"
         notes: "Notes"
-        terms: "I agree to the Terms and Conditions"
+        agree: "I agree to the "
+        terms: "Terms and Conditions"
