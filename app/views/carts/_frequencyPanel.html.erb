@@ -9,14 +9,15 @@
 <div class="panel-body">
     <div class="frequency-panel-price separator">
         <h1><%= price %>
-            <small>₽/h</small>
+            <small>₽/<%= t('hr') %></small>
         </h1>
     </div>
-    <!-- <ul class="list-unstyled">
-        <li>Keep the same cleaner</li>
-        <li>Professionally trained</li>
-        <li>Engagement of minimum 3 months</li>
-    </ul> -->
+    <% if value.to_s != 'once' %>
+      <ul class="list-unstyled small">
+          <li><%= t('freq.b1') %></li>
+          <li><%= t('freq.b2') %></li>
+      </ul>
+    <% end %>
     <!-- <i class="fa fa-2x fa-check-circle"></i> -->
     <!-- <i class="fa fa-2x fa-circle-thin"></i> -->
 </div>

@@ -163,7 +163,7 @@ Events / .event-container
 				.day-wrapper .week-date{
 					.day{
 						& > a{
-						color: rgba(0, 0, 0, 0.6);	
+						color: rgba(0, 0, 0, 0.6);
 						}
 					}
 
@@ -228,8 +228,8 @@ Events / .event-container
 					&.week-header{
 						text-transform: uppercase;
 						text-align: center;
-						font-family: 'Montserrat';
-						font-size: 10px;	
+						font-family: 'LatoWeb';
+						font-size: 10px;
 					}
 				}
 			}
@@ -312,7 +312,7 @@ Events / .event-container
 				}
 				.grid .tble{
 					height: 100%;
-					width: 100%;	
+					width: 100%;
 				}
 				.event-container .event-title{
 					font-size: 12px;
@@ -331,7 +331,7 @@ Events / .event-container
 					width: 100%;
 					&.active{
 						display: inline-block;
-					}		
+					}
 				}
 				.trow{
 					display: block;
@@ -425,7 +425,7 @@ Events / .event-container
 						}
 						&.disable{
 							background-color: $color-master-lightest;
-						}	
+						}
 					}
 				}
 				.loading{
@@ -630,7 +630,7 @@ Responsive Util
 				&.active{
 					display: inline-block;
 					background-color:#fff;
-				}		
+				}
 			}
 			.trow{
 				display: block;

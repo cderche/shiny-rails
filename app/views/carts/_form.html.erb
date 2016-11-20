@@ -24,6 +24,10 @@
     <div class="col-sm-offset-3 col-md-offset-4 col-sm-6 col-md-4">
         <%= f.select(:duration, ((2..10).step(0.5).to_a.map { |s| ["#{number_to_human(s)} #{t('hours')}", s*60*60.to_i] }), {}, { class: "form-control input-lg"}) %>
     </div>
+    <br>
+    <div class="col-sm-offset-3 col-md-offset-4 col-sm-6 col-md-4 text-center">
+      <a href="#" data-toggle="modal" data-target="#calc"><%= t('cart_form.help_calc_rooms') %></a>
+    </div>
 </div>
 
 <!-- Date and Time -->
@@ -55,3 +59,24 @@
 </div>
 
 <% end %>
+
+<!-- Modal -->
+<div class="modal fade slide-up disable-scroll" id="calc" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
+    <div class="modal-dialog ">
+        <div class="modal-content-wrapper">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  <i class="pg-close fs-14"></i>
+                </button>
+                <!-- <h5><%= t('cart_form.help_calc_rooms') %></h5> -->
+            </div>
+            <div class="modal-body text-center">
+                <%= image_tag 'calc.jpg' %>
+            </div>
+        </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+</div>
+<!-- /.modal-dialog -->

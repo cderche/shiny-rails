@@ -8,7 +8,7 @@
         stroke-opacity:.04;
         stroke : #000;
     }
-    
+
     .nvd3 .nv-groups path.nv-area{
         /*  filled area */
          fill-opacity : .1;
@@ -21,17 +21,17 @@
         /*  grid lines */
         stroke-opacity: .5;
     }
-    
+
     &[data-x-grid="false"]{
-        .nv-x .tick line { 
-            display: none; 
-        }  
-    } 
+        .nv-x .tick line {
+            display: none;
+        }
+    }
     &[data-y-grid="false"]{
-        .nv-y .tick line { 
-            display: none; 
-        }  
-    } 
+        .nv-y .tick line {
+            display: none;
+        }
+    }
     .domain{
         /* domain */
         opacity: 0;
@@ -43,7 +43,7 @@
             fill-opacity: 1;
             stroke-opacity: .5;
         }
-    } 
+    }
 
     .nvtooltip table td.legend-color-guide div{
         border-radius: 100px;
@@ -52,11 +52,11 @@
          color: lighten($color-master,30%);
     }
     .nv-pointer-events-none{
-        
+
         font-size: 12px;
-        
+
         .value.nv-pointer-events-none{
-            font-family: 'Montserrat';  
+            font-family: 'LatoWeb';
            font-weight: normal;
            font-size: 11px;
             color: lighten($color-master,30%);
@@ -69,7 +69,7 @@
         border-color : rgba(0, 0, 0, 0.12);
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     }
-    
+
      &[data-stroke-width="1"]{
         .nvd3 .nv-groups path.nv-line{
             /* Line widths */
@@ -99,14 +99,14 @@
 
     .tick text,  .nvd3 .nv-axis .nv-axisMaxMin text{
         fill: fade($color-master, 50%);
-        font-family: "Montserrat";
+        font-family: "LatoWeb";
         font-size: 11px;
         text-transform: uppercase;
         font-weight: normal;
     }
-   
 
-    .nvd3.nv-scatter .nv-groups .nv-point.hover, 
+
+    .nvd3.nv-scatter .nv-groups .nv-point.hover,
     .nvd3 .nv-groups .nv-point.hover{
         fill: inherit !important;
         stroke: inherit !important;
@@ -181,7 +181,7 @@
     .line-chart[data-area-color="black"] &{
         fill: #000;
     }
-} 
+}
 
 /* Point fill colors
 ------------------------------------
@@ -212,9 +212,9 @@
         fill : #fff;
     }
  }
-    
-#nvd3-line, 
-#nvd3-line2, 
+
+#nvd3-line,
+#nvd3-line2,
 #nvd3-area{
     svg{
         height: 500px;
@@ -262,7 +262,7 @@
 
 #tab-rickshaw-realtime{
     #rickshaw-realtime{
-        
+
     }
     #rickshaw-realtime_y_axis {
         position: absolute;
@@ -278,7 +278,7 @@
         }
         .rickshaw_graph .y_ticks text, .rickshaw_graph .x_ticks_d3 text{
             opacity: 0.35;
-            font-family: 'Montserrat';
+            font-family: 'LatoWeb';
             font-size: 11px;
 
         }
@@ -287,7 +287,7 @@
 
 #tab-rickshaw-bars{
     #rickshaw-stacked-bars{
-    
+
         &.rickshaw_graph .detail .dot{
             border-radius: 50px;
         }
@@ -310,7 +310,7 @@
     stroke: none;
   }
   .rickshaw_graph .y_ticks text, .rickshaw_graph .x_ticks_d3 text{
-            font-family: 'Montserrat';
+            font-family: 'LatoWeb';
             font-size: 11px;
         }
   .rickshaw_range_slider_preview {
@@ -336,8 +336,8 @@
     right: 0;
     width: auto;
     .x_tick.plain .title{
-       font-family: 'Montserrat';
-            font-size: 11px; 
+       font-family: 'LatoWeb';
+            font-size: 11px;
     }
   }
   .y_axis{
