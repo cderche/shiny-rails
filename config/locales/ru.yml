@@ -148,3 +148,6 @@ ru:
     city: "Москва, 115193"
   rub: "руб"
   hr: "ч"
+  freq:
+    b1: "Keep the same cleaner"
+    b2: "Engagement of minimum 3 months"
