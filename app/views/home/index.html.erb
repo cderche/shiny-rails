@@ -5,14 +5,10 @@
                 <div class="container">
                     <div class="col-sm-8 col-sm-offset-2 sm-m-t-30 sm-p-t-20 sm-p-b-20">
                         <h2 class="dark text-center text-black xs-p-t-30 sm-p-b-30">
-                            Book a
-                            <b>professional</b>
-                            &
-                            <b>reliable</b>
-                            cleaner in Moscow.
+                            <%= raw t('home.section1.text1') %>
                         </h2>
                         <div class="text-center m-t-30 col-md-8 col-md-offset-2">
-                            <%= link_to t('book_now'), clean_path, { class: 'btn btn-lg btn-primary btn-cons btn-block text-white', data: { turbolinks: false } }%>
+                            <%= link_to t('menu.order'), clean_path, { class: 'btn btn-lg btn-primary btn-cons btn-block text-white', data: { turbolinks: false } }%>
                         </div>
                     </div>
                 </div>
@@ -25,19 +21,19 @@
     <div class="row p-t-50 p-b-50">
         <div class="col-sm-3 text-center">
             <i class="fa fa-4x fa-clock-o"></i>
-            <h4 class="m-t-10">Reserve in 60 seconds</h4>
+            <h4 class="m-t-10"><%= t('home.section2.text1') %></h4>
         </div>
         <div class="col-sm-3 text-center">
             <i class="fa fa-4x fa-shield"></i>
-            <h4 class="m-t-10">Identified and Qualified</h4>
+            <h4 class="m-t-10"><%= t('home.section2.text2') %></h4>
         </div>
         <div class="col-sm-3 text-center">
             <i class="fa fa-4x fa-credit-card"></i>
-            <h4 class="m-t-10">Secure Payments</h4>
+            <h4 class="m-t-10"><%= t('home.section2.text3') %></h4>
         </div>
         <div class="col-sm-3 text-center">
             <i class="fa fa-4x fa-language"></i>
-            <h4 class="m-t-10">English Speaking</h4>
+            <h4 class="m-t-10"><%= t('home.section2.text4') %></h4>
         </div>
     </div>
 </section>
@@ -46,14 +42,14 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
-                <h6 class="block-title m-b-0 text-white text-center">Stay in touch</h6>
-                <h1 class="text-white text-center m-t-5">Subscribe to our newsletter</h1>
-                <p class="small hint-text p-t-0 text-white text-center ">We value your privacy. None of the details supplied will be shared with external parties</p>
+                <h6 class="block-title m-b-0 text-white text-center"><%= t('home.section3.text1') %></h6>
+                <h1 class="text-white text-center m-t-5"><%= t('home.section3.text2') %></h1>
+                <!-- <p class="small hint-text p-t-0 text-white text-center ">We value your privacy. None of the details supplied will be shared with external parties</p> -->
                 <div class="form-group form-group-default input-group  m-t-40 bg-transparent b-a b-transparent-white">
-                    <label>Email Address</label>
-                    <input type="email" id="subscribeEmail" class="form-control text-white" placeholder="Example@mailserver.com" style="">
+                    <label>Email</label>
+                    <input type="email" id="subscribeEmail" class="form-control text-white" placeholder="example@mailserver.com">
                     <span class="input-group-btn">
-                        <button id="subscribeButton" class="btn btn-primary m-r-10 btn-cons" type="button">Subscribe!</button>
+                        <button id="subscribeButton" class="btn btn-primary m-r-10 btn-cons" type="button"><%= t('home.section3.text3') %></button>
                     </span>
                 </div>
             </div>
@@ -62,24 +58,24 @@
 </section>
 
 <section class="p-b-100 p-t-100">
-    <h3 class="text-center"><%=  t('just_three_small_steps') %></h3>
+    <h3 class="text-center"><%= t('home.section4.text1') %></h3>
     <div class="row m-t-50">
         <div class="col-sm-4 text-center">
             <h1>1</h2>
-            <h4 class="m-t-10">Tell us what you need</h4>
+            <h4 class="m-t-10"><%= t('home.section4.text2') %></h4>
         </div>
         <div class="col-sm-4 text-center">
             <h1>2</h2>
-            <h4 class="m-t-10">We send you a professional</h4>
+            <h4 class="m-t-10"><%= t('home.section4.text3') %></h4>
         </div>
         <div class="col-sm-4 text-center">
             <h1>3</h2>
-            <h4 class="m-t-10">Enjoy a clean home</h4>
+            <h4 class="m-t-10"><%= t('home.section4.text4') %></h4>
         </div>
     </div>
     <div class="row m-t-50">
         <div class="col-sm-6 col-sm-offset-3 text-center">
-            <%= link_to t('lets_do_it'), clean_path, { class: 'btn btn-lg btn-primary btn-cons btn-block text-white', data: { turbolinks: false } }%>
+            <%= link_to t('home.section4.text5'), clean_path, { class: 'btn btn-lg btn-primary btn-cons btn-block text-white', data: { turbolinks: false } }%>
         </div>
     </div>
 </section>
