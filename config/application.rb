@@ -14,6 +14,7 @@ module ShinyRails
 
     # Pages.revox
     config.assets.paths << File.join(Rails.root, "/vendor/pages")
+    config.assets.paths << File.join(Rails.root, "/app/assets/fonts")
 
   end
 end
