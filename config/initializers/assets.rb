@@ -11,4 +11,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 # Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 # Rails.application.config.assets.precompile << Proc.new { |path, fn| fn =~ /vendor\/pages\/pages-core\/fonts/ }
-Rails.application.config.assets.precompile << Proc.new { |path, fn| fn =~ /vendor\/assets/ && !%w(.js .css).include?(File.extname(path)) }
+Rails.application.config.assets.precompile << Proc.new { |path, fn| fn =~ /vendor/ && !%w(.js .css).include?(File.extname(path)) }
