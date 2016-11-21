@@ -25,20 +25,20 @@ ru:
     section1:
       text1: "Закажите <b>профессиональную</b> и <b>надёжную</b> уборку менее чем за 1 минуту."
     section2:
-      text1: "Reserve in 60 seconds"
-      text2: "Identified and Qualified"
-      text3: "Secure Payments"
-      text4: "English Speaking"
+      text1: "Закажите профессиональную и надёжную уборку в Москве"
+      text2: "Проверенные и квалифицированные исполнители"
+      text3: "Бесопасные платежи "
+      text4: "Многоязычные домработницы"
     section3:
-      text1: "Stay in touch"
-      text2: "Subscribe to our newsletter"
-      text3: "Subscribe!"
+      text1: "Оставайтесь на связи"
+      text2: "Подписаться на информационную рассылку"
+      text3: "Подписаться"
     section4:
-      text1: "Just Three Small Steps"
-      text2: "Tell us what you need"
-      text3: "We send you a professional"
-      text4: "Enjoy a clean home"
-      text5: "Let's do it!"
+      text1: "Три простых шага"
+      text2: "Скажите, что вам нужно"
+      text3: "Мы отправим вам профессионала"
+      text4: "Наслаждаться чистым домом"
+      text5: " Давайте сделаем это!"
   questions:
     title: "Вопросы и ответы"
     q1:
@@ -92,45 +92,45 @@ ru:
     q9:
       title: "Могу ли я заказать услуги нескольких специалистов?"
       p1: "В основном, наши клинеры работают индивидуально. Если вам нужно несколько клинеров, пожалуйста, напишите нам по электронной почте или позвоните."
-  menu:
-    home: 'Home'
-    pricing: 'Pricing'
+  menu:"Меню"
+    home: 'Домой'
+    pricing: 'Тарифы'
     qa: 'Вопросы'
-    about_us: 'About us'
+    about_us: 'О нас'
     terms: "Пользовательское Соглашение"
     order: "Закaжите сейчас"
   order: "Заказ"
-  ironing: "I need ironing (+1 hour)"
-  pets: "I have animals in my home"
+  ironing: "Мне нужно погладить белье (+1 hour)"
+  pets: "У меня есть домашние животные"
   hours: "Часа"
   week: "Раз в неделю"
   fortnight: "Раз в 2 недели"
   once: "Один раз"
   summary:
-    booking_summary: "Summary of your booking"
+    booking_summary: "Ваш заказ"
     date: "Дата уборки"
     time: "Когда"
     frequency: "Регулярность"
     duration: "Время уборки"
-    cost_of_clean: "Cost of clean"
-    discount: "Discount"
-    total_cost: "Final price"
+    cost_of_clean: "Стоимость уборки"
+    discount: "Скидка"
+    total_cost: "Итог"
   cart_form:
     questions:
       frequency: "How often do you need a cleaner?"
       duration: "Calculate your clean duration"
       when: "When do you wish to have your first clean?"
       special: "Do you have any special requests?"
-    help_calc_rooms: "help me calculate"
-    button: "Reserve your cleaner"
+    help_calc_rooms: "Как расчитать"
+    button: "Закажите уборщицу"
   address_form:
-    account_info: "Account Information"
-    your_address: "Your Address"
+    account_info: "Информация об аккаунте "
+    your_address: "Ваш адрес"
     cc_remarks: "By checking this box, you are agreeing to our payment partner storing your credit card details for the duration of your registration, to allow the payment of the services offered on the site."
-    button: "Proceed to payment"
+    button: "Перейти к оплате"
   helpers:
     label:
-      address:
+      address: "Адрес"
         firstname: "Имя"
         lastname: "Фамилия"
         email: "Email"
@@ -143,12 +143,12 @@ ru:
         notes: "Комментарий"
         agree: "Я принимаю "
         terms: "правила"
-  company:
+  company:"Компания" 
     name: "ООО ДиСи Венчерс"
     street: "ул. Петра Романова д. 7/1"
     city: "Москва, 115193"
   rub: "руб"
   hr: "ч"
-  freq:
+  freq:"Частота"
     b1: "Keep the same cleaner"
     b2: "Engagement of minimum 3 months"
