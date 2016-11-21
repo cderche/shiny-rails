@@ -120,7 +120,7 @@ en:
       duration: "Calculate your clean duration"
       when: "When do you wish to have your first clean?"
       special: "Do you have any special requests?"
-    help_calc_rooms: "help me calculate"
+    help_calc_rooms: "how to calculate"
     button: "Reserve your cleaner"
   address_form:
     account_info: "Account Information"
