@@ -25,7 +25,7 @@ ru:
     section1:
       text1: "Закажите <b>профессиональную</b> и <b>надёжную</b> уборку менее чем за 1 минуту."
     section2:
-      text1: "Закажите профессиональную и надёжную уборку в Москве"
+      text1: "Закажите менее чем за 1 минуту"
       text2: "Проверенные и квалифицированные исполнители"
       text3: "Бесопасные платежи "
       text4: "Многоязычные домработницы"
@@ -37,8 +37,8 @@ ru:
       text1: "Три простых шага"
       text2: "Скажите, что вам нужно"
       text3: "Мы отправим вам профессионала"
-      text4: "Наслаждаться чистым домом"
-      text5: " Давайте сделаем это!"
+      text4: "Наслаждайтесь Вашим убранным домом!"
+      text5: "Давайте сделаем это!"
   questions:
     title: "Вопросы и ответы"
     q1:
@@ -92,7 +92,7 @@ ru:
     q9:
       title: "Могу ли я заказать услуги нескольких специалистов?"
       p1: "В основном, наши клинеры работают индивидуально. Если вам нужно несколько клинеров, пожалуйста, напишите нам по электронной почте или позвоните."
-  menu:
+  menu:"Меню"
     home: 'Домой'
     pricing: 'Тарифы'
     qa: 'Вопросы'
@@ -117,16 +117,16 @@ ru:
     total_cost: "Итог"
   cart_form:
     questions:
-      frequency: "How often do you need a cleaner?"
-      duration: "Calculate your clean duration"
-      when: "When do you wish to have your first clean?"
-      special: "Do you have any special requests?"
-    help_calc_rooms: "Как расчитать"
+      frequency: "Как часто у вас убираться?"
+      duration: "Время на уборку"
+      when: "Когда к вам приехать?"
+      special: "У Вас есть какие-то особые пожелания?"
+    help_calc_rooms: "Как рассчитать время уборки?"
     button: "Закажите уборщицу"
   address_form:
     account_info: "Информация об аккаунте "
     your_address: "Ваш адрес"
-    cc_remarks: "By checking this box, you are agreeing to our payment partner storing your credit card details for the duration of your registration, to allow the payment of the services offered on the site."
+    cc_remarks: "При установке этого флажка Вы автоматически соглашаетесь на сохранение данных Вашей кредитной карты на весь период Вашей регистрации для оплаты услуг, предлагаемых на сайте."
     button: "Перейти к оплате"
   helpers:
     label:
@@ -150,5 +150,5 @@ ru:
   rub: "руб"
   hr: "ч"
   freq:"Частота"
-    b1: "Keep the same cleaner"
+    b1: "Пользуйтесь одной и той же уборщицей каждый раз, когда у Вас возникнет необходимость в наведении чистоты. "
     b2: "Engagement of minimum 3 months"
