@@ -130,7 +130,7 @@ ru:
     button: "Перейти к оплате"
   helpers:
     label:
-      address: "Адрес"
+      address:
         firstname: "Имя"
         lastname: "Фамилия"
         email: "Email"
@@ -143,12 +143,12 @@ ru:
         notes: "Комментарий"
         agree: "Я принимаю "
         terms: "правила"
-  company:"Компания" 
+  company:
     name: "ООО ДиСи Венчерс"
     street: "ул. Петра Романова д. 7/1"
     city: "Москва, 115193"
   rub: "руб"
   hr: "ч"
-  freq:"Частота"
+  freq:
     b1: "Пользуйтесь одной и той же уборщицей каждый раз, когда у Вас возникнет необходимость в наведении чистоты. "
     b2: "Engagement of minimum 3 months"
