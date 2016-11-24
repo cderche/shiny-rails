@@ -26,12 +26,14 @@ $(document).ready(function() {
     var params = getParams()
     console.log("Params:", params);
 
-    $('.cart_frequency_summary').html(params.frequency);
+    var freq = params.frequency.split("+").join(" ");
+
+    $('.cart_frequency_summary').html(freq);
     $('.cart_date_summary').html(params.date);
     $('.cart_time_summary').html(params.time);
     $('.cart_duration_summary').html(format_duration_string(params.duration));
     $('.cart_cost_summary').html(params.cost + 'rub');
     $('.cart_cost_total').html(params.real + 'rub');
-    $('.cart_discount_summary').html(params.discount + 'rub');
+    $('.cart_discount_summary').html(params.disc + 'rub');
 
 })
