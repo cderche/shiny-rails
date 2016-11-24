@@ -23,6 +23,9 @@
                 document.head.innerHTML += '<link rel="stylesheet" type="text/css" href="/pages/css/windows.chrome.fix.css?v=pages-v1.0.0" />'
         }
     </script>
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
+
     <script src="/Templates/Getshiny/application.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
     <meta name="ROBOTS" content="NONE">
     <script type="text/javascript" src="/Templates/Getshiny/custom.js"></script>
@@ -30,6 +33,14 @@
     <script type="text/javascript" src="/Templates/Getshiny/jquery.migrate.min.js"></script>
     <script type="text/javascript" src="/Templates/Getshiny/device.min.js"></script>
     <script type="text/javascript" src="/Templates/Getshiny/payture.min.v1.0.js"></script>
+
+    <!-- // <script src="Templates/Getshiny/application.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
+    // <script type="text/javascript" src="Templates/Getshiny/custom.js"></script>
+    // <script type="text/javascript" src="Templates/Getshiny/jquery.11.min.js"></script>
+    // <script type="text/javascript" src="Templates/Getshiny/jquery.migrate.min.js"></script>
+    // <script type="text/javascript" src="Templates/Getshiny/device.min.js"></script>
+    // <script type="text/javascript" src="Templates/Getshiny/payture.min.v1.0.js"></script> -->
+
     <script type="text/javascript">
         $(document).ready(function() {
             Payture.eWalletPay({
@@ -38,7 +49,9 @@
         })
     </script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
     <link href="/Templates/Getshiny/application.css" rel="stylesheet" type="text/css">
+    <!-- <link href="Templates/Getshiny/application.css" rel="stylesheet" type="text/css"> -->
 </head>
 
 <body>
@@ -141,7 +154,7 @@
             <div class="col-sm-8 col-sm-pull-4">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div id="errorTop" class="alert alert-danger">{error}</div>
+                        <div id="errorTop" class="text-danger">{error}</div>
                         <form class="payForm" id="payForm" name="payForm">
                             <input name="Key" value="{key}" type="hidden">
                             <input type="hidden" name="AddCard" value="True">
