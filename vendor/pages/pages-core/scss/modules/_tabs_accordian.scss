@@ -23,7 +23,7 @@
       border-radius: 0;
       padding: 15px 20px;
       margin-right: 0;
-      font-family: 'Montserrat';
+      font-family: 'LatoWeb';
       font-weight: 400;
       color: fade-out($color-master,.3);
       font-size: 12px;
@@ -88,7 +88,7 @@
   }
 }
 
-/* Tabs : Simple 
+/* Tabs : Simple
 ------------------------------------
 */
 
@@ -310,7 +310,7 @@
   }
 }
 
-/* Tabs : Fill-up 
+/* Tabs : Fill-up
 ------------------------------------
 */
 
@@ -495,9 +495,9 @@
       width: 100%;
       position: relative;
       bottom: 3px;
-      z-index: 120;    
+      z-index: 120;
       content: "";
-      clear: both;    
+      clear: both;
     }
     &  ~ .tab-content{
       position: relative;

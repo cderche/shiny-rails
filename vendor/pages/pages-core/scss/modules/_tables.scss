@@ -2,7 +2,7 @@
 [16. Tables and Datatables]
 */
 
-/* Generic Tables 
+/* Generic Tables
 ------------------------------------
 */
 .table {
@@ -12,7 +12,7 @@
             th {
                 text-transform: uppercase;
                 font-weight: 600;
-                font-family:'Montserrat';
+                font-family:'LatoWeb';
                 font-size: 13px;
                 padding-top: 14px;
                 padding-bottom: 14px;
@@ -91,7 +91,7 @@
                    border-top: 0;
                 }
             }
-        }       
+        }
     }
     &.table-condensed {
         table-layout: fixed;
@@ -182,7 +182,7 @@
     margin-bottom: 0 !important;
 }
 
-/* Data-tables 
+/* Data-tables
 ------------------------------------
 */
 .table.dataTable.no-footer{
@@ -230,7 +230,7 @@
 .dataTables_wrapper .dataTables_paginate ul > li.next > a,
 .dataTables_wrapper .dataTables_paginate ul > li.prev > a{
     opacity: 1;
-} 
+}
 .dataTables_wrapper .dataTables_paginate ul > li.disabled a{
     opacity: .35;
     &:hover{
@@ -248,7 +248,7 @@
 .dataTables_wrapper .dataTables_info{
      clear: none;
     font-size: 12px;
-    
+
     padding: 0 33px;
     color: $color-master;
 }
@@ -292,7 +292,7 @@ table.dataTable thead {
     .sorting_desc_disabled:after{
         background-image: url("#{$base-img-url}/icons/sort_desc_disabled.png");
     }
-    
+
 }
 
 table.dataTable thead .sorting:after,
