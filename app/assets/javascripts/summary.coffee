@@ -24,8 +24,9 @@ format_duration_string = (seconds) ->
     hours = seconds / 3600
     str = undefined
     hourFraction = hours % 1
-    mins = if hourFraction > 0 then Math.floor(60 * hourFraction) else ''
-    str = Math.floor(hours) + 'h' + mins
+    # mins = if hourFraction > 0 then Math.floor(60 * hourFraction) else ''
+    mins = if hourFraction > 0 then '.5' else ''
+    str = Math.floor(hours) + mins
     str
 
 update_summary_frequency = ->
@@ -84,8 +85,8 @@ update_summary_discount = ->
     $('[name="cart[disc]"]').val(disc)
     $('[name="cart[real]"]').val(real)
 
-    $('.cart_discount_summary').html(disc + 'rub')
-    $('.cart_cost_total').html(real + 'rub')
+    $('.cart_discount_summary').html(disc)
+    $('.cart_cost_total').html(real)
     return
 
 update_summary_price = ->
@@ -94,7 +95,7 @@ update_summary_price = ->
 
     rate = baseRate
     cost = rate * duration
-    $('.cart_cost_summary').html(cost + 'rub')
+    $('.cart_cost_summary').html(cost)
     $('[name="cart[cost]"]').val(cost)
     return
 

@@ -439,7 +439,7 @@ body.pace-white .pace .pace-progress {
 .header .menu > li > a {
   position: relative;
   text-transform: uppercase;
-  font-family: 'Montserrat';
+  font-family: 'LatoWeb';
   padding-right: 21px;
   display: block;
 }
@@ -635,7 +635,7 @@ body.pace-white .pace .pace-progress {
 .header .menu > li > .classic ul > li a {
   color: #000000;
   text-transform: uppercase;
-  font-family: 'Montserrat';
+  font-family: 'LatoWeb';
   opacity: 0.5;
   font-size: 11px;
   line-height: 30px;
@@ -690,7 +690,7 @@ body.pace-white .pace .pace-progress {
   color: #000000;
   opacity: 0.5;
   text-transform: uppercase;
-  font-family: 'Montserrat';
+  font-family: 'LatoWeb';
   line-height: 35px;
   font-size: 11px;
 }
@@ -733,7 +733,7 @@ body.pace-white .pace .pace-progress {
 .header .menu > li > .mega .container ul.sub-menu > li a {
   color: #000000;
   text-transform: uppercase;
-  font-family: 'Montserrat';
+  font-family: 'LatoWeb';
   opacity: 0.5;
   font-size: 11px;
   line-height: 30px;
@@ -757,7 +757,7 @@ body.pace-white .pace .pace-progress {
   color: #000000;
   font-size: 12px;
   text-transform: uppercase;
-  font-family: 'Montserrat';
+  font-family: 'LatoWeb';
   margin: 0;
   padding-bottom: 5px;
 }
