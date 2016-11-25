@@ -21,6 +21,59 @@
 # Hello World
 
 ru:
+  booking:
+    titles:
+      home: "Ваш Дом"
+      frequency: "Регулярность"
+      when: "Дата уборки и Когда"
+      account: "Ваша Регистрация"
+      address: "Ваш адресс"
+      additional: "другие варианты"
+      notes: "Комментарий и промо код"
+  service:
+    name:
+      1bedroom: "1 Спальня"
+      2bedroom: "2 Спальни"
+      3bedroom: "3 Спальни"
+      4bedroom: "4 Спальни"
+      5bedroom: "5 Спальни"
+  extra:
+    name:
+      1bathroom: "1 Санузел"
+      2bathroom: "2 Санузлы"
+      3bathroom: "3 Санузлы"
+      4bathroom: "4 Санузлы"
+      5bathroom: "5 Санузлы"
+      ironing: "Мне нужно погладить белье"
+      windows: "Мойка окон"
+  frequency:
+    name:
+      once: "Один раз"
+      month: "Раз в месяц"
+      fortnight: "Раз в 2 недели"
+      week: "Раз в неделю"
+  helpers:
+    submit:
+      booking:
+        create: "Оформить заказ"
+    label:
+      booking[user_attributes]:
+        firstname: "Имя"
+        lastname: "Фамилия"
+        email: "Email"
+        phone: "Телефон"
+        agree: "Я принимаю "
+        terms: "правила"
+      booking[address_attributes]:
+        street: "Улица"
+        block: "Корпус #"
+        house: "Дом #"
+        building: "Строение #"
+        apartment: "Квартира #"
+      booking:
+        notes: "Комментарий"
+
+
   home:
     section1:
       text1: "Закажите <b>профессиональную</b> и <b>надёжную</b> уборку менее чем за 1 минуту."
@@ -128,21 +181,6 @@ ru:
     your_address: "Ваш адрес"
     cc_remarks: "При установке этого флажка Вы автоматически соглашаетесь на сохранение данных Вашей кредитной карты на весь период Вашей регистрации для оплаты услуг, предлагаемых на сайте."
     button: "Перейти к оплате"
-  helpers:
-    label:
-      address:
-        firstname: "Имя"
-        lastname: "Фамилия"
-        email: "Email"
-        phone: "Телефон"
-        street: "Улица"
-        block: "Корпус #"
-        house: "Дом #"
-        building: "Строение #"
-        apartment: "Квартира #"
-        notes: "Комментарий"
-        agree: "Я принимаю "
-        terms: "правила"
   company:
     name: "ООО ДиСи Венчерс"
     street: "ул. Петра Романова д. 7/1"

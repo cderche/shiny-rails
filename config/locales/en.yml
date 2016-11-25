@@ -20,6 +20,57 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  booking:
+    titles:
+      home: "Tell us about your home"
+      frequency: "How often should we come?"
+      when: "When should we come?"
+      account: "Your account"
+      address: "Your address"
+      additional: "Additional options"
+      notes: "Comments and Coupons"
+  service:
+    name:
+      1bedroom: "1 Bedroom"
+      2bedroom: "2 Bedrooms"
+      3bedroom: "3 Bedrooms"
+      4bedroom: "4 Bedrooms"
+      5bedroom: "5 Bedrooms"
+  extra:
+    name:
+      1bathroom: "1 Bathroom"
+      2bathroom: "2 Bathrooms"
+      3bathroom: "3 Bathrooms"
+      4bathroom: "4 Bathrooms"
+      5bathroom: "5 Bathrooms"
+      ironing: "I need some ironing done"
+      windows: "I need my windows cleaned"
+  frequency:
+    name:
+      once: "Once"
+      month: "Once a month"
+      fortnight: "Every Two Weeks"
+      week: "Every Week"
+  helpers:
+    submit:
+      booking:
+        create: "Proceed to payment"
+    label:
+      booking[user_attributes]:
+        firstname: "First Name"
+        lastname: "Last Name"
+        email: "Email"
+        phone: "Phone"
+        agree: "I agree to the"
+        terms: "Terms & Conditions"
+      booking[address_attributes]:
+        street: "Street"
+        block: "Block #"
+        house: "House #"
+        building: "Building #"
+        apartment: "Apartment #"
+      booking:
+        notes: "Comments"
   home:
     section1:
       text1: "Book a <b>professional</b> & <b>reliable</b> cleaner in Moscow."
@@ -127,21 +178,6 @@ en:
     your_address: "Your Address"
     cc_remarks: "By checking this box, you are agreeing to our payment partner storing your credit card details for the duration of your registration, to allow the payment of the services offered on the site."
     button: "Proceed to payment"
-  helpers:
-    label:
-      address:
-        firstname: "First name"
-        lastname: "Last name"
-        email: "Email"
-        phone: "Phone"
-        street: "Street"
-        block: "Block"
-        house: "House"
-        building: "Building"
-        apartment: "Apartment"
-        notes: "Notes"
-        agree: "I agree to the "
-        terms: "Terms and Conditions"
   company:
     name: "DC Ventures LLC"
     street: "Petra Romanova Street 7/1"

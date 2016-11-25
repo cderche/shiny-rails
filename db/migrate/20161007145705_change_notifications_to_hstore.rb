@@ -1,6 +1,12 @@
 class ChangeNotificationsToHstore < ActiveRecord::Migration[5.0]
   def change
-    enable_extension 'hstore' unless extension_enabled?('hstore')
+    puts "ENV['RAILS_ENV']: #{ENV['RAILS_ENV']}"
+    if ENV['RAILS_ENV'] == :production
+      enable_extension 'hstore' unless extension_enabled?('hstore')
+      add_column    :notifications, :data, :hstore
+    else
+      add_column    :notifications, :data, :string
+    end
     remove_column :notifications, :OrderId
     remove_column :notifications, :SessionType
     remove_column :notifications, :VWUserLgn
@@ -16,6 +22,6 @@ class ChangeNotificationsToHstore < ActiveRecord::Migration[5.0]
     remove_column :notifications, :Notification
     remove_column :notifications, :MerchantContract
     add_column    :notifications, :type, :string
-    add_column    :notifications, :data, :hstore
+    # add_column    :notifications, :data, :hstore
   end
 end

@@ -1,0 +1,3 @@
+<div class="col-xs-12 col-sm-offset-3 col-sm-6">
+    <%= f.select :frequency_id, Frequency.all.collect { |s| [ "#{t(s.name)} (-#{s.percent.to_i}%)", s.id, data: { percent: s.percent } ] }, {}, { include_blank: false, class: "form-control input-lg" } %>
+</div>

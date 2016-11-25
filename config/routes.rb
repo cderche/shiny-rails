@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admins
   # devise_for :users
 
-  get '/clean', to: 'carts#new'
+  get '/clean', to: 'bookings#new'
 
   resources :carts do
     resource :address, only: [:new, :create, :edit]
@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   get '/questions', to: 'home#questions'
 
   root to: "home#index"
+
+  get '/book', to: 'bookings#new'
+  resources :bookings
 end
