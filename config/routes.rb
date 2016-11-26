@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  # devise_for :admins
   # devise_for :users
 
   get '/clean', to: 'bookings#new'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # post '/notifications', to: 'notications#create', constraints: { protocol: 'https://', host: ENV['PAYTURE_HOST'] }
 
 
-  get '/admin/dashboard', to: 'admin#index'
+  # get '/admin/dashboard', to: 'admin#index'
 
   post '/subscribe', to: 'subscribe#subscribe'
 
