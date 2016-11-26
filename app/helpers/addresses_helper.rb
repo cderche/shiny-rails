@@ -6,6 +6,7 @@ module AddressesHelper
       VWUserLgn:    cart.address.email  ,
       VWUserPsw:    cart.address.token  ,
       Amount:       '100'               ,
+      Language:     I18n.locale         ,
     }
 
     service = PaymentService.new
@@ -16,12 +17,14 @@ module AddressesHelper
       host: ENV['PAYTURE_HOST'] ,
       path: '/vwapi/Pay'        ,
       query: {
-        SessionId:  sessionId   ,
-        date:       cart.date   ,
-        time:       cart.time   ,
-        cost:       cart.cost   ,
-        real:       cart.real   ,
-        disc:       cart.disc   ,
+        SessionId:  sessionId               ,
+        date:       cart.date               ,
+        time:       cart.time               ,
+        duration:   cart.duration           ,
+        frequency:  I18n.t(cart.frequency)  ,
+        cost:       cart.cost               ,
+        real:       cart.real               ,
+        disc:       cart.disc               ,
       }.to_query
     })
 

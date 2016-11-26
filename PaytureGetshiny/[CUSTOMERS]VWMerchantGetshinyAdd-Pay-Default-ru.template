@@ -24,7 +24,7 @@
         }
     </script>
 
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
 
     <script src="/Templates/Getshiny/application.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
     <meta name="ROBOTS" content="NONE">
@@ -59,7 +59,7 @@
         <div class="container relative">
             <div class="pull-left">
                 <div class="header-inner">
-                    <a href="https://www.getshiny.com/?locale=en">
+                    <a href="https://www.getshiny.com/?locale=ru">
                         <img class="logo" src="/Templates/Getshiny/images/shiny.svg" alt="Shiny" />
                     </a>
                 </div>
@@ -75,10 +75,10 @@
                 </div>
                 <ul class="menu">
                     <li class='hidden-xs'>
-                        <a href="https://www.getshiny.com/questions?locale=en">Q&amp;A</a>
+                        <a href="https://www.getshiny.com/questions?locale=ru">Вопросы</a>
                     </li>
                     <li>
-                        <a class="btn btn-sm btn-primary text-white" data-turbolinks="false" href="https://www.getshiny.com/clean?locale=en">Order</a>
+                        <a class="btn btn-sm btn-primary text-white" data-turbolinks="false" href="https://www.getshiny.com/clean?locale=ru">Заказ</a>
                     </li>
                 </ul>
             </div>
@@ -92,41 +92,41 @@
                 <div class="panel panel-default">
                     <div class="panel-heading separator">
                         <div class="panel-title">
-                            Summary of your booking
+                            ВАШ ЗАКАЗ
                         </div>
                     </div>
                     <div class="panel-body">
                         <ul class="booking_details list-unstyled">
                             <li class="booking_details_item">
                                 <span class="booking_detail_name detail">
-                    Date</span>
+                    Дата уборки</span>
                                 <span class="pull-right value cart_date_summary"><!-- Javascript --></span>
                             </li>
                             <li class="booking_details_item">
                                 <span class="booking_detail_name detail">
-                    Time</span>
+                    Когда</span>
                                 <span class="pull-right value cart_time_summary"><!-- Javascript --></span>
                             </li>
                             <li class="booking_details_item">
                                 <span class="booking_detail_name detail">
-                    How often</span>
+                    Регулярность</span>
                                 <span class="pull-right value cart_frequency_summary"><!-- Javascript --></span>
                             </li>
                         </ul>
                         <ul class="booking_details_cost list-unstyled">
                             <li class="booking_details_item hint-text">
                                 <span class="booking_detail_name detail">
-                    Cost of clean</span>
+                    Стоимость уборки</span>
                                 <span class="pull-right value cart_cost_summary"><!-- Javascript --></span>
                             </li>
                             <li class="booking_details_item discount_summary hint-text">
                                 <span class="booking_detail_name detail">
-                    Discount</span>
+                    Скидка</span>
                                 <span class="pull-right value cart_discount_summary"><!-- Javascript --></span>
                             </li>
                             <li class="booking_details_item cost_total_summary">
                                 <h4 class="text-primary"><span class="booking_detail_name detail">
-                    Final price</span><span class="pull-right value cart_cost_total"><!-- Javascript --></span></h4>
+                    Итог</span><span class="pull-right value cart_cost_total"><!-- Javascript --></span></h4>
                             </li>
                         </ul>
                     </div>
@@ -160,14 +160,14 @@
                             <!-- Card -->
                             <div class="row card">
                                 <div class="col-md-offset-2 col-md-8">
-                                    <h4 class="text-center">Add a card</h4>
+                                    <h4 class="text-center">Добавить карту</h4>
                                     <!-- <div class="CardType clearfix"></div> -->
                                     <div class="CardNumber clearfix form-group-attached">
                                         <div class="error"></div>
                                         <div class="row">
                                             <div class="col-xs-3">
                                                 <div class="form-group">
-                                                    <label for="CardNumber0">Card #</label>
+                                                    <label for="CardNumber0">Номер карты</label>
                                                     <label for="CardNumber0" class="text-white">text</label>
                                                     <input name="CardNumber0" maxlength="4" type="text" class="onlyNum form-control" autocomplete="off" next="CardNumber1">
                                                 </div>
@@ -194,19 +194,19 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label for="CardHolder">Card Holder</label>
+                                                    <label for="CardHolder">Имя держателя карты</label>
                                                     <input name="CardHolder" type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-xs-4 col-sm-2">
                                                 <div class="form-group">
-                                                    <label for="EMonth">Month</label>
+                                                    <label for="EMonth">Месяц</label>
                                                     <input name="EMonth" type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-xs-4 col-sm-2">
                                                 <div class="form-group">
-                                                    <label for="EYear">Year</label>
+                                                    <label for="EYear">Год</label>
                                                     <input name="EYear" type="text" class="form-control">
                                                 </div>
                                             </div>
@@ -222,7 +222,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-offset-2 col-md-8">
-                                    <button class="btn btn-primary btn-cons btn-lg btn-block">Proceed</button>
+                                    <button class="btn btn-primary btn-cons btn-lg btn-block">Далее</button>
                                 </div>
                             </div>
                         </form>
