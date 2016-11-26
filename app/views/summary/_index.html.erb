@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default" id="summary" data-spy="affix" data-offset-top="90">
     <div class="panel-heading separator">
         <div class="panel-title">
             <%= t('summary.booking_summary') %>
@@ -34,17 +34,17 @@
                 </span>
             </li>
 
-            <li class="booking_details_item">
+            <!-- <li class="booking_details_item">
                 <span class="booking_detail_name detail">
                     <%= t('summary.duration') %>
                 </span>
                 <span class="pull-right value">
                     <span class="cart_duration_summary">
-                      <!-- Javascript -->
+
                     </span>
                     <span><%= t('hr') %></span>
                 </span>
-            </li>
+            </li> -->
         </ul>
 
         <ul class="booking_details_cost list-unstyled">
@@ -87,7 +87,7 @@
                 </h4>
             </li>
 
-            <li class="booking_details_item promo_code_summary">
+            <!-- <li class="booking_details_item promo_code_summary">
                 <div class="input-group form-group form-group-default m-t-20">
                     <label for="cart[promo_code]">Promo Code</label>
                     <input type="hidden" name="cart[promo_value]" class="form-control">
@@ -96,7 +96,7 @@
                         <i class="fa fa-plus"></i>
                     </span>
                 </div>
-            </li>
+            </li> -->
 
         </ul>
     </div>

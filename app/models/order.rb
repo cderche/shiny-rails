@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   has_many    :notifications
-  belongs_to  :cart
-  belongs_to  :address
+  # belongs_to  :cart
+  # belongs_to  :address
 
   after_create :send_received
 
