@@ -45,12 +45,13 @@ class BookingsController < ApplicationController
       host: ENV['PAYTURE_HOST'] ,
       path: '/vwapi/Pay'        ,
       query: {
-        SessionId:  sessionId   ,
-        date:       @booking.service_date   ,
-        time:       @booking.service_time   ,
-        cost:       @booking.subtotal       ,
-        real:       @booking.final_total    ,
-        disc:       @booking.discount       ,
+        SessionId:    sessionId                         ,
+        date:         @booking.service_date             ,
+        time:         @booking.service_time             ,
+        subtotal:     @booking.subtotal                 ,
+        final_total:  @booking.final_total              ,
+        discount:     @booking.discount                 ,
+        frequency:    I18n.t(@booking.frequency.name)   ,
       }.to_query
     })
 
