@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
         redirect_to '/oops'
       end
     else
+      @booking.user.destroy if @booking.user.bookings.count == 0
       flash[:error]
       render :new
     end
