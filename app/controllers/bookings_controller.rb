@@ -52,7 +52,7 @@ class BookingsController < ApplicationController
       return nil
     end
 
-    uri = URI::HTTP.build({
+    uri = URI::HTTPS.build({
       host: ENV['PAYTURE_HOST'] ,
       path: '/vwapi/Pay'        ,
       query: {
