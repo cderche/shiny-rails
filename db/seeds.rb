@@ -21,9 +21,9 @@
 # end
 
 Frequency.create!(name: "frequency.name.once", percent: 0.0)
-Frequency.create!(name: "frequency.name.month", percent: 0.0)
-Frequency.create!(name: "frequency.name.fortnight", percent: 0.0)
-Frequency.create!(name: "frequency.name.week", percent: 0.0)
+Frequency.create!(name: "frequency.name.month", percent: 10.0)
+Frequency.create!(name: "frequency.name.fortnight", percent: 15.0)
+Frequency.create!(name: "frequency.name.week", percent: 20.0)
 
 Service.create!(name: "service.name.1bedroom", price: 1000)
 Service.create!(name: "service.name.2bedroom", price: 1500)
