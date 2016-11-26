@@ -75,13 +75,7 @@
                 </div>
                 <ul class="menu">
                     <li class='hidden-xs'>
-                        <a href="https://www.getshiny.com/pricing?locale=en">Pricing</a>
-                    </li>
-                    <li class='hidden-xs'>
                         <a href="https://www.getshiny.com/questions?locale=en">Q&amp;A</a>
-                    </li>
-                    <li class='hidden-xs'>
-                        <a href="https://www.getshiny.com/about?locale=en">About us</a>
                     </li>
                     <li>
                         <a class="btn btn-sm btn-primary text-white" data-turbolinks="false" href="https://www.getshiny.com/clean?locale=en">Order</a>
@@ -117,11 +111,6 @@
                                 <span class="booking_detail_name detail">
                     How often</span>
                                 <span class="pull-right value cart_frequency_summary"><!-- Javascript --></span>
-                            </li>
-                            <li class="booking_details_item">
-                                <span class="booking_detail_name detail">
-                    Duration</span>
-                                <span class="pull-right value cart_duration_summary"><!-- Javascript --></span>
                             </li>
                         </ul>
                         <ul class="booking_details_cost list-unstyled">

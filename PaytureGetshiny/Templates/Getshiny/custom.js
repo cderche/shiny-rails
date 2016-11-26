@@ -24,16 +24,16 @@ $(document).ready(function() {
     };
 
     var params = getParams()
-    console.log("Params:", params);
+    // console.log("Params:", params);
 
-    var freq = params.frequency.split("+").join(" ");
+    var frequency = params.frequency.split("+").join(" ");
 
-    $('.cart_frequency_summary').html(freq);
+    $('.cart_frequency_summary').html(frequency);
     $('.cart_date_summary').html(params.date);
     $('.cart_time_summary').html(params.time);
-    $('.cart_duration_summary').html(format_duration_string(params.duration));
-    $('.cart_cost_summary').html(params.cost + 'rub');
-    $('.cart_cost_total').html(params.real + 'rub');
-    $('.cart_discount_summary').html(params.disc + 'rub');
+    // $('.cart_duration_summary').html(format_duration_string(params.duration));
+    $('.cart_cost_summary').html(params.subtotal + 'rub');
+    $('.cart_cost_total').html(params.final_total + 'rub');
+    $('.cart_discount_summary').html(params.discount + 'rub');
 
 })
