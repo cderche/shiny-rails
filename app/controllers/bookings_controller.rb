@@ -11,7 +11,12 @@ class BookingsController < ApplicationController
     @booking = Booking.create(booking_params)
     if @booking.save
       flash[:success]
-      redirect_to payture_gateway
+      uri = payture_gateway
+      if uri
+        redirect_to uri
+      else
+        redirect_to '/oops'
+      end
     else
       flash[:error]
       render :new
@@ -37,11 +42,15 @@ class BookingsController < ApplicationController
       Amount:       '100'                       ,
     }
     puts "POST: #{data}"
-
-    service = PaymentService.new
-    res = service.init(data)
-    puts "Res: #{res}"
-    sessionId = res['Init']['SessionId']
+    begin
+      service = PaymentService.new
+      res = service.init(data)
+      puts "Res: #{res}"
+      sessionId = res['Init']['SessionId']
+    rescue REXML::ParseException => ex
+      puts "Failed: #{ex.message[/^.*$/]} (#{ex.message[/Line:\s\d+/]})"
+      return nil
+    end
 
     uri = URI::HTTP.build({
       host: ENV['PAYTURE_HOST'] ,

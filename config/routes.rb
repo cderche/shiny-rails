@@ -25,4 +25,7 @@ Rails.application.routes.draw do
 
   get '/book', to: 'bookings#new'
   resources :bookings
+
+  get '/oops', to: 'home#oops'
+  get '/status', to: 'home#status'
 end
