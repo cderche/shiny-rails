@@ -36,9 +36,11 @@ class BookingsController < ApplicationController
       VWUserPsw:    @booking.user.payture_token ,
       Amount:       '100'                       ,
     }
+    puts "POST: #{data}"
 
     service = PaymentService.new
     res = service.init(data)
+    puts "Res: #{res}"
     sessionId = res['Init']['SessionId']
 
     uri = URI::HTTP.build({
@@ -54,7 +56,7 @@ class BookingsController < ApplicationController
         frequency:    I18n.t(@booking.frequency.name)   ,
       }.to_query
     })
-
+    puts "URI: #{uri}"
     uri.to_s
   end
 
