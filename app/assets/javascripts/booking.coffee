@@ -54,10 +54,10 @@ $(document).ready ->
         update()
         return
 
-    $("input[name='booking[extra_ids][]'").change ->
-        update()
-        # console.log $(this).data("price")
-        return
+    # $("input[name='booking[extra_ids][]'").change ->
+    #     update()
+    #     # console.log $(this).data("price")
+    #     return
 
     $("select[name='booking[addons_attributes][0][quantity]'").change ->
         update()
