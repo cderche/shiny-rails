@@ -5,7 +5,7 @@ $(document).ready ->
             bdr_sel = $("select[name='booking[service_id]']")[0]
             bdr_price = parseFloat($(bdr_sel.options[bdr_sel.selectedIndex]).data("price"))
 
-            bth_sel = $("select[name='booking[addons_attributes][0][quantity]")
+            bth_sel = $("select[name='booking[addons_attributes][0][quantity]']")
             bth_unit_price = parseFloat(bth_sel.data("price"))
             bth_price = parseFloat($(bth_sel[0].options[bth_sel[0].selectedIndex]).val()) * bth_unit_price
 
@@ -54,12 +54,11 @@ $(document).ready ->
         update()
         return
 
-    # $("input[name='booking[extra_ids][]'").change ->
-    #     update()
-    #     # console.log $(this).data("price")
-    #     return
+    $("input[name='booking[extra_ids][]']").change ->
+        update()
+        return
 
-    $("select[name='booking[addons_attributes][0][quantity]'").change ->
+    $("select[name='booking[addons_attributes][0][quantity]']").change ->
         update()
         return
 
