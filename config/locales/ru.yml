@@ -32,18 +32,18 @@ ru:
       notes: "Комментарий и промокод"
   service:
     name:
-      1bedroom: "1 Спальня"
-      2bedroom: "2 Спальни"
-      3bedroom: "3 Спальни"
-      4bedroom: "4 Спальни"
-      5bedroom: "5 Спальни"
+      1bedroom: "1 комната"
+      2bedroom: "2 комнаты"
+      3bedroom: "3 комнаты"
+      4bedroom: "4 комнаты"
+      5bedroom: "5 комнат"
   extra:
     name:
-      1bathroom: "1 Санузел"
-      2bathroom: "2 Санузлы"
-      3bathroom: "3 Санузлы"
-      4bathroom: "4 Санузлы"
-      5bathroom: "5 Санузлы"
+      1bathroom: "1 санузел"
+      2bathroom: "2 санузла"
+      3bathroom: "3 санузла"
+      4bathroom: "4 санузла"
+      5bathroom: "5 санузлов"
       ironing: "Мне нужно погладить белье"
       windows: "Мойка окон"
   frequency:
