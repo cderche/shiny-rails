@@ -1,0 +1,16 @@
+<script charset="utf-8">
+    $(document).ready(function () {
+
+        var options = {
+            style: "bar",
+            message: '<%= t("messages.dev_mode") %>',
+            position: "bottom",
+            type: "danger",
+            showClose: false,
+            timeout: 0
+        }
+
+        // Apply the plugin to the body
+        $('html').pgNotification(options).show();
+    });
+</script>

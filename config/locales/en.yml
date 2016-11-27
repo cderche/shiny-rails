@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  messages:
+    dev_mode: "WARNING: This is a test page. No data will be preserved."
   booking:
     titles:
       home: "Tell us about your home"

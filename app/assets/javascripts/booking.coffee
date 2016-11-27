@@ -70,6 +70,8 @@ $(document).ready ->
         update_ui()
         return
 
+    $("input[name='booking[service_time]']").click ->
+      $(this).timepicker('showWidget');
 
     $("#booking_datepicker").datepicker
         startDate: '+2d'
