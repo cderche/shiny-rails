@@ -24,12 +24,12 @@ ru:
   booking:
     titles:
       home: "Ваш Дом"
-      frequency: "Регулярность"
-      when: "Дата уборки и Когда"
-      account: "Ваша Регистрация"
+      frequency: "Как часто у вас убираться"
+      when: "Когда к вам приехать"
+      account: "Личный кабинет"
       address: "Ваш адресс"
-      additional: "другие варианты"
-      notes: "Комментарий и промо код"
+      additional: "Дополнительные опции"
+      notes: "Комментарий и промокод"
   service:
     name:
       1bedroom: "1 Спальня"
