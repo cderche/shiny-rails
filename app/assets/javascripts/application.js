@@ -30,6 +30,11 @@
 //= require pages-plugins/bootstrap-timepicker/bootstrap-timepicker.min
 //= require pages-plugins/bootstrap-select2/select2.min
 //= require pages-plugins/moment/moment.min
+//= require pages-plugins/jquery-datatable/media/js/jquery.dataTables.min
+//= require pages-plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min
+//= require pages-plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap
+//= require pages-plugins/datatables-responsive/js/datatables.responsive
+//= require pages-plugins/datatables-responsive/js/lodash.min
 
 // BEGIN CORE TEMPLATE JS FOR PAGES
 //= require pages-core/js/pages.min

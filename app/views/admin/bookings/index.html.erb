@@ -1,0 +1,47 @@
+<div class="container m-t-90 p-t-30">
+
+    <div class="panel">
+        <div class="panel-heading">
+            <div class="panel-title">
+                Bookings
+            </div>
+            <div class="pull-right">
+              <input type="text" id="search-table" class="form-control pull-right" placeholder="Search">
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="panel-body">
+            <table id="bookings_table" class="table table-hover">
+                <thead>
+                    <th>OrderId</th>
+                    <th>Email</th>
+                    <th>Payture Token</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
+                    <th>Payout</th>
+                    <th>Created</th>
+                </thead>
+                <tbody>
+                    <% @bookings.each do |booking| %>
+                    <tr>
+                        <td><%= booking.order_token %></td>
+                        <td><%= booking.user.email %></td>
+                        <td><%= booking.user.payture_token %></td>
+                        <td><%= booking.final_total %></td>
+                        <td><%= booking.subtotal %></td>
+                        <td><%= booking.final_total * ENV['FREELANCER_PERCENTAGE'].to_d %></td>
+                        <td><%= booking.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+                    </tr>
+
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- <input type="text" id="search-table" class="form-control" style="max-width: 300px" placeholder="Search"> -->
+
+</div>

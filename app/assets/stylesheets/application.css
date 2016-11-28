@@ -19,6 +19,10 @@
  *= require pages-plugins/switchery/css/switchery.min
  *= require pages-plugins/bootstrap-datepicker/css/datepicker3
  *= require pages-plugins/bootstrap-timepicker/bootstrap-timepicker.min
+ *= require pages-plugins/jquery-datatable/media/css/jquery.dataTables
+ *= require pages-plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min
+ *= require pages-plugins/datatables-responsive/css/datatables.responsive
+ 
  *
  * BEGIN CORE TEMPLATE CSS FOR PAGES
  *= require pages-core/css/pages-icons

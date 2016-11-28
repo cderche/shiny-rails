@@ -4,12 +4,8 @@ Rails.application.routes.draw do
 
   get '/clean', to: 'bookings#new'
 
-  resources :carts do
-    resource :address, only: [:new, :create, :edit]
-  end
-
   resources :notifications, only: :create
-  resources :promos, only: :index
+  # resources :promos, only: :index
   # resources :notifications, constraints: { host: ENV['PAYTURE_HOST'] }, only: :create
   # post '/notifications', to: 'notications#create', constraints: { protocol: 'https://', host: ENV['PAYTURE_HOST'] }
 
@@ -28,4 +24,8 @@ Rails.application.routes.draw do
 
   get '/oops', to: 'home#oops'
   get '/status', to: 'home#status'
+
+  namespace :admin do
+    resources :bookings, only: :index
+  end
 end
