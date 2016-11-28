@@ -33,7 +33,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
-  # gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -43,6 +43,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "rails-erd"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -60,4 +61,19 @@ group :test do
   gem 'faker'
 end
 
-gem 'pg'
+group :production do
+  gem 'pg'
+end
+
+# PAGES gems
+# Gems for twitter LESS -> CSS and JS support
+gem 'jquery-turbolinks'
+gem 'execjs'
+gem 'therubyracer'
+gem 'less-rails', '~> 2.7.1'
+
+# Randomize id
+# gem "obfuscate_id"
+
+gem 'mandrill-api', require: 'mandrill'
+gem 'gibbon' # mailchimp v3

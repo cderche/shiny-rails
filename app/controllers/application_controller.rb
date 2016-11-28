@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
   protect_from_forgery prepend: true
+  before_action :set_locale
 
   def after_sign_in_path_for(resource)
     case resource
@@ -9,15 +10,13 @@ class ApplicationController < ActionController::Base
     end
     admin_dashboard_path
   end
-  # def current_cart
-  #   if session[:cart_id]
-  #     @current_cart ||= Cart.find(session[:cart_id])
-  #     session[:cart_id] = nil if @current_cart.purchased_at
-  #   end
-  #   if session[:cart_id].nil?
-  #     @current_cart = Cart.create!
-  #     session[:cart_id] = @current_cart.id
-  #   end
-  #   @current_cart
-  # end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options
+    { locale: I18n.locale }
+  end
+
 end

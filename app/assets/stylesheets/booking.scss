@@ -1,0 +1,17 @@
+select.input-lg {
+    line-height: inherit !important;
+}
+
+.row-separator {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.no-b-b {
+  border-bottom: none !important;
+}
+
+.input-group.date, .input-group.timepicker {
+  max-width: 160px;
+}

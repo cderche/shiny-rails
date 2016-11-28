@@ -1,6 +1,12 @@
 class HomeController < ApplicationController
 
   def index
-    # Do Nothing
+    # Do nothing
+  end
+
+  def terms
+  end
+
+  def questions
   end
 end

@@ -1,0 +1,73 @@
+<%= form_for @booking do |f| %>
+
+<%= render partial: "./errors", locals: { object: @booking } %>
+
+<%= hidden_field_tag "booking[extra_ids][]", nil %>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="text-center"><%= t('booking.titles.home') %></h4>
+    </div>
+    <div class="panel-body">
+        <%= render partial: "service", locals: { f: f } %>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="text-center"><%= t('booking.titles.frequency') %></h4>
+    </div>
+    <div class="panel-body">
+        <%= render partial: "frequency", locals: { f: f } %>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="text-center"><%= t('booking.titles.when') %></h4>
+    </div>
+    <div class="panel-body">
+        <%= render partial: "datetime", locals: { f: f } %>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="text-center"><%= t('booking.titles.account') %></h4>
+    </div>
+    <div class="panel-body">
+        <%= render partial: "user", locals: { f: f } %>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="text-center"><%= t('booking.titles.address') %></h4>
+    </div>
+    <div class="panel-body">
+        <%= render partial: "address", locals: { f: f } %>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="text-center"><%= t('booking.titles.additional') %></h4>
+    </div>
+    <div class="panel-body">
+        <%= render partial: "extras", locals: { f: f } %>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="text-center"><%= t('booking.titles.notes') %></h4>
+    </div>
+    <div class="panel-body">
+        <%= render partial: "notes", locals: { f: f } %>
+        <br>
+        <br>
+        <%= f.submit class: "btn btn-primary btn-cons btn-lg full-width" %>
+    </div>
+</div>
+
+<% end %>

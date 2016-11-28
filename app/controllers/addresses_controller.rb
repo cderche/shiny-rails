@@ -12,6 +12,7 @@ class AddressesController < ApplicationController
       flash[:success]
       redirect_to payment_gateway(@cart)
     else
+      flash[:error]
       render 'new'
     end
   end
@@ -23,7 +24,7 @@ class AddressesController < ApplicationController
   end
 
   def address_params
-    params.require(:address).permit(:firstname, :lastname, :email, :phone, :street, :block, :house, :building, :apartment, :notes)
+    params.require(:address).permit(:firstname, :lastname, :email, :phone, :street, :block, :house, :building, :apartment, :notes, :terms)
   end
 
 end

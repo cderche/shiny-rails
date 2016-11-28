@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007112824) do
+ActiveRecord::Schema.define(version: 20161125220344) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "addons", force: :cascade do |t|
+    t.integer  "booking_id"
+    t.integer  "extra_id"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_addons_on_booking_id"
+    t.index ["extra_id"], name: "index_addons_on_extra_id"
+  end
 
   create_table "addresses", force: :cascade do |t|
     t.string   "firstname"
@@ -21,8 +28,8 @@ ActiveRecord::Schema.define(version: 20161007112824) do
     t.string   "city"
     t.string   "postcode"
     t.string   "phone"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "cart_id"
     t.integer  "user_id"
     t.string   "email"
@@ -34,71 +41,63 @@ ActiveRecord::Schema.define(version: 20161007112824) do
     t.string   "apartment"
     t.string   "notes"
     t.string   "token"
-    t.index ["cart_id"], name: "index_addresses_on_cart_id", using: :btree
-    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+    t.boolean  "terms",         default: false
+    t.index ["cart_id"], name: "index_addresses_on_cart_id"
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "admins", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
-  end
-
-  create_table "carts", force: :cascade do |t|
-    t.string   "frequency"
-    t.date     "date"
-    t.time     "time"
-    t.integer  "duration"
-    t.boolean  "ironing"
-    t.boolean  "pets"
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "service_id"
+    t.integer  "address_id"
+    t.integer  "user_id"
+    t.string   "service_date"
+    t.integer  "frequency_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.datetime "purchased_at"
-    t.string   "token"
+    t.text     "notes"
+    t.string   "service_time"
+    t.string   "promo_code"
+    t.string   "order_token"
+    t.decimal  "subtotal"
+    t.decimal  "discount"
+    t.decimal  "final_total"
+    t.index ["address_id"], name: "index_bookings_on_address_id"
+    t.index ["frequency_id"], name: "index_bookings_on_frequency_id"
+    t.index ["service_id"], name: "index_bookings_on_service_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "extras", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.boolean  "quantity_based"
+    t.integer  "quantity_min"
+    t.integer  "quantity_max"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "frequencies", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "percent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.string   "OrderId"
-    t.string   "SessionType"
-    t.string   "VWUserLgn"
-    t.string   "VWUserPsw"
-    t.string   "Amount"
-    t.string   "TransactionDate"
-    t.string   "CardHolder"
-    t.string   "IsAlfa"
-    t.string   "CardName"
-    t.string   "CardId"
-    t.string   "DateTime"
-    t.string   "Success"
-    t.string   "Notification"
-    t.string   "MerchantContract"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "order_id"
-    t.index ["order_id"], name: "index_notifications_on_order_id", using: :btree
+    t.string   "category"
+    t.string   "data"
+    t.index ["order_id"], name: "index_notifications_on_order_id"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.integer  "notification_id"
-    t.integer  "cart_id"
-    t.integer  "address_id"
-    t.string   "status"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["address_id"], name: "index_orders_on_address_id", using: :btree
-    t.index ["cart_id"], name: "index_orders_on_cart_id", using: :btree
-    t.index ["notification_id"], name: "index_orders_on_notification_id", using: :btree
+  create_table "services", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -114,9 +113,13 @@ ActiveRecord::Schema.define(version: 20161007112824) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.string   "payture_token"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.boolean  "terms"
+    t.string   "phone"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "notifications", "orders"
 end

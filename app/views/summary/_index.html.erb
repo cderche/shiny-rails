@@ -1,0 +1,115 @@
+<div class="panel panel-default" id="summary" data-spy="affix" data-offset-top="90">
+    <div class="panel-heading separator">
+        <div class="panel-title">
+            <%= t('summary.booking_summary') %>
+        </div>
+    </div>
+    <div class="panel-body">
+
+        <ul class="booking_details list-unstyled">
+            <li class="booking_details_item">
+                <span class="booking_detail_name detail">
+                    <%= t('summary.date') %>
+                </span>
+                <span class="pull-right value cart_date_summary">
+                    <!-- Javascript -->
+                </span>
+            </li>
+
+            <li class="booking_details_item">
+                <span class="booking_detail_name detail">
+                    <%= t('summary.time') %>
+                </span>
+                <span class="pull-right value cart_time_summary">
+                    <!-- Javascript -->
+                </span>
+            </li>
+
+            <li class="booking_details_item">
+                <span class="booking_detail_name detail">
+                    <%= t('summary.frequency') %>
+                </span>
+                <span class="pull-right value cart_frequency_summary">
+                    <!-- Javascript -->
+                </span>
+            </li>
+
+            <!-- <li class="booking_details_item">
+                <span class="booking_detail_name detail">
+                    <%= t('summary.duration') %>
+                </span>
+                <span class="pull-right value">
+                    <span class="cart_duration_summary">
+
+                    </span>
+                    <span><%= t('hr') %></span>
+                </span>
+            </li> -->
+        </ul>
+
+        <ul class="booking_details_cost list-unstyled">
+
+            <li class="booking_details_item hint-text">
+                <span class="booking_detail_name detail">
+                    <%= t('summary.cost_of_clean') %>
+                </span>
+                <span class="pull-right value">
+                    <span class="cart_cost_summary">
+                      <!-- Javascript -->
+                    </span>
+                    <span><%= t('rub') %></span>
+                </span>
+            </li>
+
+            <li class="booking_details_item discount_summary hint-text">
+                <span class="booking_detail_name detail">
+                    <%= t('summary.discount') %>
+                </span>
+                <span class="pull-right value">
+                  <span class="cart_discount_summary">
+                    <!-- Javascript -->
+                  </span>
+                  <span><%= t('rub') %></span>
+                </span>
+            </li>
+
+            <li class="booking_details_item cost_total_summary">
+                <h4 class="text-primary">
+                    <span class="booking_detail_name detail">
+                        <%= t('summary.total_cost') %>
+                    </span>
+                    <span class="pull-right value">
+                      <span class="cart_cost_total">
+                        <!-- Javascript -->
+                      </span>
+                      <span><%= t('rub') %></span>
+                    </span>
+                </h4>
+            </li>
+
+            <!-- <li class="booking_details_item promo_code_summary">
+                <div class="input-group form-group form-group-default m-t-20">
+                    <label for="cart[promo_code]">Promo Code</label>
+                    <input type="hidden" name="cart[promo_value]" class="form-control">
+                    <input type="text" name="cart[promo_code]" class="form-control">
+                    <span id="promoButton" class="input-group-addon primary">
+                        <i class="fa fa-plus"></i>
+                    </span>
+                </div>
+            </li> -->
+
+        </ul>
+    </div>
+
+</div>
+
+<div id="promoNotifications"></div>
+
+<ul class="list-unstyled hidden-xs hint-text">
+    <li class="list-cc-item">
+        <i class="fa fa-3x fa-cc-mastercard"></i>
+    </li>
+    <li class="list-cc-item">
+        <i class="fa fa-3x fa-cc-visa"></i>
+    </li>
+</ul>
