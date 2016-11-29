@@ -1,5 +1,7 @@
 class Booking < ApplicationRecord
+  # include Tokenable
   has_secure_token :order_token
+  # has_token :order_token
 
   belongs_to  :service
   belongs_to  :address
