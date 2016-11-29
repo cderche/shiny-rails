@@ -1,4 +1,5 @@
 class Service < ApplicationRecord
+  include Translatable
+
   has_many :bookings
-  # has_and_belongs_to_many :extras
 end

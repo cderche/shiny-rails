@@ -77,3 +77,5 @@ gem 'less-rails', '~> 2.7.1'
 
 gem 'mandrill-api', require: 'mandrill'
 gem 'gibbon' # mailchimp v3
+gem 'record_tag_helper'
+gem 'active_model_serializers'
