@@ -46,7 +46,7 @@ en:
       5bedroom: "5 Bedrooms"
   extra:
     name:
-      bathrooms: "Bathrooms"
+      bathroom: "bathroom"
       1bathroom: "1 Bathroom"
       2bathroom: "2 Bathrooms"
       3bathroom: "3 Bathrooms"
