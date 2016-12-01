@@ -9,6 +9,7 @@ class NotificationsController < ApplicationController
     @notification           = Notification.new
     @notification.data      = notification_params.to_h
     @notification.category  = notification_params[:Notification]
+
     # @notification.order     = build_order(@notification)
 
     # puts @notification.attributes
@@ -41,7 +42,7 @@ class NotificationsController < ApplicationController
     order_token = hash["OrderId"]
     puts "complete_booking: #{order_token}"
     booking = Booking.find_by(order_token: order_token)
-    result = BookingMailer.received(booking).deliver_now
+    result = BookingMailer.received(booking)
     puts "Result: #{result}"
   end
 

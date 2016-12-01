@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  address:
+    street: "Street"
+    block: "Block #"
+    house: "House #"
+    building: "Building #"
+    apartment: "Apartment #"
   messages:
     dev_mode: "WARNING: This is a test page. No data will be preserved."
   booking:
@@ -40,6 +46,7 @@ en:
       5bedroom: "5 Bedrooms"
   extra:
     name:
+      bathrooms: "Bathrooms"
       1bathroom: "1 Bathroom"
       2bathroom: "2 Bathrooms"
       3bathroom: "3 Bathrooms"

@@ -21,6 +21,12 @@
 # Hello World
 
 ru:
+  address:
+    street: "Улица"
+    block: "Корпус #"
+    house: "Дом #"
+    building: "Строение #"
+    apartment: "Квартира #"
   messages:
     dev_mode: "ПРЕДУПРЕЖДЕНИЕ: Вы находитесь на странице тестирования. Данные не будут сохранены"
   booking:
@@ -41,6 +47,7 @@ ru:
       5bedroom: "5 комнат"
   extra:
     name:
+      bathrooms: "санузла"
       1bathroom: "1 санузел"
       2bathroom: "2 санузла"
       3bathroom: "3 санузла"
