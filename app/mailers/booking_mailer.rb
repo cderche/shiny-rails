@@ -29,7 +29,7 @@ class BookingMailer < SendinblueMailer
 
   def self.extrasHTML(booking)
     html = '<ul style="list-style-type: none; padding: 0; margin: 0">'
-    booking.addons.each do |a|
+    booking.addons.reverse_each do |a|
       html += '<li>'
       html += a.quantity.to_s + ' ' if a.extra.quantity_based
       html += I18n.t(a.extra.name)

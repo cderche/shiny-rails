@@ -48,6 +48,7 @@ ru:
   extra:
     name:
       bathroom: "санузел"
+      bathrooms: "санузла"
       1bathroom: "1 санузел"
       2bathroom: "2 санузла"
       3bathroom: "3 санузла"
