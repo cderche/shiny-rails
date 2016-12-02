@@ -28,4 +28,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :bookings, only: [:index, :show]
   end
+
+  post '/notification', to: 'notifications#create'
 end
