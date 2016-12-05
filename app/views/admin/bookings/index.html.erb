@@ -1,28 +1,21 @@
 <div class="container m-t-90 p-t-30">
 
     <div class="panel">
-        <div class="panel-heading">
-            <div class="panel-title">
-                Bookings
+        <ul class="nav nav-tabs nav-tabs-simple">
+            <li class="active">
+                <a data-toggle="tab" href="#bookingsTab">Bookings</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#notificationsTab">Notifications</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="bookingsTab">
+                <%= render partial: "bookings" %>
             </div>
-            <div class="pull-right">
-              <input type="text" id="search-table" class="form-control pull-right" placeholder="Search">
-
+            <div class="tab-pane" id="notificationsTab">
+                <%= render partial: "notifications" %>
             </div>
-            <div class="clearfix"></div>
-        </div>
-
-        <div class="panel-body">
-            <table id="bookings_table" class="table table-hover table-detailed">
-                <thead>
-                    <th>OrderId</th>
-                    <th>Customer</th>
-                    <th>Price</th>
-                    <th>Created At</th>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
         </div>
 
     </div>

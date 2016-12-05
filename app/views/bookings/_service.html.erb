@@ -1,5 +1,5 @@
 <div class="col-xs-12 col-sm-6">
-    <%= f.select :service_id, Service.all.collect { |s| [ t(s.name), s.id, data: { price: s.price } ] }, {}, { include_blank: false, class: "form-control input-lg" } %>
+    <%= f.select :service_id, Service.order(:id).collect { |s| [ t(s.name), s.id, data: { price: s.price } ] }, {}, { include_blank: false, class: "form-control input-lg" } %>
 </div>
 <div class="col-xs-12 col-sm-6">
     <%= f.fields_for :addons, @booking.addons.select{ |a| a.extra_id == 1 }.first do |ff| %>

@@ -2,9 +2,9 @@ $(document).ready ->
     table = $('#bookings_table')
 
     if table.length
-        dataSet = null
-        $.getJSON 'bookings.json', (d) ->
-            dataSet = d
+        # dataSet = null
+        # $.getJSON 'bookings.json', (d) ->
+        #     dataSet = d
 
         format = (b) ->
 
@@ -18,6 +18,16 @@ $(document).ready ->
                     html += a.extra.name + '</li>'
                 return html
 
+            emailHTML = (b) ->
+                html = ''
+                if b.booking_received_email
+                    html = '<li><span class="label label-info">Email sent</span></li>'
+                else
+                    html = '<li><span class="label label-warning">Email not sent</span></li>'
+                return html
+
+
+
             bookingHTML = (b) ->
                 html = '<ul class="list-unstyled">' +
                     '<li>OrderId: <span class="pull-right">' + b.order_token + '</span></li>' +
@@ -29,6 +39,7 @@ $(document).ready ->
                     '<li>Final Total: <span class="pull-right">' + b.final_total + '</span></li>' +
                     '<br>' +
                     '<li>Promo Code: <span class="pull-right">' + b.promo_code + '</span></li>' +
+                    emailHTML(b) +
                     '</ul>'
                 return html
 
@@ -84,7 +95,7 @@ $(document).ready ->
 
         table.dataTable(settings)
         # search box for table
-        $('#search-table').keyup ->
+        $('#search-bookings').keyup ->
             table.fnFilter $(this).val()
             return
 

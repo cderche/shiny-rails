@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125220344) do
+ActiveRecord::Schema.define(version: 20161205122139) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20161125220344) do
     t.integer  "user_id"
     t.string   "service_date"
     t.integer  "frequency_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.text     "notes"
     t.string   "service_time"
     t.string   "promo_code"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20161125220344) do
     t.decimal  "subtotal"
     t.decimal  "discount"
     t.decimal  "final_total"
+    t.boolean  "booking_received_email", default: false
     t.index ["address_id"], name: "index_bookings_on_address_id"
     t.index ["frequency_id"], name: "index_bookings_on_frequency_id"
     t.index ["service_id"], name: "index_bookings_on_service_id"
