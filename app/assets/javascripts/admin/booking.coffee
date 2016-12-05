@@ -52,6 +52,7 @@ $(document).ready ->
                 html = '<ul class="list-unstyled">' +
                     '<li>Name: <span class="pull-right">' + u.firstname + u.lastname + '</span></li>' +
                     '<li>Email: <span class="pull-right">' + u.email + '</span></li>' +
+                    '<li>Phone: <span class="pull-right">' + u.phone + '</span></li>' +
                     '<li>Token: <span class="pull-right">' + u.payture_token + '</span></li>' +
                     '</ul>'
                 return html

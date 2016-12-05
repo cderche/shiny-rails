@@ -3,22 +3,22 @@ class NotificationSerializer < ActiveModel::Serializer
   attributes :id
 
   attribute :orderId do
-    data = eval(self.object.data)
+    data = (ENV['RAILS_ENV'] == 'development') ? eval(self.object.data) : self.object.data
     data['OrderId']
   end
 
   attribute :email do
-    data = eval(self.object.data)
+    data = (ENV['RAILS_ENV'] == 'development') ? eval(self.object.data) : self.object.data
     data['VWUserLgn']
   end
 
   attribute :session do
-    data = eval(self.object.data)
+    data = (ENV['RAILS_ENV'] == 'development') ? eval(self.object.data) : self.object.data
     data['SessionType']
   end
 
   attribute :notification do
-    data = eval(self.object.data)
+    data = (ENV['RAILS_ENV'] == 'development') ? eval(self.object.data) : self.object.data
     data['Notification']
   end
 
