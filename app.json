@@ -30,7 +30,19 @@
     },
     "MAILCHIMP_LIST": {
       "required": true
-    }
+    },
+    "ADMIN_USR": {
+      "required": true
+    },
+    "ADMIN_PWD": {
+      "required": true
+    },
+    "SENDINBLUE_API": {
+      "required": true
+    },
+    "SENDINBLUE_API_KEY": {
+      "required": true
+    },
   },
   "formation": {
   },
