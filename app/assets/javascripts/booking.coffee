@@ -78,7 +78,7 @@ $(document).ready ->
             $(this).timepicker('showWidget');
 
         $("#booking_datepicker").datepicker
-            startDate: '+2d'
+            startDate: '+1d'
             format: 'dd/mm/yyyy'
         $("#booking_datepicker").datepicker("update", moment().add(2, "d").format("DD/MM/YYYY"))
 
