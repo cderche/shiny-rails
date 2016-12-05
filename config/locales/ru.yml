@@ -56,6 +56,7 @@ ru:
       5bathroom: "5 санузлов"
       ironing: "Глажка белья"
       windows: "Мойка окон"
+      endoftenancy: "Окончание аренды"
   frequency:
     name:
       once: "Один раз"
