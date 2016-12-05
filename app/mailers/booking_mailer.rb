@@ -22,7 +22,8 @@ class BookingMailer < SendinblueMailer
       }
     }
 
-    send(data)
+    result = send(data)
+    booking.update(booking_received_email: true) if (result['code'] == 'success')
   end
 
   private

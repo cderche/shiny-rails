@@ -2,6 +2,15 @@ class Admin::AdminController < ApplicationController
 
   before_action :authenticate
 
+  def notifications
+    @notifications = Notification.all
+    respond_to do |format|
+      format.json { render json: @notifications }
+    end
+  end
+
+
+
   protected
 
   def authenticate
