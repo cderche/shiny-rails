@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  already_have_an_account?: 'Already have an account?'
+  logout: "logout"
   address:
     street: "Street"
     block: "Block #"

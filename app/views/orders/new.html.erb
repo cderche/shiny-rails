@@ -1,0 +1,12 @@
+<div class="container m-t-90">
+
+  <%= form_for @order do |f| %>
+
+    <%= f.fields_for @order.build_booking do |ff| %>
+
+    <% end %>
+
+
+  <% end %>
+
+</div>

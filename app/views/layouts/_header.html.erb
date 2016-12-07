@@ -38,6 +38,10 @@
                 <li class='hidden-xs'><%= link_to t('menu.qa'), questions_path, data: { turbolinks: false } %></li>
                 <!-- <li class='hidden-xs'><%= link_to t('menu.about_us'), root_path %></li> -->
                 <li><%= link_to t('order'), clean_path, class: "btn btn-sm btn-primary text-white", data: { turbolinks: false } %></li>
+
+                <% if user_signed_in? %>
+                  <li class='hidden-xs'><%= link_to t('logout'), destroy_user_session_path, method: :delete %></li>
+                <% end %>
             </ul>
 
             <!-- <div class="font-arial m-l-35 m-r-35 m-b-20  visible-sm visible-xs m-t-30">

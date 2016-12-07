@@ -21,6 +21,8 @@
 # Hello World
 
 ru:
+  already_have_an_account?: 'Already have an account?'
+  logout: "выйти"
   address:
     street: "Улица"
     block: "Корпус #"

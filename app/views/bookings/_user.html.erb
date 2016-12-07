@@ -1,17 +1,17 @@
-<%= f.fields_for :user_attributes do |ff| %>
+<%= f.fields_for :user_attributes do |f| %>
 
   <div class="form-group-attached">
       <div class="row">
           <div class="col-sm-6">
               <div class="form-group form-group-default required">
-                  <%= ff.label :firstname %>
-                  <%= ff.text_field :firstname, class: "form-control" %>
+                  <%= f.label :firstname %>
+                  <%= f.text_field :firstname, class: "form-control" %>
               </div>
           </div>
           <div class="col-sm-6">
               <div class="form-group form-group-default required">
-                  <%= ff.label :lastname %>
-                  <%= ff.text_field :lastname, class: "form-control" %>
+                  <%= f.label :lastname %>
+                  <%= f.text_field :lastname, class: "form-control" %>
               </div>
           </div>
       </div>
@@ -19,38 +19,38 @@
       <div class="row">
           <div class="col-sm-6">
               <div class="form-group form-group-default required">
-                  <%= ff.label :email %>
-                  <%= ff.text_field :email, class: "form-control" %>
+                  <%= f.label :email %>
+                  <%= f.text_field :email, class: "form-control" %>
               </div>
           </div>
           <div class="col-sm-6">
               <div class="form-group form-group-default required">
-                  <%= ff.label :phone %>
-                  <%= ff.text_field :phone, class: "form-control" %>
+                  <%= f.label :phone %>
+                  <%= f.text_field :phone, class: "form-control" %>
               </div>
           </div>
       </div>
 
-      <!-- <div class="row">
+      <div class="row">
           <div class="col-sm-6">
               <div class="form-group form-group-default required">
-                  <%= ff.label :password %>
-                  <%= ff.password_field :password, class: "form-control" %>
+                  <%= f.label :password %>
+                  <%= f.password_field :password, class: "form-control" %>
               </div>
           </div>
           <div class="col-sm-6">
               <div class="form-group form-group-default required">
-                  <%= ff.label :password_confirmation %>
-                  <%= ff.password_field :password_confirmation, class: "form-control" %>
+                  <%= f.label :password_confirmation %>
+                  <%= f.password_field :password_confirmation, class: "form-control" %>
               </div>
           </div>
-      </div> -->
+      </div>
 
   </div>
 
-  <div class="checkbox check-success">
-      <%= ff.check_box :terms %>
-      <%= ff.label :terms do %>
+  <div class="checkbox check-primary">
+      <%= f.check_box :terms %>
+      <%= f.label :terms do %>
         <span><%= t('helpers.label.booking[user_attributes].agree') %></span>
         <a href="#" data-toggle="modal" data-target="#terms"><%= t('helpers.label.booking[user_attributes].terms') %></a>
       <% end %>

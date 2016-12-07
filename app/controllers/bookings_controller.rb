@@ -1,37 +1,63 @@
 class BookingsController < ApplicationController
 
+  # def book
+  #   @user = current_user || User.new
+  #   @address = Address.new
+  #   @booking = @user.bookings.build(address: @address)
+  #   Extra.all.each do |e|
+  #     @booking.addons.build(extra: e)
+  #   end
+  # end
+  #
+  # def create_booking
+  #
+  #
+  #
+  # end
+
   def new
-    @booking = Booking.new
+    if user_signed_in?
+      @booking = current_user.bookings.build
+    else
+      @booking = User.new.bookings.build
+    end
+
+    @booking.build_address
+
     Extra.all.each do |e|
       @booking.addons.build(extra: e)
     end
   end
 
   def create
-    @booking = Booking.create(booking_params)
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user if user_signed_in?
+
+    puts @booking
     if @booking.save
       flash[:success]
-      uri = payture_gateway
-      if uri
-        redirect_to uri
-      else
-        redirect_to '/oops'
-      end
+      redirect_to payture_gateway || 'oops'
     else
-      @booking.user.destroy if @booking.user.bookings.count == 0
       flash[:error]
       render :new
     end
   end
 
-  def edit
-
-  end
-
   private
 
   def booking_params
-    params.require(:booking).permit(:service_id, :service_date, :service_time, :notes, :frequency_id, :promo_code, address_attributes: [:street, :block, :house, :building, :apartment], user_attributes: [:firstname, :lastname, :phone, :email, :password, :password_confirmation, :terms], extra_ids: [], addons_attributes: [:quantity, :id, :extra_id])
+    params.require(:booking).permit(
+      :service_id,
+      :service_date,
+      :service_time,
+      :notes,
+      :frequency_id,
+      :promo_code,
+      address_attributes: [:street, :block, :house, :building, :apartment],
+      user_attributes: [:firstname, :lastname, :phone, :email, :password, :password_confirmation, :terms],
+      extra_ids: [],
+      addons_attributes: [:quantity, :id, :extra_id]
+    )
   end
 
   def payture_gateway

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205122139) do
+ActiveRecord::Schema.define(version: 20161207151501) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -42,13 +42,14 @@ ActiveRecord::Schema.define(version: 20161205122139) do
     t.string   "notes"
     t.string   "token"
     t.boolean  "terms",         default: false
+    t.integer  "booking_id"
+    t.index ["booking_id"], name: "index_addresses_on_booking_id"
     t.index ["cart_id"], name: "index_addresses_on_cart_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "service_id"
-    t.integer  "address_id"
     t.integer  "user_id"
     t.string   "service_date"
     t.integer  "frequency_id"
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(version: 20161205122139) do
     t.decimal  "discount"
     t.decimal  "final_total"
     t.boolean  "booking_received_email", default: false
+    t.integer  "address_id"
     t.index ["address_id"], name: "index_bookings_on_address_id"
     t.index ["frequency_id"], name: "index_bookings_on_frequency_id"
     t.index ["service_id"], name: "index_bookings_on_service_id"

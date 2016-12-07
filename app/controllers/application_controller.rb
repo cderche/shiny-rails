@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     when Admin
       admin_dashboard_path
     end
-    admin_dashboard_path
+    bookings_path
   end
 
   def set_locale
