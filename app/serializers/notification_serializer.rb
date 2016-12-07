@@ -23,6 +23,9 @@ class NotificationSerializer < ActiveModel::Serializer
   end
 
   attribute :created_at do
-    self.object.created_at.strftime("%d/%m/%Y %H:%M")
+    {
+      display: self.object.created_at.strftime("%d/%m/%Y %H:%M")  ,
+      timestamp: self.object.created_at.to_time.to_i
+    }
   end
 end

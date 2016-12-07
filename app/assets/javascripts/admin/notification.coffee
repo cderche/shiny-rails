@@ -6,6 +6,7 @@ $(document).ready ->
             ajax:
                 url: 'notifications.json',
                 dataSrc: 'notifications'
+            order: [[ 4, 'desc']]
             sDom: '<\'table-responsive\'t><\'row\'<p i>>'
             sPaginationType: 'bootstrap'
             destroy: true
@@ -19,7 +20,11 @@ $(document).ready ->
                 { data: 'email' }
                 { data: 'notification' }
                 { data: 'session' }
-                { data: 'created_at' }
+                { data: {
+                    _: 'created_at.display',
+                    sort: 'created_at.timestamp'
+                  }
+                }
             ]
 
 

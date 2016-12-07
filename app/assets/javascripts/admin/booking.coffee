@@ -78,6 +78,7 @@ $(document).ready ->
             ajax:
                 url: 'bookings.json',
                 dataSrc: 'bookings'
+            order: [[ 3, 'desc']]
             sDom: '<\'table-responsive\'t><\'row\'<p i>>'
             sPaginationType: 'bootstrap'
             destroy: true
@@ -90,7 +91,11 @@ $(document).ready ->
                 { data: 'order_token' }
                 { data: 'user.email' }
                 { data: 'final_total' }
-                { data: 'created_at' }
+                { data: {
+                    _: 'created_at.display',
+                    sort: 'created_at.timestamp'
+                  }
+                }
             ]
 
 
