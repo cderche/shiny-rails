@@ -39,8 +39,8 @@ en:
       notes: "Comments and Coupons"
   service:
     name:
-      1bedroom: "0 Bedroom"
-      2bedroom: "1 Bedrooms"
+      1bedroom: "0 Bedrooms"
+      2bedroom: "1 Bedroom"
       3bedroom: "2 Bedrooms"
       4bedroom: "3 Bedrooms"
       5bedroom: "4 Bedrooms"
