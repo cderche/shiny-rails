@@ -30,7 +30,7 @@ en:
     dev_mode: "WARNING: This is a test page. No data will be preserved."
   booking:
     titles:
-      home: "Tell us about your home"
+      home: "Tell us about your home (livingroom +)"
       frequency: "How often should we come?"
       when: "When should we come?"
       account: "Your account"
@@ -39,11 +39,11 @@ en:
       notes: "Comments and Coupons"
   service:
     name:
-      1bedroom: "1 Bedroom"
-      2bedroom: "2 Bedrooms"
-      3bedroom: "3 Bedrooms"
-      4bedroom: "4 Bedrooms"
-      5bedroom: "5 Bedrooms"
+      1bedroom: "0 Bedroom"
+      2bedroom: "1 Bedrooms"
+      3bedroom: "2 Bedrooms"
+      4bedroom: "3 Bedrooms"
+      5bedroom: "4 Bedrooms"
   extra:
     name:
       bathroom: "Bathroom"
