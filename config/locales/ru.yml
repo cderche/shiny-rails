@@ -21,6 +21,9 @@
 # Hello World
 
 ru:
+  i_am_a: "Я ..."
+  new_customer: "новый клиент"
+  existing_customer: "уже клиент"
   address:
     street: "Улица"
     block: "Корпус #"

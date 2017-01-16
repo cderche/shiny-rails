@@ -50,7 +50,8 @@
             <div class="col-sm-3 col-xs-6 xs-m-b-20">
                 <ul class="no-style no-padding">
                     <li class="m-b-5 no-padding">
-                      <%= link_to t('menu.order'), clean_path, class: "text-footer", data: { turbolinks: false } %>
+                      <!-- <%= link_to t('menu.order'), clean_path, class: "text-footer", data: { turbolinks: false } %> -->
+                      <a class="text-footer" data-toggle="modal" data-target="#orderModal" href="#"><%= t('menu.order') %></a>
                     </li>
                     <li class="m-b-5 no-padding">
                         <%= link_to t('menu.qa'), questions_path, class: "text-footer", data: { turbolinks: false } %>

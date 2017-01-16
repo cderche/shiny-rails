@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  i_am_a: "I am a ..."
+  new_customer: "new customer"
+  existing_customer: "existing customer"
   address:
     street: "Street"
     block: "Block #"
