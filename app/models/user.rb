@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_token :payture_token
 
-  attr_accessor :skip_password_validation
+  # attr_accessor :skip_password_validation
 
   has_many :bookings
   # Include default devise modules. Others available are:

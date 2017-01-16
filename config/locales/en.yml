@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  next: 'Next'
+  forgot_your_password: 'Forgot your password'
+  logout: 'Logout'
+  login: 'Log In'
   i_am_a: "I am a ..."
   new_customer: "new customer"
   existing_customer: "existing customer"

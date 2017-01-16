@@ -21,6 +21,11 @@
 # Hello World
 
 ru:
+  next: 'Далее'
+  forgot_your_password: 'Восстановление доступа'
+  logout: 'выйти'
+  login: 'войти'
+  hello: 'Привет, %{name}!'
   i_am_a: "Я ..."
   new_customer: "новый клиент"
   existing_customer: "уже клиент"

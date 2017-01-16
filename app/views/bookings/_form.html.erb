@@ -31,6 +31,7 @@
     </div>
 </div>
 
+<% if !user_signed_in? %>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="text-center"><%= t('booking.titles.account') %></h4>
@@ -39,6 +40,7 @@
         <%= render partial: "user", locals: { f: f } %>
     </div>
 </div>
+<% end %>
 
 <div class="panel panel-default">
     <div class="panel-heading">
