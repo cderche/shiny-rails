@@ -1,23 +1,32 @@
 <div class="container m-t-90 p-t-30">
 
-    <div class="panel">
-        <ul class="nav nav-tabs nav-tabs-simple">
-            <li class="active">
-                <a data-toggle="tab" href="#bookingsTab">Bookings</a>
-            </li>
-            <li>
-                <a data-toggle="tab" href="#notificationsTab">Notifications</a>
-            </li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane active" id="bookingsTab">
-                <%= render partial: "bookings" %>
-            </div>
-            <div class="tab-pane" id="notificationsTab">
-                <%= render partial: "notifications" %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">Bookings</div>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Email</th>
+                            <th>Created At</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <% @bookings.each do |booking| %>
+                      <tr>
+                        <td><%= format_status(booking.status) %></td>
+                        <td><%= booking.user.email %></td>
+                        <td><%= booking.created_at %></td>
+                        <td><%= link_to 'Show', admin_booking_path(booking) %></td>
+                      </tr>
+                      <% end %>
+                    </tbody>
+                </table>
             </div>
         </div>
-
     </div>
-
 </div>

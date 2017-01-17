@@ -1,25 +1,32 @@
 class NotificationsController < ApplicationController
-  include NotificationsHelper
+  # include NotificationsHelper
   skip_before_action :verify_authenticity_token, only: :create
 
   def create
-    # If this doesn't work, try to lowercase the keys
 
-    # puts "Notification Received: #{notification_params}"
-    @notification           = Notification.new
-    @notification.data      = notification_params.to_h
-    @notification.category  = notification_params[:Notification]
-
-    # @notification.order     = build_order(@notification)
-
-    # puts @notification.attributes
-    if @notification.save
-      sort_notification
-      # build_order(@notification)
+    if NotificationService.handle(notification_params)
       head :ok
     else
       head :bad_request
     end
+
+    # If this doesn't work, try to lowercase the keys
+
+    # # puts "Notification Received: #{notification_params}"
+    # @notification           = Notification.new
+    # @notification.data      = notification_params.to_h
+    # @notification.category  = notification_params[:Notification]
+    #
+    # # @notification.order     = build_order(@notification)
+    #
+    # # puts @notification.attributes
+    # if @notification.save
+    #   sort_notification
+    #   # build_order(@notification)
+    #   head :ok
+    # else
+    #   head :bad_request
+    # end
   end
 
   private
@@ -42,6 +49,7 @@ class NotificationsController < ApplicationController
     order_token = hash["OrderId"]
     puts "complete_booking: #{order_token}"
     booking = Booking.find_by(order_token: order_token)
+    booking.card_token = hash["CardId"]
     result = BookingMailer.received(booking)
     puts "Result: #{result}"
   end

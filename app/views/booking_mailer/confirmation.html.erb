@@ -1,0 +1,78 @@
+<table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td class="content-block">
+            <%= t('.greeting', name: @user.firstname) %>
+        </td>
+    </tr>
+    <tr>
+        <td class="content-block">
+            <%= t('.content', name: @booking.professional.fullname) %>
+        </td>
+    </tr>
+    <tr>
+        <td class="content-block">
+            <b><%= t('.your_booking') %></b><br>
+            <%= t('summary.date') %>:
+            <%= @booking.service_date %><br>
+            <%= t('summary.time') %>:
+            <%= @booking.service_time %><br>
+            <%= t('summary.frequency') %>:
+            <%= t(@booking.frequency.name) %><br>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="content-block">
+            <%= t('summary.cost_of_clean') %>:
+            <%= @booking.subtotal %><br>
+            <%= t('summary.discount') %>:
+            <%= @booking.discount %><br>
+            <%= t('summary.total_cost') %>:
+            <%= @booking.final_total %><br>
+            <%= t('summary.promo_code') %>:
+            <%= @booking.promo_code %>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="content-block">
+            <b><%= t('summary.service') %>:</b><br>
+            <%= t(@booking.service.name) %><br>
+            <% @booking.addons.each do |a| %>
+            <% if a.extra.quantity_based %>
+            <%= t(a.extra.name) %>:
+            <%= a.quantity %>
+        <% else %>
+            <%= t(a.extra.name) %>
+            <% end %>
+            <br>
+            <% end %>
+
+        </td>
+    </tr>
+
+    <tr>
+      <td class="content-block">
+        <b><%= t('address_form.your_address') %>:</b><br>
+        <%= @user.fullname %><br>
+        <%= @booking.address.street %><br>
+        <%= "#{t('address.house')}: #{@booking.address.house}" if @booking.address.house %>
+        <%= "#{t('address.block')}: #{@booking.address.block}" if @booking.address.block%>
+        <%= "#{t('address.building')}: #{@booking.address.building}" if @booking.address.building%>
+        <%= "#{t('address.apartment')}: #{@booking.address.apartment}" if @booking.address.apartment%>
+      </td>
+    </tr>
+
+    <tr>
+        <td class="content-block">
+            <%= t('.thank_you') %>
+        </td>
+    </tr>
+    <tr>
+        <td class="content-block">
+            <%= t('.signature') %>
+            <br>
+            <%= mail_to ENV['SUPPORT_EMAIL'] %>
+        </td>
+    </tr>
+</table>

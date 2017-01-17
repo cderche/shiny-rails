@@ -1,0 +1,57 @@
+<style>
+    .form-horizontal .form-group {
+        border-bottom: none !important;
+        padding-top: 0 !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 0 !important;
+    }
+
+</style>
+
+<div class="container m-t-90 p-t-30">
+    <div class="row">
+        <div class="col-xs-6"><%= link_to 'BACK', admin_bookings_path %></div>
+        <div class="col-xs-6 text-right"><%= format_status(@booking.status) %></div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'detail', locals: { booking: @booking } %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'user', locals: { booking: @booking } %>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 ">
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'service', locals: { booking: @booking } %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'address', locals: { booking: @booking } %>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 ">
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'emails', locals: { booking: @booking } %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'professional', locals: { booking: @booking } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

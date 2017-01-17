@@ -1,0 +1,41 @@
+<div class="panel panel-default" data-pages="portlet">
+    <div class="panel-heading">
+        <div class="panel-title">
+          Address
+        </div>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="street" class="col-sm-6 control-label">Street</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'date', booking.address.street, class: 'form-control text-right text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="house" class="col-sm-6 control-label">House</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'time', booking.address.house, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="block" class="col-sm-6 control-label">Block</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'subtotal', booking.address.block, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="building" class="col-sm-6 control-label">Building</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'building', booking.address.building, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="apartment" class="col-sm-6 control-label">Apartment</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'apartment', booking.address.apartment, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

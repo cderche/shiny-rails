@@ -22,7 +22,7 @@
  *= require pages-plugins/jquery-datatable/media/css/jquery.dataTables
  *= require pages-plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min
  *= require pages-plugins/datatables-responsive/css/datatables.responsive
- 
+
  *
  * BEGIN CORE TEMPLATE CSS FOR PAGES
  *= require pages-core/css/pages-icons
@@ -36,5 +36,6 @@
  *
  * I prefer to list stylesheets in a specific order, so I comment out require_tree .
  *= require_tree .
+ *= stub 'email'
  *= require_self
  */

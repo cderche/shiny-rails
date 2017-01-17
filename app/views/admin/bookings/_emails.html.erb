@@ -1,0 +1,34 @@
+<div class="panel panel-default" data-pages="portlet">
+    <div class="panel-heading">
+        <div class="panel-title">
+          Email
+        </div>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal">
+
+            <div class="form-group">
+                <label for="received" class="col-sm-6 control-label">Received</label>
+                <div class="col-sm-6 text-right" style="padding-top: 7px;">
+                  <% if booking.received_sent_at %>
+                    <span class="label label-success">SENT</span>
+                  <% else %>
+                    <span class="label label-danger">NOT SENT</span>
+                  <% end %>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="received" class="col-sm-6 control-label">Confirmation</label>
+                <div class="col-sm-6 text-right" style="padding-top: 7px;">
+                  <% if booking.confirmation_sent_at %>
+                    <span class="label label-success">SENT</span>
+                  <% else %>
+                    <span class="label label-danger">NOT SENT</span>
+                  <% end %>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="panel panel-default" data-pages="portlet">
+    <div class="panel-heading">
+        <div class="panel-title">
+          Booking
+        </div>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="date" class="col-sm-6 control-label">Service Date</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'date', booking.service_date, class: 'form-control text-right text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="time" class="col-sm-6 control-label">Service Time</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'time', booking.service_time, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="frequency" class="col-sm-6 control-label">Frequency</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'frequency', t(booking.frequency.name), class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="subtotal" class="col-sm-6 control-label">Subtotal</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'subtotal', booking.subtotal, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="discount" class="col-sm-6 control-label">Discount</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'discount', booking.discount, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="final_total" class="col-sm-6 control-label">Final Total</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'final_total', booking.final_total, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="promo_code" class="col-sm-6 control-label">Promo Code</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'promo_code', booking.promo_code, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
