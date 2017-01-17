@@ -44,6 +44,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "rails-erd"
+  gem "letter_opener"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -80,3 +81,5 @@ gem 'less-rails', '~> 2.7.1'
 gem 'record_tag_helper'
 gem 'active_model_serializers'
 gem 'sendinblue'
+gem 'premailer-rails'
+gem 'mailgun_rails'

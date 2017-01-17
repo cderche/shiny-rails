@@ -20,6 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  user_mailer:
+    welcome_email:
+      subject: 'Welcome to Shiny!'
+      greeting: 'Welcome %{name}!'
+      content: 'You have successfully signed up to getshiny.ru. Your username is: %{username}.'
+      link: 'To login to the site, just follow this link:'
+      thank_you: 'Thanks for joining and have a great day!'
+      signature: 'The Shiny Team'
+  follow: 'Follow us on instagram '
   next: 'Next'
   forgot_your_password: 'Forgot your password'
   logout: 'Logout'
