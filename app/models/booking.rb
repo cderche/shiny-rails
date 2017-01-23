@@ -52,8 +52,17 @@ class Booking < ApplicationRecord
       end
     end
 
-    self.discount = self.frequency.percent / 100 * self.subtotal
+    self.discount = (calc_promo + self.frequency.percent) / 100 * self.subtotal
     self.final_total = self.subtotal - self.discount
+  end
+
+  def calc_promo
+    if self.promo_code?
+      promo = Promo.find_by(code: self.promo_code)
+      return promo.discount if promo
+    else
+      return 0
+    end
   end
 
 end
