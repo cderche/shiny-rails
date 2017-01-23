@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  promo_code_comment: 'Applied after booking completion'
   booking_mailer:
     confirmation:
       subject: 'Booking confirmation'
@@ -42,7 +43,7 @@ en:
       link: 'To login to the site, just follow this link:'
       thank_you: 'Thanks for joining and have a great day!'
       signature: 'The Shiny Team'
-  follow: 'Follow us on instagram '
+  follow: 'Follow us on'
   next: 'Next'
   forgot_your_password: 'Forgot your password'
   logout: 'Logout'

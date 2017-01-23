@@ -23,17 +23,17 @@
 ru:
   booking_mailer:
     confirmation:
-      subject: 'Booking confirmation'
-      greeting: 'Hi %{name}'
-      content: 'Your booking has been confirmed and a professional (%{name}) has been assigned to you. Please review the details below.'
-      your_booking: 'Your booking:'
+      subject: 'Подтверждение заказа'
+      greeting: 'Здравствуйте %{name}'
+      content: 'Ваш заказ подтвержден и специалист (%{name}) был подключен к вам. Пожалуйста ищите подробности ниже.'
+      your_booking: 'Ваш заказ:'
       thank_you: 'Please let us know if any of these details are inaccurate. Thank you for your trust in Shiny!'
       signature: 'The Shiny Team'
     received:
-      subject: 'Booking received'
-      greeting: 'Hi %{name},'
-      content: 'Your booking has been received. We have started looking for a service professional and will get back to you ASAP.'
-      thank_you: 'Thank you for your trust in Shiny!'
+      subject: 'Ваш заказ получен'
+      greeting: 'Здравствуйте %{name},'
+      content: 'Ваш заказ получен. Мы подключим вас к специалисту и свяжемся с Вами как можно скорее.'
+      thank_you: 'Большое спасибо за ваш заказ!'
       signature: 'The Shiny Team'
   user_mailer:
     welcome_email:
@@ -43,7 +43,7 @@ ru:
       link: 'Чтобы войти на сайт перейдите по этой ссылке:'
       thank_you: 'Благодарим за регистрацию!'
       signature: 'The Shiny Team'
-  follow: 'Follow us on instagram '
+  follow: 'Следите за нашими новостями и скидками на'
   next: 'Далее'
   forgot_your_password: 'Восстановление доступа'
   logout: 'выйти'

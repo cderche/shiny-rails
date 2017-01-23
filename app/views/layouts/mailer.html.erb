@@ -33,7 +33,11 @@
                             <table width="100%">
                                 <tr>
                                     <td class="aligncenter content-block">
-                                        <%= t('follow') %><%= link_to ENV['INSTAGRAM_ID'], ENV['INSTAGRAM_URL'] %>.
+                                        <%= t('follow') %>
+                                        <br>
+                                        <%= link_to 'Facebook', ENV['INSTAGRAM_URL'] %>
+                                        |
+                                        <%= link_to 'Instgram', ENV['FACEBOOK_URL'] %>
                                     </td>
                                 </tr>
                             </table>
