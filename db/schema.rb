@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124163923) do
+ActiveRecord::Schema.define(version: 20170124165904) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
