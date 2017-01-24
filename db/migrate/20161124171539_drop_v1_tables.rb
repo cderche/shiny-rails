@@ -8,6 +8,6 @@ class DropV1Tables < ActiveRecord::Migration[5.0]
     drop_table :carts
     # drop_table :admins
     drop_table :orders
-    drop_table :promos
+    # drop_table :promos
   end
 end

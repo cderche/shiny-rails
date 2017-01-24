@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      /* Email styles need to be inline */
-    </style>
-  </head>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <%= stylesheet_link_tag 'email' %>
+    </head>
 
-  <body>
-    <%= yield %>
-  </body>
+    <body itemscope itemtype="http://schema.org/EmailMessage">
+        <table class="body-wrap">
+            <tr>
+                <td></td>
+                <td class="container" width="600">
+                    <div class="content">
+                        <!-- <div class="header">
+                            <table width="100%">
+                                <tr>
+                                    <td class="aligncenter content-block">
+                                        <%= image_tag 'shiny.png', width: 150 %>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div> -->
+                        <table class="main" width="100%" cellpadding="0" cellspacing="0" itemprop="action" itemscope itemtype="http://schema.org/ConfirmAction">
+                            <tr>
+                                <td class="content-wrap">
+                                    <meta itemprop="name" content="Confirm Email"/>
+                                    <%= yield %>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="footer">
+                            <table width="100%">
+                                <tr>
+                                    <td class="aligncenter content-block">
+                                        <%= t('follow') %>
+                                        <br>
+                                        <%= link_to 'Facebook', ENV['INSTAGRAM_URL'] %>
+                                        |
+                                        <%= link_to 'Instgram', ENV['FACEBOOK_URL'] %>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</body>
 </html>

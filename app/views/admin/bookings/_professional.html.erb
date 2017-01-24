@@ -1,0 +1,21 @@
+<div class="panel panel-default" data-pages="portlet">
+    <div class="panel-heading">
+        <div class="panel-title">
+          Professional
+        </div>
+    </div>
+    <div class="panel-body">
+        <%= form_for [:admin, booking], html: { class: 'form-horizontal' } do |f| %>
+            <div class="form-group">
+                <!-- <%= f.label :professional, class: 'col-sm-6 control-label' %> -->
+                <div class="col-sm-6">
+                    <%= f.collection_select(:professional_id, Professional.all, :id, :fullname, { include_blank: true }, {class: 'form-control'}) %>
+                </div>
+                <div class="col-sm-6">
+                  <%= f.submit 'assign', class: 'btn btn-primary btn-block' if !booking.professional %>
+                  <%= f.submit 'change', class: 'btn btn-danger btn-block' if booking.professional %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

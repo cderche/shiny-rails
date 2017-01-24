@@ -21,7 +21,37 @@
 
 en:
   already_have_an_account?: 'Already have an account?'
-  logout: "logout"
+  promo_code_comment: 'Applied after booking completion'
+  booking_mailer:
+    confirmation:
+      subject: 'Booking confirmation'
+      greeting: 'Hi %{name}'
+      content: 'Your booking has been confirmed and a professional (%{name}) has been assigned to you. Please review the details below.'
+      your_booking: 'Your booking:'
+      thank_you: 'Please let us know if any of these details are inaccurate. Thank you for your trust in Shiny!'
+      signature: 'The Shiny Team'
+    received:
+      subject: 'Booking received'
+      greeting: 'Hi %{name},'
+      content: 'Your booking has been received. We have started looking for a service professional and will get back to you ASAP.'
+      thank_you: 'Thank you for your trust in Shiny!'
+      signature: 'The Shiny Team'
+  user_mailer:
+    welcome_email:
+      subject: 'Welcome to Shiny!'
+      greeting: 'Welcome %{name}!'
+      content: 'You have successfully signed up to getshiny.ru. Your username is: %{username}.'
+      link: 'To login to the site, just follow this link:'
+      thank_you: 'Thanks for joining and have a great day!'
+      signature: 'The Shiny Team'
+  follow: 'Follow us on'
+  next: 'Next'
+  forgot_your_password: 'Forgot your password'
+  logout: 'Logout'
+  login: 'Log In'
+  i_am_a: "I am a ..."
+  new_customer: "new customer"
+  existing_customer: "existing customer"
   address:
     street: "Street"
     block: "Block #"
@@ -32,7 +62,7 @@ en:
     dev_mode: "WARNING: This is a test page. No data will be preserved."
   booking:
     titles:
-      home: "Tell us about your home"
+      home: "Tell us about your home (livingroom +)"
       frequency: "How often should we come?"
       when: "When should we come?"
       account: "Your account"
@@ -41,11 +71,11 @@ en:
       notes: "Comments and Coupons"
   service:
     name:
-      1bedroom: "1 Bedroom"
-      2bedroom: "2 Bedrooms"
-      3bedroom: "3 Bedrooms"
-      4bedroom: "4 Bedrooms"
-      5bedroom: "5 Bedrooms"
+      1bedroom: "Studio"
+      2bedroom: "1 Bedroom"
+      3bedroom: "2 Bedrooms"
+      4bedroom: "3 Bedrooms"
+      5bedroom: "4 Bedrooms"
   extra:
     name:
       bathroom: "Bathroom"
@@ -60,7 +90,7 @@ en:
       endoftenancy: "End of tenancy"
   frequency:
     name:
-      once: "Once"
+      once: "Once - XMAS discount"
       month: "Once a month"
       fortnight: "Every Two Weeks"
       week: "Every Week"
@@ -178,6 +208,8 @@ en:
     cost_of_clean: "Cost of clean"
     discount: "Discount"
     total_cost: "Final price"
+    promo_code: "Promo Code"
+    service: "Service"
   cart_form:
     questions:
       frequency: "How often do you need a cleaner?"

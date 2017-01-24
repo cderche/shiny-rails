@@ -22,7 +22,37 @@
 
 ru:
   already_have_an_account?: 'Already have an account?'
-  logout: "выйти"
+  booking_mailer:
+    confirmation:
+      subject: 'Подтверждение заказа'
+      greeting: 'Здравствуйте %{name}'
+      content: 'Ваш заказ подтвержден и специалист (%{name}) был подключен к вам. Пожалуйста ищите подробности ниже.'
+      your_booking: 'Ваш заказ:'
+      thank_you: 'Please let us know if any of these details are inaccurate. Thank you for your trust in Shiny!'
+      signature: 'The Shiny Team'
+    received:
+      subject: 'Ваш заказ получен'
+      greeting: 'Здравствуйте %{name},'
+      content: 'Ваш заказ получен. Мы подключим вас к специалисту и свяжемся с Вами как можно скорее.'
+      thank_you: 'Большое спасибо за ваш заказ!'
+      signature: 'The Shiny Team'
+  user_mailer:
+    welcome_email:
+      subject: 'Добро пожаловать в Shiny!'
+      greeting: 'Здравствуйте %{name}!'
+      content: 'Благодарим Вас за регистрацию на нашем сайте getshiny.ru. Ваш логин: %{username}.'
+      link: 'Чтобы войти на сайт перейдите по этой ссылке:'
+      thank_you: 'Благодарим за регистрацию!'
+      signature: 'The Shiny Team'
+  follow: 'Следите за нашими новостями и скидками на'
+  next: 'Далее'
+  forgot_your_password: 'Восстановление доступа'
+  logout: 'выйти'
+  login: 'войти'
+  hello: 'Привет, %{name}!'
+  i_am_a: "Я ..."
+  new_customer: "новый клиент"
+  existing_customer: "уже клиент"
   address:
     street: "Улица"
     block: "Корпус #"
@@ -61,7 +91,7 @@ ru:
       endoftenancy: "Окончание аренды"
   frequency:
     name:
-      once: "Один раз"
+      once: "Один раз - новогодняя скидка"
       month: "Раз в месяц"
       fortnight: "Раз в 2 недели"
       week: "Раз в неделю"
@@ -85,15 +115,13 @@ ru:
         apartment: "Квартира #"
       booking:
         notes: "Комментарий"
-
-
   home:
     section1:
       text1: "Закажите <b>профессиональную</b> и <b>надёжную</b> уборку менее чем за 1 минуту."
     section2:
       text1: "Закажите менее чем за 1 минуту"
       text2: "Проверенные и квалифицированные исполнители"
-      text3: "Бесопасные платежи "
+      text3: "Безопасные платежи "
       text4: "Многоязычные домработницы"
     section3:
       text1: "Оставайтесь на связи"

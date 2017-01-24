@@ -33,7 +33,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user if user_signed_in?
 
-    puts @booking
     if @booking.save
       flash[:success]
       redirect_to payture_gateway || 'oops'

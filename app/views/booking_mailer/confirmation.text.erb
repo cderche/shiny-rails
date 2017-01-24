@@ -1,0 +1,38 @@
+<%= t('.greeting', name: @user.firstname) %>
+===============================================
+
+<%= t('.content', name: @booking.professional.fullname) %>
+
+<%= t('.your_booking') %>
+
+<%= t('summary.date') %>: <%= @booking.service_date %>
+<%= t('summary.time') %>: <%= @booking.service_time %>
+<%= t('summary.frequency') %>: <%= t(@booking.frequency.name) %>
+
+<%= t('summary.cost_of_clean') %>: <%= @booking.subtotal %>
+<%= t('summary.discount') %>: <%= @booking.discount %>
+<%= t('summary.total_cost') %>: <%= @booking.final_total %>
+<%= t('summary.promo_code') %>: <%= @booking.promo_code %>
+
+<%= t('summary.service') %>:
+<%= t(@booking.service.name) %>
+<% @booking.addons.each do |a| %>
+<% if a.extra.quantity_based %>
+<%= t(a.extra.name) %>: <%= a.quantity %>
+<% else %>
+<%= t(a.extra.name) %>
+<% end %>
+<% end %>
+
+<%= t('address_form.your_address') %>:
+<%= @user.fullname %>
+<%= @booking.address.street %>
+<%= "#{t('address.house')}: #{@booking.address.house}" if @booking.address.house%>
+<%= "#{t('address.block')}: #{@booking.address.block}" if @booking.address.block%>
+<%= "#{t('address.building')}: #{@booking.address.building}" if @booking.address.building%>
+<%= "#{t('address.apartment')}: #{@booking.address.apartment}" if @booking.address.apartment%>
+
+<%= t('.thank_you') %>
+
+<%= t('.signature') %>
+<%= ENV['SUPPORT_EMAIL'] %>
