@@ -90,7 +90,7 @@ en:
       endoftenancy: "End of tenancy"
   frequency:
     name:
-      once: "Once - XMAS discount"
+      once: "Once"
       month: "Once a month"
       fortnight: "Every Two Weeks"
       week: "Every Week"

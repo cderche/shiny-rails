@@ -91,7 +91,7 @@ ru:
       endoftenancy: "Окончание аренды"
   frequency:
     name:
-      once: "Один раз - новогодняя скидка"
+      once: "Один раз"
       month: "Раз в месяц"
       fortnight: "Раз в 2 недели"
       week: "Раз в неделю"
