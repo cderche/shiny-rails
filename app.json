@@ -42,6 +42,42 @@
     },
     "SENDINBLUE_API_KEY": {
       "required": true
+    },
+    "SMTP_LOGIN": {
+      "required": true
+    },
+    "SMTP_PASSWORD": {
+      "required": true
+    },
+    "SMTP_PORT": {
+      "required": true
+    },
+    "SMTP_SERVER": {
+      "required": true
+    },
+    "SUPPORT_EMAIL": {
+      "required": true
+    },
+    "SUPPORT_EMAIL_NAME": {
+      "required": true
+    },
+    "NO_REPLY_EMAIL": {
+      "required": true
+    },
+    "NO_REPLY_EMAIL_NAME": {
+      "required": true
+    },
+    "MAILGUN_API_KEY": {
+      "required": true
+    },
+    "MAILGUN_DOMAIN": {
+      "required": true
+    },
+    "INSTAGRAM_URL": {
+      "required": true
+    },
+    "FACEBOOK_URL": {
+      "required": true
     }
   },
   "formation": {
