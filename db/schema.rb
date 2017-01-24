@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-# ActiveRecord::Schema.define(version: 20161207151501) do
-ActiveRecord::Schema.define(version: 20170123181706) do
+ActiveRecord::Schema.define(version: 20170124163923) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -31,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170123181706) do
     t.string   "phone"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.integer  "cart_id"
     t.integer  "user_id"
     t.string   "email"
     t.string   "gateway_token"
@@ -46,23 +46,6 @@ ActiveRecord::Schema.define(version: 20170123181706) do
     t.index ["booking_id"], name: "index_addresses_on_booking_id"
     t.index ["cart_id"], name: "index_addresses_on_cart_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
-
-  create_table "admins", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -113,8 +96,10 @@ ActiveRecord::Schema.define(version: 20170123181706) do
   create_table "notifications", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "order_id"
     t.string   "category"
     t.string   "data"
+    t.index ["order_id"], name: "index_notifications_on_order_id"
   end
 
   create_table "professionals", force: :cascade do |t|
@@ -126,11 +111,9 @@ ActiveRecord::Schema.define(version: 20170123181706) do
 
   create_table "promos", force: :cascade do |t|
     t.string   "code"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "values"
-    t.string   "promo_type"
-    t.string   "discount"
+    t.integer  "discount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "services", force: :cascade do |t|
@@ -159,6 +142,7 @@ ActiveRecord::Schema.define(version: 20170123181706) do
     t.boolean  "terms"
     t.string   "phone"
     t.boolean  "admin",                  default: false
+    t.datetime "welcome_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
