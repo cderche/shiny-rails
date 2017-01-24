@@ -1,0 +1,11 @@
+<%= t('.greeting', name: @user.firstname) %>
+===============================================
+
+<%= t('.content', username: @user.email) %>
+
+<%= t('.link') %> <%= new_user_session_url %>
+
+<%= t('.thank_you') %>
+
+<%= t('.signature') %>
+<%= ENV['SUPPORT_EMAIL'] %>

@@ -57,4 +57,9 @@ Rails.application.configure do
 
   # DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1
   config.active_record.time_zone_aware_types = [:datetime, :time]
+
+  # config.action_mailer.perform_deliveries = true
+
+  # config.action_mailer.delivery_method = :sendmail
+  # config.action_mailer.delivery_method = :letter_opener
 end

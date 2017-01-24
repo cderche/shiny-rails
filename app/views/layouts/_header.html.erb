@@ -37,7 +37,18 @@
                 <!-- <li class='hidden-xs'><%= link_to t('menu.pricing'), root_path %></li> -->
                 <li class='hidden-xs'><%= link_to t('menu.qa'), questions_path, data: { turbolinks: false } %></li>
                 <!-- <li class='hidden-xs'><%= link_to t('menu.about_us'), root_path %></li> -->
-                <li><%= link_to t('order'), clean_path, class: "btn btn-sm btn-primary text-white", data: { turbolinks: false } %></li>
+
+                <!-- Button trigger modal -->
+                <li>
+                    <% if user_signed_in? %>
+                      <li><%= link_to t('order'), clean_path, class: "btn btn-sm btn-primary text-white", data: { turbolinks: false } %></li>
+                    <% else %>
+                    <button class="btn btn-sm btn-primary text-white text-uppercase" data-toggle="modal" data-target="#orderModal"><%= t('order') %></button>
+                    <% end %>
+                </li>
+                <% if user_signed_in? %>
+                <li><%= link_to t('logout'), destroy_user_session_path, method: :delete, class: 'text-danger' %>
+                <% end %>
             </ul>
 
             <!-- <div class="font-arial m-l-35 m-r-35 m-b-20  visible-sm visible-xs m-t-30">
@@ -48,3 +59,32 @@
         </div>
     </div>
 </nav>
+
+<!-- MODAL STICK UP  -->
+<div class="modal fade stick-up" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+              <%= image_tag 'icon.svg', alt: 'logo', style: 'height: 50px' %>
+            </div>
+            <div class="modal-body">
+              <div class="hidden-xs p-t-50"></div>
+              <h3 class="text-center semi-bold"><%= t('i_am_a') %></h3>
+              <div class="hidden-xs p-t-40"></div>
+                <div class="row text-center">
+                    <div class="col-sm-6">
+                        <%= link_to t('new_customer'), clean_path, class: "btn btn-lg btn-primary btn-block text-white text-capitalize", data: { turbolinks: false } %>
+                    </div>
+                    <div class="hidden-sm hidden-md hidden-lg p-t-20"></div>
+                    <div class="col-sm-6">
+                        <%= link_to t('existing_customer'), new_user_session_path, class: "btn btn-lg btn-primary btn-block text-white text-capitalize", data: { turbolinks: false } %>
+                    </div>
+                </div>
+                <div class="hidden-xs p-t-50"></div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- END MODAL STICK UP  -->

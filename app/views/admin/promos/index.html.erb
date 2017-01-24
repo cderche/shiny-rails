@@ -1,0 +1,37 @@
+<div class="container m-t-90 p-t-30">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title col-xs-12">
+              Promos
+              <span class="pull-right">
+                <%= link_to "Add New", new_admin_promo_path, class: 'btn btn-primary' %>
+              </span>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive col-xs-12">
+                <table class="table table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Discount</th>
+                            <th>Created At</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <% @promos.each do |p| %>
+                      <tr>
+                        <td><%= p.code %></td>
+                        <td><%= p.discount %></td>
+                        <td><%= p.created_at %></td>
+                        <td><%= link_to "Delete", admin_promo_path(p), method: :delete, class: "btn btn-danger" %></td>
+                      </tr>
+                      <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

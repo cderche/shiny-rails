@@ -1,0 +1,11 @@
+<%= form_for [:admin, @promo] do |f| %>
+  <div class="form-group form-group-default col-sm-6">
+    <%= f.label :code %>
+    <%= f.text_field :code, class: 'form-control' %>
+  </div>
+  <div class="form-group form-group-default col-sm-6">
+    <%= f.label :discount %>
+    <%= f.number_field :discount, class: 'form-control' %>
+  </div>
+  <%= f.submit class: 'btn btn-success' %>
+<% end %>

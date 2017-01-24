@@ -9,6 +9,7 @@ class Booking < ApplicationRecord
   belongs_to  :frequency
   has_many    :addons
   has_many    :extras, through: :addons
+  belongs_to  :professional, optional: true
 
   accepts_nested_attributes_for :extras
   accepts_nested_attributes_for :addons
@@ -16,6 +17,26 @@ class Booking < ApplicationRecord
   accepts_nested_attributes_for :address
 
   before_save :calculate_price
+
+
+  def status
+
+    if !self.card_token
+      # If !card_token -> awaiting_card
+      :awaiting_card
+    elsif self.closed
+      # If closed -> closed
+      :closed
+    elsif self.card_token && !self.professional
+      # If card_token && !professional -> awaiting_professional
+      :awaiting_prof
+    elsif self.card_token && self.professional && self.confirmation_sent_at
+      # If card_token && professional && confirmation_sent_at -> active
+      :active
+    else
+      :error
+    end
+  end
 
   private
 
@@ -31,7 +52,17 @@ class Booking < ApplicationRecord
       end
     end
 
-    self.discount = self.frequency.percent / 100 * self.subtotal
+    self.discount = (calc_promo + self.frequency.percent) / 100 * self.subtotal
     self.final_total = self.subtotal - self.discount
   end
+
+  def calc_promo
+    if self.promo_code?
+      promo = Promo.find_by(code: self.promo_code)
+      return promo.discount if promo
+    else
+      return 0
+    end
+  end
+
 end

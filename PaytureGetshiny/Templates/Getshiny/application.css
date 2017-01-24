@@ -29212,3 +29212,15 @@ body.pace-white .pace .pace-progress {
 .list-cc-item,.inline {
     display: inline-block
 }
+
+.form-border-right {
+  border-right: 1px solid rgba(0,0,0,0.07) !important;
+}
+
+.form-border-bottom {
+  border-bottom: 1px solid rgba(0,0,0,0.07) !important;
+}
+
+.form-border-top-none {
+  border-top: none !important;
+}

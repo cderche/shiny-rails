@@ -8,7 +8,8 @@
                             <%= raw t('home.section1.text1') %>
                         </h2>
                         <div class="text-center m-t-30 col-md-8 col-md-offset-2">
-                            <%= link_to t('menu.order'), clean_path, { class: 'btn btn-lg btn-primary btn-cons btn-block text-white', data: { turbolinks: false } }%>
+                            <!-- <%= link_to t('menu.order'), clean_path, { class: 'btn btn-lg btn-primary btn-cons btn-block text-white', data: { turbolinks: false } }%> -->
+                            <button class="btn btn-lg btn-primary btn-cons btn-block text-white" data-toggle="modal" data-target="#orderModal"><%= t('menu.order') %></button>
                         </div>
                     </div>
                 </div>
@@ -75,7 +76,8 @@
     </div>
     <div class="row m-t-50">
         <div class="col-sm-6 col-sm-offset-3 text-center">
-            <%= link_to t('home.section4.text5'), clean_path, { class: 'btn btn-lg btn-primary btn-cons btn-block text-white', data: { turbolinks: false } }%>
+            <!-- <%= link_to t('home.section4.text5'), clean_path, { class: 'btn btn-lg btn-primary btn-cons btn-block text-white', data: { turbolinks: false } }%> -->
+            <button class="btn btn-lg btn-primary btn-cons btn-block text-white" data-toggle="modal" data-target="#orderModal"><%= t('home.section4.text5') %></button>
         </div>
     </div>
 </section>

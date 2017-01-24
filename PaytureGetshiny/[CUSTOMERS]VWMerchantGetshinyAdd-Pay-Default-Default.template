@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>Your Title Here</title>
+    <title>Shiny - House cleaning in Moscow / Уборка квартир в Москве</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="apple-touch-icon" href="/Templates/Getshiny/images/ico/shiny.svg">
     <link rel="apple-touch-icon" sizes="76x76" href="/Templates/Getshiny/images/ico/shiny.svg">
@@ -24,7 +24,7 @@
         }
     </script>
 
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
 
     <script src="/Templates/Getshiny/application.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
     <meta name="ROBOTS" content="NONE">
@@ -61,6 +61,7 @@
                 <div class="header-inner">
                     <a href="https://www.getshiny.com/?locale=en">
                         <img class="logo" src="/Templates/Getshiny/images/shiny.svg" alt="Shiny" />
+                        <!-- <img class="logo" src="Templates/Getshiny/images/shiny.svg" alt="Shiny" /> -->
                     </a>
                 </div>
             </div>
@@ -87,6 +88,11 @@
     <p class="notice"></p>
     <p class="alert"></p>
     <div class="container m-t-90">
+        <div class="row">
+            <div class="col-xs-6">
+                <div id="errorTop" class="text-danger">{error}</div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-4 col-sm-push-8">
                 <div class="panel panel-default">
@@ -143,94 +149,126 @@
             <div class="col-sm-8 col-sm-pull-4">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div id="errorTop" class="text-danger">{error}</div>
                         <form class="payForm" id="payForm" name="payForm">
-                            <input name="Key" value="{key}" type="hidden">
-                            <input type="hidden" name="AddCard" value="True">
-                            <div class="row row-separator text-center selectCard">
-                                <h4 class="text-center">Select card</h4>
-                                <div class="col-sm-offset-3 col-md-offset-4 col-sm-6 col-md-4 selectCard">
-                                    <select class="form-control input-lg" name="CardId">
-                                            <option selected="selected" value="FreePay">Other</option>
-                                            {cards}
-                                        </select>
-                                    <a href="" id="removeCard">Remove card</a>
-                                </div>
-                            </div>
-                            <!-- Card -->
-                            <div class="row card">
-                                <div class="col-md-offset-2 col-md-8">
-                                    <h4 class="text-center">Add a card</h4>
-                                    <!-- <div class="CardType clearfix"></div> -->
-                                    <div class="CardNumber clearfix form-group-attached">
-                                        <div class="error"></div>
-                                        <div class="row">
-                                            <div class="col-xs-3">
-                                                <div class="form-group">
-                                                    <label for="CardNumber0">Card #</label>
-                                                    <label for="CardNumber0" class="text-white">text</label>
-                                                    <input name="CardNumber0" maxlength="4" type="text" class="onlyNum form-control" autocomplete="off" next="CardNumber1">
+                            <input name="Key" value="{key}" type="hidden" \>
+                            <input type="hidden" name="AddCard" value="true" \>
+                            <input type="hidden" name="CardNumber0" \>
+                            <input type="hidden" name="CardNumber1" \>
+                            <input type="hidden" name="CardNumber2" \>
+                            <input type="hidden" name="CardNumber3" \>
+                            <div class="row">
+
+                                <div class="col-md-8">
+                                    <div class="row selectCard">
+                                        <!-- selectCard -->
+                                        <div class="col-xs-12">
+                                            <div class="panel panel-transparent">
+                                                <div class="panel-heading">
+                                                    <div class="panel-title">
+                                                        Use an existing card
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-xs-3">
-                                                <div class="form-group">
-                                                    <label for="CardNumber1" class="text-white">text</label>
-                                                    <input name="CardNumber1" maxlength="4" type="text" class="onlyNum form-control" autocomplete="off" next="CardNumber2" prev="CardNumber0">
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-3">
-                                                <div class="form-group">
-                                                    <label for="CardNumber2" class="text-white">text</label>
-                                                    <input name="CardNumber2" maxlength="4" type="text" class="onlyNum form-control" autocomplete="off" next="CardNumber3" prev="CardNumber1">
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-3">
-                                                <div class="form-group">
-                                                    <label for="CardNumber3" class="text-white">text</label>
-                                                    <input name="CardNumber3" maxlength="7" type="text" class="onlyNum form-control" autocomplete="off" prev="CardNumber2">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <select class="form-control input-lg" name="CardId">
+                                                            <option selected="selected" value="FreePay">Other</option>
+                                                            {cards}
+                                                          </select>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <a href="" id="removeCard">Remove card</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label for="CardHolder">Card Holder</label>
-                                                    <input name="CardHolder" type="text" class="form-control">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="panel panel-transparent">
+                                                <div class="panel-heading">
+                                                    <div class="panel-title">
+                                                        Enter Card Details
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-xs-4 col-sm-2">
-                                                <div class="form-group">
-                                                    <label for="EMonth">Month</label>
-                                                    <input name="EMonth" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4 col-sm-2">
-                                                <div class="form-group">
-                                                    <label for="EYear">Year</label>
-                                                    <input name="EYear" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4 col-sm-2">
-                                                <div class="form-group">
-                                                    <label for="SecureCode">CCV</label>
-                                                    <input name="SecureCode" type="text" class="form-control">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <div class="form-group-attached">
+                                                                <div class="form-group form-group-default">
+                                                                    <label for="CardNumber">Card Number</label>
+                                                                    <input type="text" name="CardNumber" class="form-control" \>
+                                                                </div>
+                                                                <div class="row clearfix">
+                                                                    <div class="form-group form-group-default form-border-bottom">
+                                                                        <label for="CardHolder">Card Holder</label>
+                                                                        <input name="CardHolder" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-xs-3">
+                                                                        <div class="form-group form-group-default form-border-top-none">
+                                                                            <label for="EMonth">Month</label>
+                                                                            <input name="EMonth" type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-3">
+                                                                        <div class="form-group form-group-default form-border-right form-border-top-none">
+                                                                            <label for="EYear">Year</label>
+                                                                            <input name="EYear" type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-3"></div>
+                                                                    <div class="col-xs-3">
+                                                                        <div class="form-group form-group-default form-border-top-none">
+                                                                            <label for="SecureCode">CCV</label>
+                                                                            <input name="SecureCode" type="text" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 hidden-xs hidden-sm visible-md visible-lg">
+                                                            <button class="btn btn-primary btn-cons btn-lg btn-block">Next</button>
+                                                        </div>
+                                                    </div>
+
+
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-offset-2 col-md-8">
-                                    <button class="btn btn-primary btn-cons btn-lg btn-block">Proceed</button>
+                                <div class="col-md-4">
+                                    <div class="panel panel-transparent">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                Notice
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>
+                                                When adding a new card 1.00rub will be blocked on your account and unblocked as soon as your card is checked.
+                                            </p>
+                                            <p>
+                                                Prior to a clean, we may block the final cost and charge you 24hrs after.
+                                            </p>
+                                            <button class="btn btn-primary btn-cons btn-lg btn-block visible-sm visible-xs">Next</button>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

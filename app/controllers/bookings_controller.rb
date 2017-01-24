@@ -8,7 +8,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.create(booking_params)
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user if user_signed_in?
+
     if @booking.save
       flash[:success]
       uri = payture_gateway
@@ -18,7 +20,7 @@ class BookingsController < ApplicationController
         redirect_to '/oops'
       end
     else
-      @booking.user.destroy if @booking.user.bookings.count == 0
+      # @booking.user.destroy if @booking.user.bookings.count == 0
       flash[:error]
       render :new
     end
