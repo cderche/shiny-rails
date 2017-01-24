@@ -3,7 +3,7 @@ class NotificationsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :create
 
   def create
-
+    puts notification_params
     if NotificationService.handle(notification_params)
       head :ok
     else
