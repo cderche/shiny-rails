@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get '/book', to: 'bookings#new'
-  resources :bookings
+  get '/bookings', to: 'bookings#new'
+  resources :bookings, only: [:new, :create]
+
 
   get '/oops', to: 'home#oops'
   get '/status', to: 'home#status'

@@ -1,7 +1,8 @@
-<% @booking.addons.select{ |a| a.extra_id != 1}.each do |addon| %>
-  <% extra = addon.extra %>
-  <div class="checkbox check-success">
-    <%= check_box_tag "booking[extra_ids][]", extra.id, @booking.extra_ids.include?(extra.id), { id: dom_id(extra), data: { price: extra.price, quantity: extra.quantity_based } } %>
-    <%= label_tag dom_id(extra), "#{t(extra.name)} (+#{extra.price.to_i}#{t('rub')})" %><br>
+<% Extra.where.not(id: 1).each do |e| %>
+
+  <div class="checkbox check-primary">
+    <%= check_box_tag 'booking[extra_ids][]', e.id, @booking.extra_ids.include?(e.id), { id: dom_id(e), data: { price: e.price , quantity: e.quantity_based }} %>
+    <%= label_tag dom_id(e), "#{t(e.name)} (+#{e.price.to_i}#{t('rub')})" %><br>
   </div>
+
 <% end %>
