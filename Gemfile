@@ -81,5 +81,7 @@ gem 'less-rails', '~> 2.7.1'
 gem 'record_tag_helper'
 gem 'active_model_serializers'
 gem 'sendinblue'
+
+gem 'devise-i18n'
 gem 'premailer-rails'
 gem 'mailgun_rails'

@@ -2,7 +2,7 @@ class Address < ApplicationRecord
   # has_secure_token
 
   # belongs_to :cart
-  has_many    :bookings
+  has_one    :booking
   # belongs_to  :user
 
   # validates :firstname, presence: true

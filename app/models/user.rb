@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_token :payture_token
 
+  validates :terms,    acceptance: true
   after_create :welcome_email
 
   # attr_accessor :skip_password_validation

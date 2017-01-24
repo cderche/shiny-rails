@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  already_have_an_account?: 'Already have an account?'
   promo_code_comment: 'Applied after booking completion'
   booking_mailer:
     confirmation:

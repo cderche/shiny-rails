@@ -1,12 +1,10 @@
-class Order < ApplicationRecord
-  has_many    :notifications
-  # belongs_to  :cart
-  # belongs_to  :address
+class Order
+  include ActiveModel::Model
+  include ActiveModel::Validations
+  include ActiveModel::Naming
 
-  after_create :send_received
+  attr_accessor :booking, :user
 
-  def send_received
-    puts "Sending received mail"
-    OrderMailer.received(self).deliver_now
-  end
+  validates_presence_of :booking
+
 end
