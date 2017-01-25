@@ -66,7 +66,7 @@ class Booking < ApplicationRecord
   end
 
   def slack_new_booking
-    Slacked.post "Booking created: #{admin_booking_url(self)}"
+    Slacked.post "Booking created"
   end
 
 end
