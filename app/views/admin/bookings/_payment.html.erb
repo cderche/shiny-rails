@@ -1,0 +1,35 @@
+<div class="panel panel-default" data-pages="portlet">
+    <div class="panel-heading">
+        <div class="panel-title">
+          Payment Details
+        </div>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="order_token" class="col-sm-6 control-label">Order Token</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'order_token', booking.order_token, class: 'form-control text-right text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="card_token" class="col-sm-6 control-label">Card Token</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'card_token', booking.card_token, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-6 control-label">Email</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'email', booking.user.email, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="payture_token" class="col-sm-6 control-label">Payture Token</label>
+                <div class="col-sm-6">
+                    <%= text_field_tag 'payture_token', booking.user.payture_token, class: 'form-control text-right', readonly: true %>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
