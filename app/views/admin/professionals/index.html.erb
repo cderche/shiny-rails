@@ -3,9 +3,9 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="panel-title col-xs-12">
-                Promos
+                Professionals (<%= Professional.count %>)
                 <span class="pull-right">
-                    <%= link_to "Add New", new_admin_promo_path, class: 'btn btn-primary' %>
+                    <%= link_to "Add New", new_admin_professional_path, class: 'btn btn-primary' %>
                 </span>
             </div>
         </div>
@@ -14,19 +14,19 @@
                 <table class="table table-hover table-condensed">
                     <thead>
                         <tr>
-                            <th>Code</th>
-                            <th>Discount</th>
+                            <th>Name</th>
+                            <th>Status</th>
                             <th>Created At</th>
-                            <th></th>
+                            <th>Options</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <% @promos.each do |p| %>
+                        <% @professionals.each do |professional| %>
                         <tr>
-                            <td><%= p.code %></td>
-                            <td><%= p.discount %></td>
-                            <td><%= p.created_at %></td>
-                            <td><%= link_to "Delete", admin_promo_path(p), method: :delete, class: "btn btn-danger" %></td>
+                            <td><%= professional.fullname %></td>
+                            <td><%= professional.status %></td>
+                            <td><%= professional.created_at %></td>
+                            <td><%= link_to 'Edit', edit_admin_professional_path(professional) %></td>
                         </tr>
                         <% end %>
                     </tbody>

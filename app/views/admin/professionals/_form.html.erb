@@ -1,0 +1,17 @@
+<%= form_for [:admin, @professional] do |f| %>
+
+<div class="form-group form-group-default col-sm-5">
+  <%= f.label :firstname %>
+  <%= f.text_field :firstname, class: 'form-control' %>
+</div>
+<div class="form-group form-group-default col-sm-5">
+  <%= f.label :lastname %>
+  <%= f.text_field :lastname, class: 'form-control' %>
+</div>
+<div class="form-group form-group-default col-sm-2">
+  <%= f.label :status %>
+  <%= f.select :status, Professional.statuses.keys, promt: "Select a status", class: 'form-control' %>
+</div>
+<%= f.submit class: 'btn btn-success' %>
+
+<% end %>

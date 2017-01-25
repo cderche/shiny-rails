@@ -6,6 +6,8 @@ class Professional < ApplicationRecord
         blocked:  1
     }
 
+    scope :active, -> { where(status: :active)}
+
     def fullname
         "#{firstname} #{lastname}"
     end

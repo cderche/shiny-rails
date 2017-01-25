@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     # get '/notifications', to: 'admin#notifications'
     resources :bookings, only: [:index, :show, :update]
     resources :promos
+    resources :professionals
   end
 
   post '/notification', to: 'notifications#create'
