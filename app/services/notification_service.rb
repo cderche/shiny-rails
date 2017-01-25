@@ -24,6 +24,7 @@ class NotificationService
     # NOT IMPLEMENTED: Create and add the notification to the booking
     # Send booking received email
     BookingMailer.received(@booking).deliver_later if !@booking.received_sent_at
+    Slacked.post "Booking received"
   end
 
 end

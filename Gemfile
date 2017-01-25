@@ -34,6 +34,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -85,3 +86,5 @@ gem 'sendinblue'
 gem 'devise-i18n'
 gem 'premailer-rails'
 gem 'mailgun_rails'
+
+gem 'slacked'

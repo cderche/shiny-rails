@@ -16,6 +16,7 @@ class Admin::BookingsController < Admin::AdminController
         respond_to do |format|
             if @booking.update(booking_params)
                 BookingMailer.confirmation(@booking).deliver_later if !@booking.confirmation_sent_at
+                Slacked.post "Booking confirmed"
                 format.html { redirect_to admin_booking_path(@booking), notice: 'Booking was successfully updated.' }
                 format.json { render :show, status: :ok, location: admin_booking_path(@booking) }
             else

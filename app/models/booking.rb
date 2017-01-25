@@ -17,7 +17,7 @@ class Booking < ApplicationRecord
   accepts_nested_attributes_for :address
 
   before_save :calculate_price
-
+  after_create :slack_new_booking
 
   def status
 
@@ -63,6 +63,10 @@ class Booking < ApplicationRecord
     else
       return 0
     end
+  end
+
+  def slack_new_booking
+    Slacked.post "Booking created"
   end
 
 end
