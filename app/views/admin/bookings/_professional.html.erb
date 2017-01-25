@@ -9,7 +9,7 @@
             <div class="form-group">
                 <!-- <%= f.label :professional, class: 'col-sm-6 control-label' %> -->
                 <div class="col-sm-6">
-                    <%= f.collection_select(:professional_id, Professional.all, :id, :fullname, { include_blank: true }, {class: 'form-control'}) %>
+                    <%= f.collection_select(:professional_id, Professional.active, :id, :fullname, { include_blank: true }, {class: 'form-control'}) %>
                 </div>
                 <div class="col-sm-6">
                   <%= f.submit 'assign', class: 'btn btn-primary btn-block' if !booking.professional %>
