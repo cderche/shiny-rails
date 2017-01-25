@@ -1,7 +1,12 @@
 class Professional < ApplicationRecord
-  has_many :bookings
+    has_many :bookings
 
-  def fullname
-    "#{self.firstname} #{self.lastname}"
-  end
+    enum status: {
+        active: 0,
+        blocked:  1
+    }
+
+    def fullname
+        "#{firstname} #{lastname}"
+    end
 end
