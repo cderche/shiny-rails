@@ -80,7 +80,7 @@ class BookingsController < ApplicationController
 
     uri = URI::HTTPS.build({
       host: ENV['PAYTURE_HOST'] ,
-      path: '/vwapi/Pay'        ,
+      path: '/vwapi/Add'        ,
       query: {
         SessionId:    sessionId                         ,
         date:         @booking.service_date             ,
