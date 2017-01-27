@@ -62,7 +62,7 @@ class BookingsController < ApplicationController
   def payture_gateway
     data = {
       OrderId:      @booking.order_token        ,
-      SessionType:  'Block'                     ,
+      SessionType:  'Block'                       ,
       VWUserLgn:    @booking.user.email         ,
       VWUserPsw:    @booking.user.payture_token ,
       Amount:       '100'                       ,
@@ -80,7 +80,7 @@ class BookingsController < ApplicationController
 
     uri = URI::HTTPS.build({
       host: ENV['PAYTURE_HOST'] ,
-      path: '/vwapi/Add'        ,
+      path: '/vwapi/Pay'        ,
       query: {
         SessionId:    sessionId                         ,
         date:         @booking.service_date             ,
