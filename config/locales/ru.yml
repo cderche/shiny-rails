@@ -107,6 +107,8 @@ ru:
         phone: "Телефон"
         agree: "Я принимаю "
         terms: "правила"
+        password: "пароль"
+        password_confirmation: "Подтверждение пароля"
       booking[address_attributes]:
         street: "Улица"
         block: "Корпус #"
