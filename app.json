@@ -1,91 +1,9 @@
 {
   "name": "shiny-rails",
   "scripts": {
-    "postdeploy": "bundle exec rails db:migrate; bundle exec rails db:seed;"
-  },
-  "env": {
-    "PAYTURE_ADD": {
-      "required": true
-    },
-    "PAYTURE_HOST": {
-      "required": true
-    },
-    "DEVISE_SECRET_KEY": {
-      "required": true
-    },
-    "ADMIN_EMAIL": {
-      "required": true
-    },
-    "ADMIN_PASSWORD": {
-      "required": true
-    },
-    "MANDRILL_USER": {
-      "required": true
-    },
-    "MANDRILL_API_KEY": {
-      "required": true
-    },
-    "MAILCHIMP_API_KEY": {
-      "required": true
-    },
-    "MAILCHIMP_LIST": {
-      "required": true
-    },
-    "ADMIN_USR": {
-      "required": true
-    },
-    "ADMIN_PWD": {
-      "required": true
-    },
-    "SENDINBLUE_API": {
-      "required": true
-    },
-    "SENDINBLUE_API_KEY": {
-      "required": true
-    },
-    "SMTP_LOGIN": {
-      "required": true
-    },
-    "SMTP_PASSWORD": {
-      "required": true
-    },
-    "SMTP_PORT": {
-      "required": true
-    },
-    "SMTP_SERVER": {
-      "required": true
-    },
-    "SUPPORT_EMAIL": {
-      "required": true
-    },
-    "SUPPORT_EMAIL_NAME": {
-      "required": true
-    },
-    "NO_REPLY_EMAIL": {
-      "required": true
-    },
-    "NO_REPLY_EMAIL_NAME": {
-      "required": true
-    },
-    "MAILGUN_API_KEY": {
-      "required": true
-    },
-    "MAILGUN_DOMAIN": {
-      "required": true
-    },
-    "INSTAGRAM_URL": {
-      "required": true
-    },
-    "FACEBOOK_URL": {
-      "required": true
-    }
-  },
-  "formation": {
+    "postdeploy": "bundle exec rails db:create db:migrate"
   },
   "addons": [
-    "heroku-postgresql"
+    "postgresql"
   ],
-  "buildpacks": [
-
-  ]
 }
