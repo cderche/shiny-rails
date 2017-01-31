@@ -16,7 +16,7 @@ services:
     depends_on:
       - db
     environment:
-      - RAILS_ENV={RAILS_ENV}
+      - RAILS_ENV=${RAILS_ENV}
 
   db:
     image: postgres
