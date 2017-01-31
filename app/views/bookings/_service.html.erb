@@ -2,8 +2,9 @@
     <%= f.select :service_id, Service.order(:id).collect { |s| [ t(s.name), s.id, data: { price: s.price } ] }, {}, { include_blank: false, class: "form-control input-lg" } %>
 </div>
 <div class="col-xs-12 col-sm-6">
+  <span id="all_day_service_id" class="hide" value="<%= Service.find_by(name: 'service.name.allday').id %>"></span>
   <%= f.fields_for :addons, @booking.addons.select{ |a| a.extra_id == 1 }.first do |ff| %>
     <%= ff.hidden_field :extra_id %>
-    <%= ff.select :quantity, ((1..5).map { |i| [t("extra.name.#{i}bathroom"), i] }), {}, { include_blank: false, class: "form-control input-lg", data: { price: Extra.find(1).price, quantity: Extra.find(1).quantity_based } } %>
+    <%= ff.select :quantity, ((1..5).map { |i| [t("extra.name.#{i}bathroom"), i] }), { include_blank: false }, { class: "form-control input-lg", data: { price: Extra.find(1).price, quantity: Extra.find(1).quantity_based } } %>
   <% end %>
 </div>

@@ -1,42 +1,42 @@
-# default: &default
-#   adapter: sqlite3
-#   pool: 5
-#   timeout: 5000
-#
-# development:
-#   <<: *default
-#   database: db/development.sqlite3
-#
-# # Warning: The database defined as "test" will be erased and
-# # re-generated from your development database when you run "rake".
-# # Do not set this db to the same as development or production.
-# test:
-#   <<: *default
-#   database: db/test.sqlite3
-#
-# production:
-#   adapter: postgresql
-#   encoding: unicode
-#   pool: 5
-#   timeout: 5000
-
 default: &default
-  adapter: postgresql
-  host: <%= ENV["POSTGRES_HOST"] %>
-  user: <%= ENV["POSTGRES_USER"] %>
-  password: <%= ENV["POSTGRES_PASSWORD"] %>
-  encoding: utf8
-  pool: 2
+  adapter: sqlite3
+  pool: 5
   timeout: 5000
 
 development:
   <<: *default
-  database: shiny_development
+  database: db/development.sqlite3
 
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: shiny_test
+  database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: shiny_production
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+# default: &default
+#   adapter: postgresql
+#   host: <%= ENV["POSTGRES_HOST"] %>
+#   user: <%= ENV["POSTGRES_USER"] %>
+#   password: <%= ENV["POSTGRES_PASSWORD"] %>
+#   encoding: utf8
+#   pool: 2
+#   timeout: 5000
+#
+# development:
+#   <<: *default
+#   database: shiny_development
+#
+# test:
+#   <<: *default
+#   database: shiny_test
+#
+# production:
+#   <<: *default
+#   database: shiny_production

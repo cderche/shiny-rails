@@ -77,6 +77,7 @@ ru:
       3bedroom: "3 комнаты"
       4bedroom: "4 комнаты"
       5bedroom: "5 комнат"
+      allday: "Целый день (~8ч)"
   extra:
     name:
       bathroom: "санузел"
@@ -95,6 +96,7 @@ ru:
       month: "Раз в месяц"
       fortnight: "Раз в 2 недели"
       week: "Раз в неделю"
+      day: "Каждый день"
   helpers:
     submit:
       booking:

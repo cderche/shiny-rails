@@ -76,6 +76,7 @@ en:
       3bedroom: "2 Bedrooms"
       4bedroom: "3 Bedrooms"
       5bedroom: "4 Bedrooms"
+      allday: "All Day (~8 Hrs)"
   extra:
     name:
       bathroom: "Bathroom"
@@ -94,6 +95,7 @@ en:
       month: "Once a month"
       fortnight: "Every Two Weeks"
       week: "Every Week"
+      day: "Every Day"
   helpers:
     submit:
       booking:
