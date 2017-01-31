@@ -25,3 +25,5 @@ config/initializers/app_env.rb
 *.sketch
 
 .env
+
+db/d3a7e550-06de-42e2-87a9-a95186600e8b
