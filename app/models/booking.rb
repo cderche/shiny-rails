@@ -44,11 +44,13 @@ class Booking < ApplicationRecord
 
     self.subtotal = self.service.price
 
-    self.addons.each do |a|
-      if a.extra.quantity_based
-        self.subtotal += a.quantity * a.extra.price
-      else
-        self.subtotal += a.extra.price
+    if self.service != Service.find_by(name: 'service.name.allday')
+      self.addons.each do |a|
+        if a.extra.quantity_based
+          self.subtotal += a.quantity * a.extra.price
+        else
+          self.subtotal += a.extra.price
+        end
       end
     end
 

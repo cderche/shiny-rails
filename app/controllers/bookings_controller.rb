@@ -30,6 +30,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    # puts "params: #{booking_params.to_yaml}"
     @booking = Booking.new(booking_params)
     @booking.user = current_user if user_signed_in?
 
