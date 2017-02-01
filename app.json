@@ -1,9 +1,7 @@
 {
     "name": "shiny-rails",
     "scripts": {
-        "dokku": {
-            "postdeploy": "bundle exec rails db:create db:migrate"
-        }
+        "postdeploy": "bundle exec rails db:create db:migrate"
     },
     "addons": [
         "dokku-postgres"
