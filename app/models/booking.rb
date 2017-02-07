@@ -61,7 +61,11 @@ class Booking < ApplicationRecord
   def calc_promo
     if self.promo_code?
       promo = Promo.find_by(code: self.promo_code)
-      return promo.discount if promo
+      if promo
+        return promo.discount
+      else
+        return 0
+      end
     else
       return 0
     end
