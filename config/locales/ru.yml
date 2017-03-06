@@ -21,7 +21,7 @@
 # Hello World
 
 ru:
-  already_have_an_account?: 'Already have an account?'
+  already_have_an_account?: 'Уже есть аккаунт?'
   booking_mailer:
     confirmation:
       subject: 'Подтверждение заказа'
