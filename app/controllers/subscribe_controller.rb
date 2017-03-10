@@ -3,8 +3,9 @@ class SubscribeController < ApplicationController
 
   def subscribe
     puts "#{subscribe_params}"
-    gibbon  = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
-    gibbon.lists(ENV['MAILCHIMP_LIST']).members.create(body: {email_address: subscribe_params, status: "subscribed"})
+    # gibbon  = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
+    # gibbon.lists(ENV['MAILCHIMP_LIST']).members.create(body: {email_address: subscribe_params, status: "subscribed"})
+    @lead = Lead.create({email: subscribe_params})
     head :ok
   end
 

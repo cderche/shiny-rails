@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125111644) do
+ActiveRecord::Schema.define(version: 20170310105238) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -89,6 +89,12 @@ ActiveRecord::Schema.define(version: 20170125111644) do
   create_table "frequencies", force: :cascade do |t|
     t.string   "name"
     t.decimal  "percent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leads", force: :cascade do |t|
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
