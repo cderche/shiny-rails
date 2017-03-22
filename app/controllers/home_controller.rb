@@ -1,7 +1,11 @@
 class HomeController < ApplicationController
+  layout 'frontend'
 
   def index
     # Do nothing
+  end
+
+  def home
   end
 
   def terms

@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   get '/terms', to: 'home#terms'
   get '/questions', to: 'home#questions'
 
-  root to: "home#index"
+  # root to: "home#index"
+  root to: "home#home"
 
   get '/book', to: 'bookings#new'
   get '/bookings', to: 'bookings#new'

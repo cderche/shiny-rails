@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%= stylesheet_link_tag "frontend", media: "all" %>
+        <%= csrf_meta_tags %>
+        <%= yield :head %>
+    </head>
+
+    <body>
+        <%= render partial: 'headers/frontend' %>
+        <h1>Layout: Frontend</h1>
+        <%= yield %>
+        <%= javascript_include_tag "frontend" %>
+    </body>
+</html>
