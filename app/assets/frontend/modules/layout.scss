@@ -75,7 +75,7 @@
     }
 }
 
-@mixin slideFromRight()
+@mixin slideFromTop()
 {
     [data-pages-direction="slideTop"] {
         display: block;
@@ -429,7 +429,7 @@ body {
             & > a {
                 position: relative;
                 text-transform: uppercase;
-                font-family: 'Montserrat';
+                font-family: 'Lato';
                 padding-right: 21px;
                 display: block;
                 span{
@@ -630,7 +630,7 @@ body {
                         a {
                             color: $color-black;
                             text-transform: uppercase;
-                            font-family: 'Montserrat';
+                            font-family: 'Lato';
                             @include header-link(0.5, 0.8, 1);
                             font-size: 11px;
                             line-height: 30px;
@@ -676,7 +676,7 @@ body {
                             color: $color-black;
                             @include header-link(0.5, 0.8, 1);
                             text-transform: uppercase;
-                            font-family: 'Montserrat';
+                            font-family: 'Lato';
                             line-height: 35px;
                             font-size: 11px;
                         }
@@ -708,7 +708,7 @@ body {
                             a {
                                 color: $color-black;
                                 text-transform: uppercase;
-                                font-family: 'Montserrat';
+                                font-family: 'Lato';
                                 @include header-link(0.5, 0.8, 1);
                                 font-size: 11px;
                                 line-height: 30px;
@@ -725,7 +725,7 @@ body {
                         color: $color-black;
                         font-size: 12px;
                         text-transform: uppercase;
-                        font-family: 'Montserrat';
+                        font-family: 'Lato';
                         margin: 0;
                         padding-bottom: 5px;
                     }

@@ -5,4 +5,4 @@
 //= require plugins/velocity/velocity.ui
 //= require plugins/jquery-unveil/jquery.unveil.min
 
-//= require pages.frontend.js
+//= require pages.frontend

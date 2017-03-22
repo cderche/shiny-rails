@@ -7,7 +7,8 @@
 */
 //@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
 /* To Load Hinted Fonts for Windows */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 html{
     font-size: 100%;
     -ms-text-size-adjust: 100%;
@@ -25,14 +26,14 @@ body{
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
 }
-/* Headings 
+/* Headings
 ------------------------------------
 */
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
     margin: 10px 0;
     font-family: 'Open Sans', sans-serif;
@@ -69,22 +70,22 @@ h5{
     font-size: 18px;
     line-height: 25.88px;
 }
-h3 small, 
-h4 small, 
+h3 small,
+h4 small,
 h5 small {
     font-weight: 300;
 }
-h1.block, 
-h2.block, 
-h3.block, 
-h4.block, 
-h5.block, 
+h1.block,
+h2.block,
+h3.block,
+h4.block,
+h5.block,
 h6.block {
     padding-bottom: 10px;
 }
 
 .block-title{
- font-family: 'Montserrat';
+ font-family: 'Lato';
  font-weight: 400;
  font-size: 15px;
  text-transform: uppercase;
@@ -126,7 +127,7 @@ dd, p {
     font-style: normal;
     white-space: normal;
 }
-small, 
+small,
 .small{
     line-height: 18px;
 }
@@ -211,7 +212,7 @@ hr{
   }
 }
 
-/* Font Sizes 
+/* Font Sizes
 ------------------------------------
 */
 
@@ -245,7 +246,7 @@ hr{
 }
 
 
-/* Misc 
+/* Misc
 ------------------------------------
 */
 
@@ -313,7 +314,7 @@ hr{
     background-color: $color-primary-lighter;
 }
 
-/* Complete 
+/* Complete
 ------------------------------------
 */
 .bg-complete {
@@ -332,7 +333,7 @@ hr{
     background-color: $color-complete-lighter;
 }
 
-/* Success 
+/* Success
 ------------------------------------
 */
 .bg-success {
@@ -370,7 +371,7 @@ hr{
     background-color: $color-info-lighter;
 }
 
-/* Danger 
+/* Danger
 ------------------------------------
 */
 .bg-danger {
@@ -412,7 +413,7 @@ hr{
 ------------------------------------
 */
 
-/* Menu 
+/* Menu
 ------------------------------------
 */
 .bg-menu-dark{
@@ -618,8 +619,8 @@ hr{
         letter-spacing: 0.03em;
     }
 }
-.font-montserrat{
-    font-family: 'Montserrat' !important;
+.font-Lato{
+    font-family: 'Lato' !important;
 }
 .font-georgia{
     font-family: Georgia !important;
@@ -680,7 +681,7 @@ hr{
 */
 
 @media (max-width: 1400px) {
-    //Bootstrap over-write 
+    //Bootstrap over-write
     .jumbotron h1{
         line-height: 55px;
     }
@@ -712,4 +713,3 @@ hr{
     }
 
 }
-
