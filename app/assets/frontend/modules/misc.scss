@@ -1,47 +1,8 @@
 /*------------------------------------------------------------------
-[19. Misc : Helper Classes]
+[28. Misc : Helper Classes]
 */
 .custom{
     height:150px;
-}
-.count-down h1{
-  font-size: 61px;
-}
-/* Lazy Images */
-.lazy{
-  opacity: 0;
-  @include transition(opacity .3s ease);
-  &.loaded{
-    opacity: 1;
-  }
-}
-.bg-overlay{
-  @include transition(opacity .3s ease);
-}
-/* Content Traingle */
-.content-triangle{
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-left: 70px solid transparent;
-  border-bottom: 100px solid white;
-  &:before{
-    content: '';
-    position: absolute;
-    left: -100%;
-    width: 100vw;
-    height: 100px;
-    background: white;
-  }
-  &:after{
-  content: '';
-  position: absolute;
-  right: 70px;
-  width: 100vw;
-  height: 100px;
-  background: white;
-  }
 }
 
 .icon-list{
@@ -60,13 +21,12 @@
     }
   }
 }
-
-/* Thumbnail for icons and profile pics 
+/* Thumbnail for icons and profile pics
 ------------------------------------
 */
 .thumbnail-wrapper{
     display: inline-block;
-    overflow: hidden;    
+    overflow: hidden;
     float:left;
     &.circular{
        @include border-radius(50%);
@@ -77,58 +37,58 @@
         &.d16{
             @include square(16+4*1px);
               & > *{
-                line-height: 12px 
-             }           
+                line-height: 12px
+             }
         }
         &.d24{
             @include square(24+4*1px);
              & > *{
-                line-height: 24px 
+                line-height: 24px
              }
-        }           
+        }
         &.d32{
             @include square(32+4*1px);
              & > *{
-                line-height: 28px 
-             }            
+                line-height: 28px
+             }
         }
         &.d48{
             @include square(48+4*1px);
              & > *{
-                line-height: 44px 
-             }            
+                line-height: 44px
+             }
         }
     }
     &.d16{
         @include square(16px);
          & > *{
-            line-height: 16px 
+            line-height: 16px
          }
     }
     &.d24{
         @include square(24px);
          & > *{
-            line-height: 24px 
+            line-height: 24px
          }
-    }    
+    }
     &.d32{
         @include square(32px);
          & > *{
-            line-height: 32px 
+            line-height: 32px
          }
     }
     &.d39{
         @include square(39px);
          & > *{
-            line-height: 39px 
+            line-height: 39px
          }
     }
     &.d48{
         @include square(48px);
          & > *{
-            line-height: 50px 
-         }        
-    } 
+            line-height: 50px
+         }
+    }
     & > *{
         vertical-align: middle;
         width: 100%;
@@ -194,15 +154,15 @@
   background: transparent;
   border: none;
 }
-/* Scroll 
+/* Scroll
 ------------------------------------
 */
 .scrollable {
-	overflow-y: auto;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Overides 
+/* Overides
 ------------------------------------
 */
 .no-padding {
@@ -227,15 +187,15 @@
 }
 
 .inherit-size{
-	width:inherit;
-	height:inherit
+  width:inherit;
+  height:inherit
 }
 .inherit-height{
-	height:inherit;
+  height:inherit;
 }
 
 .image-responsive-height{
-	width: 100%;
+  width: 100%;
 }
 .image-responsive-width{
   height: 100%;
@@ -257,10 +217,6 @@
     position: fixed !important;
     top: auto !important;
 }
-.pull-bottom-fixed{
-  position: fixed;
-  bottom: 0;
-}
 .top-left {
     position: absolute !important;
     top: 0;
@@ -272,7 +228,7 @@
     right: 0;
 }
 .bottom-left {
-    position: absolute !important; 
+    position: absolute !important;
     bottom: 1px;
     left: 0;
 }
@@ -290,15 +246,16 @@
   position:absolute !important;
   top: 0;
 }
-.pull-center{
+
+.pull-center {
     position: absolute;
     left: 0;
     right: 0;
+    width: 100%;
+    display: table;
+    z-index: 1;
 }
-.pull-center-inner{
-  display: table;
-  margin: 0 auto;
-}
+
 .cursor{
   cursor: pointer;
 }
@@ -306,54 +263,60 @@
   overflow-x: hidden !important;
 }
 
-/* Generic Padding Helpers 
+/* Generic Padding Helpers
 ------------------------------------
 */
 
+@mixin generate-paddings-options($n, $j:0){
+  @if $j <= $n {
+    @for $i from $j through $n {
+      $step : $i*5;
+
+      .p-t-#{$step} {
+        padding-top: ($step*1px) !important;
+      }
+      .p-r-#{$step} {
+        padding-right: ($step*1px) !important;
+      }
+       .p-l-#{$step} {
+        padding-left: ($step*1px) !important;
+      }
+       .p-b-#{$step} {
+        padding-bottom: ($step*1px) !important;
+      }
+      .padding-#{$step} {
+        padding: ($step*1px) !important;
+      }
+    }
+  }
+}
+
 @include generate-paddings-options(20);
 
-@mixin generate-paddings-options($n, $i: 1) when ($i =< $n)
-{
-  $step : $i*5;	
-  .p-t-${step} {
-    padding-top: ($step*1px) !important;
-  }
-  .p-r-${step} {
-    padding-right: ($step*1px) !important;
-  }
-   .p-l-${step} {
-    padding-left: ($step*1px) !important;
-  }
-   .p-b-${step} {
-    padding-bottom: ($step*1px) !important;
-  }
-  .padding-${step} {
-    padding: ($step*1px) !important;
-  }
-  @include generate-paddings-options($n, ($i + 1));
-}
 /* Generic Margin Helpers
 ------------------------------------
  */
-@include generate-margin-options(20);
-
-@mixin generate-margin-options($n, $i: 0) when ($i =< $n)
-{
-  $step : $i*5;	
-  .m-t-${step} {
-    margin-top: ($step*1px);
+@mixin generate-margin-options($n, $j: 0) {
+  @if $j <= $n {
+    @for $i from $j through $n {
+      $step : $i*5;
+      .m-t-#{$step} {
+        margin-top: ($step*1px);
+      }
+      .m-r-#{$step} {
+        margin-right: ($step*1px);
+      }
+       .m-l-#{$step} {
+        margin-left: ($step*1px);
+      }
+       .m-b-#{$step} {
+        margin-bottom: ($step*1px);
+      }
+    }
   }
-  .m-r-${step} {
-    margin-right: ($step*1px);
-  }
-   .m-l-${step} {
-    margin-left: ($step*1px);
-  }
-   .m-b-${step} {
-    margin-bottom: ($step*1px);
-  }
-  @include generate-margin-options($n, ($i + 1));
 }
+
+@include generate-margin-options(20);
 
 .full-height{
   height: 100% !important;
@@ -361,23 +324,20 @@
 .full-width{
   width: 100%;
 }
-.full-vh{
-  height: 100vh;
-}
 .hide {
   display: none;
 }
 .inline{
-	display:inline-block !important;
+  display:inline-block !important;
 }
 .block{
   display: block;
 }
 .b-blank{
-	border-color:#000;
+  border-color:#000;
 }
 
-/* Border Helpers 
+/* Border Helpers
 ------------------------------------
 */
 .b-a,
@@ -390,7 +350,7 @@
 }
 
 .b-r{
-	border-right-width:1px;
+  border-right-width:1px;
 }
 .b-l{
   border-left-width:1px;
@@ -402,7 +362,7 @@
   border-bottom-width:1px;
 }
 .b-a{
-	border-width:1px;
+  border-width:1px;
 }
 
 .b-dashed{
@@ -414,16 +374,13 @@
 }
 
 .b-transparent{
-	border-color:rgba(0, 0, 0, 0.4);	
+  border-color:rgba(0, 0, 0, 0.4);
 }
 .b-transparent-white{
-	border-color:rgba(255, 255, 255, 0.3);
+  border-color:rgba(255, 255, 255, 0.3);
 }
 .b-grey{
-	border-color:$color-master-light;	
-}
-.b-grey-light{
-  border-color:rgba(0, 0, 0, 0.07);  
+  border-color:$color-master-light;
 }
 .b-white{
   border-color:#fff;
@@ -463,9 +420,9 @@
 }
 /** Profile Wrappers **/
 .profile-img-wrapper{
-	display:inline-block;
-	float:left;
-	border-radius: 100px 100px 100px 100px;
+  display:inline-block;
+  float:left;
+  border-radius: 100px 100px 100px 100px;
   display: inline-block;
   height: 35px;
   overflow: hidden;
@@ -479,11 +436,11 @@
     width: 68px;
 }
 .profile-img-wrapper.with-left-space-custom{
-	margin-left:7px;
+  margin-left:7px;
 }
 
 .relative{
-  position: relative !important;
+  position: relative;
 }
 
 /* Demo Purposes */
@@ -503,7 +460,7 @@
     margin-right: auto;
     width: 360px;
 }
-.error-container{  
+.error-container{
     margin-top: -100px;
     margin-left: auto;
     margin-right: auto;
@@ -563,7 +520,7 @@
   &:before{
     content: "";
     display: block;
-    padding-top: calc(~'50% - '$layout-gutter-sm);  /* initial ratio of 1:1*/
+    padding-top: calc(50% - #{$layout-gutter-sm});  /* initial ratio of 1:1*/
   }
   & > div{
     position:  absolute;
@@ -581,7 +538,7 @@
   &:before{
     content: "";
     display: block;
-    padding-top: calc(~'150% - '$layout-gutter-sm);  /* initial ratio of 1:1*/
+    padding-top: calc(150% - #{$layout-gutter-sm});  /* initial ratio of 1:1*/
   }
   & > div{
     position:  absolute;
@@ -599,7 +556,7 @@
   &:before{
     content: "";
     display: block;
-    padding-top: calc(~'75% - '$layout-gutter-sm);  /* initial ratio of 1:1*/
+    padding-top: calc(75% - #{$layout-gutter-sm});  /* initial ratio of 1:1*/
   }
   & > div{
     position:  absolute;
@@ -617,7 +574,7 @@
   &:before{
     content: "";
     display: block;
-    padding-top: calc(~'125% - '$layout-gutter-sm);  /* initial ratio of 1:1*/
+    padding-top: calc(125% - #{$layout-gutter-sm});  /* initial ratio of 1:1*/
   }
   & > div{
     position:  absolute;
@@ -639,28 +596,16 @@
 }
 /* vertical alignment styles */
 .col-top {
-    vertical-align:top;
+    vertical-align:top !important;
 }
 .col-middle {
-    vertical-align:middle;
+    vertical-align:middle !important;
 }
 .col-bottom {
-    vertical-align:bottom;
+    vertical-align:bottom !important;
 }
 
-.bg-size-reset{
-  background-size: initial;
-}
-.bg-size-cover{
-  background-size: cover;
-}
-.bg-position-top-center{
-  background-position: top center;
-}
-.bg-position-center{
-  background-position: top center;
-}
-/* columns of same height styles 
+/* columns of same height styles
 ------------------------------------
 */
 .container-xs-height {
@@ -677,9 +622,6 @@
 .col-xs-height {
     display:table-cell;
     float:none;
-}
-section.last:before{
-  content: '';
 }
 @media (min-width: 768px) {
     .container-sm-height {
@@ -731,74 +673,4 @@ section.last:before{
         display:table-cell !important;
         float:none !important;
     }
-}
-
-/* Z indexes */
-.z-index-1{
-  z-index: 0;
-}
-.z-index-1{
-  z-index: 1;
-}
-.z-index-2{
-  z-index: 2;
-}
-.z-index-3{
-  z-index: 3;
-}
-.z-index-10{
-  z-index: 10;
-}
-
-.gradient-overlay:before{
-  background-image: url("../../assets/images/linear_gradient.png");
-    background-repeat: repeat-x;
-    background-size: contain;
-    content: " ";
-    height: 70%;
-    left: 0;
-    opacity: 0.07;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-}
-.top-visible-quater{
-  position: absolute;
-  top: -20%;
-}
-.top-visible-half{
-  position: absolute;
-  top: -50%;
-}
-.top-visible-three-quater{
-  position: absolute;
-  top: -80%;
-}
-.bottom-visible-quater{
-  position: absolute;
-  bottom: -20%;
-}
-.bottom-visible-half{
-  position: absolute;
-  bottom: -50%;
-}
-.bottom-visible-three-quater{
-  position: absolute;
-  bottom: -80%;
-}
-.right-visible-quater{
-  position: absolute;
-  right: -20%;
-}
-.right-visible-half{
-  position: absolute;
-  right: -50%;
-}
-.right-visible-three-quater{
-  position: absolute;
-  right: -80%;
-}
-.content-mask-md{
-  height: 350px;
 }

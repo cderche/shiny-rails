@@ -30,6 +30,8 @@ Generated From LESS
 
 Converted to SCSS
 -------------------------------------------------------------------*/
+// Import theme
+@import "themes/default/theme";
 
 // Mixins tools
 @import "mixins";
@@ -39,11 +41,3 @@ Converted to SCSS
 
 // Responsive Util
 @import "responsive";
-
-// Change your theme here
-$theme-name:"default";
-
-.theme {
-    @import "themes/default/theme";
-}
-@include theme();

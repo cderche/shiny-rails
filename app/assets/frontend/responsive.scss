@@ -76,7 +76,7 @@
 // because they stack up)
 @media (min-width:1200px){
     .row-same-height{
-      overflow: hidden; 
+      overflow: hidden;
       & > [class*="col-lg"]{
         margin-bottom: -99999px;
         padding-bottom: 99999px;
@@ -85,50 +85,48 @@
 }
 
 /* Margin Helps : MD : 1024 - 768 */
-@media (max-width:1024px){
-  @include generate-paddings-options-md(4);
-
-  @mixin generate-paddings-options-md($n, $i: 0) when ($i =< $n)
-{
-    $step : $i*5; 
-    .md-p-t-${step} {
+@media (max-width:1024px) {
+  @mixin generate-paddings-options-md($n) {
+  @for $i from 1 through $n {
+    $step: $i*5;
+    .md-p-t-#{$step} {
       padding-top: ($step*1px) !important;
     }
-    .md-p-r-${step} {
+    .md-p-r-#{$step} {
       padding-right: ($step*1px) !important;
     }
-     .md-p-l-${step} {
+    .md-p-l-#{$step} {
       padding-left: ($step*1px) !important;
     }
-     .md-p-b-${step} {
+    .md-p-b-#{$step} {
       padding-bottom: ($step*1px) !important;
     }
-    .md-padding-${step} {
-      padding: ($step*1px) !important;
-    }
-    @include generate-paddings-options-md($n, ($i + 1));
   }
+}
 
-  @include generate-margin-options-md(4);
+@include generate-paddings-options-md(4);
 
-  @mixin generate-margin-options-md($n, $i: 1) when ($i =< $n)
-{
-    $step : $i*5; 
-    .md-m-t-${step} {
+@mixin generate-margins-options-md($n) {
+  @for $i from 1 through $n {
+    $step: $i*5;
+    .md-m-t-#{$step} {
       margin-top: ($step*1px) !important;
     }
-    .md-m-r-${step} {
+    .md-m-r-#{$step} {
       margin-right: ($step*1px) !important;
     }
-     .md-m-l-${step} {
+    .md-m-l-#{$step} {
       margin-left: ($step*1px) !important;
     }
-     .md-m-b-${step} {
+    .md-m-b-#{$step} {
       margin-bottom: ($step*1px) !important;
     }
-    @include generate-margin-options-md($n, ($i + 1));
   }
-  .md-no-margin {
+}
+
+@include generate-margins-options-md(4);
+
+.md-no-margin {
     margin: 0px !important;
   }
   .md-no-padding {
@@ -163,7 +161,7 @@
             }
             &.active{
               background-color:$color-black;
-              color: $color-white; 
+              color: $color-white;
             }
           }
         &.mobile-dark{
@@ -198,7 +196,7 @@
             }
           }
         }
-      }   
+      }
     }
     .menu > li > a{
       &:before, & > span:before{
@@ -319,48 +317,60 @@
       }
   }
 
+  @mixin generate-paddings-options-sm($n) {
+    @for $i from 1 through $n {
+      $step: $i*5;
+      .sm-p-t-#{$step} {
+        padding-top: ($step*1px) !important;
+      }
+      .sm-p-r-#{$step} {
+        padding-right: ($step*1px) !important;
+      }
+      .sm-p-l-#{$step} {
+        padding-left: ($step*1px) !important;
+      }
+      .sm-p-b-#{$step} {
+        padding-bottom: ($step*1px) !important;
+      }
+    }
+  }
+
   @include generate-paddings-options-sm(6);
 
-  @mixin generate-paddings-options-sm($n, $i: 0) when ($i =< $n)
-{
-    $step : $i*5; 
-    .sm-p-t-${step} {
-      padding-top: ($step*1px) !important;
+  @mixin generate-margins-options-sm($n) {
+    @for $i from 1 through $n {
+      $step: $i*5;
+      .sm-m-t-#{$step} {
+        margin-top: ($step*1px) !important;
+      }
+      .sm-m-r-#{$step} {
+        margin-right: ($step*1px) !important;
+      }
+      .sm-m-l-#{$step} {
+        margin-left: ($step*1px) !important;
+      }
+      .sm-m-b-#{$step} {
+        margin-bottom: ($step*1px) !important;
+      }
     }
-    .sm-p-r-${step} {
-      padding-right: ($step*1px) !important;
-    }
-     .sm-p-l-${step} {
-      padding-left: ($step*1px) !important;
-    }
-     .sm-p-b-${step} {
-      padding-bottom: ($step*1px) !important;
-    }
-    .sm-padding-${step} {
-      padding: ($step*1px) !important;
-    }
-    @include generate-paddings-options-sm($n, ($i + 1));
   }
 
-  @include generate-margin-options-sm(6);
+  @include generate-margins-options-sm(6);
 
-  @mixin generate-margin-options-sm($n, $i: 1) when ($i =< $n)
-{
-    $step : $i*5; 
-    .sm-m-t-${step} {
-      margin-top: ($step*1px) !important;
+  .sm-no-margin {
+      margin: 0px !important;
     }
-    .sm-m-r-${step} {
-      margin-right: ($step*1px) !important;
+    .sm-no-padding {
+      padding: 0px !important;
     }
-     .sm-m-l-${step} {
-      margin-left: ($step*1px) !important;
+    .sm-image-responsive-width{
+      height: 100%;
+      width: auto;
     }
-     .sm-m-b-${step} {
-      margin-bottom: ($step*1px) !important;
+    .sm-image-responsive-height{
+      width: 100%;
+      height: auto;
     }
-    @include generate-margin-options-sm($n, ($i + 1));
-  }
   .sm-no-margin {
     margin: 0px !important;
   }
@@ -381,7 +391,7 @@
   }
   .sm-pull-left{
   float: left !important;
-  } 
+  }
   .sm-pull-reset{
     float: none !important;
   }
@@ -429,7 +439,7 @@
   .sm-no-border{
     border-width: 0;
   }
-  
+
   .sm-b-r,
   .sm-b-l,
   .sm-b-t,
@@ -458,7 +468,7 @@
 
 @media (min-width:992px){
     .row-same-height{
-      overflow: hidden; 
+      overflow: hidden;
       & > [class*="col-md"]{
         margin-bottom: -99999px;
         padding-bottom: 99999px;
@@ -479,7 +489,7 @@
 
 @media (min-width:768px){
     .row-same-height{
-      overflow: hidden; 
+      overflow: hidden;
       & > [class*="col-sm"]{
         margin-bottom: -99999px;
         padding-bottom: 99999px;
@@ -498,7 +508,7 @@
   .menu-content{
       width: 270px;
       overflow-y: auto;
-  }    
+  }
   .logo{
       display: inline-block;
   }
@@ -526,11 +536,11 @@
         h3{
           font-size: 2vh;
           line-height: 4vh;
-        }  
+        }
         h4{
           font-size: 3vh;
           line-height: 4.5vh;
-        }   
+        }
         h5{
           font-size: 1.5vh;
           line-height: 1.8vh;
@@ -541,48 +551,60 @@
 }
 
 @media (max-width: 480px) {
+  @mixin generate-paddings-options-xs($n) {
+    @for $i from 1 through $n {
+      $step: $i*5;
+      .xs-p-t-#{$step} {
+        padding-top: ($step*1px) !important;
+      }
+      .xs-p-r-#{$step} {
+        padding-right: ($step*1px) !important;
+      }
+      .xs-p-l-#{$step} {
+        padding-left: ($step*1px) !important;
+      }
+      .xs-p-b-#{$step} {
+        padding-bottom: ($step*1px) !important;
+      }
+    }
+  }
+
   @include generate-paddings-options-xs(4);
 
-  @mixin generate-paddings-options-xs($n, $i: 0) when ($i =< $n)
-{
-    $step : $i*5; 
-    .xs-p-t-${step} {
-      padding-top: ($step*1px) !important;
+  @mixin generate-margins-options-xs($n) {
+    @for $i from 1 through $n {
+      $step: $i*5;
+      .xs-m-t-#{$step} {
+        margin-top: ($step*1px) !important;
+      }
+      .xs-m-r-#{$step} {
+        margin-right: ($step*1px) !important;
+      }
+      .xs-m-l-#{$step} {
+        margin-left: ($step*1px) !important;
+      }
+      .xs-m-b-#{$step} {
+        margin-bottom: ($step*1px) !important;
+      }
     }
-    .xs-p-r-${step} {
-      padding-right: ($step*1px) !important;
-    }
-     .xs-p-l-${step} {
-      padding-left: ($step*1px) !important;
-    }
-     .xs-p-b-${step} {
-      padding-bottom: ($step*1px) !important;
-    }
-    .xs-padding-${step} {
-      padding: ($step*1px) !important;
-    }
-    @include generate-paddings-options-xs($n, ($i + 1));
   }
 
-  @include generate-margin-options-xs(8);
+  @include generate-margins-options-xs(8);
 
-  @mixin generate-margin-options-xs($n, $i: 1) when ($i =< $n)
-{
-    $step : $i*5; 
-    .xs-m-t-${step} {
-      margin-top: ($step*1px) !important;
+  .xs-no-margin {
+      margin: 0px !important;
     }
-    .xs-m-r-${step} {
-      margin-right: ($step*1px) !important;
+    .xs-no-padding {
+      padding: 0px !important;
     }
-     .xs-m-l-${step} {
-      margin-left: ($step*1px) !important;
+    .xs-image-responsive-width{
+      height: 100%;
+      width: auto;
     }
-     .xs-m-b-${step} {
-      margin-bottom: ($step*1px) !important;
+    .xs-image-responsive-height{
+      width: 100%;
+      height: auto;
     }
-    @include generate-margin-options-xs($n, ($i + 1));
-  }
   .xs-no-margin {
     margin: 0px !important;
   }
@@ -603,7 +625,7 @@
   }
   .xs-pull-left{
   float: left !important;
-  } 
+  }
   .xs-pull-reset{
     float: none !important;
   }
@@ -646,7 +668,7 @@
   .xs-no-border{
     border-width: 0;
   }
-  
+
   .xs-b-r,
   .xs-b-l,
   .xs-b-t,
@@ -682,7 +704,7 @@
   .xs-relative{
     position: relative !important;
   }
-  
+
   .error-page{
       padding: 15px;
       .error-container{
@@ -707,4 +729,3 @@
 
 
 }
-

@@ -1,13 +1,67 @@
 /*------------------------------------------------------------------
-[7. Buttons]
+[6. Buttons]
 */
 
 /*
 [Buttons Base Styles]
 */
 
+// Mixins
+// --------------------------------------------------
+
+// Creates contextual buttons
+@mixin button($text-color, $background-color, $border-color) {
+    &,
+    &:focus{
+    color: $text-color;
+    background-color: $background-color;
+    border-color: $background-color;
+    }
+
+  &.active,
+  &:active,
+  &.active:focus,
+  &:active:focus,
+  &:active:hover,
+  .open .dropdown-toggle#{&} {
+    background-color: mix($background-color, $color-black, $mix-percentage-dark);
+    border-color: mix($background-color, $color-black, $mix-percentage-dark);
+    color:$text-color;
+  }
+  &.hover,
+  &:hover,
+  .open .dropdown-toggle#{&}
+  {
+    background-color: mix($background-color, $color-white, $mix-percentage-light);
+    border-color: mix($background-color, $color-white, $mix-percentage-light);
+    color: $text-color;
+  }
+    &.active:hover{
+    background: mix($background-color, #000, 86%) ;
+    border-color: mix($background-color, #000, 86%) ;
+    }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: $background-color;
+              border-color: $border-color;
+        }
+      }
+
+    .badge {
+        color: $background-color;
+        background-color: $text-color;
+    }
+}
+
 .btn {
-    font-family: "Open Sans", sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 14px;
     font-weight: normal;
     letter-spacing: 0.01em;
@@ -34,16 +88,16 @@
     transition: color 0.1s linear 0s,background-color 0.1s linear 0s,opacity 0.2s linear 0s !important;
     &:hover{
         background-color: #fafafa;
-        border: 1px solid fade($color-master,27%);
+        border: 1px solid fade-out($color-master,.73);
     }
     &.active{
         border-color: $color-master-light;
         background: #fff;
     }
-    &:focus, 
-    &:active:focus, 
-    &.active:focus { 
-        outline: none !important; 
+    &:focus,
+    &:active:focus,
+    &.active:focus {
+        outline: none !important;
         outline-style: none;
     }
     .caret {
@@ -69,9 +123,7 @@ button:focus{
 Alternate buttons
 --------------------------------------------------
 */
-.btn-black {
-    @include button($color-white, $color-black, $color-black);
-}
+
 .btn-primary {
     @include button($color-white, $color-primary, $color-primary);
 }
@@ -103,7 +155,7 @@ Alternate buttons
   }
   &.hover, &:hover{
     background-color: $color-master-lightest;
-    border-color: fade($color-master,27%);
+    border-color: fade-out($color-master,.73);
     color: $color-master-darker;
   }
   &.active:hover{
@@ -111,7 +163,7 @@ Alternate buttons
   }
 }
 
-// Link button 
+// Link button
 .btn-link{
     color: #5e5e5e;
     background-color: transparent;
@@ -123,7 +175,25 @@ Alternate buttons
         outline: none;
     }
 }
-
+//File Input Btn
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+}
 /*
 Button Sizes
 --------------------------------------------------
@@ -156,109 +226,13 @@ Rounded buttons
 .btn-rounded{
     border-radius: 100px;
 }
-/*
-Bordered buttons
---------------------------------------------------
-*/
-.btn-bordered{
-    background-color: transparent;
-    border-width: 2px;
-    border-color: $color-white;
-    color: $color-white;
-    &:hover{
-        background-color: $color-white;
-        border: 2px solid $color-white;
-        color: $color-black;
-    }
-    &.btn-primary {
-        background-color: transparent;
-        border-color: $color-primary;
-        color: $color-primary;
-        &:hover{
-            background-color: $color-primary;
-            color: $color-white;
-        }
-    }
-    &.btn-success {
-        background-color: transparent;
-        border-color: $color-success;
-        color: $color-success;
 
-        &:hover{
-            background-color: $color-success;
-            color: $color-white;
-
-        }
-    }
-    &.btn-complete{
-        background-color: transparent;
-        border-color: $color-complete;
-        color: $color-complete;
-
-        &:hover{
-            background-color: $color-complete;
-            color: $color-white;
-
-        }
-    }
-    &.btn-info {
-        background-color: transparent;
-        border-color: $color-info;
-        color: $color-info;
-
-        &:hover{
-            background-color: $color-info;
-            color: $color-white;
-
-        }
-    }
-    &.btn-warning {
-        background-color: transparent;
-        border-color: $color-warning;
-        color: $color-warning;
-
-        &:hover{
-            background-color: $color-warning;
-            color: $color-white;
-
-        }
-    }
-    &.btn-danger {
-        background-color: transparent;
-        border-color: $color-danger;
-        color: $color-danger;
-        
-        &:hover{
-            background-color: $color-danger;
-            color: $color-white;
-
-        }
-    }
-    &.btn-black {
-        background-color: transparent;
-        border-color: $color-black;
-        color: $color-black;
-        &:hover{
-            background-color: $color-black;
-            color: $color-white;
-        }
-    }
-    &.btn-white {
-        background-color: transparent;
-        border-color: $color-white;
-        color: $color-white;
-        &:hover{
-            background-color: $color-white;
-            color: $color-black;
-        }
-    }
-}
 /*
  Dropdown menus
 --------------------------------------------------
 */
 .open{
-    .btn-group& .dropdown-toggle,
+    .btn-group#{&} .dropdown-toggle,
     & .dropdown-toggle,
     &.dropdown-default .dropdown-toggle{
         box-shadow: none;
@@ -307,7 +281,7 @@ Bordered buttons
         }
         & > .btn-primary + .dropdown-menu:after{
             background-color: $color-primary;
-        } 
+        }
         & > .btn-success + .dropdown-menu:after{
             background-color: $color-success;
         }
@@ -452,14 +426,14 @@ Bordered buttons
     float: left;
     list-style: none;
     text-shadow: none;
-    @include box-shadow(0px 0px 5px fade($color-master, 20%));
+    @include box-shadow(0px 0px 5px fade-out($color-master, .8));
     border: none;
     border-radius: 3px;
     font-size: 13px;
     margin: 0;
     background: $color-master-lightest;
     min-width: 50px;
-    z-index: $zIndex-dropdown;
+    z-index: $zIndex-dropdown !important;
     .divider {
         background-color: $color-master-light;
         height: 1px;
@@ -633,65 +607,10 @@ Misc buttons
 
 .pager .disabled{
     > button,
-    > button:hover, 
-    > button:focus, 
+    > button:hover,
+    > button:focus,
     > span{
         cursor: not-allowed;
         opacity: .5;
-    }
-}
-
-// Mixins
-// --------------------------------------------------
-
-// Creates contextual buttons
-@mixin button($text-color; $background-color; $border-color)
-{
-    &,
-    &:focus{
-    color: $text-color;
-    background-color: $background-color;
-    border-color: $background-color;
-    }
-
-  &.active,
-  &:active,
-  &.active:focus,
-  &:active:focus,
-  &:active:hover,
-  .open .dropdown-toggle& {
-    background-color: mix($background-color, $color-black, $mix-percentage-dark);
-    border-color: mix($background-color, $color-black, $mix-percentage-dark);
-    color:$text-color;
-  }
-  &.hover,
-  &:hover,
-  .open .dropdown-toggle&
-  {
-    background-color: mix($background-color, $color-white, $mix-percentage-light);
-    border-color: mix($background-color, $color-white, $mix-percentage-light);
-    color: $text-color;
-  }
-    &.active:hover{
-    background: mix($background-color, #000, 86%) ;
-    border-color: mix($background-color, #000, 86%) ;
-    }
-
-      &.disabled,
-      &[disabled],
-      fieldset[disabled] & {
-        &,
-        &:hover,
-        &:focus,
-        &:active,
-        &.active {
-          background-color: $background-color;
-              border-color: $border-color;
-        }
-      }
-
-    .badge {
-        color: $background-color;
-        background-color: $text-color;
     }
 }

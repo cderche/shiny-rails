@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------
-[12. Tabs & Accordians]
+[11. Tabs & Accordians]
 */
 
 /* Tabs
@@ -25,8 +25,7 @@
       margin-right: 0;
       font-family: 'Montserrat';
       font-weight: 400;
-      color: fade($color-master,
-      70%);
+      color: fade-out($color-master,.3);
       font-size: 12px;
       min-width: 70px;
       text-transform: uppercase;
@@ -48,7 +47,7 @@
     & > .tab-pane {
       &.slide-left,
       &.slide-right {
-        .transition(all .3s ease) !important;
+        @include transition(all .3s ease);
         &.sliding {
           opacity: 0 !important;
         }
@@ -58,10 +57,10 @@
         }
       }
       &.slide-left.sliding {
-        .translate3d(10%, 0, 0) !important;
+        @include translate3d(10%, 0, 0);
       }
       &.slide-right.sliding {
-        .translate3d(-10%, 0, 0) !important;
+        @include translate3d(-10%, 0, 0);
       }
     }
   }
@@ -89,7 +88,7 @@
   }
 }
 
-/* Tabs : Simple 
+/* Tabs : Simple
 ------------------------------------
 */
 
@@ -113,22 +112,22 @@
       height: 0px;
       content: '';
       z-index: 125;
-      .nav-tabs-primary& {
+      .nav-tabs-primary#{&} {
         background-color: $color-primary;
       }
-      .nav-tabs-success& {
+      .nav-tabs-success#{&} {
         background-color: $color-success;
       }
-      .nav-tabs-complete& {
+      .nav-tabs-complete#{&} {
         background-color: $color-complete;
       }
-      .nav-tabs-danger& {
+      .nav-tabs-danger#{&} {
         background-color: $color-danger;
       }
-      .nav-tabs-warning& {
+      .nav-tabs-warning#{&} {
         background-color: $color-warning;
       }
-      .nav-tabs-info& {
+      .nav-tabs-info#{&} {
         background-color: $color-info;
       }
     }
@@ -164,7 +163,7 @@
       &.active,
       &:hover {
         &:after {
-          width: 1px;
+          width: 3px;
         }
       }
     }
@@ -173,7 +172,7 @@
   }
   &.nav-tabs-left {
     & > li:after {
-      right: -1px;
+      right: 0;
     }
   }
   &.nav-tabs-right {
@@ -311,8 +310,7 @@
   }
 }
 
-
-/* Tabs : Fill-up 
+/* Tabs : Fill-up
 ------------------------------------
 */
 
@@ -330,7 +328,7 @@
         background: none repeat scroll 0 0 $color-success;
         border: 1px solid $color-success;
         content: "";
-        height: calc(~'100% + 1px');
+        height: calc(100% + 1px);
         left: 0;
         position: absolute;
         top: 0;
@@ -344,27 +342,27 @@
         transition: transform 0.3s ease 0s;
         width: 100%;
         z-index: -1;
-        .nav-tabs-primary& {
+        .nav-tabs-primary#{&} {
           background: none repeat scroll 0 0 $color-primary;
           border: 1px solid $color-primary;
         }
-        .nav-tabs-success& {
+        .nav-tabs-success#{&} {
           background: none repeat scroll 0 0 $color-success;
           border: 1px solid $color-success;
         }
-        .nav-tabs-complete& {
+        .nav-tabs-complete#{&} {
           background: none repeat scroll 0 0 $color-complete;
           border: 1px solid $color-complete;
         }
-        .nav-tabs-warning& {
+        .nav-tabs-warning#{&} {
           background: none repeat scroll 0 0 $color-warning;
           border: 1px solid $color-warning;
         }
-        .nav-tabs-danger& {
+        .nav-tabs-danger#{&} {
           background: none repeat scroll 0 0 $color-danger;
           border: 1px solid $color-danger;
         }
-        .nav-tabs-info& {
+        .nav-tabs-info#{&} {
           background: none repeat scroll 0 0 $color-info;
           border: 1px solid $color-info;
         }
@@ -421,7 +419,7 @@
     & > li {
       & > a {
         &:after {
-          width: calc(~'100% + 1px');
+          width: calc(100% + 1px);
           height: 100%;
         }
       }
@@ -497,9 +495,9 @@
       width: 100%;
       position: relative;
       bottom: 3px;
-      z-index: 120;    
+      z-index: 120;
       content: "";
-      clear: both;    
+      clear: both;
     }
     &  ~ .tab-content{
       position: relative;
@@ -510,6 +508,10 @@
 .nav-tabs-header ~ .tab-content{
   overflow: hidden;
   padding: 15px;
+}
+.nav-tab-dropdown .cs-select{
+  width: 100% !important;
+  max-width: 100%;
 }
 
 /* Panel Groups
@@ -551,12 +553,11 @@
           color: $color-master;
         }
         &.collapsed {
-          color: fade($color-master,
-          70%);
+          color: 1px solid fade-out($color-master,.3);
           opacity: 1;
           &:after {
             content: "\f055";
-            color: fade($color-master, 70%);
+            color: fade-out($color-master,.3);
           }
         }
       }
