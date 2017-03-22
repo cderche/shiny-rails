@@ -228,6 +228,104 @@ Rounded buttons
 }
 
 /*
+Bordered buttons
+--------------------------------------------------
+*/
+.btn-bordered{
+    background-color: transparent;
+    border-width: 2px;
+    border-color: $color-white;
+    color: $color-white;
+    &:hover{
+        background-color: $color-white;
+        border: 2px solid $color-white;
+        color: $color-black;
+    }
+    &.btn-primary {
+        background-color: transparent;
+        border-color: $color-primary;
+        color: $color-primary;
+        &:hover{
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
+    &.btn-success {
+        background-color: transparent;
+        border-color: $color-success;
+        color: $color-success;
+
+        &:hover{
+            background-color: $color-success;
+            color: $color-white;
+
+        }
+    }
+    &.btn-complete{
+        background-color: transparent;
+        border-color: $color-complete;
+        color: $color-complete;
+
+        &:hover{
+            background-color: $color-complete;
+            color: $color-white;
+
+        }
+    }
+    &.btn-info {
+        background-color: transparent;
+        border-color: $color-info;
+        color: $color-info;
+
+        &:hover{
+            background-color: $color-info;
+            color: $color-white;
+
+        }
+    }
+    &.btn-warning {
+        background-color: transparent;
+        border-color: $color-warning;
+        color: $color-warning;
+
+        &:hover{
+            background-color: $color-warning;
+            color: $color-white;
+
+        }
+    }
+    &.btn-danger {
+        background-color: transparent;
+        border-color: $color-danger;
+        color: $color-danger;
+
+        &:hover{
+            background-color: $color-danger;
+            color: $color-white;
+
+        }
+    }
+    &.btn-black {
+        background-color: transparent;
+        border-color: $color-black;
+        color: $color-black;
+        &:hover{
+            background-color: $color-black;
+            color: $color-white;
+        }
+    }
+    &.btn-white {
+        background-color: transparent;
+        border-color: $color-white;
+        color: $color-white;
+        &:hover{
+            background-color: $color-white;
+            color: $color-black;
+        }
+    }
+}
+
+/*
  Dropdown menus
 --------------------------------------------------
 */

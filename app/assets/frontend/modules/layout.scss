@@ -187,10 +187,10 @@ body {
         .menu > li > a:not(.btn) {
             color: $color-white;
             @include header-link(0.5, 0.8, 1);
-            // &.btn-bordered,
-            // &.btn-bordered:hover{
-            //     opacity: 1
-            // }
+            &.btn-bordered,
+            &.btn-bordered:hover{
+                opacity: 1
+            }
         }
         .search-toggle {
             color: $color-white;
