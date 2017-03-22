@@ -4,12 +4,12 @@
 // --------------------------------------------------
 
 // Import Vars
-@import "var.less";
+@import "var";
 
 //Theme Overwrite
 
 .page-sidebar .sidebar-header{
-	background-color: @color-success;
+	background-color: $color-success;
 }
 .page-container .header{
 	background: transparent;

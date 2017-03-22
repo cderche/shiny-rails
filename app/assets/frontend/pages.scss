@@ -27,6 +27,8 @@ Generated From LESS
 21. Hover
 22. Pricing
 23. Blog
+
+Converted to SCSS
 -------------------------------------------------------------------*/
 
 // Mixins tools
@@ -38,10 +40,10 @@ Generated From LESS
 // Responsive Util
 @import "responsive";
 
-//Change your theme here 
+// Change your theme here
 $theme-name:"default";
 
 .theme {
-    @import "themes/default/theme.less";
+    @import "themes/default/theme";
 }
 @include theme();
