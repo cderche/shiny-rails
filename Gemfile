@@ -88,3 +88,5 @@ gem 'premailer-rails'
 gem 'mailgun_rails'
 
 gem 'slacked'
+
+gem 'inline_svg'

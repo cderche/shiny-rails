@@ -23,3 +23,32 @@
 .header-sm-height {
   height: $header-small-height;
 }
+
+$color-list: (
+  "master": $color-master,
+  "master-light": $color-master-light,
+  "master-lighter": $color-master-lighter,
+  "master-lightest": $color-master-lightest,
+  "master-dark": $color-master-dark,
+  "master-darker": $color-master-darker,
+  "master-darkest": $color-master-darkest,
+  "white": $color-white,
+  "black": $color-black,
+  "success": $color-success,
+  "complete": $color-complete,
+  "primary": $color-primary,
+  "warning": $color-warning,
+  "danger": $color-danger,
+  "info": $color-info
+);
+
+@each $k, $v in $color-list {
+  .fill-#{$k} > g > * {
+    fill: $v;
+  }
+}
+
+svg {
+  vertical-align: middle;
+  border: 0;
+}

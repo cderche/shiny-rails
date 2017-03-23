@@ -7,8 +7,7 @@
             <div class="header-inner">
                 <!-- BEGIN LOGO -->
                 <%= link_to root_path do %>
-                <%= image_tag 'shiny_black.png', height: 32, class: 'logo', data: { src_retina: image_path('shiny_black_2x.png') } %>
-                <%= image_tag 'shiny_white.png', height: 32, class: 'alt', data: { src_retina: image_path('shiny_white_2x.png') } %>
+                  <%= inline_svg 'shiny_logo_new.svg', height: 32, class: 'logo fill-black' %>
                 <% end %>
             </div>
         </div>
