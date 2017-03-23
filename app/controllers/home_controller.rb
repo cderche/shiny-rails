@@ -1,11 +1,12 @@
 class HomeController < ApplicationController
-  layout 'frontend'
+  # layout :layout
 
   def index
     # Do nothing
   end
 
   def home
+    render layout: 'frontend'
   end
 
   def terms
@@ -24,4 +25,5 @@ class HomeController < ApplicationController
     #   redirect_to 'https://getshiny.zendesk.com/hc/en-us/categories/115000106365-FAQ'
     # end
   end
+
 end

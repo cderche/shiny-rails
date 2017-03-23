@@ -8,14 +8,14 @@
             <div class="container-xs-height full-height">
                 <div class="col-xs-height col-middle text-center">
                     <div class="container">
-                        <div class="row m-b-40">
+                        <div class="row m-b-60">
                             <div class="col-md-10 col-md-offset-1">
-                                <h2 class="m-t-5 light text-black">
+                                <h2 class="light text-black text-uppercase">
                                     Book you
                                     <b class="font-lato">professional & trusted</b>
                                     home clean in Moscow
                                 </h2>
-                                <h5 class="block-title text-black">From 1260 rub per clean</h5>
+                                <h5 class="m-t-5 block-title text-black">From 1260 rub</h5>
                             </div>
                         </div>
                         <div class="row">
@@ -74,46 +74,88 @@
 <section class="p-b-100 p-t-100 bg-master-lightest">
 <div class="container">
     <div class="row m-b-60">
-        <div class="col-sm-7">
+        <div class="col-sm-12 col-md-7">
             <h1 class="text-uppercase">
-                <b>Book in just a few clicks</b>
+                <b>Book in just a few touches</b>
             </h1>
             <h6 class="block-title m-b-40">Tell us your preferences and we will do the rest.</h6>
 
-            <div class="row m-b-60">
-                <div class="col-xs-6 m-b-40">
-                    <%= image_tag 'timer.svg', height: 40, class: 'm-b-10' %>
-                    <h6 class="block-title p-b-5">Quick</h6>
-                    <p>Booking takes just 60 seconds.</p>
+            <div class="row m-b-40">
+                <div class="col-xs-12 col-sm-6 m-b-40">
+                    <div class="col-xs-3">
+                        <%= image_tag 'timer.svg', width: 60, class: 'm-b-10' %>
+                    </div>
+                    <div class="col-xs-9">
+                        <h6 class="block-title p-b-5">Quick</h6>
+                        <p>Booking takes just 60 seconds.</p>
+                    </div>
                 </div>
-                <div class="col-xs-6 m-b-40">
-                    <%= image_tag 'credit_card.svg', height: 40, class: 'm-b-10' %>
-                    <h6 class="block-title p-b-5">Secure</h6>
-                    <p>Payments are online and PCI DSS compliant.</p>
+                <div class="col-xs-12 col-sm-6 m-b-40">
+                    <div class="col-xs-3">
+                        <%= image_tag 'credit_card.svg', width: 60, class: 'm-b-10' %>
+                    </div>
+                    <div class="col-xs-9">
+                        <h6 class="block-title p-b-5">Secure</h6>
+                        <p>Payments are online and PCI DSS compliant.</p>
+                    </div>
                 </div>
-                <div class="col-xs-6 m-b-40">
-                    <%= image_tag 'chatting.svg', height: 40, class: 'm-b-10' %>
-                    <h6 class="block-title p-b-5">Available</h6>
-                    <p>Questions? Contact us anytime via
-                        <a href="#">email</a>
-                        or
-                        <a href="#">phone</a>.</p>
+                <div class="col-xs-12 col-sm-6 m-b-40">
+                    <div class="col-xs-3">
+                        <%= image_tag 'chatting.svg', width: 60, class: 'm-b-10' %>
+                    </div>
+                    <div class="col-xs-9">
+                        <h6 class="block-title p-b-5">Available</h6>
+                        <p>Questions? Contact us anytime via
+                            <a href="#">email</a>
+                            or
+                            <a href="#">phone</a>.</p>
+                    </div>
                 </div>
-                <div class="col-xs-6 m-b-40">
-                    <%= image_tag 'dollar.svg', height: 40, class: 'm-b-10' %>
-                    <h6 class="block-title p-b-5">Charge later</h6>
-                    <p>We charge you only once you are satisfied with the result.</p>
+                <div class="col-xs-12 col-sm-6 m-b-40">
+                    <div class="col-xs-3">
+                        <%= image_tag 'dollar.svg', width: 60, class: 'm-b-10' %>
+                    </div>
+                    <div class="col-xs-9">
+                        <h6 class="block-title p-b-5">Charge later</h6>
+                        <p>We charge you only once you are satisfied with the result.</p>
+                    </div>
                 </div>
-                <div class="col-xs-6 m-b-40">
-                    <%= image_tag 'pet.svg', height: 40, class: 'm-b-10' %>
-                    <h6 class="block-title p-b-5">Have pets?</h6>
-                    <p>We love them!</p>
+                <div class="col-xs-12 col-sm-6 m-b-40">
+                    <div class="col-xs-3">
+                        <%= image_tag 'pet.svg', width: 60, class: 'm-b-10' %>
+                    </div>
+                    <div class="col-xs-9">
+                        <h6 class="block-title p-b-5">Have pets?</h6>
+                        <p>We love them!</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 m-b-40">
+                    <div class="col-xs-3">
+                        <%= image_tag 'promotion.svg', width: 60, class: 'm-b-10' %>
+                    </div>
+                    <div class="col-xs-9">
+                        <h6 class="block-title p-b-5">Recurring Discounts</h6>
+                        <p>Book weekly and get huge promotions!</p>
+                    </div>
                 </div>
             </div>
-
+            <div class="row m-b-60">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <a href="#" class="btn btn-lg btn-bordered btn-black block-title btn-block">Ready to book?</a>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-5">
-
+        <div class="col-md-5 hidden-sm">
+            <div class="content-mask-md text-center hidden-xs">
+                <div class="device_morph pull-center-inner" data-pages="auto-scroll">
+                    <%= image_tag 'b_phone.png', class: 'xs-image-responsive-height image-responsive-width' %>
+                    <div class="screen">
+                        <div class="iphone-border">
+                            <%= image_tag 'mobile_preview.png', class: 'image-responsive-height lazy' %>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
