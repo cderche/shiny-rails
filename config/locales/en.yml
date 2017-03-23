@@ -99,7 +99,7 @@ en:
   helpers:
     submit:
       booking:
-        create: "Proceed to payment"
+        create: "Payment Details"
     label:
       booking[user_attributes]:
         firstname: "First Name"
@@ -225,7 +225,7 @@ en:
     account_info: "Account Information"
     your_address: "Your Address"
     cc_remarks: "By checking this box, you are agreeing to our payment partner storing your credit card details for the duration of your registration, to allow the payment of the services offered on the site."
-    button: "Proceed to payment"
+    button: "Payment Details"
   company:
     name: "DC Ventures LLC"
     street: "Petra Romanova Street 7/1"
