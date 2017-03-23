@@ -7,5 +7,10 @@
 //= require plugins/velocity/velocity.ui
 //= require plugins/jquery-unveil/jquery.unveil.min
 
+//= require plugins/vide/jquery.vide.min
+//= require plugins/imagesloaded/imagesloaded.pkgd.min
+//= require plugins/jquery-isotope/isotope.pkgd.min
+
 //= require pages.frontend
+//= require pages.social
 //= require custom
