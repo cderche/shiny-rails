@@ -1,4 +1,4 @@
-// Webarch Default Theme  
+// Webarch Default Theme
 // --------------------------------------------------
 // Copyright Reserved Revox - 2014
 // --------------------------------------------------
@@ -8,3 +8,18 @@
 
 //Theme Overwrite
 
+.header-default-height {
+  height: $header-default-height;
+}
+.header-minimized-heigh {
+  height: $header-minimized-height;
+}
+.header-bg-height {
+  height: $header-big-height;
+}
+.header-md-height {
+  height: $header-medium-height;
+}
+.header-sm-height {
+  height: $header-small-height;
+}
