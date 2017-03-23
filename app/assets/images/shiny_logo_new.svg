@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="304px" height="80px" viewBox="0 0 304 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>shiny_logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="shiny_logo" fill="#FFFFFF">
+            <g id="Shiny">
+                <path d="M0.112291779,29.9099099 L27.5327302,29.9099099 L40.6945407,80 L0.112291779,29.9099099 Z M9.65894031e-15,26.3063063 L19.6735197,0 L26.5858374,26.3063063 L8.82627305e-15,26.3063063 Z M58.661156,29.9099099 L86.0815944,29.9099099 L45.4993455,80 L58.661156,29.9099099 Z M59.6080488,26.3063063 L66.5203665,0 L86.1938862,26.3063063 L59.6080488,26.3063063 Z M43.0969431,80 L22.6765227,0 L63.5173635,0 L43.0969431,80 Z" id="Combined-Shape"></path>
+            </g>
+            <text id="SHINY" font-family="Lato-Black, Lato" font-size="60" font-weight="700">
+                <tspan x="120" y="63">SHINY</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

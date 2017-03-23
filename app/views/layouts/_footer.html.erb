@@ -2,23 +2,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <%= image_tag 'shiny-white.svg', class: 'img-responsive logo' %>
+                <%= image_tag 'shiny-white.svg', width: 100, class: 'img-responsive logo' %>
             </div>
             <div class="col-md-5">
               <ul class="list-unstyled hint-text text-right m-t-25">
                   <li class="inline p-r-20">
                       <a href="https://www.facebook.com/getshinyrus" target="_blank">
-                          <i class="fa fa-2x fa-facebook text-white"></i>
+                          <i class="fa fa-2x fa-facebook text-master"></i>
                       </a>
                   </li>
                   <li class="inline p-r-20">
                       <a href="https://www.instagram.com/getshiny" target="_blank">
-                          <i class="fa fa-2x fa-instagram text-white"></i>
+                          <i class="fa fa-2x fa-instagram text-master"></i>
                       </a>
                   </li>
                   <li class="inline">
                       <a href="https://plus.google.com/100339362875734932916" target="_blank">
-                          <i class="fa fa-2x fa-google-plus text-white"></i>
+                          <i class="fa fa-2x fa-google-plus text-master"></i>
                       </a>
                   </li>
               </ul>
@@ -45,10 +45,10 @@
             <div class="col-sm-3 col-xs-6 xs-m-b-20">
                 <ul class="list-unstyled hint-text">
                     <li class="list-cc-item">
-                        <i class="fa fa-3x fa-cc-mastercard"></i>
+                        <i class="fa fa-2x fa-cc-mastercard"></i>
                     </li>
                     <li class="list-cc-item">
-                        <i class="fa fa-3x fa-cc-visa"></i>
+                        <i class="fa fa-2x fa-cc-visa"></i>
                     </li>
                 </ul>
             </div>
@@ -56,13 +56,13 @@
                 <ul class="no-style no-padding">
                     <li class="m-b-5 no-padding">
                       <!-- <%= link_to t('menu.order'), clean_path, class: "text-footer", data: { turbolinks: false } %> -->
-                      <a class="text-footer" data-toggle="modal" data-target="#orderModal" href="#"><%= t('menu.order') %></a>
+                      <a class="text-master" data-toggle="modal" data-target="#orderModal" href="#"><%= t('menu.order') %></a>
                     </li>
                     <li class="m-b-5 no-padding">
-                        <%= link_to t('menu.qa'), questions_path, class: "text-footer", data: { turbolinks: false } %>
+                        <%= link_to t('menu.qa'), questions_path, class: "text-master", data: { turbolinks: false } %>
                     </li>
                     <li class="m-b-5 no-padding">
-                        <%= link_to t('menu.terms'), terms_path, class: "text-footer", data: { turbolinks: false } %>
+                        <%= link_to t('menu.terms'), terms_path, class: "text-master", data: { turbolinks: false } %>
                     </li>
                 </ul>
             </div>

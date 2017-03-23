@@ -7,8 +7,9 @@
     </head>
 
     <body>
-        <%= render 'headers/frontend' %>
+        <%= render partial: 'headers/frontend' %>
         <%= yield %>
+        <%= render partial: 'layouts/footer' %>
         <%= javascript_include_tag "frontend" %>
     </body>
 </html>

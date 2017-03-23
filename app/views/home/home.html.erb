@@ -25,7 +25,7 @@
                                         <a href="#" class="btn btn-lg btn-bordered btn-black block-title btn-block">Book a clean</a>
                                     </div>
                                     <div class="col-sm-5 col-sm-offset-2">
-                                        <a href="#" class="btn btn-lg btn-bordered btn-black block-title btn-block">Request a callback</a>
+                                        <button class="btn btn-lg btn-bordered btn-black block-title btn-block" data-toggle="modal" data-target="#modalCallback">Request a callback</button>
                                     </div>
                                 </div>
 
@@ -169,7 +169,7 @@
                 <%= image_tag "iwc.png", height: 70 %>
             </a>
         </div>
-        <div class="col-sm-4 p-t-20">
+        <div class="col-sm-4 p-t-20 p-b-20">
             <h6 class="block-title">Our Partners</h6>
         </div>
         <div class="col-sm-4">
@@ -181,11 +181,11 @@
 </div>
 </section>
 
-<section class="p-b-30 p-t-40 bg-master-lighter">
+<section class="p-b-50 p-t-50 bg-master-darker">
 <div class="container">
     <div class="row m-b-40">
         <div class="col-sm-8 col-sm-offset-2 text-center">
-            <h1 class="text-uppercase">
+            <h1 class="text-uppercase text-white">
                 <b>What our customers say</b>
             </h1>
         </div>
@@ -197,7 +197,7 @@
                 <!-- START DAY -->
                 <div class="day" data-social="day">
                     <!-- START ITEM -->
-                    <div class="card share col1" data-social="item">
+                    <div class="card share" data-social="item">
                         <div class="circle" data-toggle="tooltip" title="Label" data-container="body"></div>
                         <div class="card-header clearfix">
                             <div class="user-pic">
@@ -217,7 +217,7 @@
                     <!-- END ITEM -->
 
                     <!-- START ITEM -->
-                    <div class="card share col1" data-social="item">
+                    <div class="card share" data-social="item">
                         <div class="circle" data-toggle="tooltip" title="Label" data-container="body"></div>
                         <div class="card-header clearfix">
                             <div class="user-pic">
@@ -237,7 +237,7 @@
                     <!-- END ITEM -->
 
                     <!-- START ITEM -->
-                    <div class="card share col1" data-social="item">
+                    <div class="card share" data-social="item">
                         <div class="circle" data-toggle="tooltip" title="Label" data-container="body"></div>
                         <div class="card-header clearfix">
                             <div class="user-pic">
@@ -264,3 +264,83 @@
     </div>
 </div>
 </section>
+
+<section class="p-b-50 p-t-50 bg-white b-b b-grey">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <h6 class="block-title m-b-0 text-center">Stay in touch</h6>
+            <h1 class="text-center m-t-5">Subscribe to our newsletter</h1>
+            <p class="small hint-text p-t-0 text-center">Benefit from special offers, discounts and our tips and tricks!</p>
+        </div>
+    </div>
+    <div class="row m-t-20">
+        <div class="col-xs-10 col-sm-6 col-lg-4 col-xs-offset-1 col-sm-offset-3 col-lg-offset-4">
+            <div class="form-group form-group-default input-group bg-transparent b-a b-transparent-black">
+                <label class="control-label">Email Address</label>
+                <input type="email" class="form-control" placeholder="Example@mailserver.com" style="">
+                <span class="input-group-btn">
+                    <button class="btn btn-master m-r-10 btn-cons" type="button">Subscribe!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<%= content_tag :section, class: 'jumbotron height-30-percent', data: { pages: 'parallax', pages_bg_image: image_path('hero_section_2.jpg'), bg_overlay: 'black', overlay_opacity: '0.6' } do %>
+<div class="container-xs-height full-height">
+<div class="col-xs-height col-middle text-left">
+
+    <div class="content-layer">
+        <div class="container-xs-height full-height">
+            <div class="col-xs-height col-middle text-center">
+                <div class="container">
+                    <div class="row m-b-60">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h6 class="block-title m-b-0 text-center text-white">Let your home shine</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10 col-sm-6 col-md-4 col-xs-offset-1 col-sm-offset-3 col-md-offset-4">
+                            <a href="#" class="btn btn-lg btn-bordered btn-white block-title btn-block">Book a clean</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<% end %>
+
+<!-- Modal -->
+<div class="modal fade slide-up disable-scroll" id="modalCallback" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
+<div class="modal-dialog ">
+    <div class="modal-content-wrapper">
+        <div class="modal-content">
+            <div class="modal-header clearfix text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    <i class="pg-close"></i>
+                </button>
+                <h5>Let us call you back</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row m-t-20">
+                    <div class="col-xs-12 col-sm-8">
+                        <div class="form-group form-group-default input-group bg-transparent b-a b-transparent-black">
+                            <label class="control-label">Phone</label>
+                            <input type="email" class="form-control" placeholder="+7 (901) 672-73-34">
+                            <span class="input-group-btn">
+                                <button class="btn btn-master m-r-10 btn-cons" type="button">Call me!</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+</div>
+<!-- /.modal-dialog -->
+</div>
