@@ -11,8 +11,10 @@
 //= require plugins/imagesloaded/imagesloaded.pkgd.min
 //= require plugins/jquery-isotope/isotope.pkgd.min
 
+//= require plugins/jquery-validation/js/jquery.validate.min
 //= require plugins/bootstrap/js/bootstrap
 
 //= require pages.frontend
 //= require pages.social
 //= require custom
+//= require zapier
