@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  ready_to_book: Ready to book?
+  book_a_clean: Book a clean
   already_have_an_account?: 'Already have an account?'
   promo_code_comment: 'Applied after booking completion'
   booking_mailer:
