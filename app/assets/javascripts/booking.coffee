@@ -1,3 +1,5 @@
+
+
 if $("select[name='booking[service_id]']").length
     # body...
 
@@ -19,9 +21,9 @@ if $("select[name='booking[service_id]']").length
                 return
 
             if bth_price
-              return bdr_price + bth_price + extras_price
+                return bdr_price + bth_price + extras_price
             else
-              return bdr_price
+                return bdr_price
 
         discount = ->
             fre_sel = $("select[name='booking[frequency_id]']")[0]
@@ -49,19 +51,19 @@ if $("select[name='booking[service_id]']").length
         $(".cart_frequency_summary").html(freq)
 
     hide_extras = ->
-      console.log "Selected Service: " + $("select[name='booking[service_id]']").val()
-      console.log "All Day Service: " + $("#all_day_service_id").attr("value")
-      if $("select[name='booking[service_id]']").val() == $("#all_day_service_id").attr("value")
-        extra_id = $("select[name='booking[addons_attributes][0][quantity]']").val()
-        $("select[name='booking[addons_attributes][0][quantity]']").addClass("hide")
-        $("#extras_panel").addClass("hide")
-        $("select[name='booking[addons_attributes][0][quantity]']").val(0)
-      else if $("select[name='booking[addons_attributes][0][quantity]']").hasClass("hide")
-        console.log "EXTRA ID: " + extra_id
-        $("select[name='booking[addons_attributes][0][quantity]']").val(extra_id)
-        $("select[name='booking[addons_attributes][0][quantity]']").removeClass("hide")
-        $("#extras_panel").removeClass("hide")
-      return
+        console.log "Selected Service: " + $("select[name='booking[service_id]']").val()
+        console.log "All Day Service: " + $("#all_day_service_id").attr("value")
+        if $("select[name='booking[service_id]']").val() == $("#all_day_service_id").attr("value")
+            extra_id = $("select[name='booking[addons_attributes][0][quantity]']").val()
+            $("select[name='booking[addons_attributes][0][quantity]']").addClass("hide")
+            $("#extras_panel").addClass("hide")
+            $("select[name='booking[addons_attributes][0][quantity]']").val(0)
+        else if $("select[name='booking[addons_attributes][0][quantity]']").hasClass("hide")
+            console.log "EXTRA ID: " + extra_id
+            $("select[name='booking[addons_attributes][0][quantity]']").val(extra_id)
+            $("select[name='booking[addons_attributes][0][quantity]']").removeClass("hide")
+            $("#extras_panel").removeClass("hide")
+        return
 
     update = ->
         hide_extras()
@@ -99,7 +101,6 @@ if $("select[name='booking[service_id]']").length
     $("#booking_datepicker").datepicker
         startDate: '+1d'
         format: 'dd/mm/yyyy'
-
     $("#booking_datepicker").datepicker("update", moment().add(2, "d").format("DD/MM/YYYY"))
 
     $("#booking_service_time").timepicker
