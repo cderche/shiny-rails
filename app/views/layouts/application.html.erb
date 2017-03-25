@@ -35,7 +35,6 @@
         </script>
 
         <%= csrf_meta_tags %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, 'data-turbolinks-eval' => false %>
 
         <%= yield :head %>
     </head>
@@ -49,6 +48,6 @@
         <%= render './layouts/footer' %>
 
         <%= development_notification %>
-
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, 'data-turbolinks-eval' => false %>
     </body>
 </html>
