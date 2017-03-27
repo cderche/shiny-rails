@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  ready_to_book: Ready to book?
+  book_a_clean: Book a clean
   already_have_an_account?: 'Already have an account?'
   promo_code_comment: 'Applied after booking completion'
   booking_mailer:
@@ -49,7 +51,7 @@ en:
   forgot_your_password: 'Forgot your password'
   logout: 'Logout'
   login: 'Log In'
-  i_am_a: "I am a ..."
+  i_am_a: "I am a"
   new_customer: "new customer"
   existing_customer: "existing customer"
   address:
@@ -99,7 +101,7 @@ en:
   helpers:
     submit:
       booking:
-        create: "Proceed to payment"
+        create: "Payment Details"
     label:
       booking[user_attributes]:
         firstname: "First Name"
@@ -117,6 +119,7 @@ en:
       booking:
         notes: "Comments"
   home:
+    partners: "OUR PARTNERS"
     section1:
       text1: "Book a <b>professional</b> & <b>reliable</b> cleaner in Moscow."
     section2:
@@ -224,7 +227,7 @@ en:
     account_info: "Account Information"
     your_address: "Your Address"
     cc_remarks: "By checking this box, you are agreeing to our payment partner storing your credit card details for the duration of your registration, to allow the payment of the services offered on the site."
-    button: "Proceed to payment"
+    button: "Payment Details"
   company:
     name: "DC Ventures LLC"
     street: "Petra Romanova Street 7/1"

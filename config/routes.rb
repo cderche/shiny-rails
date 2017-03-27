@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/questions', to: 'home#questions'
 
   root to: "home#index"
+  get '/beta', to: "home#home"
 
   get '/book', to: 'bookings#new'
   get '/bookings', to: 'bookings#new'

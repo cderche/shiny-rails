@@ -1,0 +1,18 @@
+//= require plugins/pace/pace-theme-flash
+//= require plugins/bootstrap/css/bootstrap.min
+//= require plugins/font-awesome/css/font-awesome
+//= require plugins/swiper/css/swiper
+
+//= require pages
+//= require plugins/pages-icons
+
+// .full-height{
+//   height: 100% !important;
+// }
+
+@for $i from 1 through 10 {
+  $step: $i*10;
+  .height-#{$step}-percent {
+    height: ($step*1%) !important;
+  }
+}

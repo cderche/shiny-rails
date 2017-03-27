@@ -1,0 +1,54 @@
+// Webarch Default Theme
+// --------------------------------------------------
+// Copyright Reserved Revox - 2014
+// --------------------------------------------------
+
+// Import Vars
+@import "var";
+
+//Theme Overwrite
+
+.header-default-height {
+  height: $header-default-height;
+}
+.header-minimized-heigh {
+  height: $header-minimized-height;
+}
+.header-bg-height {
+  height: $header-big-height;
+}
+.header-md-height {
+  height: $header-medium-height;
+}
+.header-sm-height {
+  height: $header-small-height;
+}
+
+$color-list: (
+  "master": $color-master,
+  "master-light": $color-master-light,
+  "master-lighter": $color-master-lighter,
+  "master-lightest": $color-master-lightest,
+  "master-dark": $color-master-dark,
+  "master-darker": $color-master-darker,
+  "master-darkest": $color-master-darkest,
+  "white": $color-white,
+  "black": $color-black,
+  "success": $color-success,
+  "complete": $color-complete,
+  "primary": $color-primary,
+  "warning": $color-warning,
+  "danger": $color-danger,
+  "info": $color-info
+);
+
+@each $k, $v in $color-list {
+  .fill-#{$k} > g > * {
+    fill: $v;
+  }
+}
+
+svg {
+  vertical-align: middle;
+  border: 0;
+}
