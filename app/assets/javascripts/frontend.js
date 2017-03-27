@@ -14,6 +14,8 @@
 //= require plugins/jquery-validation/js/jquery.validate.min
 //= require plugins/bootstrap/js/bootstrap
 
+//= require plugins/jquery-inputmask/jquery.inputmask.bundle.min
+
 //= require pages.frontend
 //= require pages.social
 //= require custom

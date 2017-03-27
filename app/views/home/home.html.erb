@@ -30,7 +30,7 @@
                                         <% end %>
                                     </div>
                                     <div class="col-sm-5 col-sm-offset-2">
-                                        <button class="btn btn-lg btn-bordered btn-black block-title btn-block" data-toggle="modal" data-target="#modalCallback">Request a callback</button>
+                                        <button class="btn btn-lg btn-bordered btn-black block-title btn-block" data-toggle="modal" data-target="#callback_modal">Request a callback</button>
                                     </div>
                                 </div>
 
@@ -330,7 +330,7 @@
 <% end %>
 
 <!-- Modal -->
-<div class="modal fade slide-up disable-scroll" id="modalCallback" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
+<div class="modal fade slide-up disable-scroll" id="callback_modal" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
 <div class="modal-dialog ">
     <div class="modal-content-wrapper">
         <div class="modal-content">
@@ -340,22 +340,27 @@
                 </button>
             </div>
             <div class="modal-body">
-                <h3 class="text-center block-title m-b-20"><%= t('enter_your_phone_number') %></h3>
-                <form class="callback-form">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                        <div class="form-group form-group-default bg-transparent b-a b-transparent-black">
-                            <label class="control-label"><%= t 'phone' %></label>
-                            <input type="text" name="phone" class="form-control" placeholder="+7 (901) 672-73-34" required="">
+                <form id="callback_form">
+                    <h3 class="text-center block-title m-b-20"><%= t('enter_your_phone_number') %></h3>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                            <div class="form-group form-group-default bg-transparent b-a b-transparent-black">
+                                <label class="control-label"><%= t 'phone' %></label>
+                                <input type="text" name="phone" id="callback_phone" class="form-control" placeholder="Telephone">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                        <button type="submit" class="btn btn-lg btn-bordered btn-black block-title btn-block"><%= t 'call_me_back' %></button>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                            <button type="submit" class="btn btn-lg btn-bordered btn-black block-title btn-block"><%= t 'call_me_back' %></button>
+                        </div>
                     </div>
-                </div>
                 </form>
+                <div id="callback_message" style="display:none;" class="text-center">
+                    <i class="fa fa-check fa-4x"></i>
+                    <h3>Thank you</h3>
+                    <h5 class="block-title">We will be in contact soon.</h5>
+                </div>
             </div>
         </div>
         <!-- /.modal-content -->
