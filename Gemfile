@@ -93,3 +93,4 @@ gem 'inline_svg'
 
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
+gem 'globalize-accessors'

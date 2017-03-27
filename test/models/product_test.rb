@@ -5,13 +5,15 @@ class ProductTest < ActiveSupport::TestCase
         @en_attributes = {
             name: 'Ironing',
             description: 'Ironing takes time',
-            price: 9.99
+            price: 9.99,
+            quantity_based: true
         }
         @de_attributes = {
             name: 'Bügeln',
             description: 'Bügeln braucht Zeit',
             price: 9.99,
-            locale: :de
+            locale: :de,
+            quantity_based: true
         }
     end
 
