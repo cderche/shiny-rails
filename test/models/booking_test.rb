@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class BookingTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "min price >= 0" do
+    @booking = Booking.new
+  end
 end
