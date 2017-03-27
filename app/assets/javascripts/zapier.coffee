@@ -2,7 +2,8 @@
 $('#callback_phone').inputmask("+7 (999) 999-99-99")
 
 # ZAPIER METHODS
-LEAD_WEBHOOK = "https://hooks.zapier.com/hooks/catch/2100872/1yphim/"
+CALLBACK_WEBHOOK = "https://hooks.zapier.com/hooks/catch/2100872/1yphim/"
+NEWSLETTER_WEBHOOK = "https://hooks.zapier.com/hooks/catch/2100872/13yts3/"
 zap = (data, webhook) ->
   data.push
     name: "created_at"
@@ -16,11 +17,13 @@ $('#callback_form, #newsletter_form').submit (e) ->
   e.preventDefault()
   if $(this).valid()
     data = $(this).serializeArray()
-    zap data, LEAD_WEBHOOK
     $(this).hide()
-    if $(this).id == "callback_form"
+    console.log "this.id: ", this.id
+    if this.id == "callback_form"
+      zap data, CALLBACK_WEBHOOK
       $("#callback_message").show()
     else
+      zap data, NEWSLETTER_WEBHOOK
       $("#newsletter_message").show()
   return
 
