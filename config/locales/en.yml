@@ -51,7 +51,7 @@ en:
   forgot_your_password: 'Forgot your password'
   logout: 'Logout'
   login: 'Log In'
-  i_am_a: "I am a ..."
+  i_am_a: "I am a"
   new_customer: "new customer"
   existing_customer: "existing customer"
   address:
