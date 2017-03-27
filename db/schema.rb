@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310105238) do
+ActiveRecord::Schema.define(version: 20170327193923) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -42,14 +42,13 @@ ActiveRecord::Schema.define(version: 20170310105238) do
     t.string   "notes"
     t.string   "token"
     t.boolean  "terms",         default: false
-    t.integer  "booking_id"
-    t.index ["booking_id"], name: "index_addresses_on_booking_id"
     t.index ["cart_id"], name: "index_addresses_on_cart_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "service_id"
+    t.integer  "address_id"
     t.integer  "user_id"
     t.string   "service_date"
     t.integer  "frequency_id"
@@ -63,7 +62,6 @@ ActiveRecord::Schema.define(version: 20170310105238) do
     t.decimal  "discount"
     t.decimal  "final_total"
     t.boolean  "booking_received_email", default: false
-    t.integer  "address_id"
     t.string   "card_token"
     t.datetime "received_sent_at"
     t.integer  "professional_id"
@@ -74,6 +72,22 @@ ActiveRecord::Schema.define(version: 20170310105238) do
     t.index ["professional_id"], name: "index_bookings_on_professional_id"
     t.index ["service_id"], name: "index_bookings_on_service_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.string   "frequency"
+    t.string   "date"
+    t.string   "time"
+    t.integer  "duration"
+    t.boolean  "ironing"
+    t.boolean  "pets"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.datetime "purchased_at"
+    t.string   "token"
+    t.integer  "cost"
+    t.integer  "real"
+    t.integer  "disc"
   end
 
   create_table "extras", force: :cascade do |t|
@@ -103,9 +117,26 @@ ActiveRecord::Schema.define(version: 20170310105238) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "order_id"
-    t.string   "category"
     t.string   "data"
+    t.string   "category"
     t.index ["order_id"], name: "index_notifications_on_order_id"
+  end
+
+  create_table "product_translations", force: :cascade do |t|
+    t.integer  "product_id",  null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.text     "description"
+    t.index ["locale"], name: "index_product_translations_on_locale"
+    t.index ["product_id"], name: "index_product_translations_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.decimal  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "professionals", force: :cascade do |t|

@@ -1,0 +1,11 @@
+en_window:
+  locale: en
+  name: window
+  description: This is a window
+  globalized_model: window
+
+de_window:
+  locale: de
+  name: Fenster
+  description: Dies ist ein Fenster
+  globalized_model: window
