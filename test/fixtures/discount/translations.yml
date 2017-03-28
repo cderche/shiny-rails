@@ -1,0 +1,47 @@
+en_weekly:
+  locale: en
+  name: Weekly
+  description: A professional will clean once a week
+  globalized_model: weekly
+
+de_weekly:
+  locale: de
+  name: Wöchentlich
+  description: Ein Profi wird einmal wöchentlich reinigen
+  globalized_model: weekly
+
+en_e2week:
+  locale: en
+  name: Every 2 Weeks
+  description: A professional will clean every 2 weeks
+  globalized_model: e2week
+
+de_e2week:
+  locale: de
+  name: Alle 2 Wochen
+  description: Ein Profi wird alle 2 Wochen reinigen
+  globalized_model: e2week
+
+en_coupon:
+  locale: en
+  name: 100 Discount
+  description: A 100 ruble discount
+  globalized_model: coupon
+
+de_coupon:
+  locale: de
+  name: 100 Rabatt
+  description: Ein 100 Rubel Rabatt
+  globalized_model: coupon
+
+en_off100:
+  locale: en
+  name: 100%OFF
+  description: 100%OFF
+  globalized_model: off100
+
+de_off100:
+  locale: de
+  name: 100%Rabatt
+  description: 100%Rabatt
+  globalized_model: off100

@@ -1,0 +1,2 @@
+module DiscountItemsHelper
+end

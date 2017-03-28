@@ -37,16 +37,27 @@
 # Extra.create!(name: "extra.name.ironing", price: 750, quantity_based: false)
 # Extra.create!(name: "extra.name.windows", price: 1000, quantity_based: false)
 
-@bedroom    = Product.create(price: 600.0,  quantity_based: true,   name: "Bedroom",      description: "A room for sleeping in.")
-@bathroom   = Product.create(price: 500.0,  quantity_based: true,   name: "Bathroom",     description: "A room containing a bath or shower and typically also a washbasin and a toilet.")
-@livingroom = Product.create(price: 650.0,  quantity_based: true,   name: "Living room",  description: "A room in a house for general everyday use.")
-@kitchen    = Product.create(price: 700.0,  quantity_based: true,   name: "Kitchen",      description: "A room or area where food is prepared and cooked.")
-@window     = Product.create(price: 200.0,  quantity_based: true,   name: "Windows",      description: "An opening in the wall or roof of a building.")
-@fridge     = Product.create(price: 400.0,  quantity_based: false,  name: "Refrigerator", description: "An appliance or compartment which is artificially kept cool and used to store food and drink.")
 
-@bedroom.update_attributes(     locale: :de,  name: "Schlafzimmer",   description: "Ein Zimmer zum Schlafen.")
-@bathroom.update_attributes(    locale: :de,  name: "Badezimmer",     description: "Ein Zimmer mit Bad oder Dusche und in der Regel auch ein Waschbecken und eine Toilette.")
-@livingroom.update_attributes(  locale: :de,  name: "Wohnzimmer",     description: "Ein Zimmer in einem Haus für den alltäglichen Alltag.")
-@kitchen.update_attributes(     locale: :de,  name: "Küche",          description: "Ein Raum oder ein Bereich, in dem das Essen zubereitet und gekocht wird.")
-@window.update_attributes(      locale: :de,  name: "Fenster",        description: "Eine Öffnung in der Wand oder Dach eines Gebäudes.")
-@fridge.update_attributes(      locale: :de,  name: "Kühlschrank",    description: "Ein Gerät oder ein Fach, das künstlich kühl gelagert und verwendet wird, um Speisen und Getränke zu speichern.")
+# Products
+@bedroo = Product.create(price: 600.0 ,  quantity_based: true   , name: "Bedroom"       , description: "A room for sleeping in.")
+@bathro = Product.create(price: 500.0 ,  quantity_based: true   , name: "Bathroom"      , description: "A room containing a bath or shower and typically also a washbasin and a toilet.")
+@living = Product.create(price: 650.0 ,  quantity_based: true   , name: "Living room"   , description: "A room in a house for general everyday use.")
+@kitche = Product.create(price: 700.0 ,  quantity_based: true   , name: "Kitchen"       , description: "A room or area where food is prepared and cooked.")
+@window = Product.create(price: 200.0 ,  quantity_based: true   , name: "Windows"       , description: "An opening in the wall or roof of a building.")
+@fridge = Product.create(price: 400.0 ,  quantity_based: false  , name: "Refrigerator"  , description: "An appliance or compartment which is artificially kept cool and used to store food and drink.")
+
+@bedroo.update_attributes(locale: :de ,  name: "Schlafzimmer" , description: "Ein Zimmer zum Schlafen.")
+@bathro.update_attributes(locale: :de ,  name: "Badezimmer"   , description: "Ein Zimmer mit Bad oder Dusche und in der Regel auch ein Waschbecken und eine Toilette.")
+@living.update_attributes(locale: :de ,  name: "Wohnzimmer"   , description: "Ein Zimmer in einem Haus für den alltäglichen Alltag.")
+@kitche.update_attributes(locale: :de ,  name: "Küche"        , description: "Ein Raum oder ein Bereich, in dem das Essen zubereitet und gekocht wird.")
+@window.update_attributes(locale: :de ,  name: "Fenster"      , description: "Eine Öffnung in der Wand oder Dach eines Gebäudes.")
+@fridge.update_attributes(locale: :de ,  name: "Kühlschrank"  , description: "Ein Gerät oder ein Fach, das künstlich kühl gelagert und verwendet wird, um Speisen und Getränke zu speichern.")
+
+# Discounts
+@weekly = Discount.create(name: 'Weekly'        , description: 'A professional will clean once a week'    , discount_type: :percentage  , amount: 0.2 , category: :frequency)
+@e2week = Discount.create(name: 'Every 2 Weeks' , description: 'A professional will clean every 2 weeks'  , discount_type: :percentage  , amount: 0.1 , category: :frequency)
+@coupon = Discount.create(name: '100 Discount'  , description: 'A 100 ruble discount'                     , discount_type: :fixed       , amount: 100 , category: :coupon, coupon: '100OFF')
+
+@weekly.update_attributes(locale: :de,  name: 'Wöchentlich'   , description: 'Ein Profi wird einmal wöchentlich reinigen')
+@e2week.update_attributes(locale: :de,  name: 'Alle 2 Wochen' , description: 'Ein Profi wird alle 2 Wochen reinigen')
+@coupon.update_attributes(locale: :de,  name: '100 Rabatt'    , description: 'Ein 100 Rubel Rabatt')

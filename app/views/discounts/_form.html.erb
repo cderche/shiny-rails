@@ -1,0 +1,60 @@
+<%= form_for(discount) do |f| %>
+  <% if discount.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(discount.errors.count, "error") %> prohibited this discount from being saved:</h2>
+
+      <ul>
+      <% discount.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <thead>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= f.label :coupon %></td>
+        <td><%= f.text_field :coupon %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :discount_type %></td>
+        <td><%= f.select :discount_type, options_for_select(Discount.discount_types.keys, discount.try(:discount_type))  %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :category %></td>
+        <td><%= f.select :category, options_for_select(Discount.categories.keys, discount.try(:category))  %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :amount %></td>
+        <td><%= f.text_field :amount %></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table>
+      <thead>
+          <th>Locale</th>
+          <th>Name</th>
+          <th>Description</th>
+      </thead>
+      <tbody>
+          <% Discount.globalize_locales.each do |locale| %>
+          <tr>
+              <td><%= locale %></td>
+              <td><%= f.text_field "name_#{locale}" %></td>
+              <td><%= f.text_field "description_#{locale}" %></td>
+          </tr>
+          <% end %>
+      </tbody>
+  </table>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

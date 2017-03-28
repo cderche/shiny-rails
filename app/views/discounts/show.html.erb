@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coupon:</strong>
+  <%= @discount.coupon %>
+</p>
+
+<p>
+  <strong>Discount type:</strong>
+  <%= @discount.discount_type %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @discount.amount %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @discount.category %>
+</p>
+
+<table>
+    <thead>
+        <th>Locale</th>
+        <th>Name</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <% @discount.translations.each do |translation| %>
+        <tr>
+            <td><%= translation.locale %></td>
+            <td><%= translation.name %></td>
+            <td><%= translation.description %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to 'Edit', edit_discount_path(@discount) %> |
+<%= link_to 'Back', discounts_path %>

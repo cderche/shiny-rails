@@ -3,12 +3,20 @@
     <head>
         <%= csrf_meta_tags %>
         <%= yield :head %>
+        <!-- <%= stylesheet_link_tag 'scaffolds', media: 'all', 'data-turbolinks-track' => true %> -->
+        <style media="screen">
+          tfoot {
+            font-weight: bold;
+          }
+        </style>
     </head>
 
     <body>
         <%= link_to :products, products_path %> |
         <%= link_to :carts, carts_path %> |
-        <%= link_to :line_items, line_items_path %>
+        <%= link_to :line_items, line_items_path %> |
+        <%= link_to :discounts, discounts_path %> |
+        <%= link_to :discount_items, discount_items_path %> |
         <%= yield %>
     </body>
 </html>

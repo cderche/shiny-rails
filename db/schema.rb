@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328001116) do
+ActiveRecord::Schema.define(version: 20170328112206) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -66,6 +66,35 @@ ActiveRecord::Schema.define(version: 20170328001116) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "discount_items", force: :cascade do |t|
+    t.integer  "discount_id"
+    t.integer  "cart_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["cart_id"], name: "index_discount_items_on_cart_id"
+    t.index ["discount_id"], name: "index_discount_items_on_discount_id"
+  end
+
+  create_table "discount_translations", force: :cascade do |t|
+    t.integer  "discount_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.text     "description"
+    t.index ["discount_id"], name: "index_discount_translations_on_discount_id"
+    t.index ["locale"], name: "index_discount_translations_on_locale"
+  end
+
+  create_table "discounts", force: :cascade do |t|
+    t.string   "coupon"
+    t.integer  "discount_type"
+    t.decimal  "amount"
+    t.integer  "category"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "extras", force: :cascade do |t|

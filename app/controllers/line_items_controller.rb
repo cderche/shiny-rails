@@ -1,6 +1,8 @@
 class LineItemsController < ApplicationController
   layout 'scaffold'
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:create]
+  before_action :set_product, only: [:create]
 
   # GET /line_items
   # GET /line_items.json
@@ -25,9 +27,7 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    puts "LineItemsController.create"
-    @cart = Cart.find(line_item_params[:cart_id])
-    @product = Product.find(line_item_params[:product_id])
+    # puts "LineItemsController.create"
     @line_item = @cart.add_product(@product)
 
     respond_to do |format|
@@ -76,5 +76,13 @@ class LineItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
       params.require(:line_item).permit(:product_id, :cart_id, :quantity)
+    end
+
+    def set_cart
+      @cart = Cart.find(line_item_params[:cart_id])
+    end
+
+    def set_product
+      @product = Product.find(line_item_params[:product_id])
     end
 end

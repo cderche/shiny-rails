@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+weekly:
+  discount_type: percentage
+  amount: 0.2
+  category: frequency
+
+e2week:
+  discount_type: percentage
+  amount: 0.1
+  category: frequency
+
+coupon:
+  discount_type: fixed
+  amount: 100
+  category: coupon
+  coupon: 100OFF
+
+off100:
+  discount_type: percentage
+  amount: 1
+  coupon: 100%OFF
+  category: coupon

@@ -1,6 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+<!-- <h3>Frequency: </h3>
+<% Discount.where(category: :frequency).each do |discount| %>
+  <%= button_to discount.title, discount_items_path(discount_items: { discount_id: discount, cart_id: @cart }), method: :post %>
+<% end %> -->
+
+<table>
+  <thead>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Total Line Item Price</td>
+      <td><%= @cart.total_line_items_price %></td>
+    </tr>
+    <tr>
+      <td>Total Discount</td>
+      <td><%= @cart.total_discount %></td>
+    </tr>
+    <tr>
+      <td>Total Price</td>
+      <td><%= @cart.total_price %></td>
+    </tr>
+  </tbody>
+</table>
+
 <% unless @cart.line_items.empty? %>
+<h3>Line Items</h3>
 <table>
   <thead>
     <th>Product</th>
@@ -28,14 +55,47 @@
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="3">Total Price</td>
-      <td><%= @cart.total_price %></td>
+      <td colspan="3">Total Line Item Price</td>
+      <td><%= @cart.total_line_items_price %></td>
+    </tr>
+  </tfoot>
+</table>
+<% end %>
+
+<% unless @cart.discounts.empty? %>
+<h3>Discount Items</h3>
+<table>
+  <thead>
+    <th>Discount</th>
+    <th>Type</th>
+    <th>Amount</th>
+    <th>Category</th>
+    <th>Total Discount</th>
+    <th colspan="1"></th>
+  </thead>
+  <tbody>
+    <% @cart.discount_items.all.each do |discount_item| %>
+      <tr>
+        <td><%= discount_item.discount.name %></td>
+        <td><%= discount_item.discount.discount_type %></td>
+        <td><%= discount_item.discount.amount %></td>
+        <td><%= discount_item.discount.category %></td>
+        <td><%= discount_item.total_discount %></td>
+        <td><%= button_to 'Remove', discount_item_path(discount_item), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4">Total Discount</td>
+      <td><%= @cart.total_discount %></td>
     </tr>
   </tfoot>
 </table>
 <% end %>
 
 <% unless (Product.all - @cart.products).empty? %>
+<h3>Available Products</h3>
 <table>
   <thead>
     <th>Product</th>
@@ -50,6 +110,30 @@
         <td><%= product.price %></td>
         <td><%= product.quantity_based %></td>
         <td><%= button_to 'Add to Cart', line_items_path(line_item: { product_id: product, cart_id: @cart }), method: :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<% unless (Discount.all - @cart.discounts).empty? %>
+<h3>Available Discounts</h3>
+<table>
+  <thead>
+    <th>Discount</th>
+    <th>Type</th>
+    <th>Amount</th>
+    <th>Category</th>
+    <th colspan="1"></th>
+  </thead>
+  <tbody>
+    <% (Discount.all - @cart.discounts).each do |discount| %>
+      <tr>
+        <td><%= discount.name %></td>
+        <td><%= discount.discount_type %></td>
+        <td><%= discount.amount %></td>
+        <td><%= discount.category %></td>
+        <td><%= button_to 'Add to Cart', discount_items_path(discount_item: { discount_id: discount, cart_id: @cart }), method: :post %></td>
       </tr>
     <% end %>
   </tbody>
