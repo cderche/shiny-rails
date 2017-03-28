@@ -131,4 +131,11 @@ class ProductTest < ActiveSupport::TestCase
             product.destroy
         end
     end
+
+    test "can't delete product in cart" do
+      product = products(:window)
+      assert_difference 'Product.count', 0 do
+        product.destroy
+      end
+    end
 end

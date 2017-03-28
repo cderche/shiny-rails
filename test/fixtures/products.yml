@@ -1,3 +1,15 @@
 window:
-  price: 9.99
+  price: 100.0
   quantity_based: true
+
+refrigerator:
+  price: 200.0
+  quantity_based: false
+
+bedroom:
+  price: 400.0
+  quantity_based: true
+
+microwave:
+  price: 200.0
+  quantity_based: false

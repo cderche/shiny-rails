@@ -1,6 +1,6 @@
 en_window:
   locale: en
-  name: window
+  name: Window
   description: This is a window
   globalized_model: window
 
@@ -9,3 +9,39 @@ de_window:
   name: Fenster
   description: Dies ist ein Fenster
   globalized_model: window
+
+en_refrigerator:
+  locale: en
+  name: Refrigerator
+  description: This is a refrigerator
+  globalized_model: refrigerator
+
+de_refrigerator:
+  locale: de
+  name: Kühlschrank
+  description: Dies ist ein Kühlschrank
+  globalized_model: refrigerator
+
+en_bedroom:
+  locale: en
+  name: Bedroom
+  description: This is a bedroom
+  globalized_model: bedroom
+
+de_bedroom:
+  locale: de
+  name: Schlafzimmer
+  description: Dies ist ein Schlafzimmer
+  globalized_model: bedroom
+
+en_microwave:
+  locale: en
+  name: Microwave
+  description: This is a microwave
+  globalized_model: microwave
+
+de_microwave:
+  locale: de
+  name: Mikrowelle
+  description: Dies ist eine Mikrowelle
+  globalized_model: microwave

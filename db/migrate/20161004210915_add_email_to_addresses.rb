@@ -1,5 +1,7 @@
 class AddEmailToAddresses < ActiveRecord::Migration[5.0]
   def change
-    add_column :addresses, :email, :string
+    create_table :addresses do |t|
+      t.string :email
+    end
   end
 end

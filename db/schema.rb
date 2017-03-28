@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327231656) do
+ActiveRecord::Schema.define(version: 20170328001116) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -23,27 +23,16 @@ ActiveRecord::Schema.define(version: 20170327231656) do
   end
 
   create_table "addresses", force: :cascade do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "city"
-    t.string   "postcode"
-    t.string   "phone"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.integer  "cart_id"
-    t.integer  "user_id"
-    t.string   "email"
-    t.string   "gateway_token"
-    t.string   "street"
-    t.string   "block"
-    t.string   "house"
-    t.string   "building"
-    t.string   "apartment"
-    t.string   "notes"
-    t.string   "token"
-    t.boolean  "terms",         default: false
-    t.index ["cart_id"], name: "index_addresses_on_cart_id"
-    t.index ["user_id"], name: "index_addresses_on_user_id"
+    t.string  "email"
+    t.string  "gateway_token"
+    t.string  "street"
+    t.string  "block"
+    t.string  "house"
+    t.string  "building"
+    t.string  "apartment"
+    t.string  "notes"
+    t.string  "token"
+    t.boolean "terms",         default: false
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -75,19 +64,8 @@ ActiveRecord::Schema.define(version: 20170327231656) do
   end
 
   create_table "carts", force: :cascade do |t|
-    t.string   "frequency"
-    t.string   "date"
-    t.string   "time"
-    t.integer  "duration"
-    t.boolean  "ironing"
-    t.boolean  "pets"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.datetime "purchased_at"
-    t.string   "token"
-    t.integer  "cost"
-    t.integer  "real"
-    t.integer  "disc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "extras", force: :cascade do |t|
@@ -111,6 +89,16 @@ ActiveRecord::Schema.define(version: 20170327231656) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "quantity",   default: 1
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
   create_table "notifications", force: :cascade do |t|
