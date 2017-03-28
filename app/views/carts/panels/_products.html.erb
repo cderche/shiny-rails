@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">Available Products</div>
+    </div>
+    <div class="panel-body">
+        <% unless (Product.all - @cart.products).empty? %>
+        <table class="table table-condensed table-stripped table-responsive">
+            <thead>
+                <th>Product</th>
+                <th>Price</th>
+                <!-- <th>Quantity Based</th> -->
+                <th></th>
+            </thead>
+            <tbody>
+                <% (Product.all - @cart.products).each do |product| %>
+                <tr>
+                    <td><%= product.name %></td>
+                    <td><%= number_to_currency(product.price, locale: :ru) %></td>
+                    <!-- <td><%= product.quantity_based %></td> -->
+                    <td>
+                        <%= link_to line_items_path(line_item: { product_id: product, cart_id: @cart }), class: 'btn btn-success btn-sm pull-right', method: :post  do %>
+                        <i class="pg-plus"></i>
+                        <% end %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">Available Discounts</div>
+    </div>
+    <div class="panel-body">
+        <% unless (Discount.all - @cart.discounts).empty? %>
+        <table class="table table-condensed table-stripped table-responsive">
+            <thead>
+                <th colspan="2">Discount</th>
+                <!-- <th>Type</th> -->
+                <th>Amount</th>
+                <!-- <th>Category</th> -->
+                <th></th>
+            </thead>
+            <tbody>
+                <% (Discount.all - @cart.discounts).each do |discount| %>
+                <tr>
+                    <td colspan="2"><%= discount.condensed_title %></td>
+                    <!-- <td><%= discount.discount_type[0].upcase %></td> -->
+                    <td><%= discount.discount_type.to_sym == :fixed ? number_to_currency(discount.amount, locale: :ru) : number_to_percentage(discount.amount*100, precision: 0) %></td>
+                    <!-- <td><%= discount.category[0].upcase %></td> -->
+                    <td>
+                        <%= link_to discount_items_path(discount_item: { discount_id: discount, cart_id: @cart }), class: 'btn btn-success btn-sm pull-right', method: :post  do %>
+                        <i class="pg-plus"></i>
+                        <% end %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <% end %>
+    </div>
+</div>

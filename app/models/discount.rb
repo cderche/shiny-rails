@@ -25,6 +25,10 @@ class Discount < ApplicationRecord
     end
   end
 
+  def condensed_title
+    "#{name} (#{discount_type[0].upcase}/#{category[0].upcase})"
+  end
+
   private
 
   # ensure that there are not discount items referencing this product

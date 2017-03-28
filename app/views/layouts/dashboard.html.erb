@@ -3,12 +3,7 @@
     <head>
         <%= csrf_meta_tags %>
         <%= yield :head %>
-        <!-- <%= stylesheet_link_tag 'scaffolds', media: 'all', 'data-turbolinks-track' => true %> -->
-        <style media="screen">
-          tfoot {
-            font-weight: bold;
-          }
-        </style>
+        <%= stylesheet_link_tag 'dashboard', media: 'all', 'data-turbolinks-track' => true %>
     </head>
 
     <body>
@@ -18,5 +13,6 @@
         <%= link_to :discounts, discounts_path %> |
         <%= link_to :discount_items, discount_items_path %> |
         <%= yield %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, 'data-turbolinks-eval' => false %>
     </body>
 </html>

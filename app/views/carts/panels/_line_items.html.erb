@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">Line Items</div>
+    </div>
+    <div class="panel-body">
+        <% unless @cart.line_items.empty? %>
+        <table class="table table-condensed table-stripped table-responsive">
+            <thead>
+                <th>Product</th>
+                <th>Unit</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <% @cart.line_items.all.each do |line_item| %>
+                <tr>
+                    <td><%= line_item.product.name %></td>
+                    <td><%= number_to_currency(line_item.product.price, locale: :ru) %></td>
+                    <td><%= line_item.quantity %></td>
+                    <td><%= number_to_currency(line_item.total_price, locale: :ru) %></td>
+                    <td>
+                        <div class="btn-group btn-group-vertical btn-group-sm pull-right">
+                            <% if line_item.product.quantity_based? %>
+                            <% if line_item.quantity > 1 %>
+                            <%= link_to line_item_path(line_item, params: { line_item: { quantity: line_item.quantity - 1 } }), class: 'btn btn-default', method: :put do %>
+                            <i class="pg-minus"></i>
+                            <% end %>
+                            <% end %>
+                            <%= link_to line_item_path(line_item, params: { line_item: { quantity: line_item.quantity + 1 } }), class: 'btn btn-default', method: :put do %>
+                            <i class="pg-plus"></i>
+                            <% end %>
+                            <% end %>
+                            <%= link_to line_item_path(line_item), class: 'btn btn-danger btn-sm', method: :delete  do %>
+                            <i class="pg-trash"></i>
+                            <% end %>
+                        </div>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <% end %>
+    </div>
+</div>

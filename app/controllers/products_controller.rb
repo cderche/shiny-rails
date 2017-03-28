@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  layout 'scaffold'
+  layout 'dashboard'
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products

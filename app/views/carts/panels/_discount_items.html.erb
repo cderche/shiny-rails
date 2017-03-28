@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">Discount Items</div>
+    </div>
+    <div class="panel-body">
+        <% unless @cart.discount_items.empty? %>
+        <table class="table table-condensed table-stripped table-responsive">
+            <thead>
+                <th colspan="2">Name</th>
+                <!-- <th>Type</th> -->
+                <th>Amount</th>
+                <!-- <th>Category</th> -->
+                <th>Discount</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <% @cart.discount_items.all.each do |discount_item| %>
+                <tr>
+                    <td colspan="2"><%= discount_item.discount.condensed_title %></td>
+                    <!-- <td><%= discount_item.discount.discount_type %></td> -->
+                    <td><%= discount_item.discount.discount_type.to_sym == :fixed ? discount_item.discount.amount : number_to_percentage(discount_item.discount.amount*100, precision: 0) %></td>
+                    <!-- <td><%= discount_item.discount.category %></td> -->
+                    <td><%= number_to_currency(discount_item.total_discount, locale: :ru) %></td>
+                    <td>
+                        <%= link_to discount_item_path(discount_item), class: 'btn btn-danger btn-sm pull-right', method: :delete  do %>
+                        <i class="pg-trash"></i>
+                        <% end %>
+                    </td>
+                    <!-- <td><%= button_to 'Remove', discount_item_path(discount_item), method: :delete %></td> -->
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <% end %>
+    </div>
+</div>

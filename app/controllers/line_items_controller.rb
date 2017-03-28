@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-  layout 'scaffold'
+  layout 'dashboard'
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create]
   before_action :set_product, only: [:create]

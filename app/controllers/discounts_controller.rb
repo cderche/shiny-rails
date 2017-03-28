@@ -1,5 +1,5 @@
 class DiscountsController < ApplicationController
-  layout 'scaffold'
+  layout 'dashboard'
   before_action :set_discount, only: [:show, :edit, :update, :destroy]
 
   # GET /discounts

@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">Cart Overview</div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <thead>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Total Line Item Price</td>
+                    <td><%= number_to_currency(@cart.total_line_items_price, locale: :ru) %></td>
+                </tr>
+                <tr>
+                    <td>Total Discount</td>
+                    <td><%= number_to_currency(@cart.total_discount, locale: :ru) %></td>
+                </tr>
+                <tr>
+                    <td>Total Price</td>
+                    <td><%= number_to_currency(@cart.total_price, locale: :ru) %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

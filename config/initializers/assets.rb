@@ -15,8 +15,9 @@ Rails.application.config.assets.version = '1.0'
 
 # Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "frontend")
+Rails.application.config.assets.paths << Rails.root.join("app", "assets", "plugins")
 
 Rails.application.config.assets.precompile += ['email.css']
 Rails.application.config.assets.precompile += ['frontend.css']
 Rails.application.config.assets.precompile += ['frontend.js']
-Rails.application.config.assets.precompile += %w( scaffolds.css )
+Rails.application.config.assets.precompile += %w( dashboard.css )
