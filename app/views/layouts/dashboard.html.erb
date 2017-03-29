@@ -3,16 +3,25 @@
     <head>
         <%= csrf_meta_tags %>
         <%= yield :head %>
-        <%= stylesheet_link_tag 'dashboard', media: 'all', 'data-turbolinks-track' => true %>
+        <%= stylesheet_link_tag 'dashboard', media: :all, data: { turbolinks: { track: true } } %>
     </head>
 
-    <body>
-        <%= link_to :products, products_path %> |
-        <%= link_to :carts, carts_path %> |
-        <%= link_to :line_items, line_items_path %> |
-        <%= link_to :discounts, discounts_path %> |
-        <%= link_to :discount_items, discount_items_path %> |
-        <%= yield %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, 'data-turbolinks-eval' => false %>
+    <body class="fixed-header menu-pin">
+        <%= render partial: 'dashboard/sidebar' %>
+        <div class="page-container">
+            <%= render partial: 'dashboard/header' %>
+            <div class="page-content-wrapper">
+                <div class="content">
+                    <%= render partial: 'dashboard/breadcrumbs' %>
+                    <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                        <%= render partial: 'dashboard/notice' %>
+                        <%= yield %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%= render partial: 'dashboard/quickview' %>
+        <%= render partial: 'dashboard/overlay' %>
+        <%= javascript_include_tag 'dashboard', data: { turbolinks: { track: true, eval: true } } %>
     </body>
 </html>

@@ -1,6 +1,10 @@
 class CartsController < ApplicationController
   layout 'dashboard'
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action -> { add_breadcrumb t("carts"), carts_path }
+  before_action -> { add_breadcrumb @cart.id,   current_path }, only: :show
+  before_action -> { add_breadcrumb t('new'),   current_path }, only: :new
+  before_action -> { add_breadcrumb t('edit'),  current_path }, only: :edit
 
   # GET /carts
   # GET /carts.json

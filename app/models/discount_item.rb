@@ -1,6 +1,6 @@
 class DiscountItem < ApplicationRecord
   belongs_to :discount
-  belongs_to :cart
+  belongs_to :cart, touch: true
 
   def total_discount
     total_discount = discount.amount

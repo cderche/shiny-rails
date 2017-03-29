@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
   protect_from_forgery prepend: true
   before_action :set_locale
+  include Breadcrumbs
 
   def after_sign_in_path_for(resource)
     case resource
@@ -17,6 +18,10 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { locale: I18n.locale }
+  end
+
+  def current_path
+    request.env['PATH_INFO']
   end
 
 end

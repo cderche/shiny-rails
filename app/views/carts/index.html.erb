@@ -1,25 +1,55 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <%= t('carts') %>
+        </div>
+        <div class="pull-right">
+            <div class="col-xs-12">
+              <%= link_to new_cart_path, class: 'btn btn-primary btn-sm' do %>
+                <i class="pg-plus"></i> <%= t('cart') %>
+              <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed table-responsive">
+            <thead>
+                <tr>
+                    <th colspan="1">Id</th>
+                    <th colspan="2">Subtotal</th>
+                    <th colspan="2">Discount</th>
+                    <th colspan="2">Total Price</th>
+                    <th colspan="2">Created At</th>
+                    <th colspan="2">Updated At</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
 
-<h1>Carts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @carts.each do |cart| %>
-      <tr>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Cart', new_cart_path %>
+            <tbody>
+                <% @carts.each do |cart| %>
+                <tr>
+                    <td colspan="1"><%= cart.id %></td>
+                    <td colspan="2"><%= number_to_currency(cart.total_line_items_price, locale: :ru) %></td>
+                    <td colspan="2"><%= number_to_currency(cart.total_discount, locale: :ru) %></td>
+                    <td colspan="2"><%= number_to_currency(cart.total_price, locale: :ru) %></td>
+                    <td colspan="2"><%= cart.created_at.to_formatted_s(:short) %></td>
+                    <td colspan="2"><%= cart.updated_at.to_formatted_s(:short) %></td>
+                    <td colspan="2">
+                        <div class="btn-group pull-right">
+                            <%= link_to cart, class: 'btn btn-sm btn-default' do %>
+                            <i class="pg-note"></i>
+                            <% end %>
+                            <%= link_to edit_cart_path(cart), class: 'btn btn-sm btn-default' do %>
+                            <i class="pg-settings"></i>
+                            <% end %>
+                            <%= link_to cart, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-default' do %>
+                            <i class="pg-trash"></i>
+                            <% end %>
+                        </div>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

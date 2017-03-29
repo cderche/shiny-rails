@@ -1,4 +1,4 @@
-<%= form_for(discount) do |f| %>
+<%= form_for discount, html: { class: 'form-horizontal' } do |f| %>
   <% if discount.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(discount.errors.count, "error") %> prohibited this discount from being saved:</h2>
@@ -11,50 +11,53 @@
     </div>
   <% end %>
 
-  <table>
-    <thead>
-      <th></th>
-      <th></th>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= f.label :coupon %></td>
-        <td><%= f.text_field :coupon %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :discount_type %></td>
-        <td><%= f.select :discount_type, options_for_select(Discount.discount_types.keys, discount.try(:discount_type))  %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :category %></td>
-        <td><%= f.select :category, options_for_select(Discount.categories.keys, discount.try(:category))  %></td>
-      </tr>
-      <tr>
-        <td><%= f.label :amount %></td>
-        <td><%= f.text_field :amount %></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <table>
-      <thead>
-          <th>Locale</th>
-          <th>Name</th>
-          <th>Description</th>
-      </thead>
-      <tbody>
-          <% Discount.globalize_locales.each do |locale| %>
-          <tr>
-              <td><%= locale %></td>
-              <td><%= f.text_field "name_#{locale}" %></td>
-              <td><%= f.text_field "description_#{locale}" %></td>
-          </tr>
-          <% end %>
-      </tbody>
-  </table>
-
-  <div class="actions">
-    <%= f.submit %>
+  <% Discount.globalize_locales.each do |locale| %>
+  <div class="form-group">
+      <%= f.label locale, class: 'col-xs-2 control-label' %>
+      <div class="col-md-4">
+          <%= f.text_field "name_#{locale}", class: 'form-control', placeholder: t('.placeholder.name') %>
+      </div>
+      <div class="col-md-6">
+          <%= f.text_field "description_#{locale}", class: 'form-control', placeholder: t('.placeholder.description') %>
+      </div>
   </div>
-<% end %>
+  <% end %>
+
+  <div class="form-group">
+      <%= f.label :category, class: 'col-xs-2 control-label' %>
+      <div class="col-xs-10">
+        <div class="radio radio-primary">
+          <%= f.collection_radio_buttons :category, Discount.categories, :first, :first %>
+        </div>
+      </div>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :coupon, class: 'col-xs-2 control-label' %>
+      <div class="col-xs-10 col-sm-2">
+        <%= f.text_field :coupon, class: 'form-control', placeholder: t('.placeholder.coupon') %>
+      </div>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :discount_type, class: 'col-xs-2 control-label' %>
+      <div class="col-xs-10">
+        <div class="radio radio-primary">
+          <%= f.collection_radio_buttons :discount_type, Discount.discount_types, :first, :first %>
+        </div>
+      </div>
+  </div>
+
+  <div class="form-group">
+      <%= f.label :amount, class: 'col-xs-2 control-label' %>
+      <div class="col-xs-10 col-sm-2">
+        <%= f.text_field :amount, class: 'form-control', placeholder: t('.placeholder.amount') %>
+      </div>
+  </div>
+
+  <br>
+  <div class="row">
+      <%= link_to 'Back', discounts_path, class: 'btn btn-danger' %>
+      <%= f.submit class: 'btn btn-primary pull-right' %>
+  </div>
+  <% end %>

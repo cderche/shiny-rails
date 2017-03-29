@@ -1,31 +1,61 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <%= t('products') %>
+        </div>
+        <div class="pull-right">
+            <div class="col-xs-12">
+              <%= link_to new_product_path, class: 'btn btn-primary btn-sm' do %>
+                <i class="pg-plus"></i> <%= t('product') %>
+              <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity Based</th>
+                    <th>Translations</th>
+                    <th></th>
+                </tr>
+            </thead>
 
-<h1>Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Quantity Based</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.price %></td>
-        <td><%= product.quantity_based %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
+            <tbody>
+                <% @products.each do |product| %>
+                <tr>
+                    <td><%= product.name %></td>
+                    <td><%= number_to_currency(product.price, locale: :ru) %></td>
+                    <td>
+                        <% if product.quantity_based? %>
+                        <i class="fa fa-check"></i>
+                    <% else %>
+                        <i class="fa fa-close"></i>
+                        <% end %>
+                    </td>
+                    <td>
+                        <% product.translations.select(:locale).each do |translation| %>
+                        <span class="label"><%= translation.locale %></span>
+                        <% end %>
+                    </td>
+                    <td>
+                        <div class="btn-group pull-right">
+                            <%= link_to product, class: 'btn btn-sm btn-default' do %>
+                            <i class="pg-note"></i>
+                            <% end %>
+                            <%= link_to edit_product_path(product), class: 'btn btn-sm btn-default' do %>
+                            <i class="pg-settings"></i>
+                            <% end %>
+                            <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-default' do %>
+                            <i class="pg-trash"></i>
+                            <% end %>
+                        </div>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

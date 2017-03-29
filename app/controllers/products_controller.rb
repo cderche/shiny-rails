@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   layout 'dashboard'
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action -> { add_breadcrumb t("products")   , products_path }
+  before_action -> { add_breadcrumb @product.name   , current_path }, only: :show
+  before_action -> { add_breadcrumb t('new')        , current_path }, only: :new
+  before_action -> { add_breadcrumb t('edit')       , current_path }, only: :edit
 
   # GET /products
   # GET /products.json

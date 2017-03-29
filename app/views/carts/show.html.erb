@@ -1,33 +1,23 @@
-<div id="notice" class="alert alert-info"><%= notice %></div>
-
-<!-- <h3>Frequency: </h3>
-<% Discount.where(category: :frequency).each do |discount| %>
-  <%= button_to discount.title, discount_items_path(discount_items: { discount_id: discount, cart_id: @cart }), method: :post %>
-<% end %> -->
-<!-- <div class="container"> -->
-    <div class="row">
-        <div class="col-md-6">
-            <%= render 'carts/panels/overview' %>
-        </div>
+<div class="row">
+    <div class="col-md-6">
+        <%= render 'carts/panels/overview' %>
     </div>
+</div>
 
-    <div class="row">
-        <div class="col-md-7">
-            <%= render 'carts/panels/line_items' %>
-        </div>
-        <div class="col-md-5">
-            <%= render 'carts/panels/products' %>
-        </div>
+<div class="row">
+    <div class="col-md-7">
+        <%= render 'carts/panels/line_items' %>
     </div>
-
-    <div class="row">
-        <div class="col-md-7">
-            <%= render 'carts/panels/discount_items' %>
-        </div>
-        <div class="col-md-5">
-            <%= render 'carts/panels/discounts' %>
-        </div>
+    <div class="col-md-5">
+        <%= render 'carts/panels/products' %>
     </div>
-<!-- </div> -->
+</div>
 
-<%= link_to 'Back', carts_path %>
+<div class="row">
+    <div class="col-md-7">
+        <%= render 'carts/panels/discount_items' %>
+    </div>
+    <div class="col-md-5">
+        <%= render 'carts/panels/discounts' %>
+    </div>
+</div>

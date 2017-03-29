@@ -1,45 +1,49 @@
-<%= form_for(product) do |f| %>
+<%= form_for product, html: { class: 'form-horizontal' } do |f| %>
 <% if product.errors.any? %>
-<div id="error_explanation">
-    <h2><%= pluralize(product.errors.count, "error") %>
-        prohibited this product from being saved:</h2>
+<div class="alert alert-danger">
+  <strong><%= pluralize(product.errors.count, "error") %>
+      prohibited this product from being saved:</strong>
 
-    <ul>
-        <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-    </ul>
+  <ul>
+      <% product.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+  </ul>
 </div>
 <% end %>
 
-<div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
+<% Product.globalize_locales.each do |locale| %>
+<div class="form-group">
+    <%= f.label locale, class: 'col-xs-2 control-label' %>
+    <div class="col-md-4">
+        <%= f.text_field "name_#{locale}", class: 'form-control', placeholder: t('.placeholder.name') %>
+    </div>
+    <div class="col-md-6">
+        <%= f.text_field "description_#{locale}", class: 'form-control', placeholder: t('.placeholder.description') %>
+    </div>
+</div>
+<% end %>
+
+<div class="form-group">
+    <%= f.label :price, class: 'col-xs-2 control-label' %>
+    <div class="col-xs-10 col-sm-2">
+        <!-- <%= f.text_field :price, class: 'form-control autonumeric', data: { a_sign: "₽ " } %> -->
+        <%= f.text_field :price, class: 'form-control' %>
+    </div>
 </div>
 
-<div class="field">
-    <%= f.label :quantity_based %>
-    <%= f.check_box :quantity_based %>
+<div class="form-group">
+    <%= f.label :quantity_based, class: 'col-xs-2 control-label' %>
+    <div class="col-xs-10 col-sm-2">
+        <div class="checkbox check-primary">
+            <%= f.check_box :quantity_based %>
+            <%= f.label :quantity_based %>
+        </div>
+    </div>
 </div>
-
-<table>
-    <thead>
-        <th>Locale</th>
-        <th>Name</th>
-        <th>Description</th>
-    </thead>
-    <tbody>
-        <% Product.globalize_locales.each do |locale| %>
-        <tr>
-            <td><%= locale %></td>
-            <td><%= f.text_field "name_#{locale}" %></td>
-            <td><%= f.text_field "description_#{locale}" %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
-
-<div class="actions">
-    <%= f.submit %>
+<br>
+<div class="row">
+    <%= link_to 'Back', products_path, class: 'btn btn-danger' %>
+    <%= f.submit class: 'btn btn-primary pull-right' %>
 </div>
 <% end %>

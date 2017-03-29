@@ -1,6 +1,8 @@
-<h1>Editing Discount</h1>
-
-<%= render 'form', discount: @discount %>
-
-<%= link_to 'Show', @discount %> |
-<%= link_to 'Back', discounts_path %>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title"><%= t('.edit') %></div>
+    </div>
+    <div class="panel-body">
+        <%= render 'form', discount: @discount %>
+    </div>
+</div>

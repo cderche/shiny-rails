@@ -1,6 +1,10 @@
 class DiscountsController < ApplicationController
   layout 'dashboard'
   before_action :set_discount, only: [:show, :edit, :update, :destroy]
+  before_action -> { add_breadcrumb t("discounts")  , discounts_path }
+  before_action -> { add_breadcrumb @discount.name  , current_path }, only: :show
+  before_action -> { add_breadcrumb t('new')        , current_path }, only: :new
+  before_action -> { add_breadcrumb t('edit')       , current_path }, only: :edit
 
   # GET /discounts
   # GET /discounts.json

@@ -1,0 +1,53 @@
+<!-- BEGIN SIDEBAR -->
+<div class="page-sidebar" data-pages="sidebar">
+  <div id="appMenu" class="sidebar-overlay-slide from-top">
+  </div>
+  <!-- BEGIN SIDEBAR HEADER -->
+  <div class="sidebar-header">
+    <!-- <img src="assets/img/logo_white.png" alt="logo" class="brand" data-src="assets/img/logo_white.png" data-src-retina="assets/img/logo_white_2x.png" width="93" height="25"> -->
+    <%= image_tag 'shiny_logo_new.svg', height: 25, class: 'brand' %>
+    <div class="sidebar-header-controls">
+      <!-- <button data-pages-toggle="#appMenu" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" type="button"><i class="fa fa-angle-down fs-16"></i>
+      </button> -->
+      <button data-toggle-pin="sidebar" class="btn btn-link visible-lg-inline" type="button"><i class="fa fs-12"></i>
+      </button>
+    </div>
+  </div>
+  <!-- END SIDEBAR HEADER -->
+  <!-- BEGIN SIDEBAR MENU -->
+  <div class="sidebar-menu">
+    <ul class="menu-items">
+      <li class="m-t-30">
+        <%= link_to carts_path, class: 'detailed' do %>
+          <span class="title">Carts</span>
+          <span class="details"><%= Cart.count %> carts</span>
+        <% end %>
+        <span class="icon-thumbnail">
+          <i class="pg-shopping_cart"></i>
+        </span>
+
+      </li>
+      <li>
+        <%= link_to discounts_path, class: 'detailed' do %>
+          <span class="title">Discounts</span>
+          <span class="details"><%= Discount.count %> discounts</span>
+        <% end %>
+        <span class="icon-thumbnail">
+          <i class="pg-like"></i>
+        </span>
+      </li>
+      <li>
+        <%= link_to products_path, class: 'detailed' do %>
+          <span class="title">Products</span>
+          <span class="details"><%= Product.count %> products</span>
+        <% end %>
+        <span class="icon-thumbnail">
+          <i class="pg-menu_justify"></i>
+        </span>
+      </li>
+    </ul>
+    <div class="clearfix"></div>
+  </div>
+  <!-- END SIDEBAR MENU -->
+</div>
+<!-- END SIDEBAR -->

@@ -2,21 +2,24 @@
 //= require jquery_ujs
 //= require turbolinks
 
-//= require plugins/pace/pace.min
-//= require plugins/jquery/jquery-1.11.1.min
-//= require plugins/modernizr.custom
-//= require plugins/jquery-ui/jquery-ui.min
-//= require plugins/bootstrapv3/js/bootstrap.min
-//= require plugins/jquery/jquery-easy
-//= require plugins/jquery-unveil/jquery.unveil.min
-//= require plugins/jquery-bez/jquery.bez.min
-//= require plugins/jquery-ios-list/jquery.ioslist.min
-//= require plugins/jquery-actual/jquery.actual.min
-//= require plugins/jquery-scrollbar/jquery.scrollbar.min
-//= require plugins/bootstrap-select2/select2.min
-//= require plugins/classie/classie
-//= require plugins/switchery/js/switchery.min
-//= require pages
+//= require pace/pace.min
+//= require jquery/jquery-1.11.1.min
+//= require modernizr.custom
+//= require jquery-ui/jquery-ui.min
+//= require bootstrapv3/js/bootstrap.min
+//= require jquery/jquery-easy
+//= require jquery-unveil/jquery.unveil.min
+//= require jquery-bez/jquery.bez.min
+//= require jquery-ios-list/jquery.ioslist.min
+//= require jquery-actual/jquery.actual.min
+//= require jquery-scrollbar/jquery.scrollbar.min
+//= require bootstrap-select2/select2.min
+//= require classie/classie
+//= require switchery/js/switchery.min
+
+//= require jquery-autonumeric/autoNumeric
+
+//= require script
 
 (function($) {
     'use strict';
