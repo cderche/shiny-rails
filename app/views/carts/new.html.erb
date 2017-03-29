@@ -1,5 +1,8 @@
-<h1>New Cart</h1>
-
-<%= render 'form', cart: @cart %>
-
-<%= link_to 'Back', carts_path %>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title"><%= t('.new') %></div>
+    </div>
+    <div class="panel-body">
+        <%= render 'form', cart: @cart %>
+    </div>
+</div>

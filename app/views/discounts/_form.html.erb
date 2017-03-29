@@ -1,15 +1,5 @@
 <%= form_for discount, html: { class: 'form-horizontal' } do |f| %>
-  <% if discount.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(discount.errors.count, "error") %> prohibited this discount from being saved:</h2>
-
-      <ul>
-      <% discount.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'dashboard/errors', locals: { object: discount } %>
 
   <% Discount.globalize_locales.each do |locale| %>
   <div class="form-group">

@@ -27,4 +27,5 @@ $(document).ready ->
       $(this).data 'timer', wait
       return
   $('.autonumeric').autoNumeric 'init'
+  # $('.').portlet()
   return

@@ -1,6 +1,8 @@
-<h1>Editing Cart</h1>
-
-<%= render 'form', cart: @cart %>
-
-<%= link_to 'Show', @cart %> |
-<%= link_to 'Back', carts_path %>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title"><%= t('.edit') %></div>
+    </div>
+    <div class="panel-body">
+        <%= render 'form', cart: @cart %>
+    </div>
+</div>

@@ -1,10 +1,15 @@
-<div class="panel panel-default">
+<div class="panel panel-default" data-pages="portlet">
     <div class="panel-heading">
         <div class="panel-title">Discount Items</div>
+        <div class="panel-controls">
+          <ul>
+            <li><a href="#" class="portlet-collapse" data-toggle="collapse"><i class="portlet-icon portlet-icon-collapse"></i></a>
+          </ul>
+        </div>
     </div>
     <div class="panel-body">
         <% unless @cart.discount_items.empty? %>
-        <table class="table table-condensed table-stripped table-responsive">
+        <table class="table table-condensed table-responsive">
             <thead>
                 <th colspan="2">Name</th>
                 <!-- <th>Type</th> -->
