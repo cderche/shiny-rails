@@ -37,6 +37,7 @@
         <%= csrf_meta_tags %>
 
         <%= yield :head %>
+        <%= render './facebook' %>
     </head>
 
     <body>
@@ -49,6 +50,5 @@
 
         <%= development_notification %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true, 'data-turbolinks-eval' => false %>
-        <%= render './facebook' %>
     </body>
 </html>

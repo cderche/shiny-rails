@@ -27,6 +27,7 @@
         <%= stylesheet_link_tag "frontend", media: "all" %>
         <%= csrf_meta_tags %>
         <%= yield :head %>
+        <%= render './facebook' %>
     </head>
 
     <body>
@@ -34,6 +35,5 @@
         <%= yield %>
         <%= render partial: 'footers/frontend' %>
         <%= javascript_include_tag "frontend" %>
-        <%= render './facebook' %>
     </body>
 </html>
