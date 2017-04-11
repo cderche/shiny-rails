@@ -26,4 +26,14 @@ class HomeController < ApplicationController
     # end
   end
 
+  def callback
+    Slacked.post "Callback: #{params[:phone]}"
+    head :ok
+  end
+
+  def newsletter
+    Slacked.post "Newsletter: #{params[:email]}"
+    head :ok
+  end
+
 end

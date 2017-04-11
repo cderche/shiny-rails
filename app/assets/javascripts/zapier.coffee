@@ -2,8 +2,8 @@
 $('#callback_phone').inputmask("+7 (999) 999-99-99")
 
 # ZAPIER METHODS
-CALLBACK_WEBHOOK = "https://hooks.zapier.com/hooks/catch/2100872/1yphim/"
-NEWSLETTER_WEBHOOK = "https://hooks.zapier.com/hooks/catch/2100872/13yts3/"
+CALLBACK_WEBHOOK = "/callback"
+NEWSLETTER_WEBHOOK = "/newsletter"
 zap = (data, webhook) ->
   data.push
     name: "created_at"

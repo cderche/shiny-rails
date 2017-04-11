@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   get '/oops', to: 'home#oops'
   get '/status', to: 'home#status'
 
+  post '/callback', to: 'home#callback'
+  post '/newsletter', to: 'home#newsletter'
+
   namespace :admin do
     # get '/notifications', to: 'admin#notifications'
     resources :bookings, only: [:index, :show, :update]
