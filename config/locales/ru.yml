@@ -56,24 +56,24 @@ ru:
         name: Ольга
         text: С тремя детьми у меня совсем не оставалось времени на уборку. Спасибо Шайни, теперь у меня есть больше времени на детей и на себя.
         location: Moscow, Russia
-      section6:
-        title: Оставайтесь на связи
-        subtitle: подпишитесь на нашу рассылку
-        text: Выгодные предложения, скидки и полезные лайфхаки
-        button: Подпишитесь!
-        thank_you:
-          title: Thank you
-          subtitle: We will be in contact soon.
-      section7:
-        title: Пусть ваш дом сияет чистотой
-        button: Закажите уборку!
-      modal1:
-        title: Request a callback
-        input: Telephone
-        text: Request a callback
-        thank_you:
-          title: Thank you
-          subtitle: We will be in contact soon.
+    section6:
+      title: Оставайтесь на связи
+      subtitle: подпишитесь на нашу рассылку
+      text: Выгодные предложения, скидки и полезные лайфхаки
+      button: Подпишитесь!
+      thank_you:
+        title: Thank you
+        subtitle: We will be in contact soon.
+    section7:
+      title: Пусть ваш дом сияет чистотой
+      button: Закажите уборку!
+    modal1:
+      title: Request a callback
+      input: Telephone
+      text: Request a callback
+      thank_you:
+        title: Thank you
+        subtitle: We will be in contact soon.
     package:
       title: Что входит в базовую уборку Shiny?
       section1:
