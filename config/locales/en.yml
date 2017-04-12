@@ -1,4 +1,6 @@
 en:
+  english: EN
+  russian: RU
   beta:
     section1:
       title: Book your <b class="font-lato">professional and trusted</b> home clean in Moscow
@@ -289,6 +291,7 @@ en:
     about_us: 'About us'
     terms: "Terms & Conditions"
     order: "Book Now"
+    blog: Blog
   order: "Book"
   ironing: "I need ironing (+1 hour)"
   pets: "I have animals in my home"
