@@ -1,0 +1,110 @@
+<section class="p-t-100 bg-master-lightest b-b b-grey">
+    <div class="container">
+        <div class="row m-b-60">
+            <div class="col-sm-12 col-md-7">
+                <h1 class="text-uppercase">
+                    <b><%= t('beta.section3.title') %></b>
+                </h1>
+                <h6 class="block-title m-b-40"><%= t('beta.section3.subtitle') %></h6>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 m-b-40">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <%= image_tag 'timer.svg', width: 60, class: 'm-b-10' %>
+                            </div>
+                            <div class="col-xs-9">
+                                <h6 class="block-title p-b-5"><%= t('beta.section3.item1.title') %></h6>
+                                <p><%= t('beta.section3.item1.text') %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 m-b-40">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <%= image_tag 'credit_card.svg', width: 60, class: 'm-b-10' %>
+                            </div>
+                            <div class="col-xs-9">
+                                <h6 class="block-title p-b-5"><%= t('beta.section3.item2.title') %></h6>
+                                <p><%= t('beta.section3.item2.text') %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 m-b-40">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <%= image_tag 'chatting.svg', width: 60, class: 'm-b-10' %>
+                            </div>
+                            <div class="col-xs-9">
+                                <h6 class="block-title p-b-5"><%=raw t('beta.section3.item3.title') %></h6>
+                                <p><%=raw t('beta.section3.item3.text', email: ENV['SUPPORT_EMAIL'], telephone: ENV['PHONE_NUMBER']) %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 m-b-40">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <%= image_tag 'dollar.svg', width: 60, class: 'm-b-10' %>
+                            </div>
+                            <div class="col-xs-9">
+                                <h6 class="block-title p-b-5"><%= t('beta.section3.item4.title') %></h6>
+                                <p><%= t('beta.section3.item4.text') %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 m-b-40">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <%= image_tag 'pet.svg', width: 60, class: 'm-b-10' %>
+                            </div>
+                            <div class="col-xs-9">
+                                <h6 class="block-title p-b-5"><%= t('beta.section3.item5.title') %></h6>
+                                <p><%= t('beta.section3.item5.text') %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 m-b-40">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <%= image_tag 'promotion.svg', width: 60, class: 'm-b-10' %>
+                            </div>
+                            <div class="col-xs-9">
+                                <h6 class="block-title p-b-5"><%= t('beta.section3.item6.title') %></h6>
+                                <p><%= t('beta.section3.item6.text') %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <!-- <a href="#" class="btn btn-lg btn-bordered btn-black block-title btn-block">Ready to book?</a> -->
+                        <% if user_signed_in? %>
+                        <%= link_to t('beta.section3.button'), clean_path, class: "btn btn-lg btn-bordered btn-black block-title btn-block", data: { turbolinks: false } %>
+                    <% else %>
+                        <a class="btn btn-lg btn-bordered btn-black block-title btn-block" href="#" data-toggle="modal" data-target="#modalAuth" data-text="<%= t 'ready_to_book' %>"><%= t('beta.section3.button') %></a>
+                        <% end %>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                      <u><a href="#" class="text-black text-underline" data-toggle="modal" data-target="#checklist_modal"><small><%= t('beta.checklist') %></small></a></u>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 hidden-sm">
+                <div class="content-mask-md text-center hidden-xs">
+                    <div class="device_morph pull-center-inner" data-pages="auto-scroll">
+                        <%= image_tag 'b_phone.png', class: 'xs-image-responsive-height image-responsive-width' %>
+                        <div class="screen">
+                            <div class="iphone-border">
+                                <%= image_tag 'mobile_preview.png', class: 'image-responsive-height lazy' %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

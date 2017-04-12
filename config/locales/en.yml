@@ -2,14 +2,15 @@ en:
   english: EN
   russian: RU
   beta:
+    checklist: What is Included?
     section1:
-      title: Book your <b class="font-lato">professional and trusted</b> home clean in Moscow
+      title: Book your <b class="font-lato">professional and trusted</b> home cleaner in Moscow
       subtitle: From 1260rub.
       button1: Book a clean
       button2: Request a callback
     section2:
       title: Do you know that feeling?
-      subtitle: Coming home to a freshly cleaned, shiny home...
+      subtitle: Coming home to a freshly cleaned, shiny home.
       item1:
         title: We are reliable
         text: All our cleaning professionals are fully vetted and trained.
@@ -18,7 +19,7 @@ en:
         text: Tell us what you want, we will send you a professional. Enjoy.
       item3:
         title: We are professional
-        text: Your happiness is our goal, if you are not satisfied, we will work to make it right.
+        text: Your happiness is our goal. Not satisfied? We will make it right.
     section3:
       title: Book in just a few touches
       subtitle: Tell us your preferences and we will do the rest.

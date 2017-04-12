@@ -1,0 +1,39 @@
+<!-- Modal -->
+<div class="modal fade slide-up disable-scroll" id="callback_modal" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
+    <div class="modal-dialog ">
+        <div class="modal-content-wrapper">
+            <div class="modal-content">
+                <div class="modal-header clearfix text-left">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <i class="pg-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="callback_form">
+                        <h3 class="text-center block-title m-b-20"><%= t('beta.modal1.title') %></h3>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                                <div class="form-group form-group-default bg-transparent b-a b-transparent-black">
+                                    <label class="control-label"><%= t 'beta.modal1.input' %></label>
+                                    <input type="text" name="phone" id="callback_phone" class="form-control" placeholder="Telephone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                                <button type="submit" class="btn btn-lg btn-bordered btn-black block-title btn-block"><%= t 'beta.modal1.text' %></button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="callback_message" style="display:none;" class="text-center">
+                        <i class="fa fa-check fa-4x"></i>
+                        <h3><%= t('beta.modal1.thank_you.title') %></h3>
+                        <h5 class="block-title"><%= t('beta.modal1.thank_you.subtitle') %></h5>
+                    </div>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>

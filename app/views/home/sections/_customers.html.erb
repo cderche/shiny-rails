@@ -1,0 +1,83 @@
+<section class="p-b-50 p-t-50 bg-master-darkest" data-pages-bg-image="<%= image_path 'hero_section_3.jpg' %>" data-bg-overlay="black" data-overlay-opacity="0.4">
+    <div class="container">
+        <div class="row m-b-40">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <h1 class="text-uppercase text-white">
+                    <b><%= t('beta.section5.title') %></b>
+                </h1>
+            </div>
+        </div>
+        <div class="social-wrapper">
+            <!-- START SOCIAL -->
+            <div class="social " data-pages="social">
+                <div class="feed">
+                    <!-- START DAY -->
+                    <div class="day" data-social="day">
+                        <!-- START ITEM -->
+                        <div class="card share" data-social="item">
+                            <div class="circle" data-toggle="tooltip" title="Label" data-container="body"></div>
+                            <div class="card-header clearfix">
+                                <div class="user-pic">
+                                    <%= image_tag 'profiles/3.jpg', width: 33, height: 33, src: image_path('profiles/3x.jpg'), data: { src_retina: image_path('profiles/3x.jpg'), src: image_path('profiles/3.jpg') } %>
+                                </div>
+                                <h5><%= t('beta.section5.customer1.name') %></h5>
+                                <h6>
+                                    <span>
+                                        <i class="fa fa-map-marker"></i>
+                                        <%= t('beta.section5.customer1.location') %></span>
+                                </h6>
+                            </div>
+                            <div class="card-description">
+                                <p><%= t('beta.section5.customer1.text') %></p>
+                            </div>
+                        </div>
+                        <!-- END ITEM -->
+
+                        <!-- START ITEM -->
+                        <div class="card share" data-social="item">
+                            <div class="circle" data-toggle="tooltip" title="Label" data-container="body"></div>
+                            <div class="card-header clearfix">
+                                <div class="user-pic">
+                                    <%= image_tag 'profiles/2.jpg', width: 33, height: 33, src: image_path('profiles/2x.jpg'), data: { src_retina: image_path('profiles/2x.jpg'), src: image_path('profiles/2.jpg') } %>
+                                </div>
+                                <h5><%= t('beta.section5.customer2.name') %></h5>
+                                <h6>
+                                    <span>
+                                        <i class="fa fa-map-marker"></i>
+                                        <%= t('beta.section5.customer2.location') %></span>
+                                </h6>
+                            </div>
+                            <div class="card-description">
+                                <p><%= t('beta.section5.customer2.text') %></p>
+                            </div>
+                        </div>
+                        <!-- END ITEM -->
+
+                        <!-- START ITEM -->
+                        <div class="card share" data-social="item">
+                            <div class="circle" data-toggle="tooltip" title="Label" data-container="body"></div>
+                            <div class="card-header clearfix">
+                                <div class="user-pic">
+                                    <%= image_tag 'profiles/5.jpg', width: 33, height: 33, src: image_path('profiles/5x.jpg'), data: { src_retina: image_path('profiles/5x.jpg'), src: image_path('profiles/5.jpg') } %>
+                                </div>
+                                <h5><%= t('beta.section5.customer3.name') %></h5>
+                                <h6>
+                                    <span>
+                                        <i class="fa fa-map-marker"></i>
+                                        <%= t('beta.section5.customer3.location') %></span>
+                                </h6>
+                            </div>
+                            <div class="card-description">
+                                <p><%= t('beta.section5.customer3.text') %></p>
+                            </div>
+                        </div>
+                        <!-- END ITEM -->
+
+                    </div>
+                    <!-- END DAY -->
+                </div>
+                <!-- END FEED -->
+            </div>
+        </div>
+    </div>
+</section>
