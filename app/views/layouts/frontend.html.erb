@@ -24,9 +24,11 @@
         <%= content_tag :meta, nil, content: 'http://www.getshiny.ru/'      , property: 'og:url' %>
         <%= content_tag :meta, nil, content: image_url('ico/shiny-og.png')  , property: 'og:image' %>
         <%= content_tag :meta, nil, content: I18n.locale.to_s               , property: 'og:locale' %>
-        <% I18n.available_locales.each do |locale| %>
-          <%= content_tag :meta, nil, content: locale.to_s                  , property: 'og:locale:alternate' %>
-        <% end %>
+        <%= content_tag :meta, nil, content: :en                            , property: 'og:locale:alternate' if I18n.locale == :ru %>
+        <%= content_tag :meta, nil, content: :ru                            , property: 'og:locale:alternate' if I18n.locale == :en %>
+        <%# I18n.available_locales.each do |locale| %>
+          <%# content_tag :meta, nil, content: locale.to_s                  , property: 'og:locale:alternate' %>
+        <%# end %>
 
 
         <%= stylesheet_link_tag "frontend", media: "all" %>
