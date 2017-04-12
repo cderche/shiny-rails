@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+    response.headers["Content-Language"] = I18n.locale.to_s
   end
 
   def default_url_options

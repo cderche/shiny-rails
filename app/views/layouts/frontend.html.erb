@@ -3,7 +3,6 @@
     <head>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
         <meta charset="utf-8"/>
-        <title>Shiny - Home cleaning in Moscow, Russia</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <link rel="apple-touch-icon" href="<%= image_path 'ico/shiny_icon_new_60.png' %>">
         <link rel="apple-touch-icon" sizes="76x76" href="<%= image_path 'ico/shiny_icon_new_76.png' %>">
@@ -14,14 +13,20 @@
         <meta name="apple-touch-fullscreen" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-        <meta content="" name="description"/>
-        <meta content="Shiny" name="author"/>
+        <%= content_tag :title, t('beta.seo.title') %>
+        <%= content_tag :meta, nil, content: t('beta.seo.description')  , name: :description %>
+        <%= content_tag :meta, nil, content: t('beta.seo.author')       , name: :author %>
+
         <!-- OpenGraph Properties -->
-        <meta property="og:title" content="Shiny" />
-        <meta property="og:description" content="Home cleaning in Moscow, Russia" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://www.getshiny.ru/" />
-        <meta property="og:image" content="<%= image_url 'ico/shiny_og_new.png' %>" />
+        <%= content_tag :meta, nil, content: t('beta.seo.title')            , property: 'og:title' %>
+        <%= content_tag :meta, nil, content: t('beta.seo.description')      , property: 'og:description' %>
+        <%= content_tag :meta, nil, content: :website                       , property: 'og:type' %>
+        <%= content_tag :meta, nil, content: 'http://www.getshiny.ru/'      , property: 'og:url' %>
+        <%= content_tag :meta, nil, content: image_url('ico/shiny-og.png')  , property: 'og:image' %>
+        <%= content_tag :meta, nil, content: I18n.locale.to_s               , property: 'og:locale' %>
+        <% I18n.available_locales.each do |locale| %>
+          <%= content_tag :meta, nil, content: locale.to_s                  , property: 'og:locale:alternate' %>
+        <% end %>
 
 
         <%= stylesheet_link_tag "frontend", media: "all" %>
