@@ -2,6 +2,7 @@
 //= pages.image.loader
 
 //= require plugins/jquery/jquery-1.11.1.min
+//= require jquery_ujs
 //= require plugins/swiper/js/swiper.jquery.min
 //= require plugins/velocity/velocity.min
 //= require plugins/velocity/velocity.ui
