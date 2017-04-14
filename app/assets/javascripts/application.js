@@ -37,10 +37,10 @@
 //= require pages-plugins/datatables-responsive/js/lodash.min
 
 // BEGIN CORE TEMPLATE JS FOR PAGES
-//  require pages-core/js/pages.min
+//=  require pages-core/js/pages.min
 
 // BEGIN SITE SCRIPTS
-// require ./pages
+//= require ./pages
 
 //  I prefer to list scripts in a specific order, so I comment out require_tree .
 // require_tree .
