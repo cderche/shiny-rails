@@ -12,12 +12,12 @@
 //
 
 // BEGIN VENDOR JS FOR PAGES (plus add in jquery.turbolinks)
-// require pages-plugins/pace/pace.min
-// require pages-plugins/jquery/jquery-1.11.1.min
-// require jquery.turbolinks
-// require jquery_ujs
-// require pages-plugins/modernizr.custom
-// require pages-plugins/jquery-ui/jquery-ui.min
+//= require pages-plugins/pace/pace.min
+//= require pages-plugins/jquery/jquery-1.11.1.min
+//= require jquery.turbolinks
+//= require jquery_ujs
+//= require pages-plugins/modernizr.custom
+//= require pages-plugins/jquery-ui/jquery-ui.min
 // require pages-plugins/bootstrapv3/js/bootstrap.min
 // require pages-plugins/jquery/jquery-easy
 // require pages-plugins/jquery-unveil/jquery.unveil.min
