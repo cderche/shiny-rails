@@ -1,17 +1,17 @@
-<%= content_tag :section, class: 'jumbotron height-80-percent', data: { pages: 'parallax', pages_bg_image: image_path('hero_livingroom.jpg'), bg_overlay: 'black', overlay_opacity: '0.6' } do %>
+<%= content_tag :section, class: 'jumbotron height-80-percent', data: { pages: 'parallax', pages_bg_image: image_path('hero_livingroom_1.jpg'), bg_overlay: 'white', overlay_opacity: '0.2' } do %>
 <div class="container-xs-height full-height">
     <div class="col-xs-height col-middle text-left">
 
         <div class="content-layer">
             <div class="inner full-height">
                 <div class="container-xs-height full-height">
-                    <div class="col-xs-height col-middle text-center">
+                    <div class="col-xs-height col-middle text-center p-b-90">
                         <div class="container">
                             <div class="row m-b-40">
                                 <div class="col-md-10 col-md-offset-1">
-                                    <h3 class="light text-white"><%=raw t('beta.section1.title') %></h3>
-                                    <h5 class="m-t-5 text-white font-lato"><%= t('beta.section1.subtitle') %></h5>
-                                    <u><a href="#" class="text-white text-underline" data-toggle="modal" data-target="#checklist_modal"><small><%= t('beta.checklist') %></small></a></u>
+                                    <h3 class="light text-black"><%=raw t('beta.section1.title') %></h3>
+                                    <h5 class="m-t-5 text-black font-lato"><%= t('beta.section1.subtitle') %></h5>
+                                    <u><a href="#" class="text-black text-underline" data-toggle="modal" data-target="#checklist_modal"><small><%= t('beta.checklist') %></small></a></u>
                                 </div>
                             </div>
                             <div class="row">
@@ -20,18 +20,18 @@
                                         <div class="col-sm-5 m-b-20">
                                             <!-- <a href="#" class="btn btn-lg btn-bordered btn-black block-title btn-block">Book a clean</a> -->
                                             <% if user_signed_in? %>
-                                            <%= link_to t('beta.section1.button1') , clean_path, class: "btn btn-lg btn-bordered btn-white block-title btn-block", data: { turbolinks: false } %>
+                                            <%= link_to t('beta.section1.button1') , clean_path, class: "btn btn-lg btn-bordered btn-black block-title btn-block", data: { turbolinks: false } %>
                                         <% else %>
-                                            <a class="btn btn-lg btn-bordered btn-white block-title btn-block" href="#" data-toggle="modal" data-target="#modalAuth" data-text="<%= t('book_a_clean') %>"><%= t('beta.section1.button1') %></a>
+                                            <a class="btn btn-lg btn-bordered btn-black block-title btn-block" href="#" data-toggle="modal" data-target="#modalAuth" data-text="<%= t('book_a_clean') %>"><%= t('beta.section1.button1') %></a>
                                             <% end %>
                                         </div>
                                         <div class="col-sm-5 col-sm-offset-2">
-                                            <button class="btn btn-lg btn-bordered btn-white block-title btn-block" data-toggle="modal" data-target="#callback_modal"><%= t('beta.section1.button2') %></button>
+                                            <button class="btn btn-lg btn-bordered btn-black block-title btn-block" data-toggle="modal" data-target="#callback_modal"><%= t('beta.section1.button2') %></button>
                                         </div>
                                     </div>
                                     <!-- <div class="row">
                                       <div class="col-xs-12 text-center">
-                                        <u><a href="#" class="text-white text-underline hidden-xs" data-toggle="modal" data-target="#checklist_modal"><small><%= t('beta.checklist') %></small></a></u>
+                                        <u><a href="#" class="text-black text-underline hidden-xs" data-toggle="modal" data-target="#checklist_modal"><small><%= t('beta.checklist') %></small></a></u>
                                       </div>
                                     </div> -->
                                 </div>

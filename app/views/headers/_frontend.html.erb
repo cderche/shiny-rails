@@ -35,8 +35,8 @@
             <!-- END HEADER CLOSE TOGGLE FOR MOBILE -->
             <div class="p-t-10 p-b-10 clearfix m-b-5 hidden-xs hidden-sm">
             <div class="pull-right fs-12">
-              <%= link_to t('english'), url_for(locale: 'en'), class: 'm-r-15 hint-text link text-black', data: { turbolinks: false } %>
-              <%= link_to t('russian'), url_for(locale: 'ru'), class: 'm-r-15 hint-text link text-black', data: { turbolinks: false } %>
+              <%= link_to t('english'), url_for(locale: 'en'), class: 'm-r-15 hint-text link text-black', data: { turbolinks: false } if I18n.locale == :ru %>
+              <%= link_to t('russian'), url_for(locale: 'ru'), class: 'm-r-15 hint-text link text-black', data: { turbolinks: false } if I18n.locale == :en %>
               <!-- <a href="#" class="m-r-15 hint-text link text-black">English</a> -->
               <!-- <a href="#" class="m-r-15 hint-text link text-black">Russian</a> -->
 
