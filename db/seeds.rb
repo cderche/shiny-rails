@@ -36,3 +36,5 @@ Service.create!(name: "service.name.allday", price: 6800)
 Extra.create!(name: "extra.name.bathroom", price: 500, quantity_based: true)
 Extra.create!(name: "extra.name.ironing", price: 750, quantity_based: false)
 Extra.create!(name: "extra.name.windows", price: 1000, quantity_based: false)
+
+User.create!(email: "admin@getshiny.ru", admin: true, password: "password", password_confirmation: "password")
