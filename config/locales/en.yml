@@ -88,7 +88,7 @@ en:
         item2: Wipe down all mirrors and glass fixtures
         item3: Vacuum and mop all floor surfaces
         item4: Take out garbage
-        item5: Собираем и складываем одежду
+        item5: Tidy up and fold your clothes
       section2:
         title: Bathrooms
         item1: Wash and sanitize the toilet, shower, tub, and sink
@@ -111,7 +111,7 @@ en:
         item3: Inside oven
         item4: Ironing
         item5: Windows
-        item6: Укажите другое – перед оформлением заказа мы сообщим, сможем ли это сделать
+        item6: Anything else? - Contact us before you place an order, so we can check whether we can meet you wishes or not.
       section5:
         title: The following services are not currently offered
         item1: Outside cleaning of sliding windows
