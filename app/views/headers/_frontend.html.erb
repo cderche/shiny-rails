@@ -57,7 +57,7 @@
                       <a href="#" class="text-black">Book a clean</a>
                     </li>
                     <% if user_signed_in? %>
-                    <li><%= link_to t('logout'), destroy_user_session_path, method: :delete, class: 'text-danger hidden-md hidden-lg' %>
+                    <li><%= link_to t('logout'), destroy_user_session_path, method: :delete, class: 'text-danger hidden-md hidden-lg', data: { turbolinks: false } %></li>
                     <% end %>
                     <li class="hidden-md hidden-lg">
                       <!-- <a href="#" class="text-black">English</a> -->
