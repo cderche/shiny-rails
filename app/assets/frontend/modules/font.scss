@@ -91,10 +91,19 @@
 
 @font-face {
   font-family: 'Lato';
-  src: asset-url('Lato-Regular.ttf') format('truetype');
+  src:  asset-url('Lato-Regular.ttf') format('truetype'),
+        asset-url('Lato-Regular.eot?#iefix') format('embedded-opentype'),
+        asset-url('Lato-Regular.woff') format('woff'),
+        asset-url('Lato-Regular.svg#LatoRegular') format('svg');
   font-weight: 300;
   font-style: normal;
 }
+
+//src: url('${OpenSansPath}/Light/OpenSans-Light.eot');
+//   src: url('${OpenSansPath}/Light/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+//        url('${OpenSansPath}/Light/OpenSans-Light.woff') format('woff'),
+//        url('${OpenSansPath}/Light/OpenSans-Light.ttf') format('truetype'),
+//        url('${OpenSansPath}/Light/OpenSans-Light.svg#OpenSansLight') format('svg');
 
 //@font-face {
 //  font-family: 'Lato';
