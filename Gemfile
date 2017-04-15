@@ -61,6 +61,11 @@ group :test do
   gem 'rspec'
   gem 'capybara-mechanize'
   gem 'faker'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  # gem 'capybara-webkit'
+  # gem 'culerity'
+  # gem 'celerity', :require => nil
 end
 
 group :production do

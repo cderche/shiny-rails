@@ -1,11 +1,15 @@
-Given(/^I visit "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I visit "([^"]*)"$/) do |path|
+  visit eval(path)
 end
 
-Then(/^I should be visible <%= t\('beta\.modal(\d+)\.thank_you\.title'\) %>$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I click on "([^"]*)"$/) do |text|
+  click_on I18n.t(text)
 end
 
-Then(/^I should be visible <%= t\('beta\.modal(\d+)\.thank_you\.subtitle'\) %>$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^"([^"]*)" should be visible$/) do |ref|
+  expect(find(ref).visible?).to be_truthy
+end
+
+Then(/^"([^"]*)" should be hidden$/) do |ref|
+  expect(find(ref, visible: false).visible?).to be_falsey
 end
