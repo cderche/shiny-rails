@@ -5,6 +5,7 @@ Feature: Guest can request a callback
     Given I am a guest
     When I visit "root_path"
     Then "#callback_modal" should be hidden
+    And "#callback_message" should be hidden
     When I click on "beta.section1.button2"
     Then "#callback_modal" should be visible
     When I fill in "+79999999999" in "phone"
