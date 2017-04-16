@@ -10,4 +10,4 @@ Feature: Guest can request a callback
     Then "#callback_modal" should be visible
     When I fill in "+79999999999" in "phone"
     And I submit the form "#callback_form"
-    #Then "#callback_message" should be visible
+    Then "#callback_message" should be visible
