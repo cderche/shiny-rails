@@ -21,10 +21,10 @@ $('#callback_form, #newsletter_form').submit (e) ->
     console.log "this.id: ", this.id
     if this.id == "callback_form"
       zap data, CALLBACK_WEBHOOK
-      $("#callback_message").show()
+      $("#callback_message").removeClass("hidden")
     else
       zap data, NEWSLETTER_WEBHOOK
-      $("#newsletter_message").show()
+      $("#newsletter_message").removeClass("hidden")
   return
 
 # CUSTOM RUSSIAN PHONE VALIDATOR
@@ -51,6 +51,6 @@ $("#callback_form").validate
 # RESET CALLBACK MODEL
 $('#callback_modal').on 'hidden.bs.modal', ->
   $('#callback_phone').val("")
-  $('#callback_form').show()
-  $('#callback_message').hide()
+  $('#callback_form').removeClass("hidden")
+  $('#callback_message').addClass("hidden")
   return
