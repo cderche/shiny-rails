@@ -1,6 +1,6 @@
 Feature: Guest can request a callback
 
-  @javascript
+  @selenium
   Scenario: Guest can request a callback
     Given I am a guest
     When I visit "root_path"
