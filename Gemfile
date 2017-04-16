@@ -63,9 +63,6 @@ group :test do
   gem 'faker'
   gem 'selenium-webdriver'
   gem 'capybara'
-  # gem 'capybara-webkit'
-  # gem 'culerity'
-  # gem 'celerity', :require => nil
 end
 
 group :production do
