@@ -15,6 +15,8 @@ if ENV['TRAVIS']
     # Give the build a name in Sauce Labs so they aren't just all "Unnamed Job."
     capabilities['name'] = "Travis ##{ENV['TRAVIS_JOB_NUMBER']}"
 
+    capabilities['build'] = ENV['TRAVIS_BUILD_NUMBER']
+
     Capybara.register_driver :selenium do |app|
         Capybara::Selenium::Driver.new(app,
                                        browser: :remote,
