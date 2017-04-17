@@ -8,6 +8,6 @@ Feature: Guest can request a callback
     And "#callback_message" should be hidden
     When I click on "beta.section1.button2"
     Then "#callback_modal" should be visible
-    When I fill in "+79999999999" in "phone"
+    When I fill in "9999999999" in "phone"
     And I submit the form "#callback_form"
     Then "#callback_message" should be visible
