@@ -63,6 +63,7 @@ group :test do
   gem 'faker'
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'poltergeist'
 end
 
 group :production do

@@ -1,6 +1,6 @@
 Feature: Guest can subscribe to the newsletter
 
-  @selenium
+  @javascript
   Scenario: Guest can subscribe to the newsletter
     Given I am a guest
     When I visit "root_path"
