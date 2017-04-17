@@ -69,5 +69,5 @@ Capybara.register_driver :poltergeist do |app|
   options = {
     js_errors: false
   }
-  Capybara::Selenium::Driver.new(app,options)
+  Capybara::Poltergeist::Driver.new(app,options)
 end
