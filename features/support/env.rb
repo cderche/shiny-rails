@@ -64,3 +64,10 @@ World(FactoryGirl::Syntax::Methods)
 
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
+
+Capybara.register_driver :poltergeist do |app|
+  options = {
+    js_errors: false
+  }
+  Capybara::Selenium::Driver.new(app,options)
+end
