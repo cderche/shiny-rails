@@ -11,17 +11,17 @@ script:
   # - bin/rails db:schema:load
 # addons:
   # sauce_connect: true
-env:
+# env:
   # Linux tests
-  - PLATFORM="Linux" BROWSER="firefox"
-  - PLATFORM="Linux" BROWSER="chrome"
-
-  # Mac OS X tests
-  - PLATFORM="OS X 10.10" BROWSER="firefox"
-  - PLATFORM="OS X 10.10" BROWSER="chrome"
-
-  # Windows tests
-  - PLATFORM="Windows 7" BROWSER="firefox"
-  - PLATFORM="Windows 7" BROWSER="chrome"
-  - PLATFORM="Windows 8.1" BROWSER="firefox"
-  - PLATFORM="Windows 8.1" BROWSER="chrome"
+  # - PLATFORM="Linux" BROWSER="firefox"
+  # - PLATFORM="Linux" BROWSER="chrome"
+  #
+  # # Mac OS X tests
+  # - PLATFORM="OS X 10.10" BROWSER="firefox"
+  # - PLATFORM="OS X 10.10" BROWSER="chrome"
+  #
+  # # Windows tests
+  # - PLATFORM="Windows 7" BROWSER="firefox"
+  # - PLATFORM="Windows 7" BROWSER="chrome"
+  # - PLATFORM="Windows 8.1" BROWSER="firefox"
+  # - PLATFORM="Windows 8.1" BROWSER="chrome"
