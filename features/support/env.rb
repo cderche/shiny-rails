@@ -67,8 +67,8 @@ Capybara.javascript_driver = :poltergeist
 
 Capybara.register_driver :poltergeist do |app|
   options = {
-    js_errors: false,
-    debug: true
+      js_errors: false
+    # , debug: true
   }
   Capybara::Poltergeist::Driver.new(app,options)
 end
