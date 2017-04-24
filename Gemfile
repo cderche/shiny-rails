@@ -6,7 +6,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '>= 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -61,6 +61,9 @@ group :test do
   gem 'rspec'
   gem 'capybara-mechanize'
   gem 'faker'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'poltergeist'
 end
 
 group :production do
@@ -70,9 +73,9 @@ end
 # PAGES gems
 # Gems for twitter LESS -> CSS and JS support
 gem 'jquery-turbolinks'
-gem 'execjs'
-gem 'therubyracer'
-gem 'less-rails', '~> 2.7.1'
+# gem 'execjs'
+# gem 'therubyracer'
+# gem 'less-rails', '~> 2.7.1'
 
 # Randomize id
 # gem "obfuscate_id"

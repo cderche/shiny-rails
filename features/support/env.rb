@@ -61,3 +61,14 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 # On scenarios that use external urls, add @mechanize before it
 require 'capybara/mechanize/cucumber'
 World(FactoryGirl::Syntax::Methods)
+
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
+
+Capybara.register_driver :poltergeist do |app|
+  options = {
+      js_errors: false
+    # , debug: true
+  }
+  Capybara::Poltergeist::Driver.new(app,options)
+end

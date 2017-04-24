@@ -62,7 +62,10 @@ GEM
       mechanize (~> 2.7.0)
     case_transform (0.2)
       activesupport
+    childprocess (0.6.3)
+      ffi (~> 1.0, >= 1.0.11)
     choice (0.2.0)
+    cliver (0.3.2)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -70,7 +73,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    commonjs (0.2.7)
     concurrent-ruby (1.0.5)
     css_parser (1.4.10)
       addressable
@@ -117,8 +119,8 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.18)
     gherkin (4.1.1)
-    globalid (0.3.7)
-      activesupport (>= 4.1.0)
+    globalid (0.4.0)
+      activesupport (>= 4.2.0)
     htmlentities (4.3.4)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -142,16 +144,8 @@ GEM
     jsonapi-renderer (0.1.2)
     launchy (2.4.3)
       addressable (~> 2.3)
-    less (2.6.0)
-      commonjs (~> 0.2.7)
-    less-rails (2.7.1)
-      actionpack (>= 4.0)
-      less (~> 2.6.0)
-      sprockets (> 2, < 4)
-      tilt
     letter_opener (1.4.1)
       launchy (~> 2.2)
-    libv8 (3.16.14.19)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -191,6 +185,10 @@ GEM
     orm_adapter (0.5.0)
     payture_api (0.1.7)
     pg (0.20.0)
+    poltergeist (1.14.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      websocket-driver (>= 0.2.0)
     premailer (1.10.2)
       addressable
       css_parser (>= 1.4.10)
@@ -237,7 +235,6 @@ GEM
       ffi (>= 0.5.0)
     record_tag_helper (1.0.0)
       actionview (~> 5.x)
-    ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rest-client (2.0.1)
@@ -258,6 +255,7 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     ruby-graphviz (1.2.3)
+    rubyzip (1.2.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -265,6 +263,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    selenium-webdriver (3.3.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
     sendinblue (2.4)
       httparty
       json
@@ -287,9 +289,6 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
-    therubyracer (0.12.3)
-      libv8 (~> 3.16.14.15)
-      ref
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
@@ -311,6 +310,7 @@ GEM
       bindex (>= 0.4.0)
       railties (>= 5.0)
     webrobots (0.1.2)
+    websocket (1.2.4)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -323,6 +323,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   byebug
+  capybara
   capybara-mechanize
   coffee-rails (~> 4.2)
   cucumber-rails
@@ -330,32 +331,31 @@ DEPENDENCIES
   devise
   devise-i18n
   dotenv-rails
-  execjs
   factory_girl_rails
   faker
   inline_svg
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
-  less-rails (~> 2.7.1)
   letter_opener
   listen (~> 3.0.5)
   mailgun_rails
   payture_api
   pg
+  poltergeist
   premailer-rails
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-erd
   record_tag_helper
   rspec
-  sass-rails (~> 5.0)
+  sass-rails (>= 5.0.6)
+  selenium-webdriver
   sendinblue
   slacked
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  therubyracer
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
