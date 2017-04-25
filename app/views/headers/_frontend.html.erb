@@ -54,7 +54,7 @@
                       <%= link_to t('menu.qa'), questions_path, class: 'text-master', data: { turbolinks: false } %>
                     </li>
                     <li class="hidden-md hidden-lg">
-                      <a href="#" class="text-black">Book a clean</a>
+                      <a href="#" class="text-black" data-toggle="modal" data-target="#modalAuth" data-text="<%= t('book_a_clean') %>"><%= t('book_a_clean') %></a>
                     </li>
                     <% if user_signed_in? %>
                     <li><%= link_to t('logout'), destroy_user_session_path, method: :delete, class: 'text-danger hidden-md hidden-lg', data: { turbolinks: false } %></li>

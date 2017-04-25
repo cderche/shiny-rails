@@ -124,6 +124,7 @@ GEM
     htmlentities (4.3.4)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    http_accept_language (2.1.0)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.8.1)
@@ -333,6 +334,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   faker
+  http_accept_language
   inline_svg
   jbuilder (~> 2.5)
   jquery-rails

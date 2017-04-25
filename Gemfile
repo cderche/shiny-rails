@@ -93,3 +93,6 @@ gem 'mailgun_rails'
 gem 'slacked'
 
 gem 'inline_svg'
+
+# gem 'route_translator'
+gem 'http_accept_language'

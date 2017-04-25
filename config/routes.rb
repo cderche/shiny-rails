@@ -1,8 +1,27 @@
 Rails.application.routes.draw do
-  # devise_for :admins
-  devise_for :users
 
-  get '/clean', to: 'bookings#new'
+  scope "(:locale)", locale: /en|ru/ do
+    devise_for :users
+
+    get '/clean', to: 'bookings#new'
+    get '/terms', to: 'home#terms'
+    get '/questions', to: 'home#questions'
+    root to: "home#home"
+    get '/book', to: 'bookings#new'
+    get '/bookings', to: 'bookings#new'
+    resources :bookings, only: [:new, :create]
+
+    get '/oops', to: 'home#oops'
+    get '/status', to: 'home#status'
+
+    root to: "home#home"
+  end
+
+
+  # devise_for :admins
+
+
+  # get '/clean', to: 'bookings#new'
 
   resources :notifications, only: :create
   # resources :promos, only: :index
@@ -12,21 +31,20 @@ Rails.application.routes.draw do
 
   # get '/admin/dashboard', to: 'admin#index'
 
-  post '/subscribe', to: 'subscribe#subscribe'
+  # post '/subscribe', to: 'subscribe#subscribe'
 
-  get '/terms', to: 'home#terms'
-  get '/questions', to: 'home#questions'
+  # get '/terms', to: 'home#terms'
+  # get '/questions', to: 'home#questions'
 
-  root to: "home#home"
+  # root to: "home#home"
   # get '/beta', to: "home#home"
 
-  get '/book', to: 'bookings#new'
-  get '/bookings', to: 'bookings#new'
-  resources :bookings, only: [:new, :create]
-
-
-  get '/oops', to: 'home#oops'
-  get '/status', to: 'home#status'
+  # get '/book', to: 'bookings#new'
+  # get '/bookings', to: 'bookings#new'
+  # resources :bookings, only: [:new, :create]
+  #
+  # get '/oops', to: 'home#oops'
+  # get '/status', to: 'home#status'
 
   post '/callback', to: 'home#callback'
   post '/newsletter', to: 'home#newsletter'
