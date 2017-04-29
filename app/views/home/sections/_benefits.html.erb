@@ -85,7 +85,7 @@
                         <% if user_signed_in? %>
                         <%= link_to t('beta.section3.button'), clean_path, class: "btn btn-lg btn-bordered btn-black block-title btn-block", data: { turbolinks: false } %>
                     <% else %>
-                        <a class="btn btn-lg btn-bordered btn-black block-title btn-block" href="#" data-toggle="modal" data-target="#modalAuth" data-text="<%= t 'ready_to_book' %>"><%= t('beta.section3.button') %></a>
+                        <a class="btn btn-lg btn-bordered btn-black block-title btn-block" href="#" data-toggle="modal" data-target="#modalAuth"><%= t('book_a_clean') %></a>
                         <% end %>
                     </div>
                     <div class="col-xs-12 text-center">
