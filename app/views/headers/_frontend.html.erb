@@ -67,26 +67,26 @@
           <%= link_to t('russian'), url_for(locale: 'ru'), class: 'link', data: { turbolinks: false } if I18n.locale == :en %>
         </li>
         <li class="social">
-        <a class="link" href="https://api.whatsapp.com/send?phone=<%= ENV['PHONE_NUMBER_PLAIN'] %>" target="_blank">
-          <i class="fa fa-whatsapp"></i>
-          <span class="hidden-xs font-lato">
-            Whatsapp</span>
-        </a>
+          <a class="link" href="https://api.whatsapp.com/send?phone=<%= ENV['PHONE_NUMBER_PLAIN'] %>" target="_blank">
+            <i class="fa fa-whatsapp"></i>
+            <span class="hidden-xs font-lato">
+              Whatsapp</span>
+          </a>
         </li>
         <li class="social">
-        <a class="link" href="https://t.me/ShinyTeam" target="_blank">
-          <i class="fa fa-telegram"></i>
-          <span class="hidden-xs font-lato">
-            Telegram</span>
-        </a>
+          <a class="link" href="https://t.me/ShinyTeam" target="_blank">
+            <i class="fa fa-telegram"></i>
+            <span class="hidden-xs font-lato">
+              Telegram</span>
+          </a>
         </li>
 
         <li class="social">
-        <a class="link" href="skype:+<%= ENV['PHONE_NUMBER_PLAIN'] %>?chat" target="_blank">
-          <i class="fa fa-skype"></i>
-          <span class="hidden-xs font-lato">
-            Skype</span>
-        </a>
+          <a class="link" href="skype:+<%= ENV['PHONE_NUMBER_PLAIN'] %>?chat" target="_blank">
+            <i class="fa fa-skype"></i>
+            <span class="hidden-xs font-lato">
+              Skype</span>
+          </a>
         </li>
 
         <li class="social">
@@ -106,11 +106,11 @@
         </li>
 
         <li class="social">
-        <a class="link" href="https://plus.google.com/100339362875734932916" target="_blank">
-          <i class="fa fa-google-plus"></i>
-          <span class="hidden-xs font-lato">
-            Google+</span>
-        </a>
+          <a class="link" href="https://plus.google.com/100339362875734932916" target="_blank">
+            <i class="fa fa-google-plus"></i>
+            <span class="hidden-xs font-lato">
+              Google+</span>
+          </a>
         </li>
       </ul>
 
@@ -132,19 +132,36 @@
 
 <!-- Modal -->
 <div class="modal fade slide-up disable-scroll" id="modalAuth" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-sm">
     <div class="modal-content-wrapper">
       <div class="modal-content">
-        <div class="modal-header clearfix text-left">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-            <i class="pg-close"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="hidden-xs p-t-50"></div>
-          <h3 class="text-center block-title">
+        <div class="modal-body p-t-20">
+          <div class="text-center m-b-20">
             <i class="fa fa-user-circle-o fa-3x"></i>
-          </h3>
+          </div>
+
+          <%= form_for :user, url: user_session_path do |f| %>
+          <div class="form-group form-group-default required">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group form-group-default required">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit t('login'), class: 'btn btn-primary btn-block' %>
+          </div>
+          <% end %>
+
+          <div class="text-center m-t-20">
+            <%= link_to t('new_customer'), clean_path, class: 'upcase text-master', data: { turbolinks: false } %>
+          </div>
+
+
+          <!--
           <div class="hidden-xs p-t-40"></div>
           <div class="row text-center">
             <div class="col-sm-6">
@@ -155,7 +172,7 @@
               <%= link_to t('existing_customer'), new_user_session_path, class: "btn btn-lg btn-bordered btn-black block-title btn-block", data: { turbolinks: false } %>
             </div>
           </div>
-          <div class="hidden-xs p-t-50"></div>
+          <div class="hidden-xs p-t-50"></div> -->
         </div>
       </div>
       <!-- /.modal-content -->

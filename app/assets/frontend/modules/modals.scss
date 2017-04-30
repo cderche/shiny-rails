@@ -47,7 +47,7 @@
 			&.in{
 				.modal-dialog{
 					@include translate3d(0,0,0);
-				}	
+				}
 			}
 		}
 
@@ -187,12 +187,12 @@
 	.modal{
 		&.fill-in{
 			.modal-dialog {
-				width: calc(~'100% - 20px');
+				width: calc(100% - 20px);
 			}
 		}
 		&.slide-up{
 			.modal-dialog {
-				width: calc(~'100% - 20px');
+				width: calc(100% - 20px);
 			}
 		}
 	}
