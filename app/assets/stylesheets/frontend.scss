@@ -21,7 +21,7 @@
   text-align: center;
 }
 
-.social-links .link, .footer-links .link {
+.social-links .link {
   display: inline-block;
   font-size: 13px;
   font-weight: 500;
@@ -31,13 +31,16 @@
   vertical-align: middle;
 }
 
-.social-links .link {
+.social-links .link, .header-links .link, .menu li .link {
   color: black;
 }
 
-.footer-links .link {
-
+.menu .social .link span {
+  display: inline !important;
+  text-transform: uppercase;
 }
+
+
 
 .social-links .fa {
     margin-right: 5px;
