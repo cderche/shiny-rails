@@ -1,5 +1,5 @@
 en:
-  accept_payments: We accept payments from MasterCard and Visa.
+  accept_payments: We accept payments from VISA and MasterCard
   english: English
   russian: Русский
   beta:
@@ -299,7 +299,7 @@ en:
     qa: 'Q&A'
     about_us: 'About us'
     terms: "Terms & Conditions"
-    order: "Book Now"
+    order: "Book a clean"
     blog: Blog
   order: "Book"
   ironing: "I need ironing (+1 hour)"

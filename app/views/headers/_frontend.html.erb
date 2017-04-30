@@ -48,42 +48,32 @@
           <a class="link" href="skype:+<%= ENV['PHONE_NUMBER_PLAIN'] %>?chat" target="_blank">
             <i class="fa fa-skype"></i>
           </a>
-          <!-- <% if user_signed_in? %>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="text-danger fa fa-sign-out"></i>
-                <% end %>
-              <% end %> -->
         </div>
       </div>
       <!-- BEGIN MENU ITEMS -->
-      <ul class="menu">
+
+      <ul class="menu hidden-md hidden-lg">
         <li>
-          <%= link_to t('menu.qa'), questions_path, class: 'link', data: { turbolinks: false } %>
+          <%= login_link %>
         </li>
         <li>
-          <%= link_to t('menu.blog'), "http://blog.getshiny.ru", class: "link", target: '_blank' %>
+          <%= link_to t('menu.qa')    , questions_path            , class: 'link' , data: { turbolinks: false } %>
         </li>
-        
-        <li class="hidden-md hidden-lg">
-          <a href="#" class="link" data-toggle="modal" data-target="#modalAuth"><%= t('book_a_clean') %></a>
+        <li>
+          <%= link_to t('menu.blog')  , "http://blog.getshiny.ru" , class: "link" , target: '_blank' %>
         </li>
-        <!-- <% if user_signed_in? %>
-        <li><%= link_to t('logout'), destroy_user_session_path, method: :delete, class: 'text-danger hidden-md hidden-lg', data: { turbolinks: false } %></li>
-        <% end %> -->
-        <li class="hidden-md hidden-lg">
+        <li>
           <%= link_to t('english'), url_for(locale: 'en'), class: 'link', data: { turbolinks: false } if I18n.locale == :ru %>
           <%= link_to t('russian'), url_for(locale: 'ru'), class: 'link', data: { turbolinks: false } if I18n.locale == :en %>
         </li>
-
-        <li class="social hidden-md hidden-lg">
+        <li class="social">
         <a class="link" href="https://api.whatsapp.com/send?phone=<%= ENV['PHONE_NUMBER_PLAIN'] %>" target="_blank">
           <i class="fa fa-whatsapp"></i>
           <span class="hidden-xs font-lato">
             Whatsapp</span>
         </a>
         </li>
-
-        <li class="social hidden-md hidden-lg">
+        <li class="social">
         <a class="link" href="https://t.me/ShinyTeam" target="_blank">
           <i class="fa fa-telegram"></i>
           <span class="hidden-xs font-lato">
@@ -91,7 +81,7 @@
         </a>
         </li>
 
-        <li class="social hidden-md hidden-lg">
+        <li class="social">
         <a class="link" href="skype:+<%= ENV['PHONE_NUMBER_PLAIN'] %>?chat" target="_blank">
           <i class="fa fa-skype"></i>
           <span class="hidden-xs font-lato">
@@ -99,7 +89,7 @@
         </a>
         </li>
 
-        <li class="social hidden-md hidden-lg">
+        <li class="social">
           <a class="link" href="https://www.facebook.com/getshinyrus" target="_blank">
             <i class="fa fa-facebook"></i>
             <span class="hidden-xs font-lato">
@@ -107,7 +97,7 @@
           </a>
         </li>
 
-        <li class="social hidden-md hidden-lg">
+        <li class="social">
           <a class="link" href="https://www.instagram.com/getshiny" target="_blank">
             <i class="fa fa-instagram"></i>
             <span class="hidden-xs font-lato">
@@ -115,16 +105,24 @@
           </a>
         </li>
 
-        <li class="social hidden-md hidden-lg">
+        <li class="social">
         <a class="link" href="https://plus.google.com/100339362875734932916" target="_blank">
           <i class="fa fa-google-plus"></i>
           <span class="hidden-xs font-lato">
             Google+</span>
         </a>
         </li>
-
       </ul>
-      <a class="btn btn-sm btn-bordered btn-black block-title fs-12 hidden-sm hidden-xs" href="#" data-toggle="modal" data-target="#modalAuth" data-text="<%= t('book_a_clean') %>"><%= t('book_a_clean') %></a>
+
+      <ul class="menu hidden-xs hidden-sm">
+        <li>
+          <%= link_to t('menu.qa')    , questions_path            , class: 'link' , data: { turbolinks: false } %>
+        </li>
+        <li>
+          <%= link_to t('menu.blog')  , "http://blog.getshiny.ru" , class: "link" , target: '_blank' %>
+        </li>
+      </ul>
+      <%= login_button %>
       <!-- END MENU ITEMS -->
     </div>
   </div>
@@ -134,7 +132,7 @@
 
 <!-- Modal -->
 <div class="modal fade slide-up disable-scroll" id="modalAuth" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
-  <div class="modal-dialog ">
+  <div class="modal-dialog">
     <div class="modal-content-wrapper">
       <div class="modal-content">
         <div class="modal-header clearfix text-left">
@@ -144,7 +142,9 @@
         </div>
         <div class="modal-body">
           <div class="hidden-xs p-t-50"></div>
-          <h3 class="text-center block-title"><%= t('i_am_a') %></h3>
+          <h3 class="text-center block-title">
+            <i class="fa fa-user-circle-o fa-3x"></i>
+          </h3>
           <div class="hidden-xs p-t-40"></div>
           <div class="row text-center">
             <div class="col-sm-6">
