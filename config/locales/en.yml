@@ -151,7 +151,7 @@ en:
       signature: 'The Shiny Team'
   follow: 'Follow us on'
   next: 'Next'
-  forgot_your_password: 'Forgot your password'
+  forgot_your_password: 'Forgot your password?'
   logout: 'Logout'
   login: 'Log In'
   i_am_a: "I am a"

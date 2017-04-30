@@ -128,16 +128,16 @@
   </div>
 </nav>
 <!-- END HEADER -->
-<div class="header-md-height"></div>
+<!-- <div class="header-md-height"></div> -->
 
 <!-- Modal -->
 <div class="modal fade slide-up disable-scroll" id="modalAuth" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
   <div class="modal-dialog modal-sm">
     <div class="modal-content-wrapper">
       <div class="modal-content">
-        <div class="modal-body p-t-20">
+        <div class="modal-body m-t-20">
           <div class="text-center m-b-20">
-            <i class="fa fa-user-circle-o fa-3x"></i>
+            <i class="fa fa-user-circle-o fa-3x text-black"></i>
           </div>
 
           <%= form_for :user, url: user_session_path do |f| %>
@@ -156,8 +156,10 @@
           </div>
           <% end %>
 
-          <div class="text-center m-t-20">
-            <%= link_to t('new_customer'), clean_path, class: 'upcase text-master', data: { turbolinks: false } %>
+          <div class="m-t-20 text-center">
+            <%= link_to t('new_customer'), clean_path, class: 'text-master text-uppercase', data: { turbolinks: false } %>
+            <br>
+            <small><%= link_to t("forgot_your_password"), new_user_password_path, class: 'text-master text-uppercase', data: { turbolinks: false } %></small>
           </div>
 
 
