@@ -1,75 +1,73 @@
-<section class="p-b-70 p-t-55 bg-master-dark">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <%= image_tag 'shiny_blue_old_g.png', class: 'logo', height: 24 %>
-                <%# inline_svg 'shiny_logo_new.svg', height: 32, class: 'logo fill-master' %>
-            </div>
-            <div class="col-md-5">
-              <ul class="list-unstyled hint-text text-right m-t-25">
-                  <li class="inline p-r-20">
-                      <a href="https://www.facebook.com/getshinyrus" target="_blank">
-                          <i class="fa fa-2x fa-facebook text-master"></i>
-                      </a>
-                  </li>
-                  <li class="inline p-r-20">
-                      <a href="https://www.instagram.com/getshiny" target="_blank">
-                          <i class="fa fa-2x fa-instagram text-master"></i>
-                      </a>
-                  </li>
-                  <li class="inline">
-                      <a href="https://plus.google.com/100339362875734932916" target="_blank">
-                          <i class="fa fa-2x fa-google-plus text-master"></i>
-                      </a>
-                  </li>
-              </ul>
-            </div>
-        </div>
-        <div class="row m-t-30">
-            <div class="col-sm-3 col-xs-12 xs-m-b-20">
-                <address class="margin-bottom-20 margin-top-10">
-                    <strong><%= t('company.name') %></strong>
-                    <br><%= t('company.street') %>
-                    <br><%= t('company.city') %>
-                    <br>
-                    <abbr title="Phone">
-                        <i class="fa fa-phone"></i>
-                    </abbr>
-                    <a href="tel:+79263911284">+7 (926) 391-12-84</a>
-                    <br>
-                    <abbr title="Email">
-                        <i class="fa fa-envelope-o"></i>
-                    </abbr>
-                    <a href="mailto:support@getshiny.ru">support@getshiny.ru</a>
-                </address>
-            </div>
-            <div class="col-sm-3 col-xs-6 xs-m-b-20">
-                <ul class="list-unstyled hint-text">
-                    <li class="list-cc-item">
-                        <i class="fa fa-2x fa-cc-mastercard"></i>
-                    </li>
-                    <li class="list-cc-item">
-                        <i class="fa fa-2x fa-cc-visa"></i>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-3 col-xs-6 xs-m-b-20">
-                <ul class="no-style no-padding">
-                    <li class="m-b-5 no-padding">
-                        <%= link_to t('menu.blog'), "http://blog.getshiny.ru", class: "text-master", target: '_blank' %>
-                    </li>
-                    <li class="m-b-5 no-padding">
-                      <!-- <%= link_to t('menu.order'), clean_path, class: "text-footer", data: { turbolinks: false } %> -->
-                      <a class="text-master" data-toggle="modal" data-target="#orderModal" href="#"><%= t('menu.order') %></a>
-                    </li>
-                    <li class="m-b-5 no-padding">
-                        <%= link_to t('menu.qa'), questions_path, class: "text-master", data: { turbolinks: false } %>
-                    </li>
-                    <li class="m-b-5 no-padding">
-                        <%= link_to t('menu.terms'), terms_path, class: "text-master", data: { turbolinks: false } %>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<%= render 'footers/social' %>
+
+<section class="p-b-70 p-t-55 bg-master-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <ul class="list-unstyled footer-links">
+          <li>
+            <a href="tel:+<%= ENV['PHONE_NUMBER_PLAIN'] %>" class="link text-master">
+              <!-- <i class="fa fa-phone"></i> -->
+              <span>www.getshiny.ru</span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+<%= ENV['PHONE_NUMBER_PLAIN'] %>" class="link text-master">
+              <!-- <i class="fa fa-phone"></i> -->
+              <span><%= ENV['PHONE_NUMBER'] %></span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:<%= ENV['SUPPORT_EMAIL'] %>" class="link text-master">
+              <!-- <i class="fa fa-envelope-o"></i> -->
+              <span><%= ENV['SUPPORT_EMAIL'] %></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-sm-4">
+        <ul class="list-unstyled footer-links text-center">
+          <li>
+            <%= inline_svg 'shiny_logo.svg', height: 24, class: 'logo fill-master' %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-sm-4">
+        <ul class="list-unstyled footer-links text-right">
+          <li><%= link_to t('menu.order') , "#"                       , class: "link text-master" , data: { toggle: 'modal', target: '#orderModal' } %></li>
+          <li><%= link_to t('menu.blog')  , "http://blog.getshiny.ru" , class: "link text-master" , target: '_blank' %></li>
+          <li><%= link_to t('menu.terms') , terms_path                , class: "link text-master" , data: { turbolinks: false } %></li>
+          <li><%= link_to t('menu.qa')    , questions_path            , class: "link text-master" , data: { turbolinks: false } %></li>
+        </ul>
+      </div>
     </div>
-</section>
+
+    <div class="row text-center text-master-dark">
+      <small><%= t('accept_payments') %></small>
+      <br>
+      <br>
+      <i class="fa fa-2x fa-cc-mastercard"></i>
+      &nbsp;
+      <i class="fa fa-2x fa-cc-visa"></i>
+    </div>
+
+  </section>
+
+  <section class="p-b-40 p-t-40">
+    <div class="text-center">
+      Made with
+      <i class="fa fa-heart text-red"></i>
+      <span> by</span>
+      <b> The Shiny Team</b>
+    </div>
+
+    <div class="m-t-20 text-center">
+      <small class="text-center">
+        <%= t('company.name') %>,
+        <%= t('company.street') %>,
+        <%= t('company.city') %>
+      </small>
+    </div>
+  </div>

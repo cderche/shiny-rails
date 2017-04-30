@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="117px" viewBox="0 0 120 117" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-225.000000, -411.000000)" fill="#4990E2">
+            <g id="Icon" transform="translate(225.000000, 411.000000)">
+                <path d="M60,116.666667 L0,37.8378378 L30,0 L90,0 L120,37.8378378 L60,116.666667 Z M60,108 L113.333333,38.1801802 L86.6666667,4.66666667 L33.3333333,4.66666667 L6.66666667,38.1801802 L60,108 Z" id="Combined-Shape"></path>
+                <path d="M84.0833333,8 L96.4444444,23.5172414 L23.6666667,23.5172414 L36.0277778,8 L84.0833333,8 Z M96.3666587,53.4022989 L108.034878,37.8850575 L12,37.8850575 L24.0616319,53.4022989 L96.3666587,53.4022989 Z M43.1111111,23.5172414 L31.4444444,37.8850575 L12,37.8850575 L23.6666667,23.5172414 L43.1111111,23.5172414 Z M96.3666587,53.4022989 L59.7777778,100.528736 L59.7777778,76.9137952 L77,53.4022989 L96.3666587,53.4022989 Z M32.0345601,63.6221738 L59.7777778,100.528736 L59.7777778,76.9137952 L49.8123379,63.6221738 L32.0345601,63.6221738 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -7,7 +7,8 @@
             <div class="header-inner">
                 <!-- BEGIN LOGO -->
                 <%= link_to root_path do %>
-                  <%= image_tag 'shiny_logo_old.png', class: 'logo', height: 24 %>
+                  <!-- <%= image_tag 'shiny_logo_old.png', class: 'logo', height: 24 %> -->
+                  <%= inline_svg 'shiny_logo.svg', height: 24, class: 'logo fill-primary' %>
                   <!-- <%# inline_svg 'shiny_logo_old.svg', height: 32, class: 'logo fill-primary' %> -->
                   <!-- <%# inline_svg 'shiny_logo_new.svg', height: 32, class: 'logo fill-primary' %> -->
                 <% end %>
