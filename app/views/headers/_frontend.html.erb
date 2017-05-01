@@ -66,6 +66,10 @@
           <%= link_to t('english'), url_for(locale: 'en'), class: 'link', data: { turbolinks: false } if I18n.locale == :ru %>
           <%= link_to t('russian'), url_for(locale: 'ru'), class: 'link', data: { turbolinks: false } if I18n.locale == :en %>
         </li>
+        <li>
+          <%= link_to t('logout'), destroy_user_session_path, method: :delete, class: 'link text-red' if user_signed_in? %>
+        </li>
+
         <li class="social">
           <a class="link" href="https://api.whatsapp.com/send?phone=<%= ENV['PHONE_NUMBER_PLAIN'] %>" target="_blank">
             <i class="fa fa-whatsapp"></i>
@@ -123,6 +127,11 @@
         </li>
       </ul>
       <%= login_button %>
+      <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-sm hidden-xs hidden-sm' do %>
+        <i class="fa fa-sign-out"></i>
+      <% end %>
+      <% end %>
       <!-- END MENU ITEMS -->
     </div>
   </div>
