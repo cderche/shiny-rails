@@ -194,6 +194,11 @@ en:
       ironing: "I need some ironing done"
       windows: "I need my windows cleaned"
       endoftenancy: "End of tenancy"
+      fridge: "Inside of the fridge"
+      microwave: "Inside of the microwave"
+      oven: "Inside of the oven"
+      kitchen_cabinets: "Inside of the kitchen cabinets"
+      balcony: "Clean my balcony"
   frequency:
     name:
       once: "Once"
