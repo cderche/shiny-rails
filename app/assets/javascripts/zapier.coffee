@@ -22,6 +22,9 @@ $('#callback_form, #newsletter_form').submit (e) ->
     if this.id == "callback_form"
       zap data, CALLBACK_WEBHOOK
       $("#callback_message").removeClass("hidden")
+      $(this).delay(1000).queue ->
+        $('#callback_modal').modal('hide')
+        $(this).dequeue()
     else
       zap data, NEWSLETTER_WEBHOOK
       $("#newsletter_message").removeClass("hidden")

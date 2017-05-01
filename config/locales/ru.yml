@@ -79,9 +79,9 @@ ru:
       title: Пусть ваш дом сияет чистотой
       button: Закажите уборку!
     modal1:
-      title: Request a callback
-      input: Telephone
-      text: Request a callback
+      title: Перезвоните мне
+      input: телефон
+      text: Перезвоните мне
       thank_you:
         title: Thank you
         subtitle: We will be in contact soon.
