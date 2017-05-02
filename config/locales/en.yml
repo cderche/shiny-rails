@@ -1,4 +1,10 @@
 en:
+  from: from
+  about:
+    title: About us
+    p1: Shiny is a on-demand home cleaning platform in Moscow, Russia. We differentiate ourselves through our focus on providing customers with well trained, professional, and experienced service providers. Strongly influenced by the French art-de-vivre and the Swiss accuracy, Shiny will revolutionlize you home cleaning standards.
+    p2: With a 60 second booking process, secure payment, and professional service providers, Shiny is the easiest, most convenient way to book home services in Moscow.
+  accept_payments: We accept payments from VISA and MasterCard
   english: English
   russian: Русский
   beta:
@@ -150,7 +156,7 @@ en:
       signature: 'The Shiny Team'
   follow: 'Follow us on'
   next: 'Next'
-  forgot_your_password: 'Forgot your password'
+  forgot_your_password: 'Forgot your password?'
   logout: 'Logout'
   login: 'Log In'
   i_am_a: "I am a"
@@ -193,6 +199,11 @@ en:
       ironing: "I need some ironing done"
       windows: "I need my windows cleaned"
       endoftenancy: "End of tenancy"
+      fridge: "Inside of the fridge"
+      microwave: "Inside of the microwave"
+      oven: "Inside of the oven"
+      kitchen_cabinets: "Inside of the kitchen cabinets"
+      balcony: "Clean my balcony"
   frequency:
     name:
       once: "Once"
@@ -221,6 +232,16 @@ en:
       booking:
         notes: "Comments"
   home:
+    team:
+      title: Meet the team
+      subtitle: We have accepted the challenge to combine technology and high quality labor work on the Russian home cleaning market.
+      team:
+        t1:
+          title: Dimitrij T.
+          subtitle: Zürich, Switzerland
+        t2:
+          title: Cyrille D.
+          subtitle: Paris, France
     partners: "OUR PARTNERS"
     section1:
       text1: "Book a <b>professional</b> & <b>reliable</b> cleaner in Moscow."
@@ -296,9 +317,9 @@ en:
     home: 'Home'
     pricing: 'Pricing'
     qa: 'Q&A'
-    about_us: 'About us'
+    about: 'About us'
     terms: "Terms & Conditions"
-    order: "Book Now"
+    order: "Book a clean"
     blog: Blog
   order: "Book"
   ironing: "I need ironing (+1 hour)"

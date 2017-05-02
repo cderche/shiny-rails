@@ -1,0 +1,30 @@
+<!-- <section class="p-b-60 p-t-60 b-b b-grey"> -->
+<%= content_tag :section, class: 'm-t-50 p-b-60 p-t-60' do %>
+    <div class="container">
+      <h3><%= t('about.title') %></h3>
+      <p><%= t('about.p1') %></p>
+      <p><%= t('about.p2') %></p>
+
+      <div class="row m-t-40 text-center">
+        <div class="col-xs-6">
+          <%= image_tag 'profiles/6.jpg', width: 100, height: 100, src: image_path('profiles/6x.jpg'), class: 'img-circle m-b-20', data: { src_retina: image_path('profiles/6x.jpg'), src: image_path('profiles/6.jpg') } %>
+          <div>
+            <%= inline_svg 'flags/ch.svg', height: 15, width: 20 %>
+          </div>
+          <h4 class="lead m-b-5"><%= t('home.team.team.t1.title') %></h4>
+          <small><%= t('from') %></small><br>
+          <small><%= t('home.team.team.t1.subtitle') %></small>
+        </div>
+        <div class="col-xs-6">
+            <%= image_tag 'profiles/7.jpg', width: 100, height: 100, src: image_path('profiles/7x.jpg'), class: 'img-circle m-b-20', data: { src_retina: image_path('profiles/7x.jpg'), src: image_path('profiles/7.jpg') } %>
+            <div>
+              <%= inline_svg 'flags/fr.svg', height: 15, width: 20 %>
+            </div>
+            <h4 class="lead m-b-5"><%= t('home.team.team.t2.title') %></h4>
+            <small><%= t('from') %></small><br>
+            <small><%= t('home.team.team.t2.subtitle') %></small>
+        </div>
+    </div>
+    </div>
+<!-- </section> -->
+<% end %>

@@ -46,6 +46,10 @@ $color-list: (
   .fill-#{$k} > g > * {
     fill: $v;
   }
+
+  .stroke-#{$k} > g > * {
+    stroke: $v;
+  }
 }
 
 svg {

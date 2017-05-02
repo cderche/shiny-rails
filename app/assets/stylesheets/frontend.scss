@@ -16,3 +16,36 @@
     height: ($step*1%) !important;
   }
 }
+
+#social-bar {
+  text-align: center;
+}
+
+.social-links .link {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0 10px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.social-links .link, .header-links .link, .menu li .link {
+  color: black;
+}
+
+.menu .social .link span {
+  display: inline !important;
+  text-transform: uppercase;
+}
+
+
+
+.social-links .fa {
+    margin-right: 5px;
+}
+
+.text-red {
+  color: #FF4847 !important;
+}
