@@ -57,6 +57,9 @@
           <%= login_link %>
         </li>
         <li>
+          <%= link_to t('menu.about') , about_path            , class: 'link' , data: { turbolinks: false } %>
+        </li>
+        <li>
           <%= link_to t('menu.qa')    , questions_path            , class: 'link' , data: { turbolinks: false } %>
         </li>
         <li>
@@ -126,6 +129,9 @@
       </ul>
 
       <ul class="menu hidden-xs hidden-sm">
+        <li>
+          <%= link_to t('menu.about') , about_path            , class: 'link' , data: { turbolinks: false } %>
+        </li>
         <li>
           <%= link_to t('menu.qa')    , questions_path            , class: 'link' , data: { turbolinks: false } %>
         </li>

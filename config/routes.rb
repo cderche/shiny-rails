@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get '/oops', to: 'home#oops'
     get '/status', to: 'home#status'
 
+    get '/about', to: 'home#about'
+
     root to: "home#home"
   end
 

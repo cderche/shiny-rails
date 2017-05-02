@@ -2,8 +2,13 @@
 
 <section class="p-b-70 p-t-55 bg-master-light">
   <div class="container">
+    <div class="row m-b-20">
+      <div class="text-center">
+          <%= inline_svg 'shiny_logo.svg', height: 24, class: 'logo fill-master' %>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-xs-6">
         <ul class="list-unstyled footer-links">
           <li>
             <a href="tel:+<%= ENV['PHONE_NUMBER_PLAIN'] %>" class="link text-master">
@@ -26,20 +31,13 @@
         </ul>
       </div>
 
-      <div class="col-sm-4">
-        <ul class="list-unstyled footer-links text-center">
-          <li>
-            <%= inline_svg 'shiny_logo.svg', height: 24, class: 'logo fill-master' %>
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-sm-4">
+      <div class="col-xs-6">
         <ul class="list-unstyled footer-links text-right">
           <li><%= link_to t('menu.order') , "#"                       , class: "link text-master" , data: { toggle: 'modal', target: '#orderModal' } %></li>
           <li><%= link_to t('menu.blog')  , "http://blog.getshiny.ru" , class: "link text-master" , target: '_blank' %></li>
-          <li><%= link_to t('menu.terms') , terms_path                , class: "link text-master" , data: { turbolinks: false } %></li>
+          <li><%= link_to t('menu.about') , about_path                , class: "link text-master" , data: { turbolinks: false } %></li>
           <li><%= link_to t('menu.qa')    , questions_path            , class: "link text-master" , data: { turbolinks: false } %></li>
+          <li><%= link_to t('menu.terms') , terms_path                , class: "link text-master" , data: { turbolinks: false } %></li>
         </ul>
       </div>
     </div>

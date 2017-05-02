@@ -9,6 +9,10 @@ class HomeController < ApplicationController
     render layout: 'frontend'
   end
 
+  def about
+    render layout: 'frontend'
+  end
+
   def terms
     # if I18n.locale == :ru
     #   # redirect_to 'https://support.getshiny.ru/hc/ru/articles/115000783729'
