@@ -10,9 +10,9 @@ module LoginHelper
 
   def login_link
     if user_signed_in?
-      link_to t('menu.order') , clean_path  , class: 'link'
+      link_to t('menu.order') , clean_path  , class: 'link text-primary'
     else
-      link_to t('menu.order') , '#' , class: 'link'  , data: { toggle: 'modal' , target: '#modalAuth' }
+      link_to t('menu.order') , '#' , class: 'link text-primary'  , data: { toggle: 'modal' , target: '#modalAuth' }
     end
   end
 end
