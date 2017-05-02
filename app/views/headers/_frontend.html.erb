@@ -66,9 +66,16 @@
           <%= link_to t('english'), url_for(locale: 'en'), class: 'link', data: { turbolinks: false } if I18n.locale == :ru %>
           <%= link_to t('russian'), url_for(locale: 'ru'), class: 'link', data: { turbolinks: false } if I18n.locale == :en %>
         </li>
-        <li>
-          <%= link_to t('logout'), destroy_user_session_path, method: :delete, class: 'link text-red' if user_signed_in? %>
+        <% if user_signed_in? %>
+        <li class="social">
+          <!-- <%= link_to t('logout'), destroy_user_session_path, method: :delete, class: 'link text-red' if user_signed_in? %> -->
+          <%= link_to destroy_user_session_path, method: :delete, class: 'link' do %>
+            <i class="fa fa-sign-out text-red"></i>
+            <span class="hidden-xs font-lato text-red">
+              <%= t('logout') %></span>
+          <% end %>
         </li>
+        <% end %>
 
         <li class="social">
           <a class="link" href="https://api.whatsapp.com/send?phone=<%= ENV['PHONE_NUMBER_PLAIN'] %>" target="_blank">
@@ -128,8 +135,8 @@
       </ul>
       <%= login_button %>
       <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-sm hidden-xs hidden-sm' do %>
-        <i class="fa fa-sign-out"></i>
+      <%= link_to destroy_user_session_path, method: :delete, class: 'm-l-10 hidden-xs hidden-sm' do %>
+        <i class="fa fa-sign-out text-red"></i>
       <% end %>
       <% end %>
       <!-- END MENU ITEMS -->
@@ -170,20 +177,6 @@
             <br>
             <small><%= link_to t("forgot_your_password"), new_user_password_path, class: 'text-master text-uppercase', data: { turbolinks: false } %></small>
           </div>
-
-
-          <!--
-          <div class="hidden-xs p-t-40"></div>
-          <div class="row text-center">
-            <div class="col-sm-6">
-              <%= link_to t('new_customer'), clean_path, class: "btn btn-lg btn-bordered btn-black block-title btn-block", data: { turbolinks: false } %>
-            </div>
-            <div class="hidden-sm hidden-md hidden-lg p-t-20"></div>
-            <div class="col-sm-6">
-              <%= link_to t('existing_customer'), new_user_session_path, class: "btn btn-lg btn-bordered btn-black block-title btn-block", data: { turbolinks: false } %>
-            </div>
-          </div>
-          <div class="hidden-xs p-t-50"></div> -->
         </div>
       </div>
       <!-- /.modal-content -->
