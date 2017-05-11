@@ -8,11 +8,11 @@ module LoginHelper
     end
   end
 
-  def login_link
+  def login_link(colorClass = "")
     if user_signed_in?
-      link_to t('menu.order') , clean_path  , class: 'link text-primary'
+      link_to t('menu.order') , clean_path  , class: "link #{colorClass}"
     else
-      link_to t('menu.order') , '#' , class: 'link text-primary'  , data: { toggle: 'modal' , target: '#modalAuth' }
+      link_to t('menu.order') , '#' , class: "link #{colorClass}"  , data: { toggle: 'modal' , target: '#modalAuth' }
     end
   end
 end
