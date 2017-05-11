@@ -22,6 +22,7 @@ class HomeController < ApplicationController
   end
 
   def questions
+    render layout: 'frontend'
     # if I18n.locale == :ru
     #   # redirect_to 'https://support.getshiny.ru/hc/ru/sections/115000222769'
     # else

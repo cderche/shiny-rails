@@ -1,5 +1,6 @@
-<div class="container m-t-90">
-    <h1 class="text-center"><%= t('questions.title') %></h1>
+<%= content_tag :section, class: 'm-t-50 p-b-60 p-t-60' do %>
+  <div class="container">
+    <h3 class="m-b-40"><%= t('questions.title') %></h1>
 
     <div class="panel-group" data-toggle="collapse" id="accordion">
         <!-- BEGIN - Question 1 -->
@@ -180,3 +181,5 @@
         <!-- END - Question 9 -->
     </div>
 </div>
+
+<% end %>
