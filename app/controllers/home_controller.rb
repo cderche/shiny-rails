@@ -14,6 +14,7 @@ class HomeController < ApplicationController
   end
 
   def terms
+    render layout: 'frontend'
     # if I18n.locale == :ru
     #   # redirect_to 'https://support.getshiny.ru/hc/ru/articles/115000783729'
     # else

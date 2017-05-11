@@ -1,7 +1,6 @@
-<div class="container m-t-90">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <%= render partial: "shared/terms/#{I18n.locale}" %>
-        </div>
-    </div>
-</div>
+<%= content_tag :section, class: 'm-t-50 p-b-60 p-t-60' do %>
+  <div class="container">
+    <h3><%= t('menu.terms') %></h3>
+    <%= render partial: "shared/terms/#{I18n.locale}" %>
+  </div>
+<% end %>
