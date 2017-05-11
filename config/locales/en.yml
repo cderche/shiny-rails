@@ -2,7 +2,7 @@ en:
   from: from
   about:
     title: About us
-    p1: Shiny is a on-demand home cleaning platform in Moscow, Russia. We differentiate ourselves through our focus on providing customers with well trained, professional, and experienced service providers. Strongly influenced by the French art-de-vivre and the Swiss accuracy, Shiny will revolutionlize you home cleaning standards.
+    p1: Shiny is an on-demand home cleaning platform in Moscow, Russia. We differentiate ourselves through our focus on providing customers with well trained, professional, and experienced service providers. With French art-de-vivre and the Swiss accuracy in our DNA, Shiny will revolutionize your home cleaning standards.
     p2: With a 60 second booking process, secure payment, and professional service providers, Shiny is the easiest, most convenient way to book home services in Moscow.
   accept_payments: We accept payments from VISA and MasterCard
   english: English
@@ -196,14 +196,14 @@ en:
       3bathroom: "3 Bathrooms"
       4bathroom: "4 Bathrooms"
       5bathroom: "5 Bathrooms"
-      ironing: "I need some ironing done"
-      windows: "I need my windows cleaned"
+      ironing: "Ironing"
+      windows: "Windows"
       endoftenancy: "End of tenancy"
-      fridge: "Inside of the fridge"
-      microwave: "Inside of the microwave"
-      oven: "Inside of the oven"
-      kitchen_cabinets: "Inside of the kitchen cabinets"
-      balcony: "Clean my balcony"
+      fridge: "Fridge"
+      microwave: "Microwave"
+      oven: "Oven"
+      kitchen_cabinets: "Kitchen cabinets"
+      balcony: "Balcony"
   frequency:
     name:
       once: "Once"
