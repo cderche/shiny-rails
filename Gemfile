@@ -96,3 +96,6 @@ gem 'inline_svg'
 
 # gem 'route_translator'
 gem 'http_accept_language'
+
+
+gem 'font-awesome-rails'
