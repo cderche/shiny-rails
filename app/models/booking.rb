@@ -65,6 +65,7 @@ class Booking < ApplicationRecord
 
   def calc_promo
     if self.promo_code?
+      self.promo_code = self.promo_code.upcase
       promo = Promo.find_by(code: self.promo_code)
       if promo
         return promo.discount
