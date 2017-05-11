@@ -1,54 +1,59 @@
 <!-- Modal -->
 <div class="modal fade slide-up disable-scroll" id="callback_modal" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content-wrapper">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form id="callback_form">
-                        <h3 class="text-center block-title m-b-5"><%= t('beta.modal1.title') %></h3>
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content-wrapper">
+      <div class="modal-content">
+        <div class="modal-header clearfix text-left">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <i class="pg-close fs-14"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="callback_form">
+            <h3 class="text-center block-title m-b-5"><%= t('beta.modal1.title') %></h3>
 
-                        <div class="row m-b-10">
-                          <div class="col-xs-12">
-                            <div id="social-bar" class="social-links">
-                              <a class="link" href="https://api.whatsapp.com/send?phone=<%= ENV['PHONE_NUMBER_PLAIN'] %>" target="_blank">
-                                <i class="fa fa-whatsapp"></i>
-                              </a>
-                              <a class="link" href="https://t.me/ShinyTeam" target="_blank">
-                                <i class="fa fa-telegram"></i>
-                              </a>
-                              <a class="link" href="skype:+<%= ENV['PHONE_NUMBER_PLAIN'] %>?chat" target="_blank">
-                                <i class="fa fa-skype"></i>
-                              </a>
-                              <!-- <a class="link" href="viber://add?number=+<%= ENV['PHONE_NUMBER_PLAIN'] %>" target="_blank">
+            <div class="row m-b-10">
+              <div class="col-xs-12">
+                <div id="social-bar" class="social-links">
+                  <a class="link" href="https://api.whatsapp.com/send?phone=<%= ENV['PHONE_NUMBER_PLAIN'] %>" target="_blank">
+                    <i class="fa fa-whatsapp"></i>
+                  </a>
+                  <a class="link" href="https://t.me/ShinyTeam" target="_blank">
+                    <i class="fa fa-telegram"></i>
+                  </a>
+                  <a class="link" href="skype:+<%= ENV['PHONE_NUMBER_PLAIN'] %>?chat" target="_blank">
+                    <i class="fa fa-skype"></i>
+                  </a>
+                  <!-- <a class="link" href="viber://add?number=+<%= ENV['PHONE_NUMBER_PLAIN'] %>" target="_blank">
                                   <i class="fa fa-viber"></i>
                               </a> -->
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="form-group form-group-default bg-transparent b-a b-transparent-black">
-                                    <label class="control-label"><%= t 'beta.modal1.input' %></label>
-                                    <input type="text" name="phone" id="callback_phone" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <button type="submit" class="btn btn-lg btn-bordered btn-black block-title btn-block"><%= t 'beta.modal1.text' %></button>
-                            </div>
-                        </div>
-                    </form>
-                    <div id="callback_message" class="text-center hidden">
-                        <i class="fa fa-check fa-4x"></i>
-                        <h3><%= t('beta.modal1.thank_you.title') %></h3>
-                        <h5 class="block-title"><%= t('beta.modal1.thank_you.subtitle') %></h5>
-                    </div>
                 </div>
+              </div>
             </div>
-            <!-- /.modal-content -->
+
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="form-group form-group-default bg-transparent b-a b-transparent-black">
+                  <label class="control-label"><%= t 'beta.modal1.input' %></label>
+                  <input type="text" name="phone" id="callback_phone" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <button type="submit" class="btn btn-lg btn-bordered btn-black block-title btn-block"><%= t 'beta.modal1.text' %></button>
+              </div>
+            </div>
+          </form>
+          <div id="callback_message" class="text-center hidden">
+            <i class="fa fa-check fa-4x"></i>
+            <h3><%= t('beta.modal1.thank_you.title') %></h3>
+            <h5 class="block-title"><%= t('beta.modal1.thank_you.subtitle') %></h5>
+          </div>
         </div>
+      </div>
+      <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal-dialog -->
 </div>
