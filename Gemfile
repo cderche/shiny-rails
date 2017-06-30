@@ -99,3 +99,5 @@ gem 'http_accept_language'
 
 
 gem 'font-awesome-rails'
+
+gem 'meta-tags'

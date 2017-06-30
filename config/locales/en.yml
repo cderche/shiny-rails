@@ -1,4 +1,12 @@
 en:
+  meta_tags:
+    home:
+      home:
+        title: House cleaning in Moscow
+        description: Shiny is an on demand booking platform for home cleaning in Moscow. Book your cleaner in 60 seconds. Home cleaning starting at 1260 rub.
+        keywords: clean, home cleaning, home cleaning Moscow, house cleaning, house cleaning Moscow, apartment cleaning, maid service, maid, cleaning, order a cleaner, housekeeper, housekeeping services, professional cleaning services, maid cleaning service, professional house cleaning, house maid services, home cleaners, cleaning agency, house cleaning prices, windows cleaning
+        og:
+          title: 'Shiny | House cleaning in Moscow'
   i_am_new: 'I am ordering for the first time'
   from: from
   about:

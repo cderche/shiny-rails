@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
   protect_from_forgery prepend: true
   before_action :set_locale
+  before_action :prepare_meta_tags, if: 'request.get?'
+  # before_action :hide_from_robots, if: :devise_controller?
+  before_action :hide_from_robots, except: ['home', 'ru', 'en']
+
+  private
 
   def after_sign_in_path_for(resource)
     case resource
@@ -45,5 +50,48 @@ class ApplicationController < ActionController::Base
   # def extract_locale_from_accept_language_header
   #   request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
   # end
+
+  def prepare_meta_tags(options = {})
+
+    namespace = "meta_tags.#{controller_name}.#{action_name}"
+
+    defaults = {
+      site:           'Shiny'                             ,
+      title:          I18n.t("#{namespace}.title")        ,
+      description:    I18n.t("#{namespace}.description")  ,
+      keywords:       I18n.t("#{namespace}.keywords")     ,
+      alternate: {
+        en:           'https://www.getshiny.ru/en',
+        ru:           'https://www.getshiny.ru/ru'
+      },
+      og: {
+        title:        I18n.t("#{namespace}.og.title")        ,
+        description:  I18n.t("#{namespace}.description")  ,
+        type:         :website                            ,
+        url:          request.original_url                ,
+        image:        ActionController::Base.helpers.asset_url("shiny-og.jpg"),
+        locale: [{
+          _:          I18n.locale.to_s                    ,
+          alternate:  I18n.available_locales
+        }]
+      },
+      fb: {
+        app_id:       '1632559623677969'
+      }
+    }
+
+    options.reverse_merge!(defaults)
+
+    set_meta_tags options
+  end
+
+  def hide_from_robots
+    prepare_meta_tags(
+      noindex:  true        ,
+      noindex:  'googlebot' ,
+      nofollow: true        ,
+      nofollow: 'googlebot'
+    )
+  end
 
 end

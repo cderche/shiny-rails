@@ -13,24 +13,7 @@
         <meta name="apple-touch-fullscreen" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-        <%= content_tag :title, t('beta.seo.title') %>
-        <%= content_tag :meta, nil, content: t('beta.seo.description')  , name: :description %>
-        <%= content_tag :meta, nil, content: t('beta.seo.author')       , name: :author %>
-
-        <!-- OpenGraph Properties -->
-        <%= content_tag :meta, nil, content: '1632559623677969'             , property: 'fb:app_id' %>
-        <%= content_tag :meta, nil, content: t('beta.facebook.title')       , property: 'og:title' %>
-        <%= content_tag :meta, nil, content: t('beta.facebook.description') , property: 'og:description' %>
-        <%= content_tag :meta, nil, content: :website                       , property: 'og:type' %>
-        <%= content_tag :meta, nil, content: 'http://www.getshiny.ru/'      , property: 'og:url' %>
-        <%= content_tag :meta, nil, content: image_url('shiny-og.jpg')      , property: 'og:image' %>
-        <%= content_tag :meta, nil, content: I18n.locale.to_s               , property: 'og:locale' %>
-        <%= content_tag :meta, nil, content: :en                            , property: 'og:locale:alternate' if I18n.locale == :ru %>
-        <%= content_tag :meta, nil, content: :ru                            , property: 'og:locale:alternate' if I18n.locale == :en %>
-        <%# I18n.available_locales.each do |locale| %>
-          <%# content_tag :meta, nil, content: locale.to_s                  , property: 'og:locale:alternate' %>
-        <%# end %>
-
+        <%= display_meta_tags %>
 
         <%= stylesheet_link_tag "frontend", media: "all" %>
         <%= csrf_meta_tags %>
