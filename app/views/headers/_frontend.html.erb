@@ -152,46 +152,4 @@
 <!-- END HEADER -->
 <!-- <div class="header-md-height"></div> -->
 
-<!-- Modal -->
-<div class="modal fade slide-up disable-scroll" id="modalAuth" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content-wrapper">
-      <div class="modal-content">
-        <div class="modal-header clearfix text-left">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-            <i class="pg-close fs-14"></i>
-          </button>
-        </div>
-        <div class="modal-body m-t-20">
-          <div class="text-center m-b-20">
-            <i class="fa fa-user-circle-o fa-3x text-black"></i>
-          </div>
-
-          <%= form_for :user, url: user_session_path do |f| %>
-          <div class="form-group form-group-default required">
-            <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true, class: "form-control" %>
-          </div>
-
-          <div class="form-group form-group-default required">
-            <%= f.label :password %>
-            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-          </div>
-
-          <div class="actions">
-            <%= f.submit t('login'), class: 'btn btn-primary btn-block' %>
-          </div>
-          <% end %>
-
-          <div class="m-t-20 text-center">
-            <%= link_to t('new_customer'), clean_path, class: 'text-master text-uppercase', data: { turbolinks: false } %>
-            <br>
-            <small><%= link_to t("forgot_your_password"), new_user_password_path, class: 'text-master text-uppercase', data: { turbolinks: false } %></small>
-          </div>
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-  </div>
-  <!-- /.modal-dialog -->
-</div>
+<%= render 'headers/login' %>

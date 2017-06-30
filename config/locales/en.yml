@@ -1,4 +1,5 @@
 en:
+  i_am_new: 'I am ordering for the first time'
   from: from
   about:
     title: About us
@@ -160,8 +161,8 @@ en:
   logout: 'Logout'
   login: 'Log In'
   i_am_a: "I am a"
-  new_customer: "new customer"
-  existing_customer: "existing customer"
+  new_customer: "New customer"
+  existing_customer: "Existing customer"
   address:
     street: "Street"
     block: "Block #"
@@ -223,6 +224,8 @@ en:
         phone: "Phone"
         agree: "I agree to the"
         terms: "Terms & Conditions"
+        password: "Password"
+        password_confirmation: "Confirm password"
       booking[address_attributes]:
         street: "Street"
         block: "Block #"
