@@ -7,6 +7,58 @@ ru:
         keywords: уборка, уборка квартир, уборка дома, клининговая компания, клининговые услуги, генеральная уборка квартиры, уборка помещений, мытье окон, мойка окон, клининговые компании, уборка в квартире, сколько стоит уборка квартиры, уборка домов, профессиональная уборка кварт, генеральная уборка дома, заказать уборку квартиры, услуги уборки, стоимость уборки квартиры, домработница
         og:
           title: 'Shiny | Уборка квартир в Москве'
+      about:
+        title: About us
+        description: About the Shiny platform
+        keywords: about, us
+        og:
+          title: Shiny | About us
+      questions:
+        title: Questions & Answers
+        description: Questions regarding the Shiny platform
+        keywords: questions, answers, q&a
+        og:
+          title: Shiny | Questions & Answers
+      oops:
+        title: Oops! Something went wrong
+        description: Oh no! Something seems to have gone wrong. We apologize and will work on fixing it.
+        keywords: error, wrong, oops
+        og:
+          title: Shiny | Oh no! Let's fix it!
+    sessions:
+      new:
+        title: Login
+        description: Log into the Shiny platform
+        keywords: login, sign in, account
+        og:
+          title: Shiny | Sign in
+    registrations:
+      new:
+        title: Register
+        description: Register to access the Shiny platform
+        keywords: register, account, new
+        og:
+          title: Shiny | Register
+    passwords:
+      new:
+        title: Forgot password
+        description: Did you forget your password?
+        keywords: forgot, password, reset, account
+        og:
+          title: Shiny | Forgot password
+      edit:
+        title: Reset password
+        description: Let's reset your account
+        keywords: password, reset, account
+        og:
+          title: Shiny | Reset password
+    bookings:
+      new:
+        title: Schedule an appointment
+        description: Create a booking
+        keywords: booking, appointment, schedule, order
+        og:
+          title: Shiny | Schedule an appointment
   from: из
   about:
     title: О нас

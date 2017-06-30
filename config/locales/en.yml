@@ -6,7 +6,59 @@ en:
         description: Shiny is an on demand booking platform for home cleaning in Moscow. Book your cleaner in 60 seconds. Home cleaning starting at 1260 rub.
         keywords: clean, home cleaning, home cleaning Moscow, house cleaning, house cleaning Moscow, apartment cleaning, maid service, maid, cleaning, order a cleaner, housekeeper, housekeeping services, professional cleaning services, maid cleaning service, professional house cleaning, house maid services, home cleaners, cleaning agency, house cleaning prices, windows cleaning
         og:
-          title: 'Shiny | House cleaning in Moscow'
+          title: Shiny | House cleaning in Moscow
+      about:
+        title: About us
+        description: About the Shiny platform
+        keywords: about, us
+        og:
+          title: Shiny | About us
+      questions:
+        title: Questions & Answers
+        description: Questions regarding the Shiny platform
+        keywords: questions, answers, q&a
+        og:
+          title: Shiny | Questions & Answers
+      oops:
+        title: Oops! Something went wrong
+        description: Oh no! Something seems to have gone wrong. We apologize and will work on fixing it.
+        keywords: error, wrong, oops
+        og:
+          title: Shiny | Oh no! Let's fix it!
+    sessions:
+      new:
+        title: Login
+        description: Log into the Shiny platform
+        keywords: login, sign in, account
+        og:
+          title: Shiny | Sign in
+    registrations:
+      new:
+        title: Register
+        description: Register to access the Shiny platform
+        keywords: register, account, new
+        og:
+          title: Shiny | Register
+    passwords:
+      new:
+        title: Forgot password
+        description: Did you forget your password?
+        keywords: forgot, password, reset, account
+        og:
+          title: Shiny | Forgot password
+      edit:
+        title: Reset password
+        description: Let's reset your account
+        keywords: password, reset, account
+        og:
+          title: Shiny | Reset password
+    bookings:
+      new:
+        title: Schedule an appointment
+        description: Create a booking
+        keywords: booking, appointment, schedule, order
+        og:
+          title: Shiny | Schedule an appointment
   i_am_new: 'I am ordering for the first time'
   from: from
   about:

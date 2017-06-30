@@ -69,7 +69,7 @@ class ApplicationController < ActionController::Base
         description:  I18n.t("#{namespace}.description")  ,
         type:         :website                            ,
         url:          request.original_url                ,
-        image:        ActionController::Base.helpers.asset_url("shiny-og.jpg"),
+        image:        "#{request.base_url}#{ActionController::Base.helpers.image_path('shiny-og.jpg')}",
         locale: [{
           _:          I18n.locale.to_s                    ,
           alternate:  I18n.available_locales
