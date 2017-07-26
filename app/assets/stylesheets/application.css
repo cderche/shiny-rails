@@ -36,7 +36,7 @@
  * require ./style
  *
  * I prefer to list stylesheets in a specific order, so I comment out require_tree .
- *= require_tree .
+ *= require_tree . 
  *= stub 'email'
  *= require_self
  */

@@ -20,4 +20,11 @@ Extra.create!(name: "extra.name.oven"             , price: 250  , quantity_based
 Extra.create!(name: "extra.name.kitchen_cabinets" , price: 400  , quantity_based: false)
 Extra.create!(name: "extra.name.balcony"          , price: 450  , quantity_based: false)
 
-User.create!(email: "admin@getshiny.ru", admin: true, password: "password", password_confirmation: "password")
+admin = User.create!(email: "admin@getshiny.ru", admin: true, password: "password", password_confirmation: "password")
+
+Booking.create(
+    user: admin,
+    service: Service.first,
+    address: Address.new(street: "Test Street 4"),
+    frequency: Frequency.first
+)

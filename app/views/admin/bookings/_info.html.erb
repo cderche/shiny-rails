@@ -1,0 +1,57 @@
+<div class="row">
+        <div class="col-xs-12"><%= format_status(@booking.status) %></div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'detail', locals: { booking: @booking } %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'user', locals: { booking: @booking } %>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 ">
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'service', locals: { booking: @booking } %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'address', locals: { booking: @booking } %>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 ">
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'emails', locals: { booking: @booking } %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'professional', locals: { booking: @booking } %>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 ">
+            <div class="row">
+                <div class="col-sm-12">
+                    <%= render partial: 'payment', locals: { booking: @booking } %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                  <!-- Nothing yet -->
+                </div>
+            </div>
+        </div>
+    </div>

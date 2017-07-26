@@ -1,0 +1,18 @@
+<h5>
+    <span class="font-montserrat">Order: </span>
+    <span class="font-montserrat text-primary">
+        <%= @booking.order_token %>
+    </span>
+</h5>
+
+<div class="row">
+
+    <div class="col-sm-6">
+        <%= render 'service' %>
+    </div>
+
+    <div class="col-sm-6">
+        <%= render 'detail' %>
+    </div>
+
+</div>

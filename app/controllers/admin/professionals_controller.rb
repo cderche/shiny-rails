@@ -1,4 +1,4 @@
-class Admin::ProfessionalsController < Admin::ApplicationController
+class Admin::ProfessionalsController < Admin::AdminController
   before_action :set_professional, only: [:show, :edit, :update, :destroy]
 
   # GET /professionals

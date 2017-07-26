@@ -9,25 +9,25 @@
             <div class="form-group">
                 <label for="fullname" class="col-sm-4 control-label">Full Name</label>
                 <div class="col-sm-8">
-                    <%= text_field_tag 'fullname', booking.user.fullname, class: 'form-control text-right text-right', readonly: true %>
+                    <%= text_field_tag 'fullname', @booking.user.fullname, class: 'form-control text-right text-right', readonly: true %>
                 </div>
             </div>
             <div class="form-group">
                 <label for="email" class="col-sm-4 control-label">Email</label>
                 <div class="col-sm-8">
-                    <%= text_field_tag 'email', booking.user.email, class: 'form-control text-right', readonly: true %>
+                    <%= text_field_tag 'email', @booking.user.email, class: 'form-control text-right', readonly: true %>
                 </div>
             </div>
             <div class="form-group">
                 <label for="phone" class="col-sm-4 control-label">Phone</label>
                 <div class="col-sm-8">
-                    <%= text_field_tag 'phone', booking.user.phone, class: 'form-control text-right', readonly: true %>
+                    <%= text_field_tag 'phone', @booking.user.phone, class: 'form-control text-right', readonly: true %>
                 </div>
             </div>
             <div class="form-group">
                 <label for="token" class="col-sm-4 control-label">Token</label>
                 <div class="col-sm-8">
-                    <%= text_field_tag 'token', booking.user.payture_token, class: 'form-control text-right', readonly: true %>
+                    <%= text_field_tag 'token', @booking.user.payture_token, class: 'form-control text-right', readonly: true %>
                 </div>
             </div>
         </form>

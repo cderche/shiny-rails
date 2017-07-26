@@ -1,0 +1,35 @@
+<nav class="page-sidebar" data-pages="sidebar">
+    <div class="sidebar-header">
+      <%= image_tag 'shiny_logo_old.png', class: 'brand', height: '22' %>
+    </div>
+    <div class="sidebar-menu">
+      <div class="scroll-wrapper menu-items">
+        <ul class="menu-items scroll-content">
+
+          <li class="m-t-30">
+            <%= link_to admin_bookings_path, class: 'detailed' do %>
+              <span class="title">Bookings</span>
+              <span class="details"><%= Booking.count %> Bookings</span>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to admin_professionals_path, class: 'detailed' do %>
+              <span class="title">Professionals</span>
+              <span class="details"><%= Professional.count %> Professionals</span>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to admin_promos_path, class: 'detailed' do %>
+              <span class="title">Promos</span>
+              <span class="details"><%= Promo.count %> Promos</span>
+            <% end %>
+          </li>
+
+
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </nav>

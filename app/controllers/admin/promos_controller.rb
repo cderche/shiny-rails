@@ -1,4 +1,4 @@
-class Admin::PromosController < Admin::ApplicationController
+class Admin::PromosController < Admin::AdminController
   before_action :set_promo, only: [:show, :edit, :update, :destroy]
 
   # GET /promos

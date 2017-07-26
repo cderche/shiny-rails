@@ -19,3 +19,6 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "front
 Rails.application.config.assets.precompile += ['email.css']
 Rails.application.config.assets.precompile += ['frontend.css']
 Rails.application.config.assets.precompile += ['frontend.js']
+
+Rails.application.config.assets.precompile += ['admin.js']
+Rails.application.config.assets.precompile += ['admin.css']

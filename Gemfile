@@ -101,3 +101,7 @@ gem 'http_accept_language'
 gem 'font-awesome-rails'
 
 gem 'meta-tags'
+
+gem 'pages-rails','2.1.5',:git => 'https://github.com/revoxltd/pages-rails.git'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem "font-awesome-rails"

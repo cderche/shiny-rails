@@ -1,0 +1,29 @@
+<ul class="nav nav-tabs nav-tabs-simple">
+    <li class="active">
+        <a data-toggle="tab" href="#tab-booking">Booking</a>
+    </li>
+    <li>
+        <a data-toggle="tab" href="#tab-customer">Customer</a>
+    </li>
+    <li>
+        <a data-toggle="tab" href="#tab-occurrences">Occurrences</a>
+    </li>
+</ul>
+<div class="tab-content">
+
+    <div class="tab-pane active" id="tab-booking">
+        <%= render 'tab_booking' %>
+    </div>
+
+    <div class="tab-pane" id="tab-customer">
+        <%= render 'tab_customer' %>
+    </div>
+
+    <div class="tab-pane" id="tab-occurrences">
+        <div class="alert alert-danger">
+            <i class="fa fa-exclamation-triangle"></i>
+            <span>Work in progress</span>
+        </div>
+    </div>
+
+    </div>

@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/revoxltd/pages-rails.git
+  revision: 63bbebea8f482b8c64f2eda522369eaaa8070b21
+  specs:
+    pages-rails (2.1.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,8 +52,13 @@ GEM
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
+    autoprefixer-rails (7.1.2.3)
+      execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
     capybara (2.13.0)
@@ -327,6 +338,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  bootstrap-sass (~> 3.3.6)
   byebug
   capybara
   capybara-mechanize
@@ -348,6 +360,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mailgun_rails
   meta-tags
+  pages-rails (= 2.1.5)!
   payture_api
   pg
   poltergeist

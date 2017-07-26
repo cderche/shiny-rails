@@ -1,5 +1,22 @@
 module Admin::BookingsHelper
-  def format_status(status)
+  def format_status_label(status)
+    color = color(status)
+    content_tag(:span, status, class: "label label-#{color}")
+  end
+
+  def format_status_circle(status)
+    color = color(status)
+    
+    content_tag :span, class: "text-#{color}" do
+      concat content_tag(:span, "#{status} ")
+      concat content_tag(:i, nil, class: 'fa fa-circle')
+    end
+  end
+
+  private
+
+  def color(status)
+    color = 'default'
     case status
     when :awaiting_card
       color = 'info'
@@ -12,6 +29,6 @@ module Admin::BookingsHelper
     else
       color = 'danger'
     end
-    content_tag(:span, status, class: "label label-#{color}")
+    color
   end
 end
