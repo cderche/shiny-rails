@@ -102,6 +102,11 @@ gem 'font-awesome-rails'
 
 gem 'meta-tags'
 
-gem 'pages-rails','2.1.5',:git => 'https://github.com/revoxltd/pages-rails.git'
+# gem 'pages-rails','2.1.5', :git => 'https://github.com/revoxltd/pages-rails.git'
+# gem 'pages-rails','2.1.5', github: 'revoxltd/pages-rails'
+
+gem 'pages-rails', :path => "vendor/pages-rails"
+
+
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
