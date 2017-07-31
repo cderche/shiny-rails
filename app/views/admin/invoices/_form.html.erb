@@ -1,0 +1,56 @@
+<%= form_for [:admin, @invoice], html: { class: "form-horizontal" } do |f| %>
+
+  <div class="form-group">
+    <%= f.label :booking, class: "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      <%= f.select(:booking_id, Booking.all.collect { |b| ["#{b.user.fullname} - #{b.order_token}", b.id] }, {}, { class: 'form-control', readonly: @readonly }) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :date, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-4">
+      <div class="input-group date" id="datepicker">
+        <%= f.text_field :date, class: "form-control", required: true, readonly: @readonly %>
+        <span class="input-group-addon"><i class="fa fa-calendar"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :amount, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :amount, class: "form-control", required: true, readonly: @readonly %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :token, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-4">
+      <p class="text-warning small">Warning: Leave this field empty</p>
+      <%= f.text_field :token, class: "form-control", readonly: @readonly %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-8 offset-sm-4">
+      <% if @readonly %>
+        <%= link_to 'Edit', edit_admin_invoice_path(@invoice), class: 'btn btn-default' unless @invoice.status == :charged %>
+      <% else %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>
+
+<% content_for :foot do %>
+  <script type="text/javascript">
+
+    $('#datepicker').datepicker({
+      format: 'dd/mm/yyyy'
+    });
+
+  </script>
+<% end %>

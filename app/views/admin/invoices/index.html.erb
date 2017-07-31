@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+
+  <div class="panel-heading">
+    <%= link_to 'Create Invoice', new_admin_invoice_path, class: 'btn btn-default pull-right' %>
+  </div>
+
+  <div class="panel-body">
+    <table class="table table-condensed">
+      <thead>
+        <th colspan="1">Id</th>
+        <th colspan="2">Token</th>
+        <th colspan="2">Customer</th>
+        <th colspan="2">Date</th>
+        <th colspan="2">Amount</th>
+        <th colspan="2">Status</th>
+        <th colspan="2"></th>
+      </thead>
+      <tbody>
+        <% @invoices.each do |invoice| %>
+          <tr>
+            <td colspan="1" class="v-align-middle"><%= link_to invoice.id, [:admin, invoice] %></td>
+            <td colspan="2" class="v-align-middle"><%= invoice.try(:token) %></td>
+            <td colspan="2" class="v-align-middle"><%= link_to invoice.booking.user.email, [:admin, invoice.booking.user] %></td>
+            <td colspan="2" class="v-align-middle"><%= invoice.date %></td>
+            <td colspan="2" class="v-align-middle"><%= invoice.amount %></td>
+            <td colspan="2" class="v-align-middle"><%= invoice_status_label(invoice.status) %></td>
+            <td colspan="2" class="v-align-middle">
+              <%= link_to "Charge", charge_admin_invoice_path(invoice), method: :put, class: 'btn btn-primary btn-sm' unless invoice.status == :charged %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -10,6 +10,7 @@ class Booking < ApplicationRecord
   has_many    :addons
   has_many    :extras, through: :addons
   belongs_to  :professional, optional: true
+  has_many    :invoices
 
   accepts_nested_attributes_for :extras
   accepts_nested_attributes_for :addons
