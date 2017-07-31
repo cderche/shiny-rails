@@ -1,0 +1,51 @@
+<%= form_for [:admin, @user], html: { class: "form-horizontal" } do |f| %>
+
+  <div class="form-group">
+    <%= f.label :firstname, class: "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      <%= f.text_field :firstname, class: 'form-control', readonly: @readonly %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :lastname, class: "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      <%= f.text_field :lastname, class: 'form-control', readonly: @readonly %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :phone, class: "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      <%= f.text_field :phone, class: 'form-control', readonly: @readonly %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      <p class="text-danger small">Warning: Modifying this could break Payture.</p>
+      <%= f.text_field :email, class: 'form-control', readonly: @readonly %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :payture_token, class: "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      <p class="text-danger small">Warning: Modifying this could break Payture.</p>
+      <%= f.text_field :payture_token, class: 'form-control', readonly: @readonly %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-8 offset-sm-4">
+      <% if @readonly %>
+        <%= link_to 'Edit', edit_admin_user_path(@user), class: 'btn btn-default' %>
+      <% else %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,35 @@
+<div class="panel panel-default bg-white">
+
+  <div class="panel-body">
+
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Bookings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to user.try(:fullname), admin_user_path(user) %>
+          </td>
+          <td>
+            <%= user.try(:email) %>
+          </td>
+          <td>
+            <%= user.try(:phone) %>
+          </td>
+          <td>
+            <%= user.bookings.count %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>
