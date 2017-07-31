@@ -27,6 +27,13 @@
             <% end %>
           </li>
 
+          <li>
+            <%= link_to admin_users_path, class: 'detailed' do %>
+              <span class="title">Users</span>
+              <span class="details"><%= User.count %> Users</span>
+            <% end %>
+          </li>
+
 
         </ul>
       </div>

@@ -56,6 +56,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :show, :update]
     resources :promos
     resources :professionals
+    resources :users
   end
 
   get '/admin', to: 'admin/bookings#index'
