@@ -11,18 +11,21 @@
   <link rel="apple-touch-icon" sizes="120x120" href="<%= image_path('ico/120.png') %>">
   <link rel="apple-touch-icon" sizes="152x152" href="<%= image_path('ico/152.png') %>">
   <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true  %>
-    <%= csrf_meta_tags %>
-      <%= yield :head %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
 </head>
 
 <body class="fixed-header dashboard menu-pin">
-  
+
   <%= render 'admin/shared/sidebar' %>
 
   <div class="page-container">
+    <!-- <div class="header"></div> -->
     <div class="page-content-wrapper">
       <div class="content">
-        <%= yield %>
+        <div class="container-fluid container-fixed-lg">
+          <%= yield %>
+        </div>
       </div>
     </div>
   </div>
