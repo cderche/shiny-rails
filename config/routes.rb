@@ -57,6 +57,11 @@ Rails.application.routes.draw do
     resources :promos
     resources :professionals
     resources :users
+    resources :invoices do
+      member do
+        put :charge
+      end
+    end
   end
 
   get '/admin', to: 'admin/bookings#index'

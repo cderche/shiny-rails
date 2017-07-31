@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310105238) do
+ActiveRecord::Schema.define(version: 20170731151605) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -91,6 +91,17 @@ ActiveRecord::Schema.define(version: 20170310105238) do
     t.decimal  "percent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.integer  "booking_id"
+    t.string   "date"
+    t.integer  "amount"
+    t.integer  "status",     default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "token"
+    t.index ["booking_id"], name: "index_invoices_on_booking_id"
   end
 
   create_table "leads", force: :cascade do |t|

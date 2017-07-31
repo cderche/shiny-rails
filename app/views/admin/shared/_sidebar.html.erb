@@ -34,6 +34,13 @@
             <% end %>
           </li>
 
+          <li>
+            <%= link_to admin_invoices_path, class: 'detailed' do %>
+              <span class="title">Invoices</span>
+              <span class="details"><%= Invoice.count %> Invoices</span>
+            <% end %>
+          </li>
+
 
         </ul>
       </div>

@@ -1,5 +1,60 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <%= render 'form' %>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="btn-group">
+          <%= link_to 'Edit', edit_admin_user_path(@user), class: 'btn btn-default' %>
+          <button class="btn btn-danger" data-toggle="modal" data-target="#confirmDestroy">Delete User</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
+
+<!-- DELETE USER MODAL -->
+
+<div class="modal fade slide-up disable-scroll" id="confirmDestroy" tabindex="-1" role="dialog" aria-labelledby="modalSlideUpLabel" aria-hidden="false">
+  <div class="modal-dialog ">
+    <div class="modal-content-wrapper">
+      <div class="modal-content">
+        <div class="modal-header clearfix text-left">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <i class="pg-close fs-14"></i>
+          </button>
+          <h5>Are you ABSOLUTELY sure?</h5>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger">
+            Unexpected bad things will happen if you don’t read this!
+          </div>
+          <p>This action CANNOT be undone. This will permanently delete the cderche/booking-api repository, wiki, issues, and comments, and remove all collaborator associations.</p>
+          <p>Please type in the name of the repository to confirm.</p>
+          <input class="form-control" type="text" id="destroy_email"/>
+          <br>
+          <%= link_to "I understand the consequences, delete this user", [:admin, @user], method: :delete, id: 'destroy_user', class: 'btn btn-danger btn-block disabled' %>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+</div>
+
+<% content_for :foot do %>
+<script type="text/javascript">
+
+  var email = "<%= @user.email %>";
+
+  $('#destroy_email').on('input', function (e) {
+    var value = $(this).val();
+
+    if (value === email) {
+      $("#destroy_user").removeClass('disabled');
+    } else {
+      $("#destroy_user").addClass('disabled');
+    }
+  });
+</script>
+<% end %>
