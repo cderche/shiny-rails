@@ -58,5 +58,7 @@ Rails.application.routes.draw do
     resources :professionals
   end
 
+  get '/admin', to: 'admin/bookings#index'
+
   post '/notification', to: 'notifications#create'
 end
