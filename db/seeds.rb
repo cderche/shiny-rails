@@ -22,9 +22,4 @@ Extra.create!(name: "extra.name.balcony"          , price: 450  , quantity_based
 
 admin = User.create!(email: "admin@getshiny.ru", admin: true, password: "password", password_confirmation: "password")
 
-Booking.create(
-    user: admin,
-    service: Service.first,
-    address: Address.new(street: "Test Street 4"),
-    frequency: Frequency.first
-)
+Booking.create(user: User.last, service: Service.first, address: Address.new(street: "Test Street 4"), frequency: Frequency.first)
