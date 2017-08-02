@@ -6,9 +6,8 @@ class User < ApplicationRecord
   validates :terms,    acceptance: true
   after_create :welcome_email, :slack_new_user
 
-  # attr_accessor :skip_password_validation
-
   has_many :bookings, dependent: :destroy
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

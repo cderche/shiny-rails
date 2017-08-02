@@ -1,27 +1,22 @@
 class Booking < ApplicationRecord
-  # include Tokenable
   has_secure_token :order_token
-  # has_token :order_token
 
   belongs_to  :service
   belongs_to  :address
   belongs_to  :user
   belongs_to  :frequency
-  # has_many    :addons
-  has_many    :extras, through: :addons
-  belongs_to  :professional, optional: true
-  has_many    :invoices, dependent: :destroy
+  belongs_to  :professional , optional: true
+  belongs_to  :promo        , optional: true
 
-  belongs_to  :promo, optional: true
+  has_many    :extras       , through: :addons
 
-  has_many :addons, inverse_of: :booking, dependent: :destroy
-
-  accepts_nested_attributes_for :addons, reject_if: :all_blank, allow_destroy: true
+  has_many    :invoices     , dependent: :destroy
+  has_many    :addons       , dependent: :destroy , inverse_of: :booking
 
   accepts_nested_attributes_for :extras
-  # accepts_nested_attributes_for :addons
   accepts_nested_attributes_for :user
   accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :addons, reject_if: :all_blank, allow_destroy: true
 
   before_save :calculate_price
   after_create :slack_new_booking
