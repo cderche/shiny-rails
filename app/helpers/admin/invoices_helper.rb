@@ -12,9 +12,9 @@ module Admin::InvoicesHelper
     when :draft
       color = 'warning'
     when :pending, :processing
-      color = 'info'
-    when :charged
       color = 'complete'
+    when :charged
+      color = 'success'
     else
       color = 'danger'
     end
