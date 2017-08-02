@@ -81,7 +81,7 @@ class Invoice < ApplicationRecord
   private
 
   def create_token
-    d = Date.strptime(date, "%m/%d/%Y")
+    d = Date.strptime(date, "%d/%m/%Y")
     self.token = "#{booking.order_token}_#{d.strftime('%d%m%Y')}"
   end
 end
