@@ -33,13 +33,13 @@ class NotificationService
     Slacked.post "Card was connected to booking, awaiting cleaner."
   end
 
-  def invoice_success(data)
+  def self.invoice_success(data)
     puts "Invoice successfully charged"
     @invoice = Invoice.find_by(token: data[:OrderId])
     @invoice.update(status: :charged)
   end
 
-  def invoice_fail(data)
+  def self.invoice_fail(data)
     puts "Invoice failed #{data[:ErrCode]}"
     @invoice = Invoice.find_by(token: data[:OrderId])
     @invoice.update(status: data[:ErrCode].downcase.to_sym)
