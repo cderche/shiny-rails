@@ -14,7 +14,7 @@ class Booking < ApplicationRecord
 
   belongs_to  :promo, optional: true
 
-  has_many :addons, inverse_of: :booking
+  has_many :addons, inverse_of: :booking, dependent: :destroy
 
   accepts_nested_attributes_for :addons, reject_if: :all_blank, allow_destroy: true
 
