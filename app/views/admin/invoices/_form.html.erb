@@ -3,7 +3,9 @@
   <div class="form-group">
     <%= f.label :booking, class: "col-sm-4 control-label" %>
     <div class="col-sm-8">
+      <!--email_off-->
       <%= f.select(:booking_id, Booking.all.collect { |b| ["#{b.user.email} - #{b.order_token}", b.id] }, {}, { class: 'form-control', readonly: @readonly }) %>
+      <!--/email_off-->
     </div>
   </div>
 
