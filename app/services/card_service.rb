@@ -16,6 +16,7 @@ class CardService
     payture = Payture::Card.new(ENV['PAYTURE_HOST'])
     data = payture.list(ENV['PAYTURE_ADD'], payload)
     items = data['GetList']['Item']
+    return [] if !items
     return items if items.is_a? Array
     [items]
   end
