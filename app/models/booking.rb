@@ -23,6 +23,8 @@ class Booking < ApplicationRecord
 
   def status
 
+    return :cancelled unless self.active
+
     if !self.card_token
       # If !card_token -> awaiting_card
       :awaiting_card

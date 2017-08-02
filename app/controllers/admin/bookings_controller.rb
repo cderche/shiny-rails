@@ -1,5 +1,17 @@
 class Admin::BookingsController < Admin::AdminController
-  before_action :set_booking, only: [:show, :update, :edit]
+  before_action :set_booking, only: [:show, :update, :edit, :toggle]
+
+  def toggle
+    respond_to do |format|
+      if @booking.update(active: !@booking.active)
+        format.html { redirect_to admin_booking_path(@booking), notice: 'Booking was successfully updated.' }
+        format.json { render :show, status: :ok, location: admin_booking_path(@booking) }
+      else
+        format.html { render :edit }
+        format.json { render json: @booking.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def index
     @bookings = Booking.order(created_at: :desc)

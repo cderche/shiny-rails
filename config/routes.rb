@@ -53,7 +53,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     # get '/notifications', to: 'admin#notifications'
-    resources :bookings
+    resources :bookings do
+      member do
+        get :toggle
+      end
+    end
     resources :promos
     resources :professionals
     resources :users

@@ -42,7 +42,9 @@
     </div>
     <div class="btn-group">
       <%= link_to 'Edit', edit_admin_booking_path(@booking), class: 'btn btn-primary' if @readonly %>
-      <%= link_to 'Create Invoice', new_admin_invoice_path(booking_id: @booking), class: 'btn btn-info' if @readonly %>
+      <%= link_to 'Invoice', new_admin_invoice_path(booking_id: @booking), class: 'btn btn-info' if @readonly %>
+      <%= link_to 'Cancel', toggle_admin_booking_path(@booking), class: 'btn btn-danger' if @readonly && @booking.active %>
+      <%= link_to 'Activate', toggle_admin_booking_path(@booking), class: 'btn btn-success' if @readonly && !@booking.active %>
     </div>
   </div>
 </div>
