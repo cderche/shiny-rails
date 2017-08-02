@@ -25,7 +25,7 @@
             <td colspan="2" class="v-align-middle"><%= invoice.amount %></td>
             <td colspan="2" class="v-align-middle"><%= invoice_status_label(invoice.status) %></td>
             <td colspan="2" class="v-align-middle">
-              <%= link_to "Charge", charge_admin_invoice_path(invoice), method: :put, class: 'btn btn-primary btn-sm' unless invoice.status == :charged %>
+              <%= link_to "Charge", charge_admin_invoice_path(invoice), method: :put, class: 'btn btn-primary btn-sm' if [:draft, :failed].include? invoice.status.to_sym %>
             </td>
           </tr>
         <% end %>

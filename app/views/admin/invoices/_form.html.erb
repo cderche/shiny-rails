@@ -3,7 +3,7 @@
   <div class="form-group">
     <%= f.label :booking, class: "col-sm-4 control-label" %>
     <div class="col-sm-8">
-      <%= f.select(:booking_id, Booking.all.collect { |b| ["#{b.user.fullname} - #{b.order_token}", b.id] }, {}, { class: 'form-control', readonly: @readonly }) %>
+      <%= f.select(:booking_id, Booking.all.collect { |b| ["#{b.user.email} - #{b.order_token}", b.id] }, {}, { class: 'form-control', readonly: @readonly }) %>
     </div>
   </div>
 
@@ -25,9 +25,11 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :token, class: 'col-sm-4 control-label' %>
     <div class="col-sm-4">
-      <p class="text-warning small">Warning: Leave this field empty</p>
+      <%= f.label :token, class: 'control-label' %>
+      <p class="text-danger small">Warning: Leave this field empty</p>
+    </div>
+    <div class="col-sm-4">
       <%= f.text_field :token, class: "form-control", readonly: @readonly %>
     </div>
   </div>

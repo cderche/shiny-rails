@@ -1,53 +1,53 @@
 <div class="panel panel-transparent b-grey">
-            <div class="panel-heading">
-                <div class="panel-title">Service details</div>
-            </div>
+  <div class="panel-heading">
+    <div class="panel-title">Service details</div>
+  </div>
 
-            <div class="panel-body">
-            <% @readonly = true %>
+  <div class="panel-body">
+    <% @readonly = true %>
 
-                <%= form_for [:admin, @booking], html: { class: 'form-horizontal' } do |f| %>
+    <%= form_for [:admin, @booking], html: { class: 'form-horizontal' } do |f| %>
 
-                    <%# BEGIN SERVICE %>
-                    <div class="form-group">
-                        <%= f.label :service, class: 'col-sm-6 control-label' %>
+    <%# BEGIN SERVICE %>
+    <div class="form-group">
+      <%= f.label :service, class: 'col-sm-6 control-label' %>
 
-                            <div class="col-sm-6">
-                                <%= f.select :service_id, Service.order(:id).collect { |s| [ t(s.name), s.id, data: { price: s.price } ] }, {}, { include_blank: false, class: "form-control", readonly: @readonly } %>
-                            </div>
-                    </div>
-                    <%# END SERVICE %>
+      <div class="col-sm-6">
+        <%= f.select :service_id, Service.order(:id).collect { |s| [ t(s.name), s.id, data: { price: s.price } ] }, {}, { include_blank: false, class: "form-control", readonly: @readonly } %>
+      </div>
+    </div>
+    <%# END SERVICE %>
 
-                    <%# BEGIN BATHROOM %>
-                    <div class="form-group">
-                        <%= f.label :bathrooms, class: 'col-sm-6 control-label' %>
+    <%# BEGIN BATHROOM %>
+    <div class="form-group">
+      <%= f.label :bathrooms, class: 'col-sm-6 control-label' %>
 
-                            <div class="col-sm-6">
-                                <%= f.fields_for :addons, @booking.addons.select{ |a| a.extra_id == 1 }.first do |ff| %>
-                                    <%= ff.hidden_field :extra_id %>
-                                    <%= ff.select :quantity, ((1..5).map { |i| [t("extra.name.#{i}bathroom"), i] }), { include_blank: false }, { class: "form-control", readonly: @readonly, data: { price: Extra.find(1).price, quantity: Extra.find(1).quantity_based } } %>
-                                <% end %>
-                            </div>
-                    </div>
-                    <%# END BATHROOM %>
+      <div class="col-sm-6">
+        <%= f.fields_for :addons, @booking.addons.select{ |a| a.extra_id == 1 }.first do |ff| %>
+        <%= ff.hidden_field :extra_id %>
+        <%= ff.select :quantity, ((1..5).map { |i| [t("extra.name.#{i}bathroom"), i] }), { include_blank: false }, { class: "form-control", readonly: @readonly, data: { price: Extra.find(1).price, quantity: Extra.find(1).quantity_based } } %>
+        <% end %>
+      </div>
+    </div>
+    <%# END BATHROOM %>
 
-                    <%# BEGIN EXTRA %>
-                    <% Extra.where.not(id: 1).each do |e| %>
-                    <div class="form-group">
-                        <%= f.label dom_id(e), I18n.t(e.name), class: 'col-sm-6 control-label' %>
-                        <div class="col-sm-6">
-                            <div class="checkbox check-primary">
-                                <%= f.check_box :extra_ids, { id: dom_id(e), data: { price: e.price , quantity: e.quantity_based }, readonly: @readonly }, e.id, @booking.extra_ids.include?(e.id) %>
-                                <%= f.label dom_id(e), "#{e.price.to_i}#{t('rub')}" %>
-                            </div>
-                        </div>
-                    </div>
-                    <% end %>
-                    <%# END EXTRA %>
-
-                <% end %>
-
-                <%# <button class="btn btn-primary">Edit</button> %>
-
-            </div>
+    <%# BEGIN EXTRA %>
+    <% Extra.where.not(id: 1).each do |e| %>
+    <div class="form-group">
+      <%= f.label dom_id(e), I18n.t(e.name), class: 'col-sm-6 control-label' %>
+      <div class="col-sm-6">
+        <div class="checkbox check-primary">
+          <%= f.check_box :extra_ids, { id: dom_id(e), data: { price: e.price , quantity: e.quantity_based }, readonly: @readonly }, e.id, @booking.extra_ids.include?(e.id) %>
+          <%= f.label dom_id(e), "#{e.price.to_i}#{t('rub')}" %>
         </div>
+      </div>
+    </div>
+    <% end %>
+    <%# END EXTRA %>
+
+    <% end %>
+
+    <%# <button class="btn btn-primary">Edit</button> %>
+
+  </div>
+</div>

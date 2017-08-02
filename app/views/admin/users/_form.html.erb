@@ -22,17 +22,21 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :email, class: "col-sm-4 control-label" %>
-    <div class="col-sm-8">
+    <div class="col-sm-4">
+      <%= f.label :email, class: "control-label" %>
       <p class="text-danger small">Warning: Modifying this could break Payture.</p>
+    </div>
+    <div class="col-sm-8">
       <%= f.text_field :email, class: 'form-control', readonly: @readonly %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label :payture_token, class: "col-sm-4 control-label" %>
-    <div class="col-sm-8">
+    <div class="col-sm-4">
+      <%= f.label :payture_token, class: "control-label" %>
       <p class="text-danger small">Warning: Modifying this could break Payture.</p>
+    </div>
+    <div class="col-sm-8">
       <%= f.text_field :payture_token, class: 'form-control', readonly: @readonly %>
     </div>
   </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731151605) do
+ActiveRecord::Schema.define(version: 20170801172828) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -69,9 +69,11 @@ ActiveRecord::Schema.define(version: 20170731151605) do
     t.integer  "professional_id"
     t.boolean  "closed",                 default: false
     t.datetime "confirmation_sent_at"
+    t.integer  "promo_id"
     t.index ["address_id"], name: "index_bookings_on_address_id"
     t.index ["frequency_id"], name: "index_bookings_on_frequency_id"
     t.index ["professional_id"], name: "index_bookings_on_professional_id"
+    t.index ["promo_id"], name: "index_bookings_on_promo_id"
     t.index ["service_id"], name: "index_bookings_on_service_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

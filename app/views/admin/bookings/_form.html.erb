@@ -1,0 +1,171 @@
+<style>
+    .form-horizontal .form-group {
+        border-bottom: none !important;
+        padding-top: 0 !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 0 !important;
+    }
+
+    #addons td {
+      padding-left: 0;
+      border-bottom: 0;
+    }
+</style>
+
+<%= form_for [:admin, @booking], html: { class: 'form-horizontal' } do |f| %>
+
+<div class="form-group">
+  <%= f.label :service, class: 'col-sm-4 control-label' %>
+  <div class="col-sm-8">
+    <%= f.select :service_id, Service.order(:id).collect { |s| [ t(s.name), s.id, data: { price: s.price } ] }, {}, { class: "form-control", disabled: @readonly } %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-4">
+    <%= f.label :addons, class: 'control-label' %>
+    <br>
+    <%= link_to_add_association 'Add', f, :addons, class: 'small', data: { association_insertion_node: '#addons', association_insertion_method: 'append' } unless @readonly %>
+  </div>
+  <div class="col-sm-8">
+    <table class="table table-condensed" id="addons">
+      <%= f.fields_for :addons do |addon| %>
+      <%= render 'addon_fields', f: addon %>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :promo, class: 'col-sm-4 control-label' %>
+  <div class="col-sm-8">
+    <%= f.select :promo_id, Promo.all.collect { |p| ["#{p.code} (-#{number_to_percentage(p.discount, precision: 0)})", p.id] }, { include_blank: true }, class: 'form-control', disabled: @readonly %>
+  </div>
+</div>
+
+<hr>
+
+<div class="form-group">
+  <%= f.label :frequency, class: 'col-sm-4 control-label' %>
+  <div class="col-sm-8">
+    <%= f.select :frequency_id, Frequency.all.collect { |f| ["#{t(f.name)} (-#{number_to_percentage(f.percent, precision: 0)})", f.id] }, {}, class: 'form-control', disabled: @readonly %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :start_date, class: 'col-sm-4 control-label' %>
+  <div class="col-sm-4">
+    <div id="datepicker" class="input-group date">
+      <%= f.text_field :service_date, class: "form-control", disabled: @readonly %>
+      <span class="input-group-addon">
+        <i class="fa fa-calendar"></i>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :service_time, class: 'col-sm-4 control-label' %>
+  <div class="col-sm-4">
+    <div class="input-group bootstrap-timepicker timepicker">
+      <%= f.text_field :service_time, class: "form-control", disabled: @readonly %>
+      <span class="input-group-addon">
+        <i class="fa fa-clock-o"></i>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :notes, class: 'col-sm-4 control-label' %>
+  <div class="col-sm-8">
+    <%= f.text_area :notes, class: "form-control", disabled: @readonly %>
+  </div>
+</div>
+
+<hr>
+
+<div class="form-group">
+  <%= f.label :user, class: 'col-sm-4 control-label' %>
+  <div class="col-sm-8">
+    <%= link_to "#{@booking.user.email} (#{@booking.user.fullname})", [:admin, @booking.user], class: 'btn btn-default' %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :card, class: 'col-sm-4 control-label' %>
+  <div class="col-sm-8">
+    <%= f.select :card_token, @booking.user.cards.collect { |c| [c['CardName'], c['CardId']] }, {}, class: 'form-control', disabled: @readonly %>
+  </div>
+</div>
+
+<hr>
+
+<%= f.fields_for :address do |ff| %>
+  <div class="form-group">
+    <%= ff.label :street, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+      <%= ff.text_field :street, class: "form-control", disabled: @readonly %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= ff.label :block, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-2">
+      <%= ff.text_field :block, class: "form-control", disabled: @readonly %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= ff.label :house, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-2">
+      <%= ff.text_field :house, class: "form-control", disabled: @readonly %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= ff.label :building, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-2">
+      <%= ff.text_field :building, class: "form-control", disabled: @readonly %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= ff.label :apartment, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-2">
+      <%= ff.text_field :apartment, class: "form-control", disabled: @readonly %>
+    </div>
+  </div>
+<% end %>
+
+<hr>
+
+<div class="form-group">
+  <%= f.label :professional, class: 'col-sm-4 control-label' %>
+  <div class="col-sm-8">
+    <%= f.select :professional_id, Professional.all.collect { |p| [p.fullname, p.id] }, { include_blank: true }, class: 'form-control', disabled: @readonly %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-12">
+    <div class="btn-group">
+      <%= f.submit class: 'btn btn-primary' unless @readonly %>
+      <%# f.submit "Estimate", class: 'btn btn-default', id: 'estimate' %>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+<% content_for :foot do %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#datepicker').datepicker({format: 'dd/mm/yyyy'});
+    $('#booking_service_time').timepicker({
+      showMeridian: false,
+      defaultTime: "<%= @booking.service_time %>"
+    });
+  });
+</script>
+<% end %>

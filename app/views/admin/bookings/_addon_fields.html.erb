@@ -1,0 +1,18 @@
+
+
+<tr class="nested-fields">
+  <td class="v-align-middle">
+    <%= f.select :extra_id, Extra.all.collect {|e| [I18n.t(e.name), e.id]}, {}, class: 'form-control', disabled: @readonly %>
+  </td>
+  <td class="v-align-middle">
+    <%= f.number_field :quantity, class: 'form-control', disabled: @readonly %>
+  </td>
+  <td class="v-align-middle">
+    <% unless @readonly %>
+      <%= link_to_remove_association f, class: 'text-danger pull-right' do %>
+        <i class="fa fa-times"></i>
+      <% end %>
+    <% end %>
+  </td>
+
+</tr>

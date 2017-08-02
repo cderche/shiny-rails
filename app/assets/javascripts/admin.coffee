@@ -17,7 +17,6 @@
 #= require pages-plugins/bootstrap-select2/select2.min
 #= require pages-plugins/moment/moment.min
 #= require pages-plugins/datatables-responsive/js/lodash.min
+#= require cocoon
 
 #= require pages
-
-

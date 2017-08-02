@@ -7,13 +7,19 @@ class Booking < ApplicationRecord
   belongs_to  :address
   belongs_to  :user
   belongs_to  :frequency
-  has_many    :addons
+  # has_many    :addons
   has_many    :extras, through: :addons
   belongs_to  :professional, optional: true
-  has_many    :invoices
+  has_many    :invoices, dependent: :destroy
+
+  belongs_to  :promo, optional: true
+
+  has_many :addons, inverse_of: :booking
+
+  accepts_nested_attributes_for :addons, reject_if: :all_blank, allow_destroy: true
 
   accepts_nested_attributes_for :extras
-  accepts_nested_attributes_for :addons
+  # accepts_nested_attributes_for :addons
   accepts_nested_attributes_for :user
   accepts_nested_attributes_for :address
 

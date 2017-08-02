@@ -1,3 +1,5 @@
+# require 'card_service'
+
 class User < ApplicationRecord
   has_secure_token :payture_token
 
@@ -16,6 +18,12 @@ class User < ApplicationRecord
     "#{self.firstname} #{self.lastname}"
   end
 
+  def cards
+    CardService.list(self)
+  end
+
+  after_destroy :delete_payture_account
+
   private
 
   def welcome_email
@@ -26,6 +34,10 @@ class User < ApplicationRecord
 
   def slack_new_user
     Slacked.post "New user: #{self.email}"
+  end
+
+  def delete_payture_account
+    PaytureUserService.delete(self)
   end
 
 end

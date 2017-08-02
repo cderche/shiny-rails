@@ -53,7 +53,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     # get '/notifications', to: 'admin#notifications'
-    resources :bookings, only: [:index, :show, :update]
+    resources :bookings
     resources :promos
     resources :professionals
     resources :users
@@ -67,4 +67,5 @@ Rails.application.routes.draw do
   get '/admin', to: 'admin/bookings#index'
 
   post '/notification', to: 'notifications#create'
+
 end

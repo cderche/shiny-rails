@@ -1,10 +1,15 @@
 class Admin::InvoicesController < Admin::AdminController
 
   before_action :set_invoice, only: [:show, :edit, :update, :destroy, :charge]
+  before_action :set_booking, only: [:new]
 
   def charge
     respond_to do |format|
-      format.html { redirect_to admin_invoices_path, notice: 'Invoice was successfully charged.' }
+      if PaytureWalletService.charge(@invoice)
+        format.html { redirect_to admin_invoices_path, notice: 'Invoice was charged.' }
+      else
+        format.html { redirect_to admin_invoices_path, notice: 'Invoice was not charged.' }
+      end
     end
   end
 
@@ -18,7 +23,6 @@ class Admin::InvoicesController < Admin::AdminController
   end
 
   def new
-    @invoice = Invoice.new
     @readonly = false
   end
 
@@ -69,5 +73,14 @@ class Admin::InvoicesController < Admin::AdminController
     # Never trust parameters from the scary internet, only allow the white list through.
     def invoice_params
       params.require(:invoice).permit(:booking_id, :date, :amount)
+    end
+
+    def set_booking
+      @invoice = Invoice.new
+      if params[:booking_id]
+        booking = Booking.find(params[:booking_id])
+        @invoice.booking = booking
+        @invoice.amount = booking.final_total
+      end
     end
 end
