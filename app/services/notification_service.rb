@@ -10,7 +10,7 @@ class NotificationService
       activate_booking(data) if Booking.exists?(order_token: data[:OrderId])
       invoice_success(data) if Invoice.exists?(token: data[:OrderId])
     when "CustomerPayFail"
-      update_invoice(data) if Invoice.exists?(token: data[:OrderId])
+      invoice_fail(data) if Invoice.exists?(token: data[:OrderId])
     else
       return false
     end
