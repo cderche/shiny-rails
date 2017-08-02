@@ -11,8 +11,10 @@ module Admin::InvoicesHelper
     case status.to_sym
     when :draft
       color = 'warning'
+    when :pending, :processing
+      color = 'info'
     when :charged
-      color = 'success'
+      color = 'complete'
     else
       color = 'danger'
     end
