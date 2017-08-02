@@ -14,7 +14,7 @@ class Admin::BookingsController < Admin::AdminController
   end
 
   def index
-    @bookings = Booking.order(created_at: :desc)
+    @bookings = Booking.order(active: :desc, created_at: :desc)
     respond_to do |format|
       format.html
       format.json { render json: @bookings, include: [:address, :user, :frequency, :service, addons: [:extra]] }
