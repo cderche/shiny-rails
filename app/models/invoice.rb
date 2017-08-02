@@ -4,6 +4,7 @@ class Invoice < ApplicationRecord
   enum status: [
     :draft                          ,
     :pending                        ,
+    :processing                     ,
     :failed                         ,
     :charged                        ,
     :access_denied                  ,
