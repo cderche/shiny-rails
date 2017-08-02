@@ -4,27 +4,45 @@ class NotificationService
     # puts "JSON: #{data}"
     puts "Notification: #{data[:Notification]}"
     case data[:Notification]
-    when "CustomerAddSuccess", "CustomerPaySuccess"
-        complete_booking(data)
-        return true
-      else
-        return false
+    when "CustomerAddSuccess"
+      activate_booking(data) if Booking.exists?(order_token: data[:OrderId])
+    when "CustomerPaySuccess"
+      activate_booking(data) if Booking.exists?(order_token: data[:OrderId])
+      invoice_success(data) if Invoice.exists?(token: data[:OrderId])
+    when "CustomerPayFail"
+      update_invoice(data) if Invoice.exists?(token: data[:OrderId])
+    else
+      return false
     end
+
+    return true
 
   end
 
   private
 
-  def self.complete_booking(data)
-    puts "Complete Booking"
+  def self.activate_booking(data)
+    puts "Activate Booking"
     # Find the booking
     @booking = Booking.find_by(order_token: data[:OrderId])
     # Add CardId as card_token
     @booking.update(card_token: data[:CardId])
-    # NOT IMPLEMENTED: Create and add the notification to the booking
     # Send booking received email
     BookingMailer.received(@booking).deliver_later if !@booking.received_sent_at
-    Slacked.post "Booking received"
+    # Notify on slack
+    Slacked.post "Card was connected to booking, awaiting cleaner."
+  end
+
+  def invoice_success(data)
+    puts "Invoice successfully charged"
+    @invoice = Invoice.find_by(token: data[:OrderId])
+    @invoice.update(status: :charged)
+  end
+
+  def invoice_fail(data)
+    puts "Invoice failed #{data[:ErrCode]}"
+    @invoice = Invoice.find_by(token: data[:OrderId])
+    @invoice.update(status: data[:ErrCode].downcase.to_sym)
   end
 
 end
