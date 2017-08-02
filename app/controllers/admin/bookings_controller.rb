@@ -7,7 +7,7 @@ class Admin::BookingsController < Admin::AdminController
         format.html { redirect_to admin_booking_path(@booking), notice: 'Booking was successfully updated.' }
         format.json { render :show, status: :ok, location: admin_booking_path(@booking) }
       else
-        format.html { render :edit }
+        format.html { render :show, notice: 'Booking was not updated.' }
         format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
     end

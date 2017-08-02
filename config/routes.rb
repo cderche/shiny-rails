@@ -60,7 +60,11 @@ Rails.application.routes.draw do
     end
     resources :promos
     resources :professionals
-    resources :users
+    resources :users do
+      member do
+        get :add_card
+      end
+    end
     resources :invoices do
       member do
         put :charge

@@ -1,6 +1,13 @@
 class Admin::UsersController < Admin::AdminController
 
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :add_card]
+
+  def add_card
+    @url = PaytureCardService.add_card_url(@user)
+    respond_to do |format|
+      format.js
+    end
+  end
 
   def index
     @users = User.all

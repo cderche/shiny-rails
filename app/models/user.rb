@@ -18,7 +18,7 @@ class User < ApplicationRecord
   end
 
   def cards
-    CardService.list(self)
+    PaytureCardService.list(self)
   end
 
   after_destroy :delete_payture_account
