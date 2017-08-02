@@ -20,8 +20,10 @@ class PaytureWalletService
   def self.update_status(invoice, data)
     if data['Pay']['Success'] == 'True'
       invoice.update(status: :charged)
-    else
+    elsif data[:ErrCode]
       invoice.update(status: data[:ErrCode].downcase.to_sym)
+    else
+      invoice.update(status: :failed)
     end
   end
 
