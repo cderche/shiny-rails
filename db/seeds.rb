@@ -20,6 +20,37 @@ Extra.create!(name: "extra.name.oven"             , price: 250  , quantity_based
 Extra.create!(name: "extra.name.kitchen_cabinets" , price: 400  , quantity_based: false)
 Extra.create!(name: "extra.name.balcony"          , price: 450  , quantity_based: false)
 
-admin = User.create!(email: "admin@getshiny.ru", admin: true, password: "password", password_confirmation: "password")
+User.create!(email: "admin@getshiny.ru", admin: true, password: "password", password_confirmation: "password")
 
-Booking.create(user: User.last, service: Service.first, address: Address.new(street: "Test Street 4"), frequency: Frequency.first)
+10.times do
+  User.create!(
+    email:      Faker::Internet.email   ,
+    firstname:  Faker::Name.first_name  ,
+    lastname:   Faker::Name.last_name   ,
+    password: "password"                ,
+    password_confirmation: "password"
+  )
+end
+
+10.times do
+  booking = Booking.new(
+    user:       User.all.sample       ,
+    service:    Service.all.sample    ,
+    frequency:  Frequency.all.sample  ,
+    address:    Address.new(
+      street:     Faker::Address.street_name      ,
+      block:      Faker::Address.building_number  ,
+      house:      Faker::Address.building_number  ,
+      building:   Faker::Address.building_number  ,
+      apartment:  Faker::Address.building_number
+    )
+  )
+
+  2.times do
+    a = Addon.new(extra: Extra.all.sample)
+    a.quantity = [*1..5].sample if a.extra.quantity_based
+    booking.addons << a
+  end
+
+  booking.save
+end
