@@ -20,17 +20,20 @@ class Admin::InvoicesController < Admin::AdminController
 
     @invoices = Invoice.order(updated_at: :desc).page @page
 
+    @charges_daily    = []
     @charges_weekly   = []
     @charges_monthly  = []
     @charges_yearly   = []
 
-    5.times do |i|
+    7.times do |i|
+      day    = Date.today - i.days
       sWeek   = Date.today.beginning_of_week  - i.week
       eWeek   = Date.today.end_of_week        - i.week
       sMonth  = Date.today.beginning_of_month - i.month
       eMonth  = Date.today.end_of_month       - i.month
       sYear   = Date.today.beginning_of_year  - i.year
       eYear   = Date.today.end_of_year        - i.year
+      @charges_daily    << Invoice.charged.where(date: day).sum(:amount).to_f
       @charges_weekly   << Invoice.charged_between(sWeek  , eWeek).sum(:amount).to_f
       @charges_monthly  << Invoice.charged_between(sMonth , eMonth).sum(:amount).to_f
       @charges_yearly   << Invoice.charged_between(sYear  , eYear).sum(:amount).to_f
