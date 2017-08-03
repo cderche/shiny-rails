@@ -114,3 +114,4 @@ gem 'cocoon'
 
 gem 'faker'
 gem 'novus-nvd3-rails'
+gem 'kaminari'

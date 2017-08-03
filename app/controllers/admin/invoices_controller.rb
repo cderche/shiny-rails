@@ -14,7 +14,11 @@ class Admin::InvoicesController < Admin::AdminController
   end
 
   def index
-    @invoices = Invoice.all.order(updated_at: :desc)
+    @page = params[:page] || 0
+    @prev = Invoice.page(@page).prev_page
+    @next = Invoice.page(@page).next_page
+
+    @invoices = Invoice.order(updated_at: :desc).page @page
 
     @charges_weekly   = []
     @charges_monthly  = []
