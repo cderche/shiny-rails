@@ -1,7 +1,7 @@
 class ChangeDateFormatInInvoices < ActiveRecord::Migration[5.0]
   def up
-    # change_column :invoices, :date, :date
-    change_column :invoices, :date, 'date USING date::date'
+    change_column :invoices, :date, :date
+    # change_column :invoices, :date, 'date USING date::date'
     Invoice.all.each do |i|
       if i.date.kind_of? String
         i.update(date: Date.strptime(i.date, "%d/%m/%Y"))
