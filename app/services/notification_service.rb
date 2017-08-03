@@ -28,7 +28,7 @@ class NotificationService
     # Add CardId as card_token
     @booking.update(card_token: data[:CardId])
     # Send booking received email
-    BookingMailer.received(@booking).deliver_later if !@booking.received_sent_at
+    # BookingMailer.received(@booking).deliver_later if !@booking.received_sent_at
     # Notify on slack
     Slacked.post "Card was connected to booking, awaiting cleaner."
   end
