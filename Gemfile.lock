@@ -197,6 +197,7 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    novus-nvd3-rails (1.8.5)
     ntlm-http (0.1.1)
     orm_adapter (0.5.0)
     payture_api (0.1.9)
@@ -364,6 +365,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mailgun_rails
   meta-tags
+  novus-nvd3-rails
   pages-rails!
   payture_api
   pg

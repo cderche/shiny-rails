@@ -1,6 +1,9 @@
 class Invoice < ApplicationRecord
   belongs_to :booking
 
+  # scope :charged_this_week, -> { charged.where("date >= ?", Date.today.beginning_of_week) }
+  scope :charged_between, -> (a, b) { charged.where(date: a..b) }
+
   enum status: [
     :draft                          ,
     :pending                        ,
@@ -78,10 +81,16 @@ class Invoice < ApplicationRecord
 
   before_create :create_token
 
+  # before_save :update_date_format
+
   private
 
   def create_token
-    d = Date.strptime(date, "%d/%m/%Y")
-    self.token = "#{booking.order_token}_#{d.strftime('%d%m%Y')}"
+    # d = Date.strptime(date, "%d/%m/%Y")
+    self.token = "#{booking.order_token}_#{date.strftime('%d%m%Y')}"
   end
+
+  # def update_date_format
+  #   self.date_format = Date.strptime(self.date, "%d/%m/%Y")
+  # end
 end

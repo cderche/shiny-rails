@@ -113,3 +113,4 @@ gem "font-awesome-rails"
 gem 'cocoon'
 
 gem 'faker'
+gem 'novus-nvd3-rails'

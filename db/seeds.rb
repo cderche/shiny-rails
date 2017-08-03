@@ -54,3 +54,7 @@ end
 
   booking.save
 end
+
+10.times do
+  Invoice.create!(status: :charged, booking: Booking.all.sample, amount: [*1000..5000].sample, date: (Date.today-[*1..20].sample.days))
+end

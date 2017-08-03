@@ -1,3 +1,15 @@
+<div class="row p-b-20">
+  <div class="col-sm-4">
+    <%= render partial: 'sales_widget_chart', locals: { data: @charges_weekly , name: 'Weekly sales'  , background: 'success' } %>
+  </div>
+  <div class="col-sm-4">
+    <%= render partial: 'sales_widget_chart', locals: { data: @charges_monthly, name: 'Monthly sales' , background: 'complete' } %>
+  </div>
+  <div class="col-sm-4">
+    <%= render partial: 'sales_widget_chart', locals: { data: @charges_yearly , name: 'Yearly sales'  , background: 'primary' } %>
+  </div>
+</div>
+
 <div class="panel panel-default">
 
   <div class="panel-heading">

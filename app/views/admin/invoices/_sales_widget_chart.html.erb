@@ -1,0 +1,87 @@
+<div class="widget-8 panel no-border bg-<%= background %> no-margin widget-loader-bar">
+  <div class="container-xs-height full-height">
+    <div class="row-xs-height">
+      <div class="col-xs-height col-top">
+        <div class="panel-heading top-left top-right">
+          <div class="panel-title text-white hint-text">
+            <span class="font-montserrat fs-11 all-caps"><%= name %>
+              <i class="fa fa-chevron-right"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-xs-height ">
+      <div class="col-xs-height col-top relative">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="p-l-20">
+              <h3 class="no-margin p-b-5 text-white"><%= number_to_currency(data[0], unit: '₽'[0]) %></h3>
+              <p class="small text-white m-t-5">
+
+                <span class="label font-montserrat m-r-5">
+                  <%= number_to_percentage(percentage_change(data[0], data[1]), precision: 0) %>
+                </span>
+                <%= data[0] > data[1] ? "Higher" : "Lower"  %>
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-6"></div>
+        </div>
+        <div class='widget-8-chart widget-<%= name.downcase.parameterize %> line-chart' data-line-color="black" data-points="true" data-point-color="success" data-stroke-width="2">
+          <svg></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :foot do %>
+
+<script type="text/javascript">
+
+  var <%= name.downcase.parameterize('_') %>_data = [{
+    key: "<%= name %>",
+    values: [
+      [100, <%= data[4] %>],
+      [150, <%= data[3] %>],
+      [200, <%= data[2] %>],
+      [250, <%= data[1] %>],
+      [300, <%= data[0] %>]
+    ]
+  }]
+
+  nv.addGraph((function() {
+    var chart;
+    chart = nv.models.lineChart().x(function(d) {
+      return d[0];
+    }).y(function(d) {
+      return d[1];
+    }).color(['#000']).margin({
+      top: 10,
+      right: -10,
+      bottom: -10,
+      left: -10
+    }).showXAxis(false).showYAxis(false).showLegend(false).interactive(false).forceY([0,<%= data.max %> * 1.1]);
+    d3.select('.widget-<%= name.downcase.parameterize %> svg').datum(<%= name.downcase.parameterize('_') %>_data).call(chart);
+    nv.utils.windowResize(chart.update);
+    nv.utils.windowResize(function() {
+      setTimeout((function() {
+        $('.widget-<%= name.downcase.parameterize %> .nvd3 circle.nv-point').attr('r', '3').css({
+          'stroke-width': '2px',
+          ' stroke-opacity': 0.4
+        });
+      }), 500);
+    });
+    return chart;
+  }), function() {
+    setTimeout((function() {
+      $('.widget-<%= name.downcase.parameterize %> .nvd3 circle.nv-point').attr('r', '3').css({
+        'stroke-width': '2px',
+        ' stroke-opacity': 0.4
+      });
+    }), 500);
+  });
+</script>
+
+<% end %>

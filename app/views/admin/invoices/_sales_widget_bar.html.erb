@@ -1,0 +1,39 @@
+<div class="widget-9 panel no-border bg-primary no-margin widget-loader-bar">
+  <div class="container-xs-height full-height">
+    <div class="row-xs-height">
+      <div class="col-xs-height col-top">
+        <div class="panel-heading  top-left top-right">
+          <div class="panel-title text-black">
+            <span class="font-montserrat fs-11 all-caps">Weekly Sales
+              <i class="fa fa-chevron-right"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row-xs-height">
+      <div class="col-xs-height col-top">
+        <div class="p-l-20 p-t-15">
+          <h3 class="no-margin p-b-5 text-white"><%= number_to_currency(@total_charged_this_week, unit: "₽") %></h3>
+          <% if @total_charged_1_week_ago > @total_charged_this_week %>
+            <i class="fa fa-arrow-circle-down text-white"></i>
+          <% else %>
+            <i class="fa fa-arrow-circle-up text-white"></i>
+          <% end %>
+          <span class="small hint-text">
+            <%= percentage_change(@total_charged_1_week_ago, @total_charged_this_week, "last week") %>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row-xs-height">
+      <div class="col-xs-height col-bottom">
+        <div class="progress progress-small m-b-20">
+
+          <div class="progress-bar progress-bar-white" style="width:<%= number_to_percentage(@total_charged_this_week/@total_charged_1_week_ago*100) %>"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
