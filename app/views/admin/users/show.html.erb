@@ -7,19 +7,12 @@
         <div class="btn-group">
           <%= link_to 'Edit', edit_admin_user_path(@user), class: 'btn btn-default' %>
           <button class="btn btn-danger" data-toggle="modal" data-target="#confirmDestroy">Delete User</button>
-          <%= link_to 'Add Card', add_card_admin_user_path(@user), remote: true, class: 'btn btn-complete' %>
         </div>
       </div>
     </div>
 
   </div>
 </div>
-
-<!-- empty div to be used when adding a new card to a user -->
-<div id="add_card_wrapper">
-
-</div>
-<!-- end -->
 
 <!-- DELETE USER MODAL -->
 

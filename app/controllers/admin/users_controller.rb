@@ -1,6 +1,19 @@
 class Admin::UsersController < Admin::AdminController
 
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :add_card]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :add_card, :remove_card]
+
+  def remove_card
+
+    respond_to do |format|
+      if PaytureCardService.remove_card(@user, params[:card_id])
+        format.html { redirect_to [:admin, @user], notice: 'User card was successfully removed.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { redirect_to [:admin, @user], notice: 'User card was not removed.' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def add_card
     @url = PaytureCardService.add_card_url(@user)

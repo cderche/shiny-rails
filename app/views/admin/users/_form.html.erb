@@ -41,6 +41,40 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <div class="col-sm-4">
+      <%= f.label :cards, class: "control-label" %>
+      <!-- <p class="text-danger small">Warning: Modifying this could break user bookings.</p> -->
+      <p><%= link_to 'Add Card', add_card_admin_user_path(@user), remote: true, class: 'btn btn-complete btn-xs' %></p>
+    </div>
+    <div class="col-sm-8">
+      <table class="table table-condensed">
+        <thead>
+          <th colspan="1">Status</th>
+          <th colspan="2">Card Number</th>
+          <th colspan="2">Card Holder</th>
+          <th colspan="1">Bookings</th>
+          <th colspan="1"></th>
+        </thead>
+        <tbody>
+          <% @user.cards.each do |card| %>
+            <tr>
+              <td colspan="1" class='v-align-middle'><%= card_expiry_label(card['Expired']) %></td>
+              <td colspan="2" class='v-align-middle'><%= card['CardName'] %></td>
+              <td colspan="2" class='v-align-middle'><%= card['CardHolder'] %></td>
+              <td colspan="1" class='v-align-middle'><%= Booking.where(card_token: card['CardId']).count %></td>
+              <td colspan="1" class='v-align-middle'>
+                <%= link_to remove_card_admin_user_path(user_id: @user, card_id: card['CardId']), method: :delete, data: { confirm: "By continuing this action you are removing card #{card['CardName']} from Payture. The user will not be able to use it anymore." }, class: 'btn btn-danger pull-right' do %>
+                  <i class="fa fa-trash"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </body>
+      </table>
+    </div>
+  </div>
+
 
   <% unless @readonly %>
   <div class="form-group">
@@ -51,3 +85,9 @@
   <% end %>
 
 <% end %>
+
+<!-- empty div to be used when adding a new card to a user -->
+<div id="add_card_wrapper">
+
+</div>
+<!-- end -->
