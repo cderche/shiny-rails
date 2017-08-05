@@ -46,6 +46,8 @@ class Booking < ApplicationRecord
 
   def calculate_price
 
+    return if override_pricing
+
     self.subtotal = self.service.price
 
     if self.service != Service.find_by(name: 'service.name.allday')
@@ -60,6 +62,7 @@ class Booking < ApplicationRecord
 
     self.discount = (calc_promo + self.frequency.percent) / 100 * self.subtotal
     self.final_total = self.subtotal - self.discount
+    self.pay_out = (self.final_total * 0.55).round(-2)
 
     if self.discount > self.final_total
       self.discount = subtotal

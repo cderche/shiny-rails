@@ -22,5 +22,6 @@
 #= require nv.d3
 
 #= require cocoon
+#= require switchery
 
 #= require pages

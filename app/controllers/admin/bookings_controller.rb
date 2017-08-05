@@ -59,6 +59,11 @@ class Admin::BookingsController < Admin::AdminController
       :service_time,
       :frequency_id,
       :notes,
+      :subtotal,
+      :discount,
+      :final_total,
+      :pay_out,
+      :override_pricing,
       addons_attributes: [:id, :extra_id, :quantity, :_destroy],
       address_attributes: [:street, :block, :house, :building, :apartment]
     )

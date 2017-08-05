@@ -1,107 +1,109 @@
 <style>
-    .form-horizontal .form-group {
-        border-bottom: none !important;
-        padding-top: 0 !important;
-        padding-bottom: 10px !important;
-        margin-bottom: 0 !important;
-    }
+  .form-horizontal .form-group {
+    border-bottom: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 0 !important;
+  }
 
-    #addons td {
-      padding-left: 0;
-      border-bottom: 0;
-    }
+  #addons td {
+    padding-left: 0;
+    border-bottom: 0;
+  }
+
 </style>
 
 <%= form_for [:admin, @booking], html: { class: 'form-horizontal' } do |f| %>
 
-<div class="form-group">
-  <%= f.label :service, class: 'col-sm-4 control-label' %>
-  <div class="col-sm-8">
-    <%= f.select :service_id, Service.order(:id).collect { |s| [ t(s.name), s.id, data: { price: s.price } ] }, {}, { class: "form-control", disabled: @readonly } %>
+<div class="col-sm-6">
+  <div class="form-group">
+    <%= f.label :service, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+      <%= f.select :service_id, Service.order(:id).collect { |s| [ t(s.name), s.id, data: { price: s.price } ] }, {}, { class: "form-control", disabled: @readonly } %>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <div class="col-sm-4">
-    <%= f.label :addons, class: 'control-label' %>
-    <br>
-    <%= link_to_add_association 'Add', f, :addons, class: 'small', data: { association_insertion_node: '#addons', association_insertion_method: 'append' } unless @readonly %>
+  <div class="form-group">
+    <div class="col-sm-4">
+      <%= f.label :addons, class: 'control-label' %>
+      <br>
+      <%= link_to_add_association 'Add', f, :addons, class: 'small', data: { association_insertion_node: '#addons', association_insertion_method: 'append' } unless @readonly %>
+    </div>
+    <div class="col-sm-8">
+      <table class="table table-condensed" id="addons">
+        <%= f.fields_for :addons do |addon| %>
+        <%= render 'addon_fields', f: addon %>
+        <% end %>
+      </table>
+    </div>
   </div>
-  <div class="col-sm-8">
-    <table class="table table-condensed" id="addons">
-      <%= f.fields_for :addons do |addon| %>
-      <%= render 'addon_fields', f: addon %>
-      <% end %>
-    </table>
+
+  <div class="form-group">
+    <%= f.label :promo, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+      <%= f.select :promo_id, Promo.all.collect { |p| ["#{p.code} (-#{number_to_percentage(p.discount, precision: 0)})", p.id] }, { include_blank: true }, class: 'form-control', disabled: @readonly %>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <%= f.label :promo, class: 'col-sm-4 control-label' %>
-  <div class="col-sm-8">
-    <%= f.select :promo_id, Promo.all.collect { |p| ["#{p.code} (-#{number_to_percentage(p.discount, precision: 0)})", p.id] }, { include_blank: true }, class: 'form-control', disabled: @readonly %>
+  <hr>
+
+  <div class="form-group">
+    <%= f.label :frequency, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+      <%= f.select :frequency_id, Frequency.all.collect { |f| ["#{t(f.name)} (-#{number_to_percentage(f.percent, precision: 0)})", f.id] }, {}, class: 'form-control', disabled: @readonly %>
+    </div>
   </div>
-</div>
 
-<hr>
-
-<div class="form-group">
-  <%= f.label :frequency, class: 'col-sm-4 control-label' %>
-  <div class="col-sm-8">
-    <%= f.select :frequency_id, Frequency.all.collect { |f| ["#{t(f.name)} (-#{number_to_percentage(f.percent, precision: 0)})", f.id] }, {}, class: 'form-control', disabled: @readonly %>
+  <div class="form-group">
+    <%= f.label :start_date, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-4">
+      <div id="datepicker" class="input-group date">
+        <%= f.text_field :service_date, class: "form-control", disabled: @readonly %>
+        <span class="input-group-addon">
+          <i class="fa fa-calendar"></i>
+        </span>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <%= f.label :start_date, class: 'col-sm-4 control-label' %>
-  <div class="col-sm-4">
-    <div id="datepicker" class="input-group date">
-      <%= f.text_field :service_date, class: "form-control", disabled: @readonly %>
-      <span class="input-group-addon">
-        <i class="fa fa-calendar"></i>
-      </span>
+  <div class="form-group">
+    <%= f.label :service_time, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-4">
+      <div class="input-group bootstrap-timepicker timepicker">
+        <%= f.text_field :service_time, class: "form-control", disabled: @readonly %>
+        <span class="input-group-addon">
+          <i class="fa fa-clock-o"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :notes, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+      <%= f.text_area :notes, class: "form-control", disabled: @readonly %>
     </div>
   </div>
 </div>
 
-<div class="form-group">
-  <%= f.label :service_time, class: 'col-sm-4 control-label' %>
-  <div class="col-sm-4">
-    <div class="input-group bootstrap-timepicker timepicker">
-      <%= f.text_field :service_time, class: "form-control", disabled: @readonly %>
-      <span class="input-group-addon">
-        <i class="fa fa-clock-o"></i>
-      </span>
+<div class="col-sm-6">
+  <div class="form-group">
+    <%= f.label :user, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+      <%= link_to "#{@booking.user.email} (#{@booking.user.fullname})", [:admin, @booking.user], class: 'btn btn-default' %>
     </div>
   </div>
-</div>
 
-<div class="form-group">
-  <%= f.label :notes, class: 'col-sm-4 control-label' %>
-  <div class="col-sm-8">
-    <%= f.text_area :notes, class: "form-control", disabled: @readonly %>
+  <div class="form-group">
+    <%= f.label :card, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+      <%= f.select :card_token, @booking.user.cards.collect { |c| [c['CardName'], c['CardId']] }, { include_blank: true }, class: 'form-control', disabled: @readonly %>
+    </div>
   </div>
-</div>
 
-<hr>
+  <hr>
 
-<div class="form-group">
-  <%= f.label :user, class: 'col-sm-4 control-label' %>
-  <div class="col-sm-8">
-    <%= link_to "#{@booking.user.email} (#{@booking.user.fullname})", [:admin, @booking.user], class: 'btn btn-default' %>
-  </div>
-</div>
-
-<div class="form-group">
-  <%= f.label :card, class: 'col-sm-4 control-label' %>
-  <div class="col-sm-8">
-    <%= f.select :card_token, @booking.user.cards.collect { |c| [c['CardName'], c['CardId']] }, { include_blank: true }, class: 'form-control', disabled: @readonly %>
-  </div>
-</div>
-
-<hr>
-
-<%= f.fields_for :address do |ff| %>
+  <%= f.fields_for :address do |ff| %>
   <div class="form-group">
     <%= ff.label :street, class: 'col-sm-4 control-label' %>
     <div class="col-sm-8">
@@ -136,14 +138,51 @@
       <%= ff.text_field :apartment, class: "form-control", disabled: @readonly %>
     </div>
   </div>
-<% end %>
+  <% end %>
 
+  <hr>
+
+  <div class="form-group">
+    <%= f.label :professional, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+      <%= f.select :professional_id, Professional.all.collect { |p| [p.fullname, p.id] }, { include_blank: true }, class: 'form-control', disabled: @readonly %>
+    </div>
+  </div>
+</div>
+
+<br>
 <hr>
 
-<div class="form-group">
-  <%= f.label :professional, class: 'col-sm-4 control-label' %>
-  <div class="col-sm-8">
-    <%= f.select :professional_id, Professional.all.collect { |p| [p.fullname, p.id] }, { include_blank: true }, class: 'form-control', disabled: @readonly %>
+<div class="col-sm-6">
+  <div class="form-group">
+    <%= f.label :override_pricing, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-3">
+      <%= f.check_box :override_pricing, class: 'switchery' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :subtotal, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :subtotal, class: 'form-control override', disabled: @readonly || !@booking.override_pricing %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :discount, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :discount, class: 'form-control override', disabled: @readonly || !@booking.override_pricing %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :final_total, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :final_total, class: 'form-control override', disabled: @readonly || !@booking.override_pricing %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :pay_out, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :pay_out, class: 'form-control override', disabled: @readonly || !@booking.override_pricing %>
+    </div>
   </div>
 </div>
 
@@ -160,12 +199,24 @@
 
 <% content_for :foot do %>
 <script type="text/javascript">
-  $(document).ready(function() {
+  $(document).ready(function () {
     $('#datepicker').datepicker({format: 'dd/mm/yyyy'});
-    $('#booking_service_time').timepicker({
-      showMeridian: false,
-      defaultTime: "<%= @booking.service_time %>"
+    $('#booking_service_time').timepicker({showMeridian: false, defaultTime: "<%= @booking.service_time %>"});
+
+    // switchery
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
+    // Success color: #10CFBD
+    elems.forEach(function(html) {
+      var switchery = new Switchery(html, {color: '#10CFBD', disabled: <%= @readonly %>});
     });
+
+    $('#booking_override_pricing').change(function() {
+      if (this.checked) {
+        $('.override').prop('disabled', false)
+      }else{
+        $('.override').prop('disabled', true)
+      }
+    })
   });
 </script>
 <% end %>

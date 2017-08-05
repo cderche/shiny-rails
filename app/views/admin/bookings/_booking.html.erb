@@ -9,35 +9,8 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-12">
         <%= render 'form' %>
-      </div>
-      <div class="col-sm-3 col-sm-offset-1">
-        <form class="form-horizontal">
-
-          <div class="form-group">
-            <label class="col-sm-4 control-label">Subtotal</label>
-            <div class="col-sm-8">
-              <%= text_field_tag :subtotal, @booking.subtotal, class: 'form-control special-disabled', disabled: true %>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-4 control-label">Discount</label>
-            <div class="col-sm-8">
-              <%= text_field_tag :discount, @booking.discount, class: 'form-control special-disabled', disabled: true %>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-sm-4 control-label">Total</label>
-            <div class="col-sm-8">
-              <%= text_field_tag :total, @booking.final_total, class: 'form-control special-disabled', disabled: true %>
-            </div>
-          </div>
-
-        </form>
-
       </div>
     </div>
     <div class="btn-group">

@@ -64,8 +64,8 @@
               <td colspan="2" class='v-align-middle'><%= card['CardHolder'] %></td>
               <td colspan="1" class='v-align-middle'><%= Booking.where(card_token: card['CardId']).count %></td>
               <td colspan="1" class='v-align-middle'>
-                <%= link_to remove_card_admin_user_path(user_id: @user, card_id: card['CardId']), method: :delete, data: { confirm: "By continuing this action you are removing card #{card['CardName']} from Payture. The user will not be able to use it anymore." }, class: 'btn btn-danger pull-right' do %>
-                  <i class="fa fa-trash"></i>
+                <%= link_to remove_card_admin_user_path(user_id: @user, card_id: card['CardId']), method: :delete, data: { confirm: "By continuing this action you are removing card #{card['CardName']} from Payture. The user will not be able to use it anymore." }, class: 'pull-right text-danger' do %>
+                  <i class="fa fa-times"></i>
                 <% end %>
               </td>
             </tr>
