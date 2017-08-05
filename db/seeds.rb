@@ -32,7 +32,7 @@ User.create!(email: "admin@getshiny.ru", admin: true, password: "password", pass
   )
 end
 
-10.times do
+100.times do
   booking = Booking.new(
     user:       User.all.sample       ,
     service:    Service.all.sample    ,
@@ -55,6 +55,6 @@ end
   booking.save
 end
 
-500.times do
+100.times do
   Invoice.create!(status: :charged, booking: Booking.all.sample, amount: [*1000..5000].sample, date: (Date.today-[*0..1000].sample.days))
 end

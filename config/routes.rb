@@ -55,7 +55,8 @@ Rails.application.routes.draw do
     # get '/notifications', to: 'admin#notifications'
     resources :bookings do
       member do
-        get :toggle
+        get :activate
+        get :cancel
       end
     end
     resources :promos

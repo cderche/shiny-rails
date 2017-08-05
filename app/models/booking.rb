@@ -21,26 +21,28 @@ class Booking < ApplicationRecord
   before_save :calculate_price
   after_create :slack_new_booking
 
-  def status
+  enum status: [:draft, :pending, :active, :cancelled]
 
-    return :cancelled unless self.active
-
-    if !self.card_token
-      # If !card_token -> awaiting_card
-      :awaiting_card
-    elsif self.closed
-      # If closed -> closed
-      :closed
-    elsif self.card_token && !self.professional
-      # If card_token && !professional -> awaiting_professional
-      :awaiting_prof
-    elsif self.card_token && self.professional && self.confirmation_sent_at
-      # If card_token && professional && confirmation_sent_at -> active
-      :active
-    else
-      :error
-    end
-  end
+  # def status
+  #
+  #   return :cancelled unless self.active
+  #
+  #   if !self.card_token
+  #     # If !card_token -> awaiting_card
+  #     :awaiting_card
+  #   elsif self.closed
+  #     # If closed -> closed
+  #     :closed
+  #   elsif self.card_token && !self.professional
+  #     # If card_token && !professional -> awaiting_professional
+  #     :awaiting_prof
+  #   elsif self.card_token && self.professional && self.confirmation_sent_at
+  #     # If card_token && professional && confirmation_sent_at -> active
+  #     :active
+  #   else
+  #     :error
+  #   end
+  # end
 
   private
 

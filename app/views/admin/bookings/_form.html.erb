@@ -17,6 +17,13 @@
 
 <div class="col-sm-6">
   <div class="form-group">
+    <%= f.label :status, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-4">
+      <%= f.select :status, Booking.statuses.keys, {}, { class: "form-control", disabled: @readonly } %>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label :service, class: 'col-sm-4 control-label' %>
     <div class="col-sm-8">
       <%= f.select :service_id, Service.order(:id).collect { |s| [ t(s.name), s.id, data: { price: s.price } ] }, {}, { class: "form-control", disabled: @readonly } %>

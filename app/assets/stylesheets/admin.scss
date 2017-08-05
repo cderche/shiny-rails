@@ -6,3 +6,17 @@
 
 $base-img-url: "/assets";
 @import "pages";
+
+.pagination {
+  margin: 0px;
+
+  .page a, .next a, .last a, .first a, .prev a {
+    @extend .btn;
+    @extend .btn-default;
+  }
+
+  .current {
+    @extend .btn;
+    @extend .btn-info;
+  }
+}

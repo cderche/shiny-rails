@@ -26,11 +26,11 @@ class NotificationService
     # Find the booking
     @booking = Booking.find_by(order_token: data[:OrderId])
     # Add CardId as card_token
-    @booking.update(card_token: data[:CardId])
+    @booking.update(card_token: data[:CardId], status: :pending)
     # Send booking received email
-    # BookingMailer.received(@booking).deliver_later if !@booking.received_sent_at
+    BookingMailer.received(@booking).deliver_later if !@booking.received_sent_at
     # Notify on slack
-    Slacked.post "Card was connected to booking, awaiting cleaner."
+    Slacked.post "Card was connected to booking, pending professional."
   end
 
   def self.invoice_success(data)

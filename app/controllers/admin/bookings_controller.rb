@@ -1,20 +1,36 @@
 class Admin::BookingsController < Admin::AdminController
   before_action :set_booking, only: [:show, :update, :edit, :toggle]
 
-  def toggle
+  def activate
     respond_to do |format|
-      if @booking.update(active: !@booking.active)
-        format.html { redirect_to admin_booking_path(@booking), notice: 'Booking was successfully updated.' }
+      if @booking.update(status: :active)
+        format.html { redirect_to admin_booking_path(@booking), notice: 'Booking was successfully activated.' }
         format.json { render :show, status: :ok, location: admin_booking_path(@booking) }
       else
-        format.html { render :show, notice: 'Booking was not updated.' }
+        format.html { render :show, notice: 'Booking was not activated.' }
+        format.json { render json: @booking.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def cancel
+    respond_to do |format|
+      if @booking.update(status: :cancelled)
+        format.html { redirect_to admin_booking_path(@booking), notice: 'Booking was successfully cancelled.' }
+        format.json { render :show, status: :ok, location: admin_booking_path(@booking) }
+      else
+        format.html { render :show, notice: 'Booking was not cancelled.' }
         format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def index
-    @bookings = Booking.order(active: :desc, created_at: :desc)
+
+    @bookings = Booking.order(created_at: :desc)
+    @bookings.where!(status: params[:status]) if params[:status].present?
+    @bookings = @bookings.page params[:page]
+
     respond_to do |format|
       format.html
       format.json { render json: @bookings, include: [:address, :user, :frequency, :service, addons: [:extra]] }
@@ -51,6 +67,7 @@ class Admin::BookingsController < Admin::AdminController
   # Never trust parameters from the scary internet, only allow the white list through.
   def booking_params
     params.require(:booking).permit(
+      :status,
       :card_token,
       :promo_id,
       :professional_id,
