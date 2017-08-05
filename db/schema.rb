@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805135303) do
+ActiveRecord::Schema.define(version: 20170805155228) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(version: 20170805135303) do
     t.boolean  "closed",                 default: false
     t.datetime "confirmation_sent_at"
     t.integer  "promo_id"
-    t.boolean  "active",                 default: true
     t.boolean  "override_pricing",       default: false
     t.decimal  "pay_out"
     t.integer  "status",                 default: 0

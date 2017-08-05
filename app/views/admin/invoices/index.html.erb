@@ -16,25 +16,12 @@
 <div class="panel panel-default">
 
   <div class="panel-heading">
-    <div class="btn-group">
-      <%= link_to admin_invoices_path(page: 1), class: 'btn btn-default' do %>
-        <i class="fa fa-step-backward"></i>
-      <% end %>
-      <%= link_to admin_invoices_path(page: @prev), class: 'btn btn-default' do %>
-        <i class="fa fa-backward"></i>
-      <% end %>
-      <%= link_to admin_invoices_path(page: @page), class: 'btn btn-default' do %>
-        <strong><%= @page %></strong>
-      <% end %>
-      <%= link_to admin_invoices_path(page: @next), class: 'btn btn-default' do %>
-        <i class="fa fa-forward"></i>
-      <% end %>
-      <%= link_to admin_invoices_path(page: Invoice.page(1).total_pages), class: 'btn btn-default' do %>
-        <i class="fa fa-step-forward"></i>
-      <% end %>
+
+    <div class="pull-right">
+      <%= paginate @invoices %>
     </div>
 
-    <%= link_to 'Create Invoice', new_admin_invoice_path, class: 'btn btn-default pull-right' %>
+    <%= link_to 'Create Invoice', new_admin_invoice_path, class: 'btn btn-default' %>
   </div>
 
   <div class="panel-body">

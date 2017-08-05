@@ -34,9 +34,10 @@ end
 
 100.times do
   booking = Booking.new(
-    user:       User.all.sample       ,
-    service:    Service.all.sample    ,
-    frequency:  Frequency.all.sample  ,
+    user:       User.all.sample                   ,
+    service:    Service.all.sample                ,
+    frequency:  Frequency.all.sample              ,
+    status:     Booking.statuses.keys.sample      ,
     address:    Address.new(
       street:     Faker::Address.street_name      ,
       block:      Faker::Address.building_number  ,
