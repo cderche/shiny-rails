@@ -63,6 +63,7 @@ Rails.application.routes.draw do
     resources :users do
       member do
         get :add_card
+        delete :remove_card
       end
     end
     resources :invoices do

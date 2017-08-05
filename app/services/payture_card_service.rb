@@ -24,6 +24,17 @@ class PaytureCardService
     }).to_s
   end
 
+  def self.remove_card(user, card_id)
+    payload = {
+      VWUserLgn:    user.email          ,
+      VWUserPsw:    user.payture_token  ,
+      CardId:       card_id
+    }
+    payture = Payture::Card.new(ENV['PAYTURE_HOST'])
+    data = payture.remove(ENV['PAYTURE_ADD'], payload)
+    data['Remove']['Success'] == 'True'
+  end
+
   private
 
   def self.getList(user)
