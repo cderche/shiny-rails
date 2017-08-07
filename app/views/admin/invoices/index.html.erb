@@ -16,40 +16,50 @@
 <div class="panel panel-default">
 
   <div class="panel-heading">
-
-    <div class="pull-right">
-      <%= paginate @invoices %>
+    <%= form_for_filterrific @filterrific do |f| %>
+    <div class="row">
+      <div class="col-sm-2">
+        <div id="datepicker" class="input-group date">
+          <%= f.text_field :with_date_equal, class: "form-control", disabled: @readonly %>
+          <span class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+          </span>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <%= f.select :with_status_ids, Invoice.statuses.collect { |s| ["#{s[0]} (#{Invoice.send(s[0]).count})", s[1]] }, { include_blank: "All (#{Invoice.count})" }, { class: 'form-control' } %>
+      </div>
+      <div class="col-sm-2">
+        <%= link_to 'Reset filters', reset_filterrific_url, class: 'btn btn-default' %>
+      </div>
     </div>
-
-    <%= link_to 'Create Invoice', new_admin_invoice_path, class: 'btn btn-default' %>
+    <%# render_filterrific_spinner %>
+    <% end %>
   </div>
+
+  <!-- <div class="row">
+      <div class="col-sm-6">
+        <%= link_to 'Create Invoice', new_admin_invoice_path, class: 'btn btn-default' %>
+      </div>
+      <div class="col-sm-6">
+        <div class="pull-right">
+
+        </div>
+      </div>
+    </div>
+  </div> -->
 
   <div class="panel-body">
-    <table class="table table-condensed">
-      <thead>
-        <th colspan="1">Id</th>
-        <th colspan="2">Token</th>
-        <th colspan="2">Customer</th>
-        <th colspan="2">Date</th>
-        <th colspan="2">Amount</th>
-        <th colspan="2">Status</th>
-        <th colspan="2"></th>
-      </thead>
-      <tbody>
-        <% @invoices.each do |invoice| %>
-          <tr>
-            <td colspan="1" class="v-align-middle"><%= link_to invoice.id, [:admin, invoice] %></td>
-            <td colspan="2" class="v-align-middle"><%= invoice.try(:token) %></td>
-            <td colspan="2" class="v-align-middle"><%= link_to invoice.booking.user.email, [:admin, invoice.booking.user] %></td>
-            <td colspan="2" class="v-align-middle"><%= invoice.date %></td>
-            <td colspan="2" class="v-align-middle"><%= invoice.amount %></td>
-            <td colspan="2" class="v-align-middle"><%= invoice_status_label(invoice.status) %></td>
-            <td colspan="2" class="v-align-middle">
-              <%= link_to "Charge", charge_admin_invoice_path(invoice), method: :put, class: 'btn btn-primary btn-sm' if [:draft, :failed].include? invoice.status.to_sym %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div id="filterrific_results">
+      <%= render partial: 'list', locals: { invoices: @invoices } %>
+    </div>
   </div>
 </div>
+
+<% content_for :foot do %>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#datepicker').datepicker({format: 'dd/mm/yyyy'});
+  });
+</script>
+<% end %>

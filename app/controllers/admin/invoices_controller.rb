@@ -14,12 +14,15 @@ class Admin::InvoicesController < Admin::AdminController
   end
 
   def index
-    @page = params[:page] || 0
-    @prev = Invoice.page(@page).prev_page
-    @next = Invoice.page(@page).next_page
-
-    @invoices = Invoice.order(updated_at: :desc).page @page
-
+    @filterrific = initialize_filterrific(
+      Invoice,
+      params[:filterrific],
+      select_options: {
+        with_status_ids: Invoice::statuses
+      }
+    ) or return
+    @invoices = @filterrific.find.page params[:page]
+    
     @charges_daily    = []
     @charges_weekly   = []
     @charges_monthly  = []

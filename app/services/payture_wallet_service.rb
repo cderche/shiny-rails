@@ -22,7 +22,7 @@ class PaytureWalletService
       invoice.update(status: :charged)
       return true
     elsif data[:ErrCode]
-      invoice.update(status: data[:ErrCode].downcase.to_sym)
+      invoice.update(status: :failed, error: data[:ErrCode])
       return false
     else
       invoice.update(status: :failed)

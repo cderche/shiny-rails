@@ -42,7 +42,7 @@ class NotificationService
   def self.invoice_fail(data)
     puts "Invoice failed #{data[:ErrCode]}"
     @invoice = Invoice.find_by(token: data[:OrderId])
-    @invoice.update(status: data[:ErrCode].downcase.to_sym)
+    @invoice.update(status: :failed, error: data[:ErrCode])
   end
 
 end

@@ -22,7 +22,7 @@ Extra.create!(name: "extra.name.balcony"          , price: 450  , quantity_based
 
 User.create!(email: "admin@getshiny.ru", admin: true, password: "password", password_confirmation: "password")
 
-10.times do
+5.times do
   User.create!(
     email:      Faker::Internet.email   ,
     firstname:  Faker::Name.first_name  ,
@@ -32,7 +32,7 @@ User.create!(email: "admin@getshiny.ru", admin: true, password: "password", pass
   )
 end
 
-100.times do
+50.times do
   booking = Booking.new(
     user:       User.all.sample                   ,
     service:    Service.all.sample                ,
@@ -56,6 +56,6 @@ end
   booking.save
 end
 
-100.times do
-  Invoice.create!(status: :charged, booking: Booking.all.sample, amount: [*1000..5000].sample, date: (Date.today-[*0..1000].sample.days))
+50.times do
+  Invoice.create!(status: Invoice.statuses.keys.sample, booking: Booking.all.sample, amount: [*1000..5000].sample, date: (Date.today-[*0..1000].sample.days))
 end

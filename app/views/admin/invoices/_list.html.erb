@@ -1,0 +1,29 @@
+<table class="table table-condensed">
+  <thead>
+    <th colspan="2">Customer</th>
+    <th colspan="2">Date</th>
+    <th colspan="2">Amount</th>
+    <th colspan="2">Status</th>
+    <th colspan="2">Error</th>
+    <th colspan="2"></th>
+  </thead>
+  <tbody>
+    <% invoices.each do |invoice| %>
+    <tr>
+      <td colspan="2" class="v-align-middle"><%= invoice_status_label(invoice.status) %></td>
+      <td colspan="2" class="v-align-middle"><%= link_to invoice.booking.user.email, [:admin, invoice.booking.user] %></td>
+      <td colspan="2" class="v-align-middle"><%= invoice.date.strftime('%d/%m/%Y') %></td>
+      <td colspan="2" class="v-align-middle"><%= invoice.amount %></td>
+      <td colspan="2" class="v-align-middle"><%= invoice.error %></td>
+      <td colspan="2" class="v-align-middle">
+        <%= link_to "View", [:admin, invoice], class: 'btn btn-complete btn-sm' %>
+        <%= link_to "Charge", charge_admin_invoice_path(invoice), method: :put, class: 'btn btn-primary btn-sm' if invoice.status.to_sym == :draft %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= paginate invoices %>
+</div>

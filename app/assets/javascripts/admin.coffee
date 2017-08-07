@@ -23,5 +23,6 @@
 
 #= require cocoon
 #= require switchery
+#= require filterrific/filterrific-jquery
 
 #= require pages

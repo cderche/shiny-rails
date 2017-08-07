@@ -8,15 +8,19 @@ $base-img-url: "/assets";
 @import "pages";
 
 .pagination {
-  margin: 0px;
 
-  .page a, .next a, .last a, .first a, .prev a {
-    @extend .btn;
-    @extend .btn-default;
+  .page, .next, .last, .first, .prev, .current {
+    @extend .small;
+    @extend .bold;
+    a {
+      @extend .text-master-light;
+      padding: 5px 10px;
+    }
   }
 
   .current {
-    @extend .btn;
-    @extend .btn-info;
+    a {
+      @extend .text-master;
+    }
   }
 }
