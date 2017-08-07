@@ -1,3 +1,18 @@
+<div class="row p-b-20">
+  <div class="col-sm-3">
+    <%= render partial: 'booking_widget', locals: { data: @bookings_daily  , name: 'Daily new bookings'   , background: 'complete' } %>
+  </div>
+  <div class="col-sm-3">
+    <%= render partial: 'booking_widget', locals: { data: @bookings_weekly , name: 'Weekly new bookings'  , background: 'success' } %>
+  </div>
+  <div class="col-sm-3">
+    <%= render partial: 'booking_widget', locals: { data: @bookings_monthly, name: 'Monthly new bookings' , background: 'complete' } %>
+  </div>
+  <div class="col-sm-3">
+    <%= render partial: 'booking_widget', locals: { data: @bookings_yearly , name: 'Yearly new bookings'  , background: 'success' } %>
+  </div>
+</div>
+
 <div class="panel panel-default bg-white">
 
     <div class="panel-heading">

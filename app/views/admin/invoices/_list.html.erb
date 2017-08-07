@@ -1,24 +1,34 @@
 <table class="table table-condensed">
   <thead>
-    <th colspan="2">Customer</th>
-    <th colspan="2">Date</th>
-    <th colspan="2">Amount</th>
-    <th colspan="2">Status</th>
-    <th colspan="2">Error</th>
-    <th colspan="2"></th>
+    <th>Status</th>
+    <th>Date</th>
+    <th>Amount</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Error</th>
+    <th></th>
   </thead>
   <tbody>
     <% invoices.each do |invoice| %>
     <tr>
-      <td colspan="2" class="v-align-middle"><%= invoice_status_label(invoice.status) %></td>
-      <td colspan="2" class="v-align-middle"><%= link_to invoice.booking.user.email, [:admin, invoice.booking.user] %></td>
-      <td colspan="2" class="v-align-middle"><%= invoice.date.strftime('%d/%m/%Y') %></td>
-      <td colspan="2" class="v-align-middle"><%= number_to_currency(invoice.amount, unit: '₽') %></td>
-      <td colspan="2" class="v-align-middle"><%= invoice.error %></td>
-      <td colspan="2" class="v-align-middle">
-        <%= link_to "View", [:admin, invoice], class: 'btn btn-complete btn-sm' %>
-        <%= link_to "Charge", charge_admin_invoice_path(invoice), method: :put, class: 'btn btn-primary btn-sm' if invoice.status.to_sym == :draft %>
-        <%= link_to "Delete", admin_invoice_path(invoice), method: :delete, class: 'btn btn-danger btn-sm' if invoice.status.to_sym == :pending %>
+      <td class="v-align-middle"><%= invoice_status_label(invoice.status) %></td>
+      <td class="v-align-middle"><%= invoice.date.strftime('%d/%m/%Y') %></td>
+      <td class="v-align-middle"><%= number_to_currency(invoice.amount, unit: '₽') %></td>
+      <td class="v-align-middle"><%= link_to invoice.booking.user.try(:fullname), [:admin, invoice.booking.user] %></td>
+      <td class="v-align-middle"><%= link_to invoice.booking.user.try(:email), [:admin, invoice.booking.user] %></td>
+      <td class="v-align-middle"><%= invoice.error %></td>
+      <td class="v-align-middle">
+        <div class="btn-group btn-group btn-group-justified pull-right">
+          <%= link_to [:admin, invoice], class: 'btn btn-complete btn-sm' do %>
+            <i class="fa fa-info"></i>
+          <% end %>
+          <%= link_to charge_admin_invoice_path(invoice), method: :put, class: "btn btn-primary btn-sm #{!invoice.draft? ? 'disabled' : ''}" do %>
+            <i class="fa fa-credit-card-alt"></i>
+          <% end %>
+          <%= link_to admin_invoice_path(invoice), method: :delete, class: "btn btn-danger btn-sm #{!invoice.draft? ? 'disabled' : ''}" do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+        </div>
       </td>
     </tr>
     <% end %>

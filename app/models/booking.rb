@@ -33,6 +33,7 @@ class Booking < ApplicationRecord
 
   # scope :sorted_by, lambda { |sort_key| }
   scope :with_status_ids, lambda { |status_ids| where(status: [*status_ids]) }
+  scope :created_between, -> (a, b) { where(created_at: a..b) }
 
   def lifetime_value
     invoices.charged.sum(:amount)
