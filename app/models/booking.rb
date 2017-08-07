@@ -23,26 +23,16 @@ class Booking < ApplicationRecord
 
   enum status: [:draft, :pending, :active, :cancelled]
 
-  # def status
-  #
-  #   return :cancelled unless self.active
-  #
-  #   if !self.card_token
-  #     # If !card_token -> awaiting_card
-  #     :awaiting_card
-  #   elsif self.closed
-  #     # If closed -> closed
-  #     :closed
-  #   elsif self.card_token && !self.professional
-  #     # If card_token && !professional -> awaiting_professional
-  #     :awaiting_prof
-  #   elsif self.card_token && self.professional && self.confirmation_sent_at
-  #     # If card_token && professional && confirmation_sent_at -> active
-  #     :active
-  #   else
-  #     :error
-  #   end
-  # end
+  filterrific(
+    # default_filter_params: { sorted_by: 'created_at_desc' },
+    available_filters: [
+      # :with_date_equal  ,
+      :with_status_ids  ,
+    ]
+  )
+
+  # scope :sorted_by, lambda { |sort_key| }
+  scope :with_status_ids, lambda { |status_ids| where(status: [*status_ids]) }
 
   private
 

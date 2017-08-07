@@ -26,14 +26,19 @@ class Admin::BookingsController < Admin::AdminController
   end
 
   def index
-
-    @bookings = Booking.order(created_at: :desc)
-    @bookings.where!(status: params[:status]) if params[:status].present?
-    @bookings = @bookings.page params[:page]
+    @filterrific = initialize_filterrific(
+      Booking,
+      params[:filterrific],
+      select_options: {
+        with_status_ids: Booking::statuses
+      }
+    ) or return
+    @bookings = @filterrific.find.page params[:page]
 
     respond_to do |format|
       format.html
       format.json { render json: @bookings, include: [:address, :user, :frequency, :service, addons: [:extra]] }
+      format.js
     end
   end
 

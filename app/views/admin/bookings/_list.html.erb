@@ -1,0 +1,36 @@
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Identifier</th>
+      <th>Status</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% bookings.each do |booking| %>
+    <tr>
+      <td>
+        <%= link_to booking.try('order_token'), admin_booking_path(booking) %>
+      </td>
+      <td>
+        <%= format_status_label(booking.status) %>
+      </td>
+      <td>
+        <%= booking.user.try('email') %>
+      </td>
+      <td>
+        <%= booking.user.try('phone') %>
+      </td>
+      <td>
+        <%= booking.created_at.strftime("%a, %b %d at %H:%M %Z") %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= paginate bookings, remote: true %>
+</div>
