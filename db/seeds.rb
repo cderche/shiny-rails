@@ -57,5 +57,6 @@ end
 end
 
 50.times do
-  Invoice.create!(status: Invoice.statuses.keys.sample, booking: Booking.all.sample, amount: [*1000..5000].sample, date: (Date.today-[*0..1000].sample.days))
+  booking = Booking.all.sample
+  Invoice.create!(status: Invoice.statuses.keys.sample, booking: booking, amount: booking.final_total, date: (Date.today-[*0..1000].sample.days))
 end

@@ -13,7 +13,7 @@
       <td colspan="2" class="v-align-middle"><%= invoice_status_label(invoice.status) %></td>
       <td colspan="2" class="v-align-middle"><%= link_to invoice.booking.user.email, [:admin, invoice.booking.user] %></td>
       <td colspan="2" class="v-align-middle"><%= invoice.date.strftime('%d/%m/%Y') %></td>
-      <td colspan="2" class="v-align-middle"><%= invoice.amount %></td>
+      <td colspan="2" class="v-align-middle"><%= number_to_currency(invoice.amount, unit: '₽') %></td>
       <td colspan="2" class="v-align-middle"><%= invoice.error %></td>
       <td colspan="2" class="v-align-middle">
         <%= link_to "View", [:admin, invoice], class: 'btn btn-complete btn-sm' %>

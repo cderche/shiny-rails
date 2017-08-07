@@ -34,6 +34,10 @@ class Booking < ApplicationRecord
   # scope :sorted_by, lambda { |sort_key| }
   scope :with_status_ids, lambda { |status_ids| where(status: [*status_ids]) }
 
+  def lifetime_value
+    invoices.charged.sum(:amount)
+  end
+
   private
 
   def calculate_price
