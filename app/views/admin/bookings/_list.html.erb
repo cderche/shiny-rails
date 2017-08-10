@@ -3,12 +3,12 @@
     <tr>
       <!-- <th>Identifier</th> -->
       <th>Status</th>
-      <th>Frequency</th>
+      <th colspan="2">Frequency</th>
       <th>Value</th>
       <th>Lifetime</th>
       <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
+      <!-- <th>Email</th> -->
+      <!-- <th>Phone</th> -->
       <th>Created At</th>
       <th></th>
     </tr>
@@ -18,12 +18,12 @@
     <tr>
       <!-- <td><%# link_to booking.try('order_token'), admin_booking_path(booking) %></td> -->
       <td><%= format_status_label(booking.status) %></td>
-      <td><%= t(booking.frequency.name) %></td>
+      <td colspan="2"><%= ScheduleSupportService.rule(booking).to_s %></td>
       <td><%= number_to_currency(booking.final_total, unit: '₽') %></td>
       <td><%= number_to_currency(booking.lifetime_value, unit: '₽') %></td>
       <td><%= booking.user.try('sort_name') %></td>
-      <td><%= booking.user.try('email') %></td>
-      <td><%= booking.user.try('phone') %></td>
+      <!-- <td><%= booking.user.try('email') %></td> -->
+      <!-- <td><%= booking.user.try('phone') %></td> -->
       <td><%= booking.created_at.strftime("%a, %b %d") %></td>
       <td>
         <%= link_to [:admin, booking], class: 'btn btn-complete btn-sm' do %>

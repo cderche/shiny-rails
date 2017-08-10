@@ -38,6 +38,7 @@ end
     service:    Service.all.sample                ,
     frequency:  Frequency.all.sample              ,
     status:     Booking.statuses.keys.sample      ,
+    service_date: (Date.today-[*0..500].sample).strftime('%d/%m/%Y'),
     address:    Address.new(
       street:     Faker::Address.street_name      ,
       block:      Faker::Address.building_number  ,
