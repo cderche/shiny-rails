@@ -24,19 +24,54 @@ class Booking < ApplicationRecord
   enum status: [:draft, :pending, :active, :cancelled]
 
   filterrific(
-    # default_filter_params: { sorted_by: 'created_at_desc' },
+    default_filter_params: { sorted_by: 'created_at_desc' },
     available_filters: [
       # :with_date_equal  ,
+      :sorted_by,
       :with_status_ids  ,
+      :search_query
     ]
   )
 
   # scope :sorted_by, lambda { |sort_key| }
   scope :with_status_ids, lambda { |status_ids| where(status: [*status_ids]) }
   scope :created_between, -> (a, b) { where(created_at: a..b) }
+  scope :sorted_by, lambda { |sort_option|
+    direction = (sort_option =~ /desc$/) ? :desc : :asc
+    case sort_option.to_s
+    when /^created_at_/
+      order(created_at: direction)
+    when /^name_/
+      order("LOWER(users.lastname) #{direction}, LOWER(users.firstname) #{direction}").joins(:user)
+    else
+      raise(ArgumentError, "Invalid sort option: #{ sort_option.inspect }")
+    end
+  }
+  scope :search_query, lambda { |query|
+    return nil  if query.blank?
+    terms = query.downcase.split(/\s+/)
+    terms.map! { |e| (e.gsub('*', '%') + '%').gsub(/%+/, '%') }
+    num_or_conds = 3
+
+    joins(:user).where(
+      terms.map { |term|
+        "(LOWER(users.firstname) LIKE ? OR LOWER(users.lastname) LIKE ? OR LOWER(users.email) LIKE ?)"
+      }.join(' AND '),
+      *terms.map { |e| [e] * num_or_conds }.flatten
+    )
+  }
 
   def lifetime_value
     invoices.charged.sum(:amount)
+  end
+
+  def self.options_for_sorted_by
+    [
+      ['Creation date (newest first)', 'created_at_desc'],
+      ['Creation date (oldest first)', 'created_at_asc'],
+      ['Name (a-z)', 'name_asc'],
+      ['Name (z-a)', 'name_desc'],
+    ]
   end
 
   private

@@ -30,6 +30,7 @@ class Admin::BookingsController < Admin::AdminController
       Booking,
       params[:filterrific],
       select_options: {
+        sorted_by: Booking.options_for_sorted_by,
         with_status_ids: Booking::statuses
       }
     ) or return

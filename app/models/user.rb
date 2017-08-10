@@ -17,6 +17,10 @@ class User < ApplicationRecord
     "#{self.firstname} #{self.lastname}"
   end
 
+  def sort_name
+    "#{self.lastname}, #{self.firstname}" if self.lastname && self.firstname
+  end
+
   def cards
     PaytureCardService.list(self)
   end
