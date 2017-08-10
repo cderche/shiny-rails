@@ -18,11 +18,12 @@ class Admin::InvoicesController < Admin::AdminController
       Invoice,
       params[:filterrific],
       select_options: {
+        sorted_by: Booking.options_for_sorted_by,
         with_status_ids: Invoice::statuses
       }
     ) or return
     @invoices = @filterrific.find.page params[:page]
-    
+
     @charges_daily    = []
     @charges_weekly   = []
     @charges_monthly  = []
