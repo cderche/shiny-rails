@@ -21,7 +21,7 @@
       <td colspan="2"><%= format_booking_rule(booking) %></td>
       <td><%= number_to_currency(booking.final_total, unit: '₽') %></td>
       <td><%= number_to_currency(booking.lifetime_value, unit: '₽') %></td>
-      <td><%= booking.user.try('sort_name') %></td>
+      <td><%= link_to booking.user.try('sort_name'), [:admin, booking.user] %></td>
       <!-- <td><%= booking.user.try('email') %></td> -->
       <!-- <td><%= booking.user.try('phone') %></td> -->
       <td><%= booking.created_at.strftime("%a, %b %d") %></td>

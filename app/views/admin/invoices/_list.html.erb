@@ -4,7 +4,7 @@
     <th>Date</th>
     <th>Amount</th>
     <th>Name</th>
-    <th>Email</th>
+    <!-- <th>Email</th> -->
     <th>Error</th>
     <th></th>
   </thead>
@@ -14,8 +14,8 @@
       <td class="v-align-middle"><%= invoice_status_label(invoice.status) %></td>
       <td class="v-align-middle"><%= invoice.date.strftime('%d/%m/%Y') %></td>
       <td class="v-align-middle"><%= number_to_currency(invoice.amount, unit: '₽') %></td>
-      <td class="v-align-middle"><%= link_to invoice.booking.user.try(:fullname), [:admin, invoice.booking.user] %></td>
-      <td class="v-align-middle"><%= link_to invoice.booking.user.try(:email), [:admin, invoice.booking.user] %></td>
+      <td class="v-align-middle"><%= link_to invoice.booking.user.try(:sort_name), [:admin, invoice.booking.user] %></td>
+      <!-- <td class="v-align-middle"><%= link_to invoice.booking.user.try(:email), [:admin, invoice.booking.user] %></td> -->
       <td class="v-align-middle"><%= invoice.error %></td>
       <td class="v-align-middle">
         <div class="btn-group btn-group btn-group-justified pull-right">
