@@ -14,6 +14,13 @@ module Admin::BookingsHelper
     end
   end
 
+  def format_booking_rule(booking)
+    if booking.frequency == Frequency.find(1)
+      return "Once"
+    end
+    ScheduleSupportService.rule(booking).to_s
+  end
+
   private
 
   def color(status)
