@@ -12,7 +12,7 @@ class Admin::OccurrencesController < Admin::AdminController
     # @occurrences = @filterrific.find.page params[:page]
     bookings = Booking.all
     @occurrences = []
-    Booking.all.each { |booking|
+    Booking.active.each { |booking|
       @occurrences.concat ScheduleService.sort(booking, Date.today, Date.today + 1.month)
     }
     @occurrences.sort! { |x,y| x.date <=> y.date }
