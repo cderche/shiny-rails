@@ -30,14 +30,22 @@ User.create!(email: "admin@getshiny.ru", admin: true, password: "password", pass
     password: "password"                ,
     password_confirmation: "password"
   )
+
+  Professional.create!(
+    firstname:  Faker::Name.first_name  ,
+    lastname:   Faker::Name.last_name
+  )
+
 end
 
-50.times do
+10.times do
   booking = Booking.new(
     user:       User.all.sample                   ,
     service:    Service.all.sample                ,
     frequency:  Frequency.all.sample              ,
     status:     Booking.statuses.keys.sample      ,
+    professional: Professional.all.sample         ,
+    service_time: '11:00'                         ,
     service_date: (Date.today-[*0..500].sample).strftime('%d/%m/%Y'),
     address:    Address.new(
       street:     Faker::Address.street_name      ,
@@ -60,4 +68,23 @@ end
 50.times do
   booking = Booking.all.sample
   Invoice.create!(status: Invoice.statuses.keys.sample, booking: booking, amount: booking.final_total, date: (Date.today-[*0..1000].sample.days))
+end
+
+Booking.all.each do |b|
+  schedule = ScheduleSupportService.schedule(b)
+  if schedule
+    dates = schedule.next_occurrences(2)
+    dates.each do |date|
+      Occurrence.create!(
+        booking:      b               ,
+        user:         b.user          ,
+        date:         date            ,
+        time:         b.service_time  ,
+        professional: b.professional  ,
+        amount_due:   b.final_total   ,
+        pay_out:      b.pay_out       ,
+        status:       :active
+      )
+    end
+  end
 end

@@ -11,4 +11,8 @@ class Professional < ApplicationRecord
     def fullname
         "#{firstname} #{lastname}"
     end
+
+    def sort_name
+      "#{self.lastname}, #{self.firstname}" if self.lastname && self.firstname
+    end
 end

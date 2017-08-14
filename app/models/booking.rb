@@ -12,6 +12,7 @@ class Booking < ApplicationRecord
 
   has_many    :invoices     , dependent: :destroy
   has_many    :addons       , dependent: :destroy , inverse_of: :booking
+  has_many    :occurrences  , dependent: :destroy
 
   accepts_nested_attributes_for :extras
   accepts_nested_attributes_for :user
@@ -117,7 +118,7 @@ class Booking < ApplicationRecord
   end
 
   def slack_new_booking
-    Slacked.post "Booking created"
+    # Slacked.post "Booking created"
   end
 
 end

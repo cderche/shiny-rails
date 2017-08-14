@@ -41,6 +41,13 @@
             <% end %>
           </li>
 
+          <li>
+            <%= link_to admin_occurrences_path, class: 'detailed' do %>
+              <span class="title">Occurrences</span>
+              <span class="details"><%= Occurrence.count %> Occurrences</span>
+            <% end %>
+          </li>
+
 
         </ul>
       </div>

@@ -18,7 +18,7 @@ class Admin::InvoicesController < Admin::AdminController
       Invoice,
       params[:filterrific],
       select_options: {
-        sorted_by: Booking.options_for_sorted_by,
+        sorted_by: Invoice.options_for_sorted_by,
         with_status_ids: Invoice::statuses
       }
     ) or return

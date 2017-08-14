@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170807072328) do
+ActiveRecord::Schema.define(version: 20170811185859) do
 
   create_table "addons", force: :cascade do |t|
     t.integer  "booking_id"
@@ -123,6 +123,23 @@ ActiveRecord::Schema.define(version: 20170807072328) do
     t.string   "category"
     t.string   "data"
     t.index ["order_id"], name: "index_notifications_on_order_id"
+  end
+
+  create_table "occurrences", force: :cascade do |t|
+    t.date     "date"
+    t.string   "time"
+    t.integer  "booking_id"
+    t.decimal  "amount_due"
+    t.decimal  "pay_out"
+    t.string   "card_id"
+    t.integer  "user_id"
+    t.integer  "status"
+    t.integer  "professional_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["booking_id"], name: "index_occurrences_on_booking_id"
+    t.index ["professional_id"], name: "index_occurrences_on_professional_id"
+    t.index ["user_id"], name: "index_occurrences_on_user_id"
   end
 
   create_table "professionals", force: :cascade do |t|

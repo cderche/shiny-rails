@@ -72,6 +72,7 @@ Rails.application.routes.draw do
         put :charge
       end
     end
+    resources :occurrences
   end
 
   get '/admin', to: 'admin/bookings#index'
