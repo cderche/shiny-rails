@@ -118,7 +118,7 @@ class Booking < ApplicationRecord
   end
 
   def slack_new_booking
-    # Slacked.post "Booking created"
+    Slacked.post "Booking created"
   end
 
 end

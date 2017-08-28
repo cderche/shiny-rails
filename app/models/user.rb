@@ -37,7 +37,7 @@ class User < ApplicationRecord
   end
 
   def slack_new_user
-    # Slacked.post "New user: #{self.email}"
+    Slacked.post "New user: #{self.email}"
   end
 
   def delete_payture_account
