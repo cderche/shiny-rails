@@ -12,6 +12,8 @@ ru:
     models:
       user: "Пользователь"
   devise:
+    buttons:
+      reset_password: "Сброс пароля"
     confirmations:
       confirmed: "Ваш адрес эл. почты успешно подтвержден."
       new:

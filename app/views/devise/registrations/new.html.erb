@@ -1,27 +1,62 @@
+<div class="row m-t-90">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
 
-<h2><%= t('.sign_up') %></h2>
+            <div class="panel panel-body">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+                <%= render 'shared/flash' %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+                <div class="text-center m-t-20">
+                    <%= image_tag 'shiny_logo_old.png', class: 'logo', height: 40 %>
+                    <h4 class="m-t-40"><%= t('.sign_up') %></h4>
+                </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group form-group-default required">
+                            <%= f.label :email %>
+                            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                        </div>
+                    </div>
+                </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group form-group-default required">
+                            <%= f.label :password %>
+                            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                        </div>
+                    </div>
+                </div>
 
-<%= render "devise/shared/links" %>
+                <% if devise_mapping.rememberable? -%>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                      <div class="form-group form-group-default required">
+                          <%= f.label :password_confirmation %>
+                          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+                      </div>
+                    </div>
+                </div>
+                <% end -%>
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <%= f.submit t('.sign_up'), class: 'btn btn-primary btn-block btn-lg' %>
+                    </div>
+                </div>
+
+                <div class="row m-t-20">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <%= render "devise/shared/links" %>
+                    </div>
+                </div>
+
+                <% end %>
+
+            </div>
+        </div>
+    </div>
+</div>

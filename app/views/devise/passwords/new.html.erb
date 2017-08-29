@@ -1,27 +1,41 @@
 
 <div class="row m-t-90">
-    <div class="col-sm-6 col-sm-offset-3">
+    <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title"><%= t 'forgot_your_password' %></div>
-            </div>
 
             <div class="panel panel-body">
 
-                <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-                <%= devise_error_messages! %>
+              <%= render 'shared/flash' %>
 
-                <div class="form-group form-group-default required">
-                    <%= f.label :email %>
-                    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+              <div class="text-center m-t-20">
+                <%= image_tag 'shiny_logo_old.png', class: 'logo', height: 40 %>
+                <h4 class="m-t-40"><%= t 'forgot_your_password' %></h4>
+              </div>
+
+                <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'm-t-30' }) do |f| %>
+
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <div class="form-group form-group-default required">
+                      <%= f.label :email %>
+                      <%= f.email_field :email, class: 'form-control', autofocus: true %>
+                  </div>
                 </div>
+              </div>
 
-                <!-- <div class="form-group form-group-default"> -->
-                <%= f.submit t('next'), class: 'btn btn-primary btn-block' %>
-                <!-- </div> -->
+              <div class="row m-t-20">
+                <div class="col-md-8 col-md-offset-2">
+                  <%= f.submit t('devise.buttons.reset_password'), class: 'btn btn-primary btn-block btn-lg' %>
+                </div>
+              </div>
+
+              <div class="row m-t-20">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <%= render "devise/shared/links" %>
+                </div>
+              </div>
+
                 <% end %>
-
-                <%= render "devise/shared/links" %>
 
             </div>
         </div>

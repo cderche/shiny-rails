@@ -49,3 +49,12 @@
 .text-red {
   color: #FF4847 !important;
 }
+
+#error_explanation {
+  @extend .text-red !optional;
+  h2 {
+    font-size: 12px;
+    @extend .text-red !optional;
+  }
+  font-size: 12px;
+}

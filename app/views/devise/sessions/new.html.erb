@@ -1,37 +1,61 @@
 <div class="row m-t-90">
-    <div class="col-sm-6 col-sm-offset-3 ">
+    <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="panel-title"><%= t 'log_in' %></div>
-            </div>
 
             <div class="panel panel-body">
 
-                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                <div class="form-group form-group-default required">
-                    <%= f.label :email %>
-                    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                <%= render 'shared/flash' %>
+
+                <div class="text-center m-t-20">
+                    <%= image_tag 'shiny_logo_old.png', class: 'logo', height: 40 %>
+                    <h4 class="m-t-40"><%= t 'log_in' %></h4>
                 </div>
 
-                <div class="form-group form-group-default required">
-                    <%= f.label :password %>
-                    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group form-group-default required">
+                            <%= f.label :email %>
+                            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="form-group form-group-default required">
+                            <%= f.label :password %>
+                            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                        </div>
+                    </div>
                 </div>
 
                 <% if devise_mapping.rememberable? -%>
-                <div class="checkbox check-primary">
-                    <%= f.check_box :remember_me %>
-                    <%= f.label :remember_me %>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="checkbox check-primary">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :remember_me %>
+                        </div>
+                    </div>
                 </div>
                 <% end -%>
 
-                <div class="actions">
-                    <%= f.submit t('login'), class: 'btn btn-primary btn-block' %>
-
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <%= f.submit t('login'), class: 'btn btn-primary btn-block btn-lg' %>
+                    </div>
                 </div>
+
+                <div class="row m-t-20">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <%= render "devise/shared/links" %>
+                    </div>
+                </div>
+
                 <% end %>
 
-                <%= render "devise/shared/links" %>
             </div>
         </div>
     </div>
