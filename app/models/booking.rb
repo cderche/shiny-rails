@@ -22,6 +22,8 @@ class Booking < ApplicationRecord
   before_save :calculate_price
   after_create :slack_new_booking
 
+  after_update :confirm_professional, if: :professional_id_changed?
+
   enum status: [:draft, :pending, :active, :cancelled]
 
   filterrific(
@@ -119,6 +121,11 @@ class Booking < ApplicationRecord
 
   def slack_new_booking
     Slacked.post "Booking created"
+  end
+
+  def confirm_professional
+    puts "Send email confirming professional"
+    BookingMailer.confirmation(@booking).deliver_later
   end
 
 end
