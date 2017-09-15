@@ -1,4 +1,6 @@
 en:
+  payment_details: 'Payment details'
+  connect_my_card: 'Connect my card'
   views:
     pagination:
       first: "<i class='fa fa-angle-double-left'></i>"
