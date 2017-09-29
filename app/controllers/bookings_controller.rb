@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
 
     if @booking.save
       flash[:success]
-      redirect_to payture_gateway || 'oops'
+      redirect_to AddCardService.add_card_to_booking(@booking) || 'oops'
     else
       flash[:error]
       render :new
@@ -58,42 +58,6 @@ class BookingsController < ApplicationController
       extra_ids: [],
       addons_attributes: [:quantity, :id, :extra_id]
     )
-  end
-
-  def payture_gateway
-    data = {
-      OrderId:      @booking.order_token        ,
-      SessionType:  'Block'                       ,
-      VWUserLgn:    @booking.user.email         ,
-      VWUserPsw:    @booking.user.payture_token ,
-      Amount:       '100'                       ,
-    }
-    puts "POST: #{data}"
-    begin
-      service = PaymentService.new
-      res = service.init(data)
-      puts "Res: #{res}"
-      sessionId = res['Init']['SessionId']
-    rescue REXML::ParseException => ex
-      puts "Failed: #{ex.message[/^.*$/]} (#{ex.message[/Line:\s\d+/]})"
-      return nil
-    end
-
-    uri = URI::HTTPS.build({
-      host: ENV['PAYTURE_HOST'] ,
-      path: '/vwapi/Pay'        ,
-      query: {
-        SessionId:    sessionId                         ,
-        date:         @booking.service_date             ,
-        time:         @booking.service_time             ,
-        subtotal:     @booking.subtotal                 ,
-        final_total:  @booking.final_total              ,
-        discount:     @booking.discount                 ,
-        frequency:    I18n.t(@booking.frequency.name)   ,
-      }.to_query
-    })
-    puts "URI: #{uri}"
-    uri.to_s
   end
 
 end

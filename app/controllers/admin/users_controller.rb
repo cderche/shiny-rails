@@ -16,7 +16,7 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def add_card
-    @url = PaytureCardService.add_card_url(@user)
+    @url = AddCardService.add_card_to_user(@user)
     respond_to do |format|
       format.js
     end

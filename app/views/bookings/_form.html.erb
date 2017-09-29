@@ -73,12 +73,12 @@
         <%= render partial: "notes", locals: { f: f } %>
         <br>
         <br>
-        <%# f.submit class: "btn btn-primary btn-cons btn-lg full-width" %>
-        <a href="#" class="btn btn-primary btn-cons btn-lg full-width" data-toggle="modal" data-target="#payment_modal"><%= t('payment_details') %></a>
+        <%= f.submit class: "btn btn-primary btn-cons btn-lg full-width" %>
+        <!-- <a href="#" class="btn btn-primary btn-cons btn-lg full-width" data-toggle="modal" data-target="#payment_modal"><%= t('payment_details') %></a> -->
     </div>
 </div>
 
 
-<%= render partial: 'payment_modal', locals: { f: f } %>
+<%# render partial: 'payment_modal', locals: { f: f } %>
 
 <% end %>
