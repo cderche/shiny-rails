@@ -20,23 +20,23 @@ class AddCardService
 
   def self.add_card_to_booking(booking)
     params = {
-      OrderId:      booking.order_token ,
-      SessionType:  'Block'             ,
-      Amount:       100                 ,
-      Language:     I18n.locale.to_s
+      OrderId:      booking.order_token             ,
+      SessionType:  'Block'                         ,
+      Amount:       100                             ,
+      Language:     I18n.locale.to_s                ,
+      Frequency:    I18n.t(booking.frequency.name)  ,
+      Date:         booking.service_date            ,
+      Time:         booking.service_time            ,
+      Subtotal:     booking.subtotal                ,
+      Discount:     booking.discount                ,
+      Total:        booking.final_total             ,
+      Promo:        booking.promo_code
     }
 
     initResult = init(booking.user, params)
 
     query = {
-      SessionId: initResult['Init']['SessionId'],
-      pDate:      booking.service_date           ,
-      pTime:      booking.service_time           ,
-      pSubtotal:  booking.subtotal               ,
-      pTotal:     booking.final_total            ,
-      pDiscount:  booking.discount               ,
-      pFrequency: I18n.t(booking.frequency.name) ,
-      pPromo:     booking.promo_code
+      SessionId: initResult['Init']['SessionId']
     }
 
     url(initResult, query)
